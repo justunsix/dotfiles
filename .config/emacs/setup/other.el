@@ -401,9 +401,10 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
          ("C-c l" . my-org-insert-link)
          ;; Override org-mode's org-open-at-point with jt/org-open-at-point
 				 ;; This allows for opening links in the same window
-				 ("C-c C-o" . jt/org-open-at-point)
+				 (:map org-mode-map
+							 ("C-c C-o" . jt/org-open-at-point))
 				 )
-	) 
+	)
 
 ;; Add where are your org files
 (setq org-agenda-files jt/org-directory)
