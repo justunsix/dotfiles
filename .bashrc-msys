@@ -1,0 +1,49 @@
+# .bashrc
+ 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+ 
+##############
+### Basics ###
+##############
+ 
+# Don't wait for job termination notification
+set -o notify
+ 
+# Enables UTF-8 in Putty.
+# See http://www.earth.li/~huggie/blog/tech/mobile/putty-utf-8-trick.html
+echo -ne '\e%G\e[?47h\e%G\e[?47l'
+ 
+# My pretty prompt (Yay!)
+PS1='\[\e[32;40m\]\u\[\e[0m\]\[\e[34;40m\]\H\[\e[0m\]\[\e[40;1m\]\w\[\e[0m\] '
+ 
+############
+### PATH ###
+############
+ 
+# Remove '/c/*' from PATH if running under Msys to avoid possible 
+# interference from programs already installed on system. Removal 
+# with awk is copied from http://stackoverflow.com/a/370192.
+if [ $(uname -o) == 'Msys' ]; then
+    export PATH=`echo ${PATH} | awk -v RS=: -v ORS=: '/c\// {next} {print}' | sed 's/:*$//'`
+fi
+ 
+###############
+### Aliases ###
+###############
+ 
+ 
+alias less='less -r'
+alias rm='rm -i'
+alias whence='type -a'
+alias ls='ls -F --color=auto'
+alias dir='ls --color=auto --format=long -L'
+alias vdir='ls --color=auto --format=long'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias md='mkdir'
+alias pico='nano'
+alias cls='clear'
