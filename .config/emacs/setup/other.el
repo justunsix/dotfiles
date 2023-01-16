@@ -399,6 +399,8 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   :bind (("C-c a" . org-agenda)
          ;; Bind C-c l to my-org-insert-link similar to org-insert-link
          ("C-c l" . my-org-insert-link)
+				 ;; Bind org-insert-heading
+				 ("C-c h" . org-insert-heading)
          ;; Override org-mode's org-open-at-point with jt/org-open-at-point
 				 ;; This allows for opening links in the same window
 				 (:map org-mode-map
