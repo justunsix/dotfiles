@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# From https://github.com/fnd/todo.txt-cli/blob/extensions/edit
+action=$1
+shift
+
+function usage() {
+	echo "  $(basename $0) [item]"
+	echo "    Edit item(s) using text editor."
+	echo ""
+	exit
+}
+
+[ "$action" = "usage" ] && usage
+
+cmd=${EDITOR:-vi}
+if [[ "$1" =~ ^[0-9]+$ ]]; then
+	cmd="$cmd +$1"
+fi
+
+$cmd "$TODO_FILE"

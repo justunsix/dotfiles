@@ -1,0 +1,205 @@
+# Base configuration
+# https://starship.rs/config/#prompt
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Use custom format
+format = """
+$fill
+$all"""
+
+# Insert a horizontal line before each prompt
+[fill]
+symbol = "─"
+style = "bold green"
+
+# Replace the "❯" symbol in the prompt with "➜"
+# [character] # The name of the module we are configuring is "character"
+# success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+# Disable the package module, hiding it from the prompt completely
+# [package]
+# disabled = true
+
+# ** Shell specific indicators
+# https://mvolkmann.github.io/blog/starship/
+# https://github.com/starship/starship/discussions/1252
+
+[shell]
+fish_indicator = "f"
+# Doller sign
+bash_indicator = "b"
+zsh_indicator = "z"
+powershell_indicator = "ps"
+unknown_indicator = "mystery shell"
+format = "[$indicator ](bold cyan) "
+disabled = false
+
+# Indicates when in fish shell private mode
+#[custom.fishprivate]
+#command = "echo 🔒"
+#when = """ test -n "$fish_private_mode" """
+#format = "$output"
+
+#[env_var.fish_private_mode]
+#symbol = "fpm"
+#default = "0"
+#format = "$output"
+#disabled = false
+
+#when = """ test "$STARSHIP_SHELL" = "fish" """
+# when = """ test "$fish_private_mode" = "1" """
+#when = """ test "$fish_private_mode" = "1" """
+#when = '[ "$fish_private_mode" == "1" ]'
+
+# ** Plain text preset
+# This preset changes the symbols for each module into plain text. Great if you don't have access to Unicode.
+# https://starship.rs/presets/plain-text.html
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+# vimcmd_symbol = "[<](bold green)"
+vicmd_symbol = "[<](bold green)"
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+
+[aws]
+symbol = "aws "
+
+#[bun]
+#symbol = "bun "
+
+[c]
+symbol = "C "
+
+[cobol]
+symbol = "cobol "
+
+[conda]
+symbol = "conda "
+
+[crystal]
+symbol = "cr "
+
+[cmake]
+symbol = "cmake "
+
+# [daml]
+# symbol = "daml "
+
+[dart]
+symbol = "dart "
+
+[deno]
+symbol = "deno "
+
+[dotnet]
+symbol = ".NET "
+
+[directory]
+read_only = " ro"
+
+[docker_context]
+symbol = "docker "
+
+[elixir]
+symbol = "exs "
+
+[elm]
+symbol = "elm "
+
+[git_branch]
+symbol = "git "
+
+[golang]
+symbol = "go "
+
+[hg_branch]
+symbol = "hg "
+
+[java]
+symbol = "java "
+
+[julia]
+symbol = "jl "
+
+[kotlin]
+symbol = "kt "
+
+[lua]
+symbol = "lua "
+
+[nodejs]
+symbol = "nodejs "
+
+[memory_usage]
+symbol = "memory "
+
+# [meson]
+# symbol = "meson "
+
+[nim]
+symbol = "nim "
+
+[nix_shell]
+symbol = "nix "
+
+[ocaml]
+symbol = "ml "
+
+[package]
+symbol = "pkg "
+
+[perl]
+symbol = "pl "
+
+[php]
+symbol = "php "
+
+[pulumi]
+symbol = "pulumi "
+
+[purescript]
+symbol = "purs "
+
+[python]
+symbol = "py "
+
+# [raku]
+# symbol = "raku "
+
+[ruby]
+symbol = "rb "
+
+[rust]
+symbol = "rs "
+
+[scala]
+symbol = "scala "
+
+[spack]
+symbol = "spack "
+
+[sudo]
+symbol = "sudo "
+
+[swift]
+symbol = "swift "
+
+[terraform]
+symbol = "terraform "
+
+[zig]
+symbol = "zig "
+# ** End of Plain text preset
