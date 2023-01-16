@@ -1,0 +1,27 @@
+[alias]
+  # ** commit
+	# commit with message
+	c = commit -m
+	# commit all with message
+	ca = commit -am
+
+  # branch
+  # branch (verbose)
+  b = branch -v
+	
+  # status
+	s = status
+
+  # diff
+	# diff unstaged changes
+	d = diff
+
+  # push
+	p = push
+	
+[pull]
+	rebase = false
+
+[include]
+  # includes further configuration in these files
+  path = .gitconfig.user
