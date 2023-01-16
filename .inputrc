@@ -1,0 +1,41 @@
+# Sensible defaults from https://www.masteringemacs.org/article/keyboard-shortcuts-every-command-line-hacker-should-know-about-gnu-readline
+# and https://wiki.archlinux.org/title/readline
+# By default the keyseq-timeout value is a rather ambitious 500 ms, so increase to 1200 ms:
+set keyseq-timeout 1200
+
+### Python
+
+$if Python
+
+# Wrap prompt in !help( ... )  (for PDB)
+"\C-xh": "\C-a!help(\C-e)"
+# Wrap prompt in dir( ... )
+"\C-xd": "\C-adir(\C-e)"
+
+### Global settings: Bash and some fish
+
+# Use VI editing interface
+# set editing-mode-vi
+
+# Colored completion of partial matches in bash
+# by default color highlighting for completition is disabled
+set colored-stats on
+set colored-completion-prefix on
+# Append char to indicate type
+set visible-stats On
+# Mark symlinked directories
+set mark-symlinked-directories On
+# Color the common prefix in menu-complete
+set menu-complete-display-prefix On
+
+# Make use of the macro functionality you must first bind the command
+# print-last-kbd-macro to a key in your .inputrc file:
+# C-x p
+"\C-xP": print-last-kbd-macro
+
+# C-x G call fzf
+"\C-xG": "\C-e | fzf)\C-a(\C-a$\C-b\C-a"
+
+# Typing C-M-f prints out all known functions; C-M-v all known variables.
+"\e\C-f": dump-functions
+"\e\C-v": dump-variables
