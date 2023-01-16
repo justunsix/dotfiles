@@ -1,6 +1,9 @@
 MIT License
 
-Unless another license is indicated in certain directories or files
+Unless another license is indicated in certain directories and files such as:
+- Emacs configurations in folder: .config/emacs folder
+- Fonts in folder: .fonts
+- Hunspell dictionaries in folder: other/Hunspell
 
 Copyright (c) 2023 Justin Tung
 

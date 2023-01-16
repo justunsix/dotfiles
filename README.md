@@ -15,7 +15,7 @@ This repository contains my personal dotfiles like configurations and setups for
 - Shell:
   - Bash
   - Fish
-  - Prompt: starship
+  - Prompt: Starship
 - Clipboard manager: copyq
 - Editor:
   - Emacs
@@ -26,4 +26,4 @@ This repository contains my personal dotfiles like configurations and setups for
 
 ## How Dotfiles are Managed
 
-There are many ways to manage your dotfiles. I use Ansible inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) which also installs and configures machines I used from scratch using package managers like apt, dnf, deb-get, chocolately, and nix.
+There are many ways to manage your dotfiles. I use Ansible inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) which also installs and configures machines I use from initial installation using package managers like apt, dnf, deb-get, chocolately, and nix.
