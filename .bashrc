@@ -126,7 +126,7 @@ fi
 if [ -f "$HOME/.env" ]; then
 		source "$HOME/.env"
     # aliases
-		source "~/.env-aliases"
+		source "$HOME/.env-aliases"
 fi
 
 isUbuntu="false"
