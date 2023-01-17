@@ -213,14 +213,13 @@ if [ "$isFedora" = "true" ]; then
 		[ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
     source /usr/share/fzf/shell/key-bindings.bash
 		export FZF_DEFAULT_COMMAND='fd --hidden --type f'
-
-		# SSH key management with i3
-		# Prompt once for SSH keys, then remember for rest of user's session
-		# Work in terminal and non terminal environments
-		# https://wiki.archlinux.org/title/SSH_keys#Keychain
 fi
 
-# If running i3, eval the keychain
+
+# SSH key management with i3
+# Prompt once for SSH keys, then remember for rest of user's session
+# Work in terminal and non terminal environments
+# https://wiki.archlinux.org/title/SSH_keys#Keychain
 # see man keychain for other shells and additional certificates
 if pgrep -x "i3" > /dev/null
 then
