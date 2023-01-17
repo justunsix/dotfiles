@@ -6,8 +6,8 @@ alias jgt="jt-gt.sh"
 alias jgc="jt-gc.sh"
 
 # todotxt
-alias t="todo.sh"
-alias to="todo.sh -d ~/usr/bin/todotxt-cli/todo-work.cfg"
+alias t="todo.sh -d $HOME/.config/todotxt-cli/todo.cfg"
+alias to="todo.sh -d $HOME/.config/todotxt-cli/todo-work.cfg"
 
 # cd
 alias ..="cd .."
