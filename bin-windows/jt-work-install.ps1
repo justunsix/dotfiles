@@ -15,7 +15,6 @@ veracrypt `
 keepassxc `
 cygwin `
 vscode `
-microsoft-windows-terminal `
 emacs `
 ripgrep `
 hunspell.portable `
