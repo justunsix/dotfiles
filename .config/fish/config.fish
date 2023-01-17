@@ -5,7 +5,7 @@ end
 # Add ~/.local/bin to the path
 set -gx PATH $PATH ~/.local/bin
 
-
+# ---------------------------------------------------
 # ---------------------------------------------------
 # * My Customizations ---
 
@@ -30,8 +30,8 @@ if test -e $HOME/.bash_aliases
 end
 
 # Source overlay variables, aliases
-if test -e $DOTFILES_OVERLAY_DIR/.env
-		source $DOTFILES_OVERLAY_DIR/.env-aliases
+if test -e $HOME/.env-aliases
+		source $HOME/.env-aliases
 end
 
 alias nvm="echo 'Switch to bash shell to use nvm'"

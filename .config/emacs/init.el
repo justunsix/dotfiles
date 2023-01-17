@@ -12,8 +12,10 @@
 ;; --------------------------------------------------------------------------------
 ;; * Overlay  ----------------------------
 ;; Optionally load dotfiles overlay Emacs configurations
-(if (file-exists-p (concat (getenv "DOTFILES_OVERLAY_DIR") "/.env"))
-		(load (concat (getenv "DOTFILES_OVERLAY_DIR") "/files/.config/emacs/env.el")))
+(setq env-el-location "~/.config/emacs/setup/env.el")
+(if (file-exists-p env-el-location)
+		(load env-el-location)
+	)
 
 (require 'minimal)
 (require 'other)

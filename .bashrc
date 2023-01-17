@@ -119,16 +119,14 @@ if ! shopt -oq posix; then
 fi
 
 # ---------------------------------------------------
+# ---------------------------------------------------
 # --- My Customizations ---
 
-# Overlay to apply to dotfiles in this repository such as overrides and other environment variables
-export DOTFILES_OVERLAY_DIR="$HOME/Code/dotfiles-overlay"
-
 # Source overlay variables, aliases
-if [ -f "$DOTFILES_OVERLAY_DIR/.env" ]; then
-		source "$DOTFILES_OVERLAY_DIR/.env"
+if [ -f "$HOME/.env" ]; then
+		source "$HOME/.env"
     # aliases
-		source "$DOTFILES_OVERLAY_DIR/.env-aliases"
+		source "~/.env-aliases"
 fi
 
 isUbuntu="false"
