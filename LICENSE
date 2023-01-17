@@ -1,9 +1,13 @@
 MIT License
 
 Unless another license is indicated in certain directories and files such as:
-- Emacs configurations under GNU General Public License v3.0 in folder: .config/emacs
-- Fonts in folder: .fonts
-- Hunspell dictionaries under Mozilla Public License Version 2.0 in folder: other/Hunspell 
+- GNU General Public License v3.0 
+  - Emacs configurations in folder: .config/emacs
+  - todotxt configurations and actions in folder: .config/todotxt-cli
+- Mozilla Public License Version 2.0
+  - Hunspell dictionaries in folder: other/Hunspell 
+- Other
+  - Fonts in folder: .fonts
 
 Copyright (c) 2023 Justin Tung
 
