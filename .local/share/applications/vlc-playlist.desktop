@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=VLC Playlist
+GenericName=Playlist
+Comment=Playlist
+Exec=sh -c "/snap/bin/vlc $VLC_PLAYLIST_LOCATION/VLC-Linux-Playlist.xspf"
+Path=/snap/bin/
+Icon=gnome-music
+Terminal=false
+Type=Application
+Categories=Application
