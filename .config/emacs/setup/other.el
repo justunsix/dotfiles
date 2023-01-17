@@ -409,7 +409,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	)
 
 ;; Add where are your org files
-(setq org-agenda-files jt/org-directory)
+;; (setq org-agenda-files jt/org-directory)
 
 ;; Enable logs of recent activity
 (setq org-agenda-start-with-log-mode t)
