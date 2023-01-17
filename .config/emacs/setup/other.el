@@ -694,15 +694,20 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
   (lsp-headerline-breadcrumb-mode))
 
-; lsp and lsp-deferred will activate lsp-mode
+;; lsp and lsp-deferred will activate lsp-mode
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :hook (lsp-mode . efs/lsp-mode-setup)
   :init
-  ; set personal lsp-mode feature prefix to overwrite default Super key + L
-  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
+	;; set personal lsp-mode feature prefix to overwrite default Super key + L
+	;; Or 'C-l', 's-l'
+  (setq lsp-keymap-prefix "C-c l")
   :config
   (lsp-enable-which-key-integration t))
+
+;; yasnippet for lsp
+(use-package yasnippet
+	:hook (lsp-mode . yas-minor-mode))
 
 ;; UI enhancements for LSP
 ;; Can use sideline configuration for more frame help on screen
