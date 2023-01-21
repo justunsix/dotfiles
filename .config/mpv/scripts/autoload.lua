@@ -1,4 +1,5 @@
 -- From https://raw.githubusercontent.com/mpv-player/mpv/master/TOOLS/lua/autoload.lua
+-- Using license GPL: https://github.com/mpv-player/mpv/blob/master/LICENSE.GPL
 -- Updated 2023-01-15
 -- This script automatically loads playlist entries before and after the
 -- the currently played file. It does so by scanning the directory a file is
