@@ -289,6 +289,18 @@ bindsym $mod+n exec --no-startup-id i3-msg '[class="mpv"] focus' || mpv
 bindsym $mod+p exec --no-startup-id i3-msg '[class="Evolution"] focus' || evolution;workspace 9: mail;focus
 
 # ----------------------------------------
+# Display of certain applications
+
+# Firefox no title bar
+for_window [title="^.*Mozilla Firefox"] border pixel 0
+# Emacs no title bar
+for_window [class="Emacs"] border pixel 0
+# Applications with floating
+for_window [class="Pavucontrol"] floating enable; border none
+for_window [class="dolphin"] floating enable; border pixel 1
+for_window [class="Org.gnome.Nautilus"] floating enable; border pixel 1
+
+# ----------------------------------------
 # Launcher Mode
 
 # Manual entry: https://i3wm.org/docs/userguide.html#binding_modes
