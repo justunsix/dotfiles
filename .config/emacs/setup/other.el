@@ -662,7 +662,11 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 
 ;; Tree view of code like symbols, diagnostic messages (errors/warnings)
 (use-package lsp-treemacs
-  :after lsp)
+  :after lsp
+	:config
+	;; Reduce font size used in the treemacs buffer, useful for long file names
+	(set-face-attribute 'treemacs-file-face nil :height 80)
+	)
 
 ;; --------------------------------------------------------------------------------
 ;; * Company Completion  ----------------------------
