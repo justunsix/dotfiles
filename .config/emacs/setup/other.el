@@ -761,7 +761,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	)
 
 (use-package yaml-mode
-  :hook (yaml-mode . lsp-mode)
+  :hook (yaml-mode)
   :mode "\\.yaml\\'"
       )
 
