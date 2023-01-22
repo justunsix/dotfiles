@@ -5,6 +5,7 @@ microsoft-windows-terminal `
 autohotkey `
 git `
 git-credential-manager-for-windows `
+starship `
 fzf  `
 python3 `
 firefox `
