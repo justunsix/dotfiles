@@ -78,7 +78,8 @@
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.fontSize": 17,
   "terminal.integrated.sendKeybindingsToShell": true,
-  "terminal.integrated.allowChords": false,  
+  "terminal.integrated.allowChords": false,
+  
   "workbench.colorCustomizations": {
     "[Visual Studio Dark]": {
       // black and green settings
