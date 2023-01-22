@@ -479,28 +479,17 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 ;;(use-package visual-fill-column
 ;;  :hook (org-mode . efs/org-mode-visual-fill))
 
-;; Dynamic scoping, disable request to evaluate org babel on those literal dotfiles
-(defun jt/org-babel-tangle-no-prompt-evaluate-dotfile ()
-  (let ((org-confirm-babel-evaluate nil))
-    (org-babel-tangle))
-
-  (setq dotfile-i3config (concat jt/dotfiles-dir "/files/.config/i3/config"))
-  (setq dotfile-i3statusconfig (concat jt/dotfiles-dir "/files/.config/i3status/config"))	
-	
-  (copy-file "~/.config/i3/config" dotfile-i3config t)
-  (copy-file "~/.config/i3status/config" dotfile-i3statusconfig t)
-  )
-
 ;; Automatically tangle our literate org dotfiles when we save them 
 (defun efs/org-babel-tangle-config ()
   ;; Check if current buffer-file-name string contains word "Dotfile"
   ;; If it contains "Dotfile", run tangle with no warning prompt
   (when (string-match-p "Dotfile" (buffer-file-name))
-    (jt/org-babel-tangle-no-prompt-evaluate-dotfile)
+		(let ((org-confirm-babel-evaluate nil))
+			(org-babel-tangle))
     )
   )
 
-;; (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
 
 ;; Defer after org is loaded
 (with-eval-after-load 'org
