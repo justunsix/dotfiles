@@ -439,10 +439,10 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   ;;                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
   ;; Set faces for heading levelsq
-  (dolist (face '((org-level-1 . 1.2)
-                  (org-level-2 . 1.1)
-                  (org-level-3 . 1.05)
-                  (org-level-4 . 1.0)
+  (dolist (face '((org-level-1 . 1.3)
+                  (org-level-2 . 1.25)
+                  (org-level-3 . 1.2)
+                  (org-level-4 . 1.1)
                   (org-level-5 . 1.1)
                   (org-level-6 . 1.1)
                   (org-level-7 . 1.1)
@@ -451,7 +451,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 
   ;; Set org-level-3 font face to be lighter green
   (set-face-attribute 'org-level-3 nil :foreground "#00ff00")
-
+  ;; Set org-level-4 font face to be lighter blue
+	(set-face-attribute 'org-level-4 nil :foreground "#56a6a9")
+	
   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
   (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
   (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
