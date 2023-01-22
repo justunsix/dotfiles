@@ -2,38 +2,34 @@
 
 Configuration and customization files to personalize Linux and Windows.
 
-This repository contains my personal dotfiles like configurations and setups.
+This repository contains my personal dotfiles like configurations for software described below.
 
 ## Repository Structure
 
-/ 
-├── .config/ configuration files for the below mentioned programs
-    ├── Code/User - [Visual Studio Code](https://code.visualstudio.com/) (Editor)
-    ├── cool-retro-term - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) (Terminal Emulator)
-	├── copyq - [copyq](https://hluk.github.io/CopyQ/) (Clipboard Manager)
-	├── dunst - [dunst](https://dunst-project.org/) (Notification daemon, for use with i3)
-	├── emacs - [Emacs](https://www.gnu.org/software/emacs/) (Editor)
-	├── fontconfig/conf.d - Font managed by [Nix package manager](https://nixos.org/)
-	├── i3 - [i3 Window Manager (WM)](https://i3wm.org/)
-	├── i3status - [i3status](https://i3wm.org/docs/i3status.html) (Status bar for use with i3)
-	├── mpv - [mpv](https://mpv.io/) (Media Player)
-	├── rofi - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3)
-  	├── todotxt-cli - [todotxt](https://github.com/todotxt/todo.txt-cli) (Task manager)
-	├── `kdeglobals` - [KDE](https://kde.org/) (Desktop Environment appearance settings))
-	├── `starship.toml` - [Starship](https://starship.rs/) (Cross-shell prompt)
-├── .fonts - Open source fonts
-├── .local/share/applications - [Desktop entries](https://wiki.archlinux.org/title/desktop_entries)
-├── Templates - New file templates for [GNOME File manager](https://wiki.gnome.org/action/show/Apps/Files?action=show&redirect=Apps%2FNautilus) also known as Nautilus
-├── usr/bin - Linux scripts
-├── usr/bin-windws - Windows scripts
-├── other - Other configuration files not normally stored in user home directory
-├── `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell configuration files
-├── `.gitconfig` - [Git](https://git-scm.com/) distributed version control configuration file
-├── `.inputrc` - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) for command line editing
-
-## How Dotfiles are Managed
-
-There are many ways to manage your dotfiles. I use Ansible inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) which also installs and configures machines I use from initial installation using package managers like apt, dnf, deb-get, chocolately, and nix.
+/<br/>
+├── `.config/` configuration files for the below mentioned programs<br/>
+------├── `Code/User/` - [Visual Studio Code](https://code.visualstudio.com/) (Editor)<br/>
+------├── `cool-retro-term/` - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) (Terminal Emulator)<br/>
+------├── `copyq/` - [copyq](https://hluk.github.io/CopyQ/) (Clipboard Manager)<br/>
+------├── `dunst/` - [dunst](https://dunst-project.org/) (Notification daemon, for use with i3)<br/>
+------├── `emacs/` - [Emacs](https://www.gnu.org/software/emacs/) (Editor)<br/>
+------├── `fontconfig/conf.d/` - Font managed by [Nix package manager](https://nixos.org/)<br/>
+------├── `i3/` - [i3 Window Manager (WM)](https://i3wm.org/)<br/>
+------├── `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) (Status bar for use with i3)<br/>
+------├── `mpv/` - [mpv](https://mpv.io/) (Media Player)<br/>
+------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3)<br/>
+------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) (Task manager)<br/>
+------├── `kdeglobals` - [KDE](https://kde.org/) (Desktop Environment appearance settings))<br/>
+------├── `starship.toml` - [Starship](https://starship.rs/) (Cross-shell prompt)<br/>
+├── `.fonts/` - Open source fonts<br/>
+├── `.local/share/applications/` - [Desktop entries](https://wiki.archlinux.org/title/desktop_entries)<br/>
+├── `Templates/` - New file templates for [GNOME File manager](https://wiki.gnome.org/action/show/Apps/Files?action=show&redirect=Apps%2FNautilus) also known as Nautilus<br/>
+├── `usr/bin/` - Linux scripts<br/>
+├── `usr/bin-windows/` - Windows scripts<br/>
+├── `other/` - Other configuration files not normally stored in user home directory<br/>
+├── `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell configuration files<br/>
+├── `.gitconfig` - [Git](https://git-scm.com/) distributed version control configuration file<br/>
+├── `.inputrc` - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) for command line editing<br/>
 
 ## Programs and Software Configured
 
@@ -46,9 +42,6 @@ There are many ways to manage your dotfiles. I use Ansible inspired by [geerling
 - Desktop environment: [GNOME](https://www.gnome.org/)
 - Window manager (WM): [i3 tiling WM](https://i3wm.org/)
   - Status bar: [i3status](https://i3wm.org/docs/i3status.html)
-
-### Shells
-
 - Shell:
   - [Bash](https://www.gnu.org/software/bash/)
     - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) library
@@ -68,3 +61,7 @@ There are many ways to manage your dotfiles. I use Ansible inspired by [geerling
 - Terminal emulator: [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term)
 - Notification daemon: [dunst](https://dunst-project.org/)
 - Task management: [todotxt](https://github.com/todotxt/todo.txt-cli)
+
+## How Dotfiles are Managed
+
+There are many ways to manage your dotfiles. I use Ansible inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) and [dotfiles Ansible role](https://github.com/geerlingguy/ansible-role-dotfiles) which also installs and configures machines I use from initial installation using package managers like apt, dnf, deb-get, chocolately, and nix.
