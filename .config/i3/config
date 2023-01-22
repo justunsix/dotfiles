@@ -194,6 +194,7 @@ exec --no-startup-id dex --autostart --environment i3
 # Nightlight
 # exec --no-startup-id redshift -t 2200:2200 -m randr -l 43:79 &
 
+# Display management
 # Rotate DP-4 screen to portrait
 # exec xrandr --output DP-4 --rotate left
 # exec xrandr --output DP-2 --primary
