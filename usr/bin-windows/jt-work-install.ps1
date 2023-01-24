@@ -32,6 +32,7 @@ python `
 maven `
 mremoteng `
 pdfxchangeeditor `
+powershell-core --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 REGISTER_MANIFEST=1 ENABLE_PSREMOTING=1"' `
 -y
 
 # Upgrade all installed packages
