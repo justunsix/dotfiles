@@ -32,8 +32,11 @@ python `
 maven `
 mremoteng `
 pdfxchangeeditor `
-powershell-core --install-arguments='""ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 REGISTER_MANIFEST=1 ENABLE_PSREMOTING=1"' `
 -y
+
+# Install power-core with arguments per 
+# https://community.chocolatey.org/packages/powershell-core/
+choco install powershell-core -y --install-arguments='""ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 REGISTER_MANIFEST=1 ENABLE_PSREMOTING=1"'
 
 # Alternatively for powershell-core, install using winget to avoid powershell upgrade issues
 # winget install --id Microsoft.Powershell --source winget
