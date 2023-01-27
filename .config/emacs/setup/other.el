@@ -500,12 +500,16 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	(org-babel-do-load-languages
 	 'org-babel-load-languages
 	 '((emacs-lisp . t)
-			(python . t)
-			(shell . t)
-			(haskell . t)
-			;;			(powershell . t)
-			)
-		)
+		 (python . t)
+		 (shell . t)
+		 ;; plantuml
+		 ;; per https://plantuml.com/emacs
+		 (plantuml . t)
+		 ;; (haskell . t)
+		 ;;	(powershell . t)
+		 )
+	 )
+	(add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
 	)
 
 ;; Defer after org is loaded
@@ -524,11 +528,18 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (add-to-list 'org-structure-template-alist '("hs" . "src haskell"))
   (add-to-list 'org-structure-template-alist '("yaml" . "src yaml"))
   (add-to-list 'org-structure-template-alist '("json" . "src json"))
+  (add-to-list 'org-structure-template-alist '("puml" . "src plantuml"))
 	;;  (add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))    
   ;;  (add-to-list 'org-structure-template-alist '("li" . "src lisp"))
   ;;  (add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
   ;;  (add-to-list 'org-structure-template-alist '("ts" . "src typescript"))
   ;;  (add-to-list 'org-structure-template-alist '("go" . "src go"))
+
+	(add-to-list
+	 'org-src-lang-modes '("plantuml" . plantuml))
+
+  (setq org-plantuml-jar-path "~/.config/emacs/plantuml/plantuml.jar")
+	
   )
 
 ;; --------------------------------------------------------------------------------
@@ -685,7 +696,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   :hook (company-mode . company-box-mode))
 
 ;; --------------------------------------------------------------------------------
-;; * Language Servers ----------------------------
+;; * Language and Language Servers ----------------------------
 
 ; Breadcrumb to show structure of file and where you are located
 (defun efs/lsp-mode-setup ()
@@ -753,6 +764,14 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   :hook (yaml-mode)
   :mode "\\.yaml\\'"
       )
+
+(use-package plantuml-mode
+	:mode "\\.plantuml\\'"
+	:config
+	(setq plantuml-executable-path "/usr/bin/plantuml")
+	(setq plantuml-default-exec-mode 'executable)
+	(setq plantuml-output-type "png")
+	)
 
 (use-package json-mode
   :mode "\\.json\\'"
