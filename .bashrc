@@ -224,7 +224,9 @@ fi
 # see man keychain for other shells and additional certificates
 if pgrep -x "i3" > /dev/null
 then
-		eval $(keychain --eval --quiet id_ed25519 id_rsa)
+		if [ -f ~/.ssh/id_ed25519 ]; then
+				eval $(keychain --eval --quiet id_ed25519 id_rsa)
+		fi
 fi
 
 # oc - Openshift CLI
