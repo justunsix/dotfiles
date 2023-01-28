@@ -342,3 +342,7 @@ for_window [instance="copyq"] resize set 1000 600
 for_window [instance="copyq"] border pixel 5
 
 exec copyq
+
+# Bind Print Screen to screenshot, OCR, and copy text to clipboard
+# per: https://willbush.dev/blog/fast-ocr-to-clipboard/
+bindsym Print exec --no-startup-id flameshot gui --raw | tesseract stdin stdout -l eng | xclip -in -selection clipboard
