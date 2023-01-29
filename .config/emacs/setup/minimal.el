@@ -228,6 +228,7 @@
 (global-set-key (kbd "<f2> k") 'jt/kill-all-buffers)
 
 ;; Windows navigation using windmove starting in Emacs 21
+;; Overrides defaults which are: S-<arrow keys>
 (global-set-key (kbd "<f2> <left>")  'windmove-left)
 (global-set-key (kbd "<f2> <right>") 'windmove-right)
 (global-set-key (kbd "<f2> <up>")    'windmove-up)
