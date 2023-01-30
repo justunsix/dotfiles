@@ -1057,5 +1057,11 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 		(org-open-at-point))
 	)
 
+(defun jt/copy-file-name-to-clipboard-as-org-link ()
+	"Copy current file name as an org link to the kill ring (clipboard)."
+	(interactive)
+	(kill-new (format "[[file:%s]]" (file-name-nondirectory (buffer-file-name))))
+	)
+
 (provide 'other)
 
