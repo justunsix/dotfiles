@@ -19,7 +19,7 @@ else
     echo 'Updating APT packages'
     echo ' '
     sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-    sudo aptitude safe-upgrade
+    sudo aptitude safe-upgrade -y
 
     # Update all Snaps
     echo ' '
