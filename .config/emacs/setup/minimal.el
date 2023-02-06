@@ -225,6 +225,10 @@
 ;; Bind eval-region to F2 e r
 (global-set-key (kbd "<f2> e r") 'eval-region)
 
+(global-set-key (kbd "<f2> i d") 'jt/insert-date)
+
+(global-set-key (kbd "<f2> i t") 'jt/insert-date-time)
+
 (global-set-key (kbd "<f2> k") 'jt/kill-all-buffers)
 
 ;; Windows navigation using windmove starting in Emacs 21
