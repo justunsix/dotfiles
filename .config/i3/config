@@ -337,6 +337,9 @@ for_window [instance="copyq"] floating enable
 for_window [instance="copyq"] resize set 1000 600
 for_window [instance="copyq"] border pixel 5
 
+# Make sure the system tray is on the primary monitor
+# otherwise copyq will not appear in the tray and will not close itself
+# when it loses focus
 exec copyq
 
 # Bind Print Screen to screenshot, OCR, and copy text to clipboard
