@@ -19,6 +19,10 @@ fi
 
 # if xrandr program exists
 if [ -x "$(command -v xrandr)" ]; then
+		# Using xrandr, set first connected monitor as primary
+		export PRIMARY=$(xrandr | grep " connected" | head -n 1 | cut -d " " -f1)
+		xrandr --output $PRIMARY --primary
+
 		# if multiple displays are detected
 		if [ $(xrandr | grep -c " connected") -gt 1 ]; then
 				# run screen configuration
