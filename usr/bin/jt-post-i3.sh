@@ -17,10 +17,10 @@ if [ -x "$(command -v redshift)" ]; then
 		
 fi
 
-# if multiple displays are detected
-if [ $(xrandr | grep -c " connected") -gt 1 ]; then
-		# if xrandr program exists
-		if [ -x "$(command -v xrandr)" ]; then
+# if xrandr program exists
+if [ -x "$(command -v xrandr)" ]; then
+		# if multiple displays are detected
+		if [ $(xrandr | grep -c " connected") -gt 1 ]; then
 				# run screen configuration
   		  # Rotate DP-4 screen to portrait
 				xrandr --output DP-4 --rotate left
