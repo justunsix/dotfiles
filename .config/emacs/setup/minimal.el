@@ -229,6 +229,8 @@
 
 (global-set-key (kbd "<f2> i t") 'jt/insert-date-time)
 
+(global-set-key (kbd "<f2> c f") 'jt/copy-file-name-to-clipboard)
+
 (global-set-key (kbd "<f2> k") 'jt/kill-all-buffers)
 
 ;; Windows navigation using windmove starting in Emacs 21
