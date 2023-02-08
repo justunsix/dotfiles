@@ -502,6 +502,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	 '((emacs-lisp . t)
 		 (python . t)
 		 (shell . t)
+		 (sql . t)
 		 ;; plantuml
 		 ;; per https://plantuml.com/emacs
 		 (plantuml . t)
@@ -529,6 +530,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (add-to-list 'org-structure-template-alist '("yaml" . "src yaml"))
   (add-to-list 'org-structure-template-alist '("json" . "src json"))
   (add-to-list 'org-structure-template-alist '("puml" . "src plantuml"))
+  (add-to-list 'org-structure-template-alist '("sql" . "src sql"))	
 	;;  (add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))    
   ;;  (add-to-list 'org-structure-template-alist '("li" . "src lisp"))
   ;;  (add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
