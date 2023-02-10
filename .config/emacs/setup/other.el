@@ -1001,11 +1001,13 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 (straight-use-package
  '(copilot :type git :host github :repo "zerolfx/copilot.el" :files ("dist" "*.el")))
 
-;; Active copilot-mode on org-mode, markdown-mode, yaml-mode, Elisp/d mode
+;; Active copilot-mode on org-mode, markdown-mode, yaml-mode, Elisp/d mode, sh-mode
 (add-hook 'org-mode-hook 'copilot-mode)
 (add-hook 'markdown-mode-hook 'copilot-mode)
 (add-hook 'yaml-mode-hook 'copilot-mode)
 (add-hook 'emacs-lisp-mode-hook 'copilot-mode)
+(add-hook 'sh-mode-hook 'copilot-mode)
+
 ;; (add-hook 'prog-mode-hook 'copilot-mode)
 
 ;; Ensure copilot is loaded
