@@ -530,7 +530,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (add-to-list 'org-structure-template-alist '("yaml" . "src yaml"))
   (add-to-list 'org-structure-template-alist '("json" . "src json"))
   (add-to-list 'org-structure-template-alist '("puml" . "src plantuml"))
-  (add-to-list 'org-structure-template-alist '("sql" . "src sql"))	
+  (add-to-list 'org-structure-template-alist '("sql" . "src sql"))
+	;; Hashicorp Configuration Language (HCL)
+  (add-to-list 'org-structure-template-alist '("hcl" . "src hcl"))	
 	;;  (add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))    
   ;;  (add-to-list 'org-structure-template-alist '("li" . "src lisp"))
   ;;  (add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
@@ -787,6 +789,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 (use-package lua-mode
   :mode "\\.lua\\'"
   :hook (lua-mode . lsp-mode))
+
+(use-package hcl-mode
+	:mode "\\.hcl\\'")
 
 ;; --------------------------------------------------------------------------------
 ;; * Key Bindings ----------------------------
