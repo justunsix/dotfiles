@@ -295,9 +295,9 @@ bindsym $mod+9 exec --no-startup-id i3-msg '[class="Evolution"] focus' || evolut
 # Display of certain applications
 
 # Firefox no title bar
-for_window [title="^.*Mozilla Firefox"] border pixel 0
+for_window [title="^.*Mozilla Firefox"] border pixel 1
 # Emacs no title bar
-for_window [class="Emacs"] border pixel 0
+for_window [class="Emacs"] border pixel 1
 # Applications with floating
 for_window [class="Pavucontrol"] floating enable; border none
 # for_window [class="dolphin"] floating enable; border pixel 1
