@@ -978,7 +978,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   )
 
 ;; Installation and instructions at https://github.com/zerolfx/copilot.el
-(setq copilot-node-executable "~/.nvm/versions/node/v18.13.0/bin/node")
+(setq copilot-node-executable "~/.nvm/versions/node/v18.14.0/bin/node")
 
 (when jt/windows-p
 	;; Set to nodejs location installed by Chocolately
