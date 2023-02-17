@@ -68,6 +68,14 @@ if [ $(date +%d) = 01 ] || [ $(date +%d) = 20 ]; then
     nix-collect-garbage -d
 fi
 
+# Scan font directories to build font cache files
+# in case nix managed fonts were updated
+echo ' '
+echo '----------------------------------------'
+echo 'Updating font cache'
+echo ' '
+fc-cache -v
+
 # Update Clam, Freshclam sigantures
 # if ClamAV is installed
 if [ -f /usr/bin/clamscan ]; then
