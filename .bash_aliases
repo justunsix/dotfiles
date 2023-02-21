@@ -12,6 +12,3 @@ alias to="todo.sh -d $HOME/.config/todotxt-cli/todo-work.cfg"
 # cd
 alias ..="cd .."
 alias ...="cd ../.."
-
-# yt-dlp
-alias ytd="yt-dlp"

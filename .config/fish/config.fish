@@ -57,3 +57,6 @@ end
 
 # *** Starship
 starship init fish | source
+
+# zoxide - smarter cd
+zoxide init fish | source

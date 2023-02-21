@@ -244,5 +244,10 @@ eval "$(starship init bash)"
 # rust tools
 . "$HOME/.cargo/env"
 
+# zoxide - smarter cd
+eval "$(zoxide init bash)"
+
 # Go to fish shell on non-login shells
 fish
+
+source /home/justin/.config/broot/launcher/bash/br
