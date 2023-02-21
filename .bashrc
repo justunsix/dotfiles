@@ -241,5 +241,8 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile
 # Starship
 eval "$(starship init bash)"
 
+# rust tools
+. "$HOME/.cargo/env"
+
 # Go to fish shell on non-login shells
 fish
