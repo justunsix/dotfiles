@@ -32,6 +32,7 @@ python `
 maven `
 mremoteng `
 pdfxchangeeditor `
+zoxide `
 -y
 
 # Install power-core with arguments per 
