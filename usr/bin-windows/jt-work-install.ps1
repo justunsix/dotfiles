@@ -33,6 +33,7 @@ maven `
 mremoteng `
 pdfxchangeeditor `
 zoxide `
+plantuml `
 -y
 
 # Install power-core with arguments per 
