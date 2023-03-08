@@ -34,6 +34,7 @@ mremoteng `
 pdfxchangeeditor `
 zoxide `
 plantuml `
+fd `
 -y
 
 # Install power-core with arguments per 
