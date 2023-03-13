@@ -247,8 +247,8 @@ eval "$(starship init bash)"
 # zoxide - smarter cd
 eval "$(zoxide init bash)"
 
+# Run br first time to generate default configuration
+source "$HOME/.config/broot/launcher/bash/br"
+
 # Go to fish shell on non-login shells
 fish
-
-# Run br first time to generate default configuration
-source /home/justin/.config/broot/launcher/bash/br
