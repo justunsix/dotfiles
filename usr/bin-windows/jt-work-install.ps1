@@ -24,7 +24,6 @@ capture2text `
 inkscape `
 gimp `
 virtualbox `
-zoom `
 azure-cli `
 drawio `
 nodejs `
