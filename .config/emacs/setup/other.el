@@ -652,7 +652,8 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (setq magit-repolist-columns
         '(("Name"    25 magit-repolist-column-ident ())
           ("Version" 25 magit-repolist-column-version ())
-          ("D"        1 magit-repolist-column-dirty ())
+					("Flag" 3 magit-repolist-column-flag ())
+          ;; ("D"        1 magit-repolist-column-dirty ())
           ("B<U"      3 magit-repolist-column-unpulled-from-upstream
        ((:right-align t)
         (:help-echo "Upstream changes not in branch")))
