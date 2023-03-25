@@ -108,6 +108,9 @@
   },
   // * User Interface
   "window.titleBarStyle": "custom",
+  // Turn on line numbers, other options are relative, interval and off
+  // per https://code.visualstudio.com/docs/getstarted/settings
+  "editor.lineNumbers": "on",
   "settingsSync.ignoredExtensions": [],
   "settingsSync.ignoredSettings": [
     "-git.path"
@@ -138,7 +141,6 @@
   // * Input and Output
   "editor.copyWithSyntaxHighlighting": true,
   "editor.accessibilitySupport": "off",
-  "editor.lineNumbers": "off",
   "files.autoSave": "afterDelay",
   "window.zoomLevel": 1,
   // ## AutoHotKey (AHK)
