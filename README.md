@@ -64,4 +64,4 @@ This repository contains my personal dotfiles like configurations for software d
 
 ## How Dotfiles are Managed
 
-There are many ways to manage your dotfiles. I use Ansible inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) and [dotfiles Ansible role](https://github.com/geerlingguy/ansible-role-dotfiles) which also installs and configures machines I use from initial installation using package managers like apt, dnf, deb-get, chocolately, and nix.
+There are many ways to manage your dotfiles. I use an [Ansible playbook](https://github.com/justunsix/dotfiles-playbook) inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) and [dotfiles Ansible role](https://github.com/geerlingguy/ansible-role-dotfiles) which installs and configures machines I use from base installation using package managers like apt, dnf, deb-get, chocolately, and nix.
