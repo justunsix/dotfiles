@@ -378,6 +378,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 ;; --------------------------------------------------------------------------------
 ;; * Org Mode Setup --------------------------
 
+;; Set up org mode
 (defun efs/org-mode-setup ()
   (org-indent-mode)
   (variable-pitch-mode 1)
@@ -615,6 +616,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
     ;;  (require 'org-roam-protocol)
     )
 
+  ;; Synchronize database on startup
+  (org-roam-db-sync)
+	
   ;; Run org-roam-update-id-locations to rebuild ids to files per
   ;; https://github.com/org-roam/org-roam/issues/1702    
 
