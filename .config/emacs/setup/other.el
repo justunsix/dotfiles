@@ -137,10 +137,10 @@
 ;; * Ivy - Completion framework ----------------------------
 (use-package ivy
   ;; minor mode name will not display in mode line but will still be active
-  :diminish  
+  :diminish
   :bind (("C-f" . swiper) ;; Common find binding
          :map ivy-minibuffer-map
-         ("TAB" . ivy-alt-done)	
+         ("TAB" . ivy-alt-done)
          ("C-l" . ivy-alt-done)
          ("C-j" . ivy-next-line)
          ("C-k" . ivy-previous-line)
@@ -183,9 +183,11 @@
   ;; init called before package is loaded
   :diminish which-key-mode
   :config
-  (which-key-mode)
+  (which-key-mode +1)
   ;; Delay before keys show up
-  (setq which-key-idle-delay 0.3))
+	(setq which-key-idle-delay 0.3
+				which-key-idle-secondary-delay 0.3)
+)
 
 ;; * Help Support ----------------------------
 
@@ -214,7 +216,7 @@
 
 ;; NOTE: Set this to the folder where you keep your Git repositories and projects
 (setq projectile-project-search-path jt/project-search-path)
-			
+
 (setq projectile-switch-project-action #'projectile-dired)
 
 (projectile-mode +1)
@@ -363,7 +365,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   :bind
   ;; Backward bound to C-Page Up
   ("C-<prior>" . centaur-tabs-backward)
-  ;; Forward  bound to C-Page Down    
+  ;; Forward  bound to C-Page Down
   ("C-<next>" . centaur-tabs-forward)
   ("C-c t s" . centaur-tabs-counsel-switch-group)
   ;; Group tabs by project
@@ -454,7 +456,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (set-face-attribute 'org-level-3 nil :foreground "#00ff00")
   ;; Set org-level-4 font face to be lighter blue
 	(set-face-attribute 'org-level-4 nil :foreground "#56a6a9")
-	
+
   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
   (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
   (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
@@ -480,7 +482,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 ;;(use-package visual-fill-column
 ;;  :hook (org-mode . efs/org-mode-visual-fill))
 
-;; Automatically tangle our literate org dotfiles when we save them 
+;; Automatically tangle our literate org dotfiles when we save them
 (defun efs/org-babel-tangle-config ()
   ;; Check if current buffer-file-name string contains word "Dotfile"
   ;; If it contains "Dotfile", run tangle with no warning prompt
@@ -533,8 +535,8 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (add-to-list 'org-structure-template-alist '("puml" . "src plantuml"))
   (add-to-list 'org-structure-template-alist '("sql" . "src sql"))
 	;; Hashicorp Configuration Language (HCL)
-  (add-to-list 'org-structure-template-alist '("hcl" . "src hcl"))	
-	;;  (add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))    
+  (add-to-list 'org-structure-template-alist '("hcl" . "src hcl"))
+	;;  (add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))
   ;;  (add-to-list 'org-structure-template-alist '("li" . "src lisp"))
   ;;  (add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
   ;;  (add-to-list 'org-structure-template-alist '("ts" . "src typescript"))
@@ -544,7 +546,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	 'org-src-lang-modes '("plantuml" . plantuml))
 
   (setq org-plantuml-jar-path "~/.config/emacs/plantuml/plantuml.jar")
-	
+
   )
 
 ;; --------------------------------------------------------------------------------
@@ -618,9 +620,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 
   ;; Synchronize database on startup
   (org-roam-db-sync)
-	
+
   ;; Run org-roam-update-id-locations to rebuild ids to files per
-  ;; https://github.com/org-roam/org-roam/issues/1702    
+  ;; https://github.com/org-roam/org-roam/issues/1702
 
   ;; visual queue about regular links vs org-roam links
   ;; https://wiki.systemcrafters.net/emacs/org-roam/
@@ -680,25 +682,34 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	)
 
 ;; --------------------------------------------------------------------------------
-;; * Company Completion  ----------------------------
+;; * Company Auto-Completion  ----------------------------
 
 ;; Company-mode completion interface
+;; with enhancements from https://github.com/ianyepan/yay-evil-emacs/blob/master/config.org#company-for-auto-completion
 (use-package company
-  :after lsp-mode
-  ; Optionally hook can activate during prog-mode as well
-  :hook (lsp-mode . company-mode)
-  ; Use tab to complete selections and initiate completions if needed, by default
-  ; tab is mapped to company-next (next suggestion)
-  ;:bind (:map company-active-map
-  ;       ("<tab>" . company-complete-selection))
-  ;      (:map lsp-mode-map
-  ;       ("<tab>" . company-indent-or-complete-common))
-  :custom
-  ; Triggers for when completions show up
-  ; How many characters must be typed
-  (company-minimum-prefix-length 1)
-  ; How long for completion to come
-  (company-idle-delay 0.2))
+	:diminish company-mode
+  ;; :after lsp-mode
+	:hook (prog-mode . company-mode)
+  ;; Use tab to complete selections and initiate completions if needed, by default
+  ;; tab is mapped to company-next (next suggestion)
+																				;: bind (:map company-active-map
+  ;;       ("<tab>" . company-complete-selection))
+  ;;      (:map lsp-mode-map
+  ;;       ("<tab>" . company-indent-or-complete-common))
+	:config
+  (setq
+	 ;; Triggers for when completions show up
+   ;; How many characters must be typed
+	 company-minimum-prefix-length 1
+	 ;; How long for completion to come
+   company-idle-delay 0.1
+   company-selection-wrap-around t
+   company-tooltip-align-annotations t
+   company-frontends '(company-pseudo-tooltip-frontend ; show tooltip even for single candidate
+                       company-echo-metadata-frontend))
+	(define-key company-active-map (kbd "C-n") 'company-select-next)
+	(define-key company-active-map (kbd "C-p") 'company-select-previous)
+	)
 
 ;; Enhance look of completion options
 (use-package company-box
@@ -798,6 +809,18 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 (use-package hcl-mode
 	:mode "\\.hcl\\'")
 
+(use-package web-mode
+  :mode (("\\.html?\\'" . web-mode)
+         ("\\.css\\'"   . web-mode)
+         ("\\.jsx?\\'"  . web-mode)
+         ("\\.tsx?\\'"  . web-mode)
+         ("\\.json\\'"  . web-mode))
+  :config
+  (setq web-mode-markup-indent-offset 2) ; HTML
+  (setq web-mode-css-indent-offset 2)    ; CSS
+  (setq web-mode-code-indent-offset 2)   ; JS/JSX/TS/TSX
+  (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
+
 ;; --------------------------------------------------------------------------------
 ;; * Key Bindings ----------------------------
 
@@ -819,7 +842,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 (global-set-key (kbd "<f2> k") 'jt/kill-all-buffers)
 
 ;; Other
-(global-set-key (kbd "<f2> m b") 'jt/bongo-open-my-playlist) 
+(global-set-key (kbd "<f2> m b") 'jt/bongo-open-my-playlist)
 ;; Bind org-toggle-link-display to F2 l
 (global-set-key (kbd "<f2> l") 'org-toggle-link-display)
 
@@ -866,7 +889,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 
 ;; Order corrections by likeliness
 ;; Do not order not by the default of alphabetical ordering.
-(setq flyspell-sort-corrections nil)  
+(setq flyspell-sort-corrections nil)
 
 ;; Do not print messages for every word
 ;; When checking the entire buffer, don’t print messages for every word. This is a major performance gain.
@@ -877,7 +900,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	(setq ispell-hunspell-dict-paths-alist '(("en_US" "C:/Hunspell/en_US.aff" "C:/Hunspell/en_US.dic")
 																					 ("en_GB" "C:/Hunspell/en_GB.aff" "C:/Hunspell/en_GB.dic")
 																					 ("fr_FR" "C:/Hunspell/fr.aff" "C:/Hunspell/fr.dic")
-																					 ("fr_CA" "C:/Hunspell/fr.aff" "C:/Hunspell/fr.dic")																								
+																					 ("fr_CA" "C:/Hunspell/fr.aff" "C:/Hunspell/fr.dic")
 																					 ))
 	)
 
@@ -901,7 +924,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	;; Make sure file is present
 
 	(ispell-change-dictionary "en_GB,en_US,fr_FR,fr_CA")
-	(setq ispell-personal-dictionary "~/.config/hunspell/.hunspell_personal")    
+	(setq ispell-personal-dictionary "~/.config/hunspell/.hunspell_personal")
 	)
 ;; Run flyspell-mode in org-mode and markdown-mode
 ;; where spelling assistance is needed
@@ -939,13 +962,13 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
     :commands bongo
     )
 
-	(defun jt/bongo-open-my-playlist() 
+	(defun jt/bongo-open-my-playlist()
 		"Open my playlist in bongo stored in playlist environment variable"
 		(interactive)
 		(bongo)
 		(bongo-insert-playlist-contents jt/bongo-playlist-location)
 		(bongo-playlist-mode)
-		)	
+		)
   )
 
 ;; Always play on random
@@ -991,7 +1014,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	;; - manually nodejs v17 folder structure using
   ;; - Windows 64 bit binary from https://nodejs.org/download/release/v17.9.1/
   ;; - as if it was installed by nvm
-  (setq copilot-node-executable "C:/Program Files/nodejs/node.exe")	
+  (setq copilot-node-executable "C:/Program Files/nodejs/node.exe")
   )
 
 ;; Use straight.el for use-package expressions
@@ -1029,9 +1052,27 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 (setq copilot-idle-delay 0.4)
 
 ;; Set copilot-overlay-face to inherit from font-lock-comment-face
-;; Default is `shadow` which is too light 
+;; Default is `shadow` which is too light
 (set-face-attribute 'copilot-overlay-face nil
                     :inherit 'font-lock-comment-face)
+
+;; --------------------------------------------------------------------------------
+;; * Changes adapted from Yay-Evil emacs distro by Ian Y.E. Pan -------------------
+;; Licensed under GPL3 from https://github.com/ianyepan/yay-evil-emacs/tree/master
+;; 3rd Party Emacs Packages Section
+
+;; Syntax highlighting
+;; Lightweight syntax highlighting improvement for numbers and escape sequences (e.g. \n, \t).
+(use-package highlight-numbers
+  :hook (prog-mode . highlight-numbers-mode))
+
+(use-package highlight-escape-sequences
+  :hook (prog-mode . hes-mode))
+
+;; On-the-fly syntax checking extension
+(use-package flycheck
+	:config (global-flycheck-mode +1)
+	)
 
 ;; --------------------------------------------------------------------------------
 ;; * System Runtime ----------------------------
@@ -1050,12 +1091,12 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (copilot-diagnose)
 
   ;; Send minibuffer message
-  (sleep-for 1)    
+  (sleep-for 1)
   (message "All buffers killed except *dashboard*, *scratch*, *Messages*, and *copilot events*, restarting copilot")
   )
 
 (defun jt/switch-to-buffer-dashboard ()
-	"Switch to buffer called *dashboard*"
+	"Switch to buffer called *dashboard*."
 	(interactive)
 	(switch-to-buffer "*dashboard*")
 	)
@@ -1064,7 +1105,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 ;; to prevent org from opening in a new window in frame
 ;; from: https://stackoverflow.com/questions/1854214/how-do-i-keep-emacs-org-mode-from-splitting-windows/1854647#1854647
 (defun jt/org-open-at-point ()
-	"Open the link at point in same window, do not split frame"
+	"Open the link at point in same window, do not split frame."
 	(interactive)
 	(let ((org-link-frame-setup
 				 (list (cons 'file 'find-file))))
@@ -1078,4 +1119,3 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	)
 
 (provide 'other)
-
