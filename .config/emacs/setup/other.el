@@ -1,4 +1,8 @@
+;;; other.el --- Emacs 3rd Party Packages and Configurations
+;;  Author: Justin Tung
+;;; Commentary:
 ;; Emacs configuration with packages in addition to Emacs defaults
+;;; Code:
 
 ;; --------------------------------------------------------------------------------
 ;; * System Variables ----------------------------
@@ -1001,7 +1005,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 ;; * Copilot ----------------------------
 
 (defun jt/copilot ()
-  ;; Activate copilot only under certain conditions, previously only if proxy not present
+  ;; Activate copilot only under certain conditions, previously only if proxy not present.
   (copilot-mode 1)
   )
 
@@ -1119,3 +1123,5 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	)
 
 (provide 'other)
+
+;;; other.el ends here

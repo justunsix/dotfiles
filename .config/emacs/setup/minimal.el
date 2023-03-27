@@ -1,4 +1,8 @@
+;;; minimal.el --- Emacs Native Packages Configuration
+;;  Author: Justin Tung
+;;; Commentary:
 ;; Minimal configuration that works with default Emacs 28.2+ with no extra packages
+;;; Code:
 
 ;; --------------------------------------------------------------------------------
 ;; * Emacs General Settings -------------------------------------------------------
@@ -362,3 +366,5 @@
 ;; Placeholder
 
 (provide 'minimal)
+
+;;; minimal.el ends here
