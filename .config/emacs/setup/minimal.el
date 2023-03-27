@@ -110,7 +110,7 @@
 	)
 
 ;; switch-to-buffer-in-dedicated-window: Controls what happens if you attempt to switch buffers in a dedicated window like sidebars
-;; - prefer pop to the default to have it pop up the buffer somewhere else than simply error out. 
+;; - prefer pop to the default to have it pop up the buffer somewhere else than simply error out.
 ;; switch-to-buffer-obey-display-actions: If nil, the default, user-switched buffers are exempt from display buffer actions set in display-buffer-alist
 ;; - "You probably want those rules to affect your interactive buffer switching, as it makes for a consistent buffer switching experience."
 ;; from: https://www.masteringemacs.org/article/demystifying-emacs-window-manager
@@ -124,6 +124,42 @@
 		(window . root)
 		(window-height . 0.3))
 	)
+
+;; --------------------------------------------------------------------------------
+;; * Changes adapted from Yay-Evil emacs distro by Ian Y.E. Pan -------------------
+;; Licensed under GPL3 from https://github.com/ianyepan/yay-evil-emacs/tree/master
+;; Unopinionated and was created for general use
+;; Native Emacs packages Section
+
+;; Splitting Windows
+;; The Emacs default split doesn't seem too intuitive for most users.
+;; Focus on the split window after splitting.
+(use-package emacs
+  :ensure nil
+  :preface
+  (defun ian/split-and-follow-horizontally ()
+    "Split window below."
+    (interactive)
+    (split-window-below)
+    (other-window 1))
+  (defun ian/split-and-follow-vertically ()
+    "Split window right."
+    (interactive)
+    (split-window-right)
+    (other-window 1))
+  :config
+  (global-set-key (kbd "C-x 2") #'ian/split-and-follow-horizontally)
+  (global-set-key (kbd "C-x 3") #'ian/split-and-follow-vertically))
+
+;; Reduce the matching parenthese highlight delay to instantly.
+(setq show-paren-delay 0)
+
+;; Auto-pairing quotes and parentheses etc
+;; Hook electric-pair-mode to all programming modes
+(add-hook 'prog-mode-hook 'electric-pair-mode)
+
+;; Clean up whitespace at end of files before save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; --------------------------------------------------------------------------------
 ;; * Themes  ----------------------------
@@ -278,7 +314,7 @@
 
 ;; --------------------------------------------------------------------------------
 ;; * Custom Functions ----------------------------
-	
+
 (defun jt/kill-all-buffers ()
   "Kill all buffers except *scratch*, *Messages* and switch to *scratch* buffer"
   (interactive)
@@ -286,7 +322,7 @@
   (delete-other-windows)
   (mapc 'kill-buffer (delq (current-buffer) (delq (get-buffer "*Messages*") (delq  (buffer-list)))))
   ;; Send minibuffer message
-  (sleep-for 1)    
+  (sleep-for 1)
   (message "All buffers killed except *scratch*, *Messages*")
   )
 
@@ -317,7 +353,7 @@
       (kill-region (region-beginning) (region-end))
 		;; kill buffer, ensure only 1 window exists
     (kill-this-buffer)
-		(delete-other-windows)			  
+		(delete-other-windows)
 		)
 	)
 
@@ -326,4 +362,3 @@
 ;; Placeholder
 
 (provide 'minimal)
-
