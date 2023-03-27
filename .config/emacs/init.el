@@ -1,3 +1,8 @@
+;;; init.el ---
+;;; Author: Justin Tung
+;;; Commentary:
+;; Load personal variables and packages and adjust garbage collection on startup
+;;; Code:
 ;; Add emacs user directory to load-path so that we can load files to emacs
 (add-to-list 'load-path (concat user-emacs-directory "setup/"))
 
@@ -5,7 +10,7 @@
 ;; The default is 800 kilobytes.  Measured in bytes.
 (setq gc-cons-threshold (* 50 1000 1000))
 
-;; Variables used in Emacs configuration below, override with your settings. 
+;; Variables used in Emacs configuration below, override with your settings.
 ;; File is located in ~/.config/emacs/setup/variables.el
 (require 'variables)
 
@@ -17,7 +22,9 @@
 		(load env-el-location)
 	)
 
+;; Load native emacs configurations
 (require 'minimal)
+;; Load 3rd party packages and their configurations
 (require 'other)
 
 ;; Make gc pauses faster by decreasing the threshold.
@@ -26,3 +33,5 @@
 ;; Setting to 2MB
 ;; See also https://akrl.sdf.org/ for further tweaks in runtime
 (setq gc-cons-threshold (* 2 1000 1000))
+
+;;; init.el ends here
