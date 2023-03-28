@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Clipboard HTML to Org
+GenericName=Clipboard HTML to Org
+Comment=Convert HTML from clipboard to Org mode
+Exec=sh -c "$HOME/usr/bin/jt-clip-html-to-org.sh"
+Path=/
+Icon=browser
+Terminal=false
+Type=Application
+Categories=Application
