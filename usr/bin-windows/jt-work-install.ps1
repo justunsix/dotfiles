@@ -34,9 +34,10 @@ pdfxchangeeditor `
 zoxide `
 plantuml `
 fd `
+obs-studio `
 -y
 
-# Install power-core with arguments per 
+# Install power-core with arguments per
 # https://community.chocolatey.org/packages/powershell-core/
 choco install powershell-core -y --install-arguments='""ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 REGISTER_MANIFEST=1 ENABLE_PSREMOTING=1"'
 
