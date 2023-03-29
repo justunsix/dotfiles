@@ -138,22 +138,18 @@
 ;; Splitting Windows
 ;; The Emacs default split doesn't seem too intuitive for most users.
 ;; Focus on the split window after splitting.
-(use-package emacs
-  :ensure nil
-  :preface
-  (defun ian/split-and-follow-horizontally ()
-    "Split window below."
-    (interactive)
-    (split-window-below)
-    (other-window 1))
-  (defun ian/split-and-follow-vertically ()
-    "Split window right."
-    (interactive)
-    (split-window-right)
-    (other-window 1))
-  :config
-  (global-set-key (kbd "C-x 2") #'ian/split-and-follow-horizontally)
-  (global-set-key (kbd "C-x 3") #'ian/split-and-follow-vertically))
+(defun ian/split-and-follow-horizontally ()
+  "Split window below."
+  (interactive)
+  (split-window-below)
+  (other-window 1))
+(defun ian/split-and-follow-vertically ()
+  "Split window right."
+  (interactive)
+  (split-window-right)
+  (other-window 1))
+(global-set-key (kbd "C-x 2") #'ian/split-and-follow-horizontally)
+(global-set-key (kbd "C-x 3") #'ian/split-and-follow-vertically)
 
 ;; Reduce the matching parenthese highlight delay to instantly.
 (setq show-paren-delay 0)
