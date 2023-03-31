@@ -1010,21 +1010,13 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 (setq copilot-node-executable "~/.nvm/versions/node/v18.14.0/bin/node")
 
 (when jt/windows-p
-	;; Set to nodejs location installed by Chocolately
-	;; Deprecated:
-	;; - manually nodejs v17 folder structure using
-  ;; - Windows 64 bit binary from https://nodejs.org/download/release/v17.9.1/
-  ;; - as if it was installed by nvm
+  ;; Set to nodejs location installed by Chocolately
+  ;; Previous configuration was set to nodejs v17 folder structure using Windows 64 bit binary from https://nodejs.org/download/release/v17.9.1/ as if it was installed by nvm
   (setq copilot-node-executable "C:/Program Files/nodejs/node.exe")
   )
 
 ;; Use straight.el for use-package expressions
 ;; (straight-use-package 'use-package)
-
-;; Load copilot using straight
-;; (use-package copilot
-;;   :straight (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
-;;   :ensure t)
 
 ;; Load copilot using straight
 (straight-use-package
