@@ -540,7 +540,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (add-to-list 'org-structure-template-alist '("sql" . "src sql"))
 	;; Hashicorp Configuration Language (HCL)
   (add-to-list 'org-structure-template-alist '("hcl" . "src hcl"))
-	;;  (add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))
+	(add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))
   ;;  (add-to-list 'org-structure-template-alist '("li" . "src lisp"))
   ;;  (add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
   ;;  (add-to-list 'org-structure-template-alist '("ts" . "src typescript"))
@@ -824,6 +824,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   (setq web-mode-css-indent-offset 2)    ; CSS
   (setq web-mode-code-indent-offset 2)   ; JS/JSX/TS/TSX
   (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
+
+(use-package powershell
+	:mode "\\.ps1\\'")
 
 ;; --------------------------------------------------------------------------------
 ;; * Key Bindings ----------------------------
