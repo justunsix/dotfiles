@@ -853,9 +853,6 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 ;; Bind switch buffer to C-tab - overwrite minimal settings
 (global-set-key (kbd "<C-tab>") 'counsel-switch-buffer)
 
-;; Bind mark-whole-buffer aka select all to C-a
-(global-set-key (kbd "C-a") 'mark-whole-buffer)
-
 ;; --------------------------------------------------------------------------------
 ;; * Terminals ----------------------------
 
