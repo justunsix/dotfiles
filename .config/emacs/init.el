@@ -22,10 +22,33 @@
 		(load env-el-location)
 	)
 
+;; --------------------------------------------------------------------------------
 ;; Load native emacs configurations
 (require 'minimal)
+
+;; --------------------------------------------------------------------------------
 ;; Load 3rd party packages and their configurations
 (require 'other)
+;; user interface
+(require 'jt-emacs-ui)
+;; org-mode related
+(require 'jt-emacs-org)
+;;  artificial intelligence (AI)
+(require 'jt-emacs-ai)
+;; programming languages
+(require 'jt-emacs-languages)
+;; terminal, shell
+(require 'jt-emacs-terminal)
+;; spelling of words
+(require 'jt-emacs-spelling)
+;; completion frameworks
+(require 'jt-emacs-completion-ivy-counsel)
+;; directory and files
+(require 'jt-emacs-dired)
+
+
+;; --------------------------------------------------------------------------------
+;; Post Emacs Start GC
 
 ;; Make gc pauses faster by decreasing the threshold.
 ;; to avoid Emacs memory consumption over time and
