@@ -253,7 +253,7 @@ if [ -d "$HOME/.cargo" ]; then
 		. "$HOME/.cargo/env"
 fi
 
-if command -v starship &> /dev/null
+if command -v zoxide &> /dev/null
 then
 		# zoxide - smarter cd
 		eval "$(zoxide init bash)"
