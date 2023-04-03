@@ -15,11 +15,15 @@ set -g theme_display_vcs yes
 # ---------------------------------------------------
 # ** Completions
 
-# Kubernetes Control fish autocompletion
-kubectl completion fish | source
+# If kubectl command is present, source completion
+if type -q kubectl
+		kubectl completion fish | source
+end
 
-# pip autocompletion
-pip completion --fish | source
+if type -q pip
+	# pip autocompletion
+	pip completion --fish | source
+end
 
 # ---------------------------------------------------
 # ** Aliases
@@ -46,7 +50,7 @@ alias nvm="echo 'Switch to bash shell to use nvm'"
 if test -e /usr/share/fzf/shell/key-bindings.fish
 		source /usr/share/fzf/shell/key-bindings.fish
 end
-# Ubuntu Debian per /usr/share/doc/fzf/README.Debian
+# Ubuntu Debian, Arch per /usr/share/doc/fzf/README.Debian
 echo fzf_key_bindings > ~/.config/fish/functions/fish_user_key_bindings.fish
 
 # *** oc - Openshift CLI
@@ -55,8 +59,12 @@ if test -e ~/usr/bin/oc
 		oc completion fish | source
 end
 
-# *** Starship
-starship init fish | source
+if type -q starship
+	 # *** Starship
+	 starship init fish | source
+end
 
-# zoxide - smarter cd
-zoxide init fish | source
+if type -q zoxide
+	 # zoxide - smarter cd
+	 zoxide init fish | source
+end
