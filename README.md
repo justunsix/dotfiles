@@ -30,6 +30,7 @@ This repository contains my personal dotfiles like configurations for software d
 ├── `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell configuration files<br/>
 ├── `.gitconfig` - [Git](https://git-scm.com/) distributed version control configuration file<br/>
 ├── `.inputrc` - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) for command line editing<br/>
+├── `.Xresources` , `.xinitrc` - [X Window System](https://www.x.org/wiki/) configuration files<br/>
 
 ## Programs and Software Configured
 
