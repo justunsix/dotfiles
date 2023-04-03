@@ -179,15 +179,19 @@ export EDITOR="emacs"
 
 # Node Version Manager (NVM)
 export NVM_DIR="$HOME/.nvm"
-# This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-# nvm alias default 18.13.0
+
+if command -v nvm >/dev/null
+then
+		# This loads nvm
+		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+		# This loads nvm bash_completion
+		[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+		# nvm alias default 18.13.0
+fi
 
 # Haskell - Glasgow Haskell Compiler
 # ghcup-env
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" 
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # fzf
 
@@ -216,7 +220,6 @@ if [ "$isFedora" = "true" ]; then
 		export FZF_DEFAULT_COMMAND='fd --hidden --type f'
 fi
 
-
 # SSH key management with i3
 # Prompt once for SSH keys, then remember for rest of user's session
 # Work in terminal and non terminal environments
@@ -236,19 +239,31 @@ fi
 
 # Nix
 # added by Nix single user installer in .bash_profile, moved here
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi 
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
 
-# Starship
-eval "$(starship init bash)"
+if command -v starship &> /dev/null
+then
+		# Starship
+		eval "$(starship init bash)"
+fi
 
-# rust tools
-. "$HOME/.cargo/env"
+# if $HOME/.cargo exists, source it
+if [ -d "$HOME/.cargo" ]; then
+		# rust tools
+		. "$HOME/.cargo/env"
+fi
 
-# zoxide - smarter cd
-eval "$(zoxide init bash)"
+if command -v starship &> /dev/null
+then
+		# zoxide - smarter cd
+		eval "$(zoxide init bash)"
+fi
 
-# Run br first time to generate default configuration
-source "$HOME/.config/broot/launcher/bash/br"
+if command -v broot &> /dev/null
+then
+	 # Run br first time to generate default configuration
+	 source "$HOME/.config/broot/launcher/bash/br"
+fi
 
 # Go to fish shell on non-login shells
 fish
