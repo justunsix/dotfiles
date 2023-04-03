@@ -72,8 +72,8 @@
 
 (use-package yaml-mode
   :hook (yaml-mode)
-  :mode "\\.yaml\\'"
-      )
+  :mode "\\.y[a]?ml\\'"
+	)
 
 (use-package plantuml-mode
 	:mode "\\.plantuml\\'"
