@@ -56,6 +56,28 @@
 ;; (define-key dired-recent-mode-map (kbd "C-x C-d") nil)
 ;; (define-key dired-recent-mode-map (kbd "SOME OTHER KEY") #'dired-recent-open)
 
+;; ranger
+(use-package ranger
+	:after dired
+	:config
+	;; Configurations per https://github.com/punassuming/ranger.el#configuration
+	(setq
+	 ;; kill the buffers, after you move to another entry in the dired buffer.
+	 ranger-cleanup-eagerly t
+	 ;; show hidden files, toggle with zh
+	 ranger-show-hidden t
+	 ;; size of the parent windows as a fraction of the frame size.
+	 ranger-width-parents 0.12
+	 ;; preview selected file / directory on startup
+	 ranger-preview-file t
+	 ;; Exclude Files From Being Previewed, including binaries
+	 ranger-excluded-extensions '("mkv" "iso" "mp4")
+	 ranger-dont-show-binary t
+	 ;; Exclude Directories From Being Previewed by size in MB
+   ranger-max-preview-size 4
+	 )
+	)
+
 (provide 'jt-emacs-dired)
 
 ;;; jt-emacs-dired.el ends here
