@@ -78,6 +78,8 @@
 	 )
 	)
 
+;; C-p activates (deer-from-dired), but conflicts with global key C-p
+
 (provide 'jt-emacs-dired)
 
 ;;; jt-emacs-dired.el ends here
