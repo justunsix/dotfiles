@@ -4,7 +4,8 @@
 ==================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
 
-Kickstart.nvim is *not* a distribution. Under MIT License
+	 Kickstart.nvim is *not* a distribution.
+	 Under MIT License from https://github.com/nvim-lua/kickstart.nvim
 
 Kickstart.nvim is a template for your own configuration.
   The goal is that you can read every line of code, top-to-bottom, and understand
