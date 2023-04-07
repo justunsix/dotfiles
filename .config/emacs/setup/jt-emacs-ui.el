@@ -112,15 +112,19 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
            )
        "Emacs"
        )
-      ((derived-mode-p 'prog-mode)
-       "Editing")
-      ((derived-mode-p 'dired-mode)
-       "Dired")
+;;      ((derived-mode-p 'prog-mode)
+;;       "Editing")
+;;      ((derived-mode-p 'dired-mode)
+;;       "Dired")
       ((memq major-mode '(helpful-mode
                           help-mode))
        "Help")
       ((memq major-mode '(org-mode
-                          org-agenda-clockreport-mode
+													org-agenda-clockreport-mode
+													prog-mode
+													text-mode
+													dired-mode
+													elisp-mode
                           ;; org-src-mode
                           ;; org-agenda-mode
                           ;; org-beamer-mode
@@ -130,12 +134,13 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
                           ;; org-agenda-log-mode
                           ;; diary-mode
                           ))
-       "OrgMode")
-      ((memq major-mode '(term-mode
-                          eshell-mode))
-       "Terminal")
+       "OrgProgMode")
+;;      ((memq major-mode '(term-mode
+;;                          eshell-mode))
+;;       "Terminal")
       (t
-       (centaur-tabs-get-group-name (current-buffer)))
+       (centaur-tabs-get-group-name (current-buffer))
+			 )
       )
      ) ; end of list
     ) ; end of defun
@@ -160,6 +165,8 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   ;;      ("g T" . centaur-tabs-backward)
   ;;      )
   ) ; end of use package
+
+(centaur-tabs-group-buffer-groups)
 
 ;; Add rainbow delimiters for paratheses
 (use-package rainbow-delimiters
