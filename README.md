@@ -17,6 +17,7 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `i3/` - [i3 Window Manager (WM)](https://i3wm.org/)<br/>
 ------├── `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) (Status bar for use with i3)<br/>
 ------├── `mpv/` - [mpv](https://mpv.io/) (Media Player)<br/>
+------├── `nvim/` - [neovim](https://neovim.io/) (Editor)<br/>
 ------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3)<br/>
 ------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) (Task manager)<br/>
 ------├── `kdeglobals` - [KDE](https://kde.org/) (Desktop Environment appearance settings))<br/>
@@ -55,6 +56,7 @@ This repository contains my personal dotfiles like configurations for software d
 - Editor:
   - [Emacs](https://www.gnu.org/software/emacs/)
   - [Visual Studio Code](https://code.visualstudio.com/)
+  - [neovim](https://neovim.io/)
 - Video player: [mpv](https://mpv.io/)
 
 - Window switcher/application launcher: [rofi](https://github.com/davatorium/rofi)
