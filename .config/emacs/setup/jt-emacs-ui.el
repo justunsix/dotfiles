@@ -77,13 +77,14 @@
         centaur-tabs-show-navigation-buttons t
         ;; Set location of highlight bar in active tab
         centaur-tabs-set-bar 'under
-        x-underline-at-descent-line t)
+        x-underline-at-descent-line t
+  		  ;; Fix length of tabs, tab text is abbreviated
+				centaur-tabs-label-fixed-length 20
+				)
   ;; Make the headline face match the centaur-tabs-default face. This makes the tabbar have an uniform appearance
   (centaur-tabs-headline-match)
   ;; Cycle options: tabs, tab groups, just groups
   ;; (setq centaur-tabs-cycle-scope 'tabs)
-  ;; Fix length of tabs, tab text can be abbreviated
-  ;; (setq centaur-tabs-label-fixed-length 30)
   ;; (centaur-tabs-enable-buffer-reordering)
   ;; (setq centaur-tabs-adjust-buffer-order t)
   (centaur-tabs-mode t)
@@ -167,6 +168,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   ) ; end of use package
 
 (centaur-tabs-group-buffer-groups)
+(centaur-tabs-change-fonts "Source Code Pro" 80)
 
 ;; Add rainbow delimiters for paratheses
 (use-package rainbow-delimiters
