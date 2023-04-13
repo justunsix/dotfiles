@@ -111,6 +111,33 @@
   (setq web-mode-code-indent-offset 2)   ; JS/JSX/TS/TSX
   (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
 
+;; Python
+;; from https://github.com/daviwil/emacs-from-scratch/blob/dd9320769f3041ac1edca139496f14abe147d010/Emacs.org#python
+;; prerequisites:
+;; - run: python3 -m pip install --user "python-language-server[all]"
+;; - $HOME/.local/bin in your PATH
+
+(use-package python-mode
+	;; prevent loading of python.el
+	:ensure t
+	:hook
+	(python-mode . lsp-deferred)
+	:custom
+	;; Set for python3 by default
+	(python-shell-interpreter "python3")
+	;; Use pytest for unit tests
+	;; Debugger
+	;; (dap-python-executable "python3")
+  ;; (dap-python-debugger 'debugpy)
+  ;; :config
+  ;; (require 'dap-python)
+	)
+
+(when jt/windows-p
+	;; set to python for Windows installed by chocolatey
+	(setq python-shell-interpreter "python")
+	)
+
 (use-package powershell
 	:mode "\\.ps1\\'")
 
