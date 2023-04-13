@@ -239,7 +239,10 @@ fi
 
 # Nix
 # added by Nix single user installer in .bash_profile, moved here
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]
+then
+		. ~/.nix-profile/etc/profile.d/nix.sh
+fi
 
 if command -v starship &> /dev/null
 then
