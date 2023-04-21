@@ -66,7 +66,7 @@
 
 (use-package face-remap
   ;; the actual mode
-  :diminish buffer-face-mode           
+  :diminish buffer-face-mode
   :commands prot/variable-pitch-mode
   :config
   (define-minor-mode prot/variable-pitch-mode
@@ -230,7 +230,7 @@
 	(nyan-mode 1))
 
 ;; --------------------------------------------------------------------------------
-;; Other switches 
+;; Other switches
 ;; (nyan-start-animation)
 ;; (nyan-stop-animation)
 ;; (nyan-toggle-wavy-trail)
@@ -272,7 +272,7 @@
   :config
   (global-set-key (kbd "<f7>") 'dap-step-in)
   (global-set-key (kbd "<f8>") 'dap-next)
-  (global-set-key (kbd "<f9>") 'dap-continue))  
+  (global-set-key (kbd "<f9>") 'dap-continue))
 
 ;; Java mode hook
 (defun my-java-mode-hook ()
@@ -293,8 +293,17 @@
 
   ;; Indent arguments on the next line as indented body.
   (c-set-offset 'arglist-intro '++))
-(add-hook 'java-mode-hook 'my-java-mode-hook)  
+(add-hook 'java-mode-hook 'my-java-mode-hook)
 
 ;; End Java ----------------------------------------------------------------------
+
+;; Neotree
+
+(use-package neotree
+	)
+
+;; Use icons for window system and arrow terminal
+;; per https://github.com/jaypei/emacs-neotree
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 (provide 'extras)
