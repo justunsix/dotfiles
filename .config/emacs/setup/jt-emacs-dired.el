@@ -16,6 +16,25 @@
 ;; Bind wdired-change-to-wdired-mode to W in dired-mode
 (define-key dired-mode-map (kbd "W") 'wdired-change-to-wdired-mode)
 
+(use-package treemacs
+	:ensure t
+	:bind
+ 	(:map global-map
+				([f8] . treemacs)
+				)
+	)
+
+;; Set the font size for Treemacs
+(custom-set-faces
+ '(treemacs-root-face ((t (:height 0.7))))
+ '(treemacs-git-untracked-face ((t (:height 0.7))))
+ '(treemacs-git-added-face ((t (:height 0.7))))
+ '(treemacs-git-conflict-face ((t (:height 0.7))))
+ '(treemacs-git-ignored-face ((t (:height 0.7))))
+ '(treemacs-directory-face ((t (:height 0.7))))
+ '(treemacs-file-face ((t (:height 0.7))))
+ )
+
 ;; File icons in dired mode if graphical environment
 ;; Use treemacs icons since they are nicer instead of all-the-icons-dired, faster
 ;; https://emacs.stackexchange.com/questions/71269/all-the-icons-are-all-white-in-dired
