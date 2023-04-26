@@ -161,8 +161,8 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 export PATH="$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin:$HOME/.nix-profile/bin/:$HOME/usr/bin/todotxt-cli:$HOME/.local/bin:$HOME/usr/bin:$PATH"
 
 export EMACS_SERVER_FILE="~/.emacs.d/server/server"
-# Set EDITOR environment variable to emacs
-export EDITOR="emacs"
+# Set EDITOR environment variable
+export EDITOR="vim"
 # Set xmonad configuration director
 # export XMONAD_CONFIG_DIR="$HOME/.config/xmonad"
 
