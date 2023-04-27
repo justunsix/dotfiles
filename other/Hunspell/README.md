@@ -14,6 +14,9 @@ en_US.aff
 en_US.dic
 en_ZA.aff
 en_ZA.dic
+
+- Copy these files from C:\Program Files\LibreOffice\share\extensions\dict-fr to C:/Hunspell
+
 fr.aff
 fr.dic
 

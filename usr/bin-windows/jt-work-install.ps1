@@ -35,6 +35,7 @@ zoxide `
 plantuml `
 fd `
 obs-studio `
+terraform `
 -y
 
 # Install power-core with arguments per
