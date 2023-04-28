@@ -17,6 +17,8 @@ Invoke-Expression (& {
 
 # PSReadline
 Import-Module PSReadLine
+# Enable Predictive IntelliSense
+Set-PSReadLineOption -PredictionSource History
 
 # PSFzf 
 Import-Module PSFzf
