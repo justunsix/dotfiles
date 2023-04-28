@@ -45,5 +45,13 @@ choco install powershell-core -y --install-arguments='""ADD_FILE_CONTEXT_MENU_RU
 # Alternatively for powershell-core, install using winget to avoid powershell upgrade issues
 # winget install --id Microsoft.Powershell --source winget
 
+# Install Azure tools
+Install-Module -name PSReadline -AllowClobber -Force
+## Azure Predictor Intellisense
+Install-Module -name Az.Accounts -Force
+Install-Module -name Az.Tools.Predictor -Force
+## Azure Active Directory
+Install-Module -name AzureADPreview
+
 # Upgrade all installed packages
 choco upgrade all -y
