@@ -15,14 +15,15 @@ Import-Module PSReadLine
 # Enable Predictive IntelliSense
 Set-PSReadLineOption -PredictionSource History
 
-# PSFzf 
+# PSFzf
 Import-Module PSFzf
 # Select Current Provider Path (default chord: Ctrl+t)
 # Reverse Search Through PSReadline History (default chord: Ctrl+r)
 # replace 'Ctrl+t' and 'Ctrl+r' with your preferred bindings:
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
-# Intellisense 
+# Intellisense
+Import-Module CompletionPredictor
 ## List view of predictions under the cursor
 Set-PSReadLineOption -PredictionViewStyle ListView
 

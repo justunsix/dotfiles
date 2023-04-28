@@ -46,14 +46,19 @@ choco install powershell-core -y --install-arguments='""ADD_FILE_CONTEXT_MENU_RU
 # winget install --id Microsoft.Powershell --source winget
 
 # Install Readline supports
-Install-Module -name PSReadline -AllowClobber -Force
-Install-Module -name PSFzf
+Install-Module -Name PSReadline -AllowClobber -Force
+Install-Module -Name PSFzf
 # Install Azure tools
-## Azure Predictor Intellisense
-Install-Module -name Az.Accounts -Force
-Install-Module -name Az.Tools.Predictor -Force
 ## Azure Active Directory, deprecated 2023-06
-Install-Module -name AzureADPreview
+Install-Module -Name AzureADPreview
 
 # Upgrade all installed packages
 choco upgrade all -y
+
+pwsh
+
+## Azure Predictor Intellisense - pwsh 7+
+Install-Module -Name Az.Accounts -Force
+Install-Module -Name Az.Tools.Predictor -Force
+## CompletionPredictor - pwsh 7+
+Install-Module -Name CompletionPredictor
