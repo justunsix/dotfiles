@@ -114,7 +114,8 @@
 ;; Python
 ;; from https://github.com/daviwil/emacs-from-scratch/blob/dd9320769f3041ac1edca139496f14abe147d010/Emacs.org#python
 ;; prerequisites:
-;; - run: python3 -m pip install --user "python-language-server[all]"
+;; - run: python3 -m pip install --user "python-lsp-server"
+;;   -  or python3 -m pip install install pyright
 ;; - $HOME/.local/bin in your PATH
 
 (use-package python-mode
@@ -132,6 +133,10 @@
   ;; :config
   ;; (require 'dap-python)
 	)
+
+;; Set location of pyls lsp server otherwise Emacs
+;; cannot find the lsp server
+(setq lsp-pyls-server-command "~/.local/bin/pylsp")
 
 (when jt/windows-p
 	;; set to python for Windows installed by chocolatey
