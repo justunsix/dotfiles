@@ -124,9 +124,9 @@ fi
 
 # Source overlay variables, aliases
 if [ -f "$HOME/.env" ]; then
-		source "$HOME/.env"
+    source "$HOME/.env"
     # aliases
-		source "$HOME/.env-aliases"
+    source "$HOME/.env-aliases"
 fi
 
 isUbuntu="false"
@@ -161,112 +161,115 @@ fi
 
 export PATH="$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin:$HOME/.nix-profile/bin/:$HOME/usr/bin/todotxt-cli:$HOME/.local/bin:$HOME/usr/bin:$PATH"
 
+if [ "$isWSLUbuntu" = "true" ]; then
+    export PATH="$HOME/Code/dotfiles/usr/bin:$PATH"
+fi
+
 export EMACS_SERVER_FILE="~/.emacs.d/server/server"
 # Set EDITOR environment variable
 export EDITOR="vim"
-# Set xmonad configuration director
-# export XMONAD_CONFIG_DIR="$HOME/.config/xmonad"
 
-# Standard programs
+# Node Version Manager (NVM)
+export NVM_DIR="$HOME/.nvm"
+
+# If NVM is installed, load it
+if command -v nvm >/dev/null; then
+    # This loads nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    # This loads nvm bash_completion
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+    # nvm alias default 18.13.0
+fi
+
+# Programs
+
 ## cat(1) clone with syntax highlighting and git integration
 # alias bat="batcat"
 
-# Emacs
+## Emacs
 # Ensure in emacs (start-server) is done in init or on emacs command line
 # Find emacs server socks using:
 # lsof -c emacs | grep server | tr -s " "
 # Default on Linux is "/run/user/1000/emacs/server"
 # alias emacsclient="emacsclient --socket-name="/run/user/1000/emacs/server"
 
-# Node Version Manager (NVM)
-export NVM_DIR="$HOME/.nvm"
-
-if command -v nvm >/dev/null
-then
-		# This loads nvm
-		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-		# This loads nvm bash_completion
-		[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-		# nvm alias default 18.13.0
-fi
-
-# Haskell - Glasgow Haskell Compiler
+## Haskell - Glasgow Haskell Compiler
 # ghcup-env
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
-# fzf
-
+## fzf
 # Set fzf to always use bat for previews
 # export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
-
-if [ "$isUbuntu" = "true" ]; then
-		# Ubuntu Debian per /usr/share/doc/fzf/README.Debian
-		source /usr/share/doc/fzf/examples/key-bindings.bash
-		# Should be unnecessary in later apt fzf versions
-		source ~/Code/External/fzf/shell/completion.bash
-		# Change fzf find files command from default find to fd-find
-		# fd-find is called fdfind on Ubuntu due to a file name clash
-		# per apt-cache show fd-find
-		alias fd="fdfind"
-		# Find:
-		# --type f = files
-		# --hidden = include hidden files
-		export FZF_DEFAULT_COMMAND='fdfind --hidden --type f'
+# If fzf command is on system, configure it
+if command -v fzf >/dev/null; then
+    if [ "$isUbuntu" = "true" ]; then
+        # Ubuntu Debian per /usr/share/doc/fzf/README.Debian
+        source /usr/share/doc/fzf/examples/key-bindings.bash
+        # Should be unnecessary in later apt fzf versions
+        source ~/Code/External/fzf/shell/completion.bash
+        # Change fzf find files command from default find to fd-find
+        # fd-find is called fdfind on Ubuntu due to a file name clash
+        # per apt-cache show fd-find
+        alias fd="fdfind"
+        # Find:
+        # --type f = files
+        # --hidden = include hidden files
+        export FZF_DEFAULT_COMMAND='fdfind --hidden --type f'
+    fi
+    if [ "$isFedora" = "true" ]; then
+        # FZF mappings and options
+        [ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
+        source /usr/share/fzf/shell/key-bindings.bash
+        export FZF_DEFAULT_COMMAND='fd --hidden --type f'
+    fi
 fi
 
-if [ "$isFedora" = "true" ]; then
-		# FZF mappings and options
-		[ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
-    source /usr/share/fzf/shell/key-bindings.bash
-		export FZF_DEFAULT_COMMAND='fd --hidden --type f'
-fi
-
-# SSH key management with i3
+## Keychain
+# SSH key management with i3 or WSL Ubuntu
 # Prompt once for SSH keys, then remember for rest of user's session
 # Work in terminal and non terminal environments
 # https://wiki.archlinux.org/title/SSH_keys#Keychain
 # see man keychain for other shells and additional certificates
-if pgrep -x "i3" > /dev/null
-then
-		eval $(keychain --eval --quiet id_ed25519 id_rsa)
+
+# If i3 is running or WSL Ubuntu, run keychain
+if pgrep -x "i3" >/dev/null || [ "$isWSLUbuntu" = "true" ] ; then
+    eval $(keychain --eval --quiet id_ed25519 id_rsa)
 fi
 
-# oc - Openshift CLI
+## oc - Openshift CLI
 # if oc command exists, source completions
-if command -v oc &> /dev/null
-then
-		source <(oc completion bash)
+if command -v oc &>/dev/null; then
+    source <(oc completion bash)
 fi
 
-# Nix
+## Nix
 # added by Nix single user installer in .bash_profile, moved here
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]
-then
-		. ~/.nix-profile/etc/profile.d/nix.sh
+if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
+    . ~/.nix-profile/etc/profile.d/nix.sh
 fi
 
-if command -v starship &> /dev/null
-then
-		# Starship
-		eval "$(starship init bash)"
+## Starship Prompt
+if command -v starship &>/dev/null; then
+    # Starship
+    eval "$(starship init bash)"
 fi
 
-# if $HOME/.cargo exists, source it
+## Cargo, Rust package manager
 if [ -d "$HOME/.cargo" ]; then
-		# rust tools
-		. "$HOME/.cargo/env"
+    # rust tools
+    . "$HOME/.cargo/env"
 fi
 
-if command -v zoxide &> /dev/null
-then
-		# zoxide - smarter cd
-		eval "$(zoxide init bash)"
+## Zoxide - smarter cd
+if command -v zoxide &>/dev/null; then
+    # zoxide - smarter cd
+    eval "$(zoxide init bash)"
 fi
 
-if command -v broot &> /dev/null
-then
-	 # Run br first time to generate default configuration
-	 source "$HOME/.config/broot/launcher/bash/br"
+## broot - interactive tree view
+if command -v broot &>/dev/null; then
+    # Run br first time to generate default configuration
+    source "$HOME/.config/broot/launcher/bash/br"
 fi
 
 # Go to fish shell on non-login shells
