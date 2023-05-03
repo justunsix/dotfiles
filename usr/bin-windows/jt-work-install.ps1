@@ -38,7 +38,7 @@ obs-studio `
 terraform `
 -y
 
-# Install power-core with arguments per
+# Install PowerShell-core with arguments per
 # https://community.chocolatey.org/packages/powershell-core/
 choco install powershell-core -y --install-arguments='""ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 REGISTER_MANIFEST=1 ENABLE_PSREMOTING=1"'
 
@@ -55,6 +55,7 @@ Install-Module -Name AzureADPreview
 # Upgrade all installed packages
 choco upgrade all -y
 
+# Install PowerShell 7+ modules
 pwsh
 
 ## Azure Predictor Intellisense - pwsh 7+
