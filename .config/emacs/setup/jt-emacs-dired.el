@@ -35,6 +35,11 @@
  '(treemacs-file-face ((t (:height 0.7))))
  )
 
+;; Set Python on Windows
+(when jt/windows-p
+	(setq treemacs-python-executable (executable-find "python"))
+	)
+
 ;; File icons in dired mode if graphical environment
 ;; Use treemacs icons since they are nicer instead of all-the-icons-dired, faster
 ;; https://emacs.stackexchange.com/questions/71269/all-the-icons-are-all-white-in-dired
