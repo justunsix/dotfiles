@@ -25,6 +25,14 @@
 																					 ))
 	)
 
+;; if Linux and ~/.nix-profile/share/hunspell/ exists, add en_CA to ispell-hunspell-dict-paths-alist
+;; (when jt/linux-p
+;; 	(when (file-exists-p "~/.nix-profile/share/hunspell/")
+;; 		(setq ispell-hunspell-dict-paths-alist '(("enCA" "~/.nix-profile/share/hunspell/en_CA.aff" "~/.nix-profile/share/hunspell/en_CA.dic"))
+;; 		)
+;; 	)
+;; )
+
 ;; hunspell with multiple dictionaries
 ;; Ensure dictories are installed with OS package managers
 (with-eval-after-load "ispell"
