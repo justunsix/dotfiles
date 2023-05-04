@@ -41,6 +41,10 @@
 ;; Installation and instructions at https://github.com/zerolfx/copilot.el
 (setq copilot-node-executable "~/.nvm/versions/node/v18.14.0/bin/node")
 
+;; if ~/.nix-profile/bin/node exists, use it instead
+(when (file-exists-p "~/.nix-profile/bin/node")
+  (setq copilot-node-executable "~/.nix-profile/bin/node"))
+
 (when jt/windows-p
   ;; Set to nodejs location installed by Chocolately
   ;; Previous configuration was set to nodejs v17 folder structure using Windows 64 bit binary from https://nodejs.org/download/release/v17.9.1/ as if it was installed by nvm
