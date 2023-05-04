@@ -11,3 +11,5 @@
 auto-save-list
 tramp
 .\#*
+.env
+env.el
