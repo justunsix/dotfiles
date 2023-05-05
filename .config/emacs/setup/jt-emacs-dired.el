@@ -1,7 +1,7 @@
 ;;; jt-emacs-dired.el --- Personal dired related configurations and packages
 ;;  Author: Justin Tung
 ;;; Commentary:
-;; Configurations related to dired
+;; Configurations related to Dired
 ;;; Code:
 
 ;; --------------------------------------------------------------------------------
@@ -18,22 +18,18 @@
 
 (use-package treemacs
 	:ensure t
+	:config
+	(progn
+		(setq treemacs-text-scale 0.5
+					;; indent default 2
+					treemacs-indentation 1
+		 )
+		)
 	:bind
  	(:map global-map
 				([f8] . treemacs)
 				)
 	)
-
-;; Set the font size for Treemacs
-(custom-set-faces
- '(treemacs-root-face ((t (:height 0.7))))
- '(treemacs-git-untracked-face ((t (:height 0.7))))
- '(treemacs-git-added-face ((t (:height 0.7))))
- '(treemacs-git-conflict-face ((t (:height 0.7))))
- '(treemacs-git-ignored-face ((t (:height 0.7))))
- '(treemacs-directory-face ((t (:height 0.7))))
- '(treemacs-file-face ((t (:height 0.7))))
- )
 
 ;; Set Python on Windows
 (when jt/windows-p
