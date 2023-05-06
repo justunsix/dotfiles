@@ -122,6 +122,13 @@ fi
 # ---------------------------------------------------
 # --- My Customizations ---
 
+################################
+#
+# Variables &
+# Environment Variables
+#
+################################
+
 # Source overlay variables, aliases
 if [ -f "$HOME/.env" ]; then
     source "$HOME/.env"
@@ -181,7 +188,14 @@ if command -v nvm >/dev/null; then
     # nvm alias default 18.13.0
 fi
 
+################################
+#
 # Programs
+#
+################################
+
+# Check programs are installed before configuring them.
+# Conditionals allow reusing this .bashrc on multiple systems
 
 ## cat(1) clone with syntax highlighting and git integration
 # alias bat="batcat"
@@ -230,10 +244,13 @@ fi
 # Work in terminal and non terminal environments
 # https://wiki.archlinux.org/title/SSH_keys#Keychain
 # see man keychain for other shells and additional certificates
-
-# If i3 is running or WSL Ubuntu, run keychain
-if pgrep -x "i3" >/dev/null || [ "$isWSLUbuntu" = "true" ] ; then
-    eval $(keychain --eval --quiet id_ed25519 id_rsa)
+if command -v keychain >/dev/null; then
+		# If i3 is running or WSL Ubuntu, run keychain
+		if pgrep -x "i3" >/dev/null || [ "$isWSLUbuntu" = "true" ] ; then
+				eval $(keychain --eval --quiet id_ed25519)
+   			# optionally include id_rsa
+				# eval $(keychain --eval --quiet id_ed25519)
+		fi
 fi
 
 ## oc - Openshift CLI
@@ -272,5 +289,7 @@ if command -v broot &>/dev/null; then
     source "$HOME/.config/broot/launcher/bash/br"
 fi
 
-# Go to fish shell on non-login shells
-fish
+if command -v fish >/dev/null; then
+		# Go to fish shell on non-login shells
+		fish
+fi
