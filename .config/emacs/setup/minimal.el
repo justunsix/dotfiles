@@ -66,7 +66,10 @@
 ;; Settings only for graphical environments
 ;; not required for terminal mode
 (when (display-graphic-p)
-	(scroll-bar-mode 'right)   ; Enable visible scrollbar
+
+	;; Turn off scroll bar, use modeline indicator instead
+	(scroll-bar-mode -1)
+	;; (scroll-bar-mode 'right)   ; Enable visible scrollbar
 	;; Enable mouse context menu (only available in Emacs 28+)
 	(context-menu-mode t)
 
