@@ -143,8 +143,8 @@
 	(setq python-shell-interpreter "python")
 	)
 
-(use-package powershell
-	:mode "\\.ps1\\'")
+(use-package powershell)
+;;	:mode "\\.ps1\\'")
 
 (provide 'jt-emacs-languages)
 
