@@ -34,7 +34,9 @@
          ;; Override org-mode's org-open-at-point with jt/org-open-at-point
 				 ;; This allows for opening links in the same window
 				 (:map org-mode-map
-							 ("C-c C-o" . jt/org-open-at-point))
+							 ("C-c C-o" . jt/org-open-at-point)
+							 ("C-b" . 'jt/org-boldify-region)
+							 )
 				 )
 	)
 
@@ -291,6 +293,14 @@
 	"Copy current file name as an org link to the kill ring (clipboard)."
 	(interactive)
 	(kill-new (format "[[file:%s]]" (file-name-nondirectory (buffer-file-name))))
+	)
+
+(defun jt/org-boldify-region ()
+  "Boldify the selected region in Org mode or unbold if already."
+  (interactive)
+  (when (region-active-p)
+    (org-emphasize ?*)
+		)
 	)
 
 (provide 'jt-emacs-org)
