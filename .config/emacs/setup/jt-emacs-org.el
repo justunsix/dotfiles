@@ -165,11 +165,14 @@
   (add-to-list 'org-structure-template-alist '("hs" . "src haskell"))
   (add-to-list 'org-structure-template-alist '("yaml" . "src yaml"))
   (add-to-list 'org-structure-template-alist '("json" . "src json"))
-  (add-to-list 'org-structure-template-alist '("puml" . "src plantuml"))
   (add-to-list 'org-structure-template-alist '("sql" . "src sql"))
 	;; Hashicorp Configuration Language (HCL)
   (add-to-list 'org-structure-template-alist '("hcl" . "src hcl"))
 	(add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))
+	;; Replaced by yassnippet due to complexity
+  ;; (add-to-list 'org-structure-template-alist '("plant" . "src plantuml"))
+
+	;; Other
   ;;  (add-to-list 'org-structure-template-alist '("li" . "src lisp"))
   ;;  (add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
   ;;  (add-to-list 'org-structure-template-alist '("ts" . "src typescript"))

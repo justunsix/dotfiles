@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: src-plantuml
+# key: <plant
+# --
+#+begin_src plantuml :file plantuml-...png
+  @startuml
+	$0
+  @enduml
+#+end_src
+
+#+RESULTS:
+[[file:plantuml....png]]

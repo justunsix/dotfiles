@@ -24,9 +24,23 @@
   :config
   (lsp-enable-which-key-integration t))
 
-;; yasnippet for lsp
+;; yasnippet for lsp and snippet management
 (use-package yasnippet
 	:hook (lsp-mode . yas-minor-mode))
+;; Activate yasnippet globally
+;; can be done on per buffer with yas-minor-mode
+(yas-global-mode 1)
+
+;; Install snippet collection
+(use-package yasnippet-snippets
+	:after yasnippet)
+
+;; configure personal snippets with concat user emacs directory + snippets
+(setq yas-snippet-dirs (list (concat user-emacs-directory "snippets")))
+
+;; Add (yasnippet backquote-change) to ‘warning-suppress-types’
+;; to turn off warnings of elisp executions in snippets
+(add-to-list 'warning-suppress-types '(yasnippet backquote-change))
 
 ;; UI enhancements for LSP
 ;; Can use sideline configuration for more frame help on screen

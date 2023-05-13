@@ -159,7 +159,7 @@
 
 ;; Auto-pairing quotes and parentheses etc
 ;; Hook electric-pair-mode to all programming modes
-(add-hook 'prog-mode-hook 'electric-pair-mode)
+;; (add-hook 'prog-mode-hook 'electric-pair-mode)
 
 ;; Clean up whitespace at end of files before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -264,10 +264,6 @@
 ;; Bind eval-region to F2 e r
 (global-set-key (kbd "<f2> e r") 'eval-region)
 
-(global-set-key (kbd "<f2> i d") 'jt/insert-date)
-
-(global-set-key (kbd "<f2> i t") 'jt/insert-date-time)
-
 (global-set-key (kbd "<f2> c f") 'jt/copy-file-name-to-clipboard)
 
 (global-set-key (kbd "<f2> k") 'jt/kill-all-buffers)
@@ -328,16 +324,6 @@
   (sleep-for 1)
   (message "All buffers killed except *scratch*, *Messages*")
   )
-
-(defun jt/insert-date ()
-  "Insert the current date in format YYYY-MM-DD into the current buffer"
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
-
-(defun jt/insert-date-time ()
-  "Insert the current date in format YYYY-MM-DD HHMM into the current buffer"
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d %H%M")))
 
 ;; Get name of current file without full path and copy to kill ring
 (defun jt/copy-file-name-to-clipboard ()

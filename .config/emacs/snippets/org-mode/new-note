@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: new note template
+# key: <nn
+# --
+#+title: ${1:title}
+#+filetags: ${2:filetags}
+
+* See Also
+
+- $0
