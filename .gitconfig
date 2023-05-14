@@ -8,9 +8,10 @@
   # branch
   # branch (verbose)
   b = branch -v
-	
+
   # status
-	s = status
+	## Run a short status
+	s = status --short
 
   # diff
 	# diff unstaged changes
@@ -18,9 +19,19 @@
 
   # push
 	p = push
-	
+
 [pull]
 	rebase = false
+
+[fetch]
+    # Prune during fetch to cleanup outdated remote references
+		# in .git directory
+		# https://www.freecodecamp.org/news/git-config-how-to-configure-git-settings/
+    prune = true
+
+[init]
+    # Set default branch name for new repositories
+    defaultBranch = main
 
 [include]
   # includes further configuration in these files
