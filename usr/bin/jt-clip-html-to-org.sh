@@ -8,3 +8,8 @@
 # --wrap=none : don't wrap lines
 # sed... : remove backslashes from line indicators added by pandoc
 xclip -o -selection clipboard -t text/html | pandoc -f html -t org --wrap=none | sed 's/\\\\//g' | xclip -selection clipboard
+
+# Altnerate implementation at
+# https://emacs.stackexchange.com/questions/12121/org-mode-parsing-rich-html-directly-when-pasting
+# Conversion from JSON simplifies the HTML
+# xclip -o -t TARGETS | grep -q text/html && (xclip -o -t text/html | pandoc -f html -t json | pandoc -f json -t org) || xclip -o
