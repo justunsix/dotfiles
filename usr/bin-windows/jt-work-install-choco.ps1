@@ -1,17 +1,12 @@
-# Install with Chocolatey the following packages
+# Install with Chocolatey and PowerShell the following packages
 # List package on each line by itself
 choco install `
 microsoft-windows-terminal `
 autohotkey `
 git `
 git-credential-manager-for-windows `
-starship `
-fzf  `
 python3 `
-firefox `
 jetbrainsmono `
-peazip `
-vlc `
 veracrypt `
 keepassxc `
 cygwin `
@@ -20,9 +15,6 @@ emacs `
 ripgrep `
 hunspell.portable `
 pandoc `
-capture2text `
-inkscape `
-gimp `
 virtualbox `
 azure-cli `
 drawio `
@@ -37,6 +29,16 @@ fd `
 obs-studio `
 terraform `
 -y
+
+# Chocolatey packages moved to scoop install
+# firefox `
+# capture2text `
+# inkscape `
+# gimp `
+# starship `
+# fzf  `
+# peazip `
+# vlc `
 
 # Install PowerShell-core with arguments per
 # https://community.chocolatey.org/packages/powershell-core/
