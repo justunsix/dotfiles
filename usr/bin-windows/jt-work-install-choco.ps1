@@ -8,26 +8,14 @@ git-credential-manager-for-windows `
 python3 `
 jetbrainsmono `
 veracrypt `
-keepassxc `
 cygwin `
-vscode `
-emacs `
-ripgrep `
 hunspell.portable `
-pandoc `
 virtualbox `
 azure-cli `
-drawio `
 nodejs `
 python `
-maven `
-mremoteng `
 pdfxchangeeditor `
-zoxide `
-plantuml `
-fd `
 obs-studio `
-terraform `
 -y
 
 # Chocolatey packages moved to scoop install
@@ -39,6 +27,18 @@ terraform `
 # fzf  `
 # peazip `
 # vlc `
+# keepassxc `
+# vscode `
+# emacs `
+# ripgrep `
+# pandoc `
+# drawio `
+# maven `
+# mremoteng `
+# zoxide `
+# plantuml `
+# fd `
+# terraform `
 
 # Install PowerShell-core with arguments per
 # https://community.chocolatey.org/packages/powershell-core/

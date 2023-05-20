@@ -10,3 +10,15 @@ starship `
 fzf  `
 peazip `
 vlc `
+keepassxc `
+vscode `
+emacs `
+ripgrep `
+pandoc `
+draw.io `
+maven `
+mremoteng `
+zoxide `
+plantuml `
+fd `
+terraform
