@@ -113,7 +113,6 @@
   "editor.lineNumbers": "on",
   "settingsSync.ignoredExtensions": [],
   "settingsSync.ignoredSettings": [
-    "-git.path",
     "http.proxy"
   ],
   // Overwrite default markdown settings - moved to local workspace settings
