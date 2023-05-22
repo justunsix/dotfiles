@@ -113,7 +113,8 @@
   "editor.lineNumbers": "on",
   "settingsSync.ignoredExtensions": [],
   "settingsSync.ignoredSettings": [
-    "-git.path"
+    "-git.path",
+    "http.proxy"
   ],
   // Overwrite default markdown settings - moved to local workspace settings
   // "markdown.styles": [
@@ -142,7 +143,6 @@
   "editor.copyWithSyntaxHighlighting": true,
   "editor.accessibilitySupport": "off",
   "files.autoSave": "afterDelay",
-  "window.zoomLevel": 1,
   // ## AutoHotKey (AHK)
   // Default location installed by chocolatey
   "ahk++.file.compilePath": "C:\\Program Files\\AutoHotkey\\Compiler\\Ahk2Exe.exe",
@@ -167,5 +167,6 @@
   // * Other Settings
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
-  }
+  },
+  "workbench.colorTheme": "Visual Studio Dark",
 }
