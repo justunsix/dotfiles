@@ -14,7 +14,6 @@ virtualbox `
 azure-cli `
 nodejs `
 python `
-pdfxchangeeditor `
 obs-studio `
 -y
 

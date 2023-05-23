@@ -21,4 +21,6 @@ mremoteng `
 zoxide `
 plantuml `
 fd `
+gcc `
+neovim `
 terraform
