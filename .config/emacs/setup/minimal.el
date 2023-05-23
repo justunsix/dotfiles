@@ -315,14 +315,9 @@
 ;; * Custom Functions ----------------------------
 
 (defun jt/kill-all-buffers-except-starred ()
-  "Kill all buffers except *scratch*, *Messages* and switch to *scratch* buffer"
+  "Kill all buffers except buffers with stars *."
   (interactive)
-  (switch-to-buffer "*scratch*")
-  (delete-other-windows)
-  (mapc 'kill-buffer (delq (current-buffer) (delq (get-buffer "*Messages*") (delq  (buffer-list)))))
-  ;; Send minibuffer message
-  (sleep-for 1)
-  (message "All buffers killed except *scratch*, *Messages*")
+  (kill-matching-buffers "^[^*]" nil t)
   )
 
 ;; Get name of current file without full path and copy to kill ring
