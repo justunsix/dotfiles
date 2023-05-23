@@ -59,6 +59,7 @@
   ;; Around 7pm, check for updates
   ;; (auto-package-update-at-time "19:20"))
 	;; Trigger explicitly `M-x auto-package-update-now` to update
+)
 
 ;; --------------------------------------------------------------------------------
 ;; * Support Packages: Search, Help, Projects ----------------------------
@@ -194,8 +195,7 @@
 (global-set-key (kbd "C-p") 'projectile-find-file)
 
 ;; Buffer Management
-;; Bind jt/kill-all-buffers to F2 k
-(global-set-key (kbd "<f2> k") 'jt/kill-all-buffers)
+(global-set-key (kbd "<f2> k") 'jt/kill-all-buffers-except-starred)
 
 ;; Other
 (global-set-key (kbd "<f2> m b") 'jt/bongo-open-my-playlist)
@@ -273,12 +273,6 @@
 	;; Switch to buffer called *dashboard*
   (switch-to-buffer "*dashboard*")
   (kill-matching-buffers "^[^*]" nil t)
-	)
-
-(defun jt/switch-to-buffer-dashboard ()
-	"Switch to buffer called *dashboard*."
-	(interactive)
-	(switch-to-buffer "*dashboard*")
 	)
 
 (provide 'other)
