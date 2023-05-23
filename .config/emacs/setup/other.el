@@ -267,20 +267,13 @@
 ;; --------------------------------------------------------------------------------
 ;; * Custom Functions ----------------------------
 
-(defun jt/kill-all-buffers ()
-  "Kill all buffers except *dashboard*, *scratch*, *Messages* and if buffer exists *copilot events*"
+(defun jt/kill-all-buffers-except-starred ()
+  "Kill all buffers except ones starting with * and switch to *dashboard*."
   (interactive)
-  ;; Switch to buffer called *dashboard*
+	;; Switch to buffer called *dashboard*
   (switch-to-buffer "*dashboard*")
-  (delete-other-windows)
-  (mapc 'kill-buffer (delq (current-buffer) (delq (get-buffer "*dashboard*") (delq (get-buffer "*scratch*") (delq (get-buffer "*Messages*") (delq (get-buffer "*copilot events*") (buffer-list)))))))
-  ;; Restart copilot
-  (copilot-diagnose)
-
-  ;; Send minibuffer message
-  (sleep-for 1)
-  (message "All buffers killed except *dashboard*, *scratch*, *Messages*, and *copilot events*, restarting copilot")
-  )
+  (kill-matching-buffers "^[^*]" nil t)
+	)
 
 (defun jt/switch-to-buffer-dashboard ()
 	"Switch to buffer called *dashboard*."

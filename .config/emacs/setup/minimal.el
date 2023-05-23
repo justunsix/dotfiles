@@ -266,7 +266,7 @@
 
 (global-set-key (kbd "<f2> c f") 'jt/copy-file-name-to-clipboard)
 
-(global-set-key (kbd "<f2> k") 'jt/kill-all-buffers)
+(global-set-key (kbd "<f2> k") 'jt/kill-all-buffers-except-starred)
 
 ;; Windows navigation using windmove starting in Emacs 21
 ;; Overrides defaults which are: S-<arrow keys>
@@ -314,7 +314,7 @@
 ;; --------------------------------------------------------------------------------
 ;; * Custom Functions ----------------------------
 
-(defun jt/kill-all-buffers ()
+(defun jt/kill-all-buffers-except-starred ()
   "Kill all buffers except *scratch*, *Messages* and switch to *scratch* buffer"
   (interactive)
   (switch-to-buffer "*scratch*")
