@@ -47,7 +47,7 @@
   :defer 20
   :custom
   ;; Interval in days
-  (auto-package-update-interval 7)
+  (auto-package-update-interval 30)
   ;; Ask before auto update
   (auto-package-update-prompt-before-update t)
   ;; Show results, default is nil
@@ -55,10 +55,10 @@
   :config
   ;; Check if interval passed
   (auto-package-update-maybe)
-  ;; Around 7pm, check for updates
   ;; 2nd check in case you rarely restart Emacs
-  (auto-package-update-at-time "19:20"))
-;; Trigger explicitly `M-x auto-package-update-now` to update
+  ;; Around 7pm, check for updates
+  ;; (auto-package-update-at-time "19:20"))
+	;; Trigger explicitly `M-x auto-package-update-now` to update
 
 ;; --------------------------------------------------------------------------------
 ;; * Support Packages: Search, Help, Projects ----------------------------
