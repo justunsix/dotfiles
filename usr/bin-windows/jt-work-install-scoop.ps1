@@ -1,6 +1,8 @@
 # Install with scoop the following packages
 # List package on each line by itself
 scoop install `
+git `
+extras/git-credential-manager `
 firefox `
 capture2text `
 zoxide `

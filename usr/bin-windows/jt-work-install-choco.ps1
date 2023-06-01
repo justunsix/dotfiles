@@ -3,8 +3,6 @@
 choco install `
 microsoft-windows-terminal `
 autohotkey `
-git `
-git-credential-manager-for-windows `
 python3 `
 jetbrainsmono `
 veracrypt `
