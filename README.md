@@ -20,7 +20,7 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `nvim/` - [neovim](https://neovim.io/) (Editor)<br/>
 ------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3)<br/>
 ------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) (Task manager)<br/>
-------├── `kdeglobals` - [KDE](https://kde.org/) (Desktop Environment appearance settings))<br/>
+------├── `kdeglobals` - [KDE](https://kde.org/) (Desktop Environment appearance settings)<br/>
 ------├── `starship.toml` - [Starship](https://starship.rs/) (Cross-shell prompt)<br/>
 ├── `.fonts/` - Open source fonts<br/>
 ├── `.local/share/applications/` - [Desktop entries](https://wiki.archlinux.org/title/desktop_entries)<br/>
@@ -28,6 +28,8 @@ This repository contains my personal dotfiles like configurations for software d
 ├── `usr/bin/` - Linux scripts<br/>
 ├── `usr/bin-windows/` - Windows scripts<br/>
 ├── `other/` - Other configuration files not normally stored in user home directory<br/>
+------├── `PowerShell/` - [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell) shell configuration files<br/>
+------├── `WindowsPowerShell/` - [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell) 5.1 configuration files<br/>
 ├── `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell configuration files<br/>
 ├── `.gitconfig` - [Git](https://git-scm.com/) distributed version control configuration file<br/>
 ├── `.inputrc` - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) for command line editing<br/>
