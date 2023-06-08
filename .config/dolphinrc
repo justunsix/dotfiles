@@ -1,0 +1,53 @@
+MenuBar=Disabled
+
+[CompactMode]
+FontWeight=25
+PreviewSize=16
+
+[DetailsMode]
+FontWeight=25
+PreviewSize=16
+
+[General]
+CloseActiveSplitView=false
+OpenExternallyCalledFolderInNewTab=false
+ShowFullPath=true
+ShowFullPathInTitlebar=true
+ShowToolTips=true
+SortingChoice=CaseInsensitiveSorting
+UseTabForSwitchingSplitView=true
+Version=201
+ViewPropsTimestamp=2022,10,26,0,35,22.971
+
+[IconsMode]
+FontWeight=25
+PreviewSize=16
+
+[KPropertiesDialog]
+XWAYLAND0 Height 1600x900=593
+XWAYLAND0 Height 1920x1080=501
+XWAYLAND0 Width 1600x900=509
+XWAYLAND0 Width 1920x1080=335
+
+[MainWindow]
+ToolBarsMovable=Disabled
+XWAYLAND0 Height 1600x900=721
+XWAYLAND0 Height 1920x1080=749
+XWAYLAND0 Width 1600x900=1352
+XWAYLAND0 Width 1920x1080=1440
+XWAYLAND0 XPosition 1600x900=73
+XWAYLAND0 XPosition 1920x1080=336
+XWAYLAND0 XWAYLAND1 Height 1920x1080=600
+XWAYLAND0 XWAYLAND1 Width 1920x1080=760
+XWAYLAND0 XWAYLAND1 Window-Maximized 1920x1080=true
+XWAYLAND0 XWAYLAND1 XPosition 1920x1080=1650
+XWAYLAND0 XWAYLAND1 YPosition 1920x1080=87
+XWAYLAND0 YPosition 1600x900=126
+XWAYLAND0 YPosition 1920x1080=317
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
+
+[ViewPropertiesDialog]
+XWAYLAND0 Height 1920x1080=372
+XWAYLAND0 Width 1920x1080=494
