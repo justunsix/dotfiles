@@ -179,8 +179,8 @@ export EDITOR="vim"
 # Node Version Manager (NVM)
 export NVM_DIR="$HOME/.nvm"
 
-# If NVM is installed, load it
-if command -v nvm >/dev/null; then
+# If NVM binary exists, load it
+if [ -f $NVM_DIR/nvm.sh ]; then
     # This loads nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     # This loads nvm bash_completion
