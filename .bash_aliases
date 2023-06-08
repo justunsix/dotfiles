@@ -12,3 +12,6 @@ alias to="todo.sh -d $HOME/.config/todotxt-cli/todo-work.cfg"
 # cd
 alias ..="cd .."
 alias ...="cd ../.."
+
+# exa
+alias exa="exa --icons -lh --group-directories-first"
