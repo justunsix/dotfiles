@@ -20,6 +20,7 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `nvim/` - [neovim](https://neovim.io/) (Editor)<br/>
 ------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3)<br/>
 ------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) (Task manager)<br/>
+------├── `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings <br/>
 ------├── `kdeglobals` - [KDE](https://kde.org/) (Desktop Environment appearance settings)<br/>
 ------├── `starship.toml` - [Starship](https://starship.rs/) (Cross-shell prompt)<br/>
 ├── `.fonts/` - Open source fonts<br/>
