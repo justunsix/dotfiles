@@ -13,25 +13,27 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `copyq/` - [copyq](https://hluk.github.io/CopyQ/) (Clipboard Manager)<br/>
 ------├── `dunst/` - [dunst](https://dunst-project.org/) (Notification daemon, for use with i3)<br/>
 ------├── `emacs/` - [Emacs](https://www.gnu.org/software/emacs/) (Editor)<br/>
-------├── `fontconfig/conf.d/` - Font managed by [Nix package manager](https://nixos.org/)<br/>
+------├── `fish/` - [Fish](https://fishshell.com/) shell<br/>
+------├── `fontconfig/conf.d/` - Fonts managed by [Nix package manager](https://nixos.org/)<br/>
 ------├── `i3/` - [i3 Window Manager (WM)](https://i3wm.org/)<br/>
-------├── `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) (Status bar for use with i3)<br/>
+------├── `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) Status bar for use with i3<br/>
 ------├── `mpv/` - [mpv](https://mpv.io/) (Media Player)<br/>
 ------├── `nvim/` - [neovim](https://neovim.io/) (Editor)<br/>
-------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3)<br/>
-------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) (Task manager)<br/>
+------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3 and in GNOME)<br/>
+------├── `tmux` - [tmux](https://github.com/tmux/tmux/wiki) Terminal Multiplexer<br/>
+------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) Task manager on command line<br/>
 ------├── `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings <br/>
-------├── `kdeglobals` - [KDE](https://kde.org/) (Desktop Environment appearance settings)<br/>
-------├── `starship.toml` - [Starship](https://starship.rs/) (Cross-shell prompt)<br/>
+------├── `kdeglobals` - [KDE](https://kde.org/) Desktop Environment appearance settings<br/>
+------├── `starship.toml` - [Starship](https://starship.rs/) Cross-shell prompt<br/>
 ├── `.fonts/` - Open source fonts<br/>
 ├── `.local/share/applications/` - [Desktop entries](https://wiki.archlinux.org/title/desktop_entries)<br/>
 ├── `Templates/` - New file templates for [GNOME File manager](https://wiki.gnome.org/action/show/Apps/Files?action=show&redirect=Apps%2FNautilus) also known as Nautilus<br/>
 ├── `usr/bin/` - Linux scripts<br/>
 ├── `usr/bin-windows/` - Windows scripts<br/>
 ├── `other/` - Other configuration files not normally stored in user home directory<br/>
-------├── `PowerShell/` - [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell) shell configuration files<br/>
-------├── `WindowsPowerShell/` - [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell) 5.1 configuration files<br/>
-├── `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell configuration files<br/>
+------├── `PowerShell/` - [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell) shell<br/>
+------├── `WindowsPowerShell/` - [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell) 5.1 Windows shell<br/>
+├── `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell<br/>
 ├── `.gitconfig` - [Git](https://git-scm.com/) distributed version control configuration file<br/>
 ├── `.inputrc` - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) for command line editing<br/>
 ├── `.Xresources` , `.xinitrc` - [X Window System](https://www.x.org/wiki/) configuration files<br/>
