@@ -37,6 +37,11 @@
   :init (doom-modeline-mode 1)
   :custom ((doom-modeline-height 15)))
 
+;; Icons used by doom-modeline
+;; After install, run M-x nerd-icons-install-fonts to install the necessary fonts
+;; per https://github.com/seagle0128/doom-modeline
+(use-package nerd-icons)
+
 ;; --------------------------------------------------------------------------------
 ;; * Font Configuration ----------------------------
 
