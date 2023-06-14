@@ -25,4 +25,7 @@ plantuml `
 fd `
 gcc `
 neovim `
-terraform
+terraform `
+nu `
+uutils-coreutils `
+gitui
