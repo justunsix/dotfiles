@@ -1,0 +1,40 @@
+{
+    "mapping": {
+        "1,79,1": [
+            "KEY_LEFTMETA + 1",
+            "keyboard"
+        ],
+        "1,80,1": [
+            "KEY_LEFTMETA + 2",
+            "keyboard"
+        ],
+        "1,81,1": [
+            "KEY_LEFTMETA + 3",
+            "keyboard"
+        ],
+        "1,75,1": [
+            "KEY_LEFTMETA + 4",
+            "keyboard"
+        ],
+        "1,76,1": [
+            "KEY_LEFTMETA + 5",
+            "keyboard"
+        ],
+        "1,77,1": [
+            "KEY_LEFTMETA + 6",
+            "keyboard"
+        ],
+        "1,71,1": [
+            "KEY_LEFTMETA + 7",
+            "keyboard"
+        ],
+        "1,72,1": [
+            "KEY_LEFTMETA + 8",
+            "keyboard"
+        ],
+        "1,73,1": [
+            "KEY_LEFTMETA + 9",
+            "keyboard"
+        ]
+    }
+}
