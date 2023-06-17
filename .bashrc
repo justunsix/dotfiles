@@ -185,7 +185,13 @@ if [ -f $NVM_DIR/nvm.sh ]; then
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     # This loads nvm bash_completion
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-    # nvm alias default 18.13.0
+
+		# Use default node version is none is set
+		if [ -f .nvmrc ]; then
+				nvm use
+		else
+				nvm use default
+		fi
 fi
 
 ################################

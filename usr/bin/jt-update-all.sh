@@ -76,12 +76,26 @@ echo 'Updating font cache'
 echo ' '
 fc-cache -v
 
+echo ' '
+echo '----------------------------------------'
+echo 'Update nodejs version'
+echo ' '
+# nvm is a bash function, not a builtin, file or alias
+# from https://github.com/branneman/dotfiles/blob/master/scripts/updates
+if [ -d $HOME/.nvm ] && [ -s $HOME/.nvm/nvm.sh ]; then
+		NVM_DIR="$HOME/.nvm"
+		source .nvm/nvm.sh
+		nvm install lts/*
+		nvm alias default lts/*
+		nvm use default
+fi
+
 # Update Clam, Freshclam sigantures
 # if ClamAV is installed
 if [ -f /usr/bin/clamscan ]; then
-	echo ' '
-	echo '----------------------------------------'
-	echo 'Updating ClamAV'
-	echo ' '
-	sudo freshclam
+		echo ' '
+		echo '----------------------------------------'
+		echo 'Updating ClamAV'
+		echo ' '
+		sudo freshclam
 fi
