@@ -62,11 +62,11 @@ nix-channel --update
 nix-env -u
 
 # Run nix package manager garbage collection
+nix-collect-garbage --delete-older-than 30d
 # If day is Friday, Saturday or Sunday ($(date +%u) -ge 5)
 # If date is 1st of month or 20th or month
-if [ $(date +%d) = 01 ] || [ $(date +%d) = 20 ]; then
-    nix-collect-garbage -d
-fi
+# if [ $(date +%d) = 01 ] || [ $(date +%d) = 20 ]; then
+# fi
 
 # Scan font directories to build font cache files
 # in case nix managed fonts were updated
@@ -84,7 +84,7 @@ echo ' '
 # from https://github.com/branneman/dotfiles/blob/master/scripts/updates
 if [ -d $HOME/.nvm ] && [ -s $HOME/.nvm/nvm.sh ]; then
 		NVM_DIR="$HOME/.nvm"
-		source .nvm/nvm.sh
+		source $HOME/.nvm/nvm.sh
 		nvm install lts/*
 		nvm alias default lts/*
 		nvm use default
