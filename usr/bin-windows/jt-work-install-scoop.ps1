@@ -28,4 +28,5 @@ neovim `
 terraform `
 nu `
 uutils-coreutils `
-gitui
+gitui `
+obs-studio

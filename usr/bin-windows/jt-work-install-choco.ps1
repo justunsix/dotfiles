@@ -12,7 +12,6 @@ virtualbox `
 azure-cli `
 nodejs `
 python `
-obs-studio `
 -y
 
 # Chocolatey packages moved to scoop install
@@ -36,6 +35,7 @@ obs-studio `
 # plantuml `
 # fd `
 # terraform `
+# obs-studio `
 
 # Install PowerShell-core with arguments per
 # https://community.chocolatey.org/packages/powershell-core/
