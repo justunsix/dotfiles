@@ -33,7 +33,7 @@
 (require 'jt-emacs-ui)
 ;; org-mode related
 (require 'jt-emacs-org)
-;;  artificial intelligence (AI)
+;; artificial intelligence (AI)
 (require 'jt-emacs-ai)
 ;; programming languages
 (require 'jt-emacs-languages)
