@@ -1,14 +1,14 @@
 # Emacs packages
-auto-save-list
-elpa
-emacs
-setup
-straight
-transient
-org-roam.db
-places
-projectile-bookmarks.eld
-recentf
-.last-package-update-day
-dired-history
-amx-items
+# auto-save-list
+# elpa
+# emacs
+# setup
+# straight
+# transient
+# org-roam.db
+# places
+# projectile-bookmarks.eld
+# recentf
+# .last-package-update-day
+# dired-history
+# amx-items
