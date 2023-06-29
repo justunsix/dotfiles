@@ -42,7 +42,11 @@
 
 ;; Add where are your org files
 (setq org-directory jt/org-directory)
-;; (setq org-agenda-files jt/org-directory)
+(setq org-agenda-files (list org-directory))
+;; Set org-agenda-file-regexp as a regular expression to  match all .org files
+;; with the word task in the filename
+;; original value was: "\\`[^.].*\\.org\\'"
+(setq org-agenda-file-regexp "\\`[^.].*task.*\\.org\\'")
 
 ;; Enable logs of recent activity
 (setq org-agenda-start-with-log-mode t)
