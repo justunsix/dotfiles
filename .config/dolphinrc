@@ -46,7 +46,7 @@ XWAYLAND0 YPosition 1600x900=126
 XWAYLAND0 YPosition 1920x1080=317
 
 [PreviewSettings]
-Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail
+Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail
 
 [ViewPropertiesDialog]
 XWAYLAND0 Height 1920x1080=372
