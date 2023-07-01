@@ -12,6 +12,7 @@ virtualbox `
 azure-cli `
 nodejs `
 python `
+msys2 `
 -y
 
 # Chocolatey packages moved to scoop install
