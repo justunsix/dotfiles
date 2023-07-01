@@ -33,6 +33,8 @@
 (require 'jt-emacs-ui)
 ;; org-mode related
 (require 'jt-emacs-org)
+;; org-roam related
+(require 'jt-emacs-org-roam)
 ;; artificial intelligence (AI)
 (require 'jt-emacs-ai)
 ;; programming languages
