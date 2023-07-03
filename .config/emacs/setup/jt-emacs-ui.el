@@ -52,11 +52,22 @@
 (defun jt/set-default-fonts ()
   "Set the font size based on the defaults font size."
   (interactive)
-  (set-face-attribute 'default nil :font "Source Code Pro" :weight 'normal :height efs/default-font-size)
+  (set-face-attribute 'default nil
+											:font "Source Code Pro"
+											:weight 'normal
+											:height efs/default-font-size)
   ;; Set the fixed pitch face
-  (set-face-attribute 'fixed-pitch nil :font "Source Code Pro" :weight 'normal :height 115)
+  (set-face-attribute 'fixed-pitch nil
+											:font "Source Code Pro"
+											:weight 'normal
+											:height 115)
   ;; Set the variable pitch face with weight normal
-  (set-face-attribute 'variable-pitch nil :font "JetBrains Mono" :weight 'normal :height efs/default-font-size)
+  ;; to JetBrains Mono font family
+  ;; If not family, may get error like "Font not available, #<font-spec nil nil JetBrains Mono"
+  (set-face-attribute 'variable-pitch nil
+											:family "JetBrains Mono"
+											:weight 'normal
+											:height efs/default-font-size)
   )
 
 (jt/set-default-fonts)
