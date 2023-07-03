@@ -62,12 +62,23 @@
 											:weight 'normal
 											:height 115)
   ;; Set the variable pitch face with weight normal
-  ;; to JetBrains Mono font family
-  ;; If not family, may get error like "Font not available, #<font-spec nil nil JetBrains Mono"
-  (set-face-attribute 'variable-pitch nil
-											:family "JetBrains Mono"
-											:weight 'normal
-											:height efs/default-font-size)
+	(when jt/linux-p
+		(set-face-attribute 'variable-pitch nil
+												:font "JetBrains Mono"
+												:weight 'normal
+												:height efs/default-font-size)
+		)
+
+  (when jt/windows-p
+		;; Temporary Fix
+    ;; On Windows to Source Code Pro due to problem with JetBrains Mono
+		;; If not family, may get error like "Font not available, #<font-spec nil nil JetBrains Mono"
+		(set-face-attribute 'variable-pitch nil
+												:family "Source Code Pro"
+												:weight 'normal
+												:height efs/default-font-size)
+		)
+
   )
 
 (jt/set-default-fonts)
@@ -129,10 +140,10 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
            )
        "Emacs"
        )
-;;      ((derived-mode-p 'prog-mode)
-;;       "Editing")
-;;      ((derived-mode-p 'dired-mode)
-;;       "Dired")
+			;;      ((derived-mode-p 'prog-mode)
+			;;       "Editing")
+			;;      ((derived-mode-p 'dired-mode)
+			;;       "Dired")
       ((memq major-mode '(helpful-mode
                           help-mode))
        "Help")
@@ -152,9 +163,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
                           ;; diary-mode
                           ))
        "OrgProgMode")
-;;      ((memq major-mode '(term-mode
-;;                          eshell-mode))
-;;       "Terminal")
+			;;      ((memq major-mode '(term-mode
+			;;                          eshell-mode))
+			;;       "Terminal")
       (t
        (centaur-tabs-get-group-name (current-buffer))
 			 )
