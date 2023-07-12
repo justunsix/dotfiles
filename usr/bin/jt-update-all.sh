@@ -62,6 +62,7 @@ nix-channel --update
 nix-env -u
 
 # Run nix package manager garbage collection
+# delete generations older than 30 days
 nix-collect-garbage --delete-older-than 30d
 # If day is Friday, Saturday or Sunday ($(date +%u) -ge 5)
 # If date is 1st of month or 20th or month
