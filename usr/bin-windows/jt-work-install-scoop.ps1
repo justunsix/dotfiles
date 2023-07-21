@@ -29,4 +29,5 @@ terraform `
 nu `
 uutils-coreutils `
 gitui `
-obs-studio
+obs-studio `
+extras/miniconda3
