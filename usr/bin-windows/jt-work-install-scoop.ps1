@@ -27,7 +27,8 @@ gcc `
 neovim `
 terraform `
 nu `
-uutils-coreutils `
 gitui `
+extras/miniconda3 `
 obs-studio `
-extras/miniconda3
+gsudo `
+uutils-coreutils
