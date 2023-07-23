@@ -26,12 +26,13 @@
 ;; Setup recommended by:
 ;; - High level settings and usage: https://michaelneuper.com/posts/replace-jupyter-notebook-with-emacs-org-mode/
 ;; - Detailed configuration: https://sqrtminusone.xyz/posts/2021-05-01-org-python/
+;; See detailed configuration for additional usage and configuration
 ;; Defer after org is loaded
 (with-eval-after-load 'org
 	(setq
 	 org-confirm-babel-evaluate nil)
 
-	;; Always see inline images from output
+	;; Always see inline images after babel execution
 	(add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
 
   ;; When in Windows set conda-home as scoop's miniconda3 install location

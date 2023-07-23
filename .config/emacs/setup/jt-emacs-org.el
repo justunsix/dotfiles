@@ -29,6 +29,8 @@
 	 org-ellipsis " ▾"
 	 ;; Fontify code blocks
 	 org-src-fontify-natively t
+	 ;; Show inline images on startup
+	 org-startup-with-inline-images t
 	 )
   (efs/org-font-setup)
   :bind (("C-c a" . org-agenda)
