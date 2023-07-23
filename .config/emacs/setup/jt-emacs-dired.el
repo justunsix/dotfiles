@@ -20,7 +20,7 @@
 	:ensure t
 	:config
 	(progn
-		(setq treemacs-text-scale 0.5
+		(setq treemacs-text-scale -2
 					;; indent default 2
 					treemacs-indentation 1
 		 )

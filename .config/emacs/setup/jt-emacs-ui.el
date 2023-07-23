@@ -46,7 +46,7 @@
 ;; * Font Configuration ----------------------------
 
 ;; You will most likely need to adjust this font size for your system
-(defvar efs/default-font-size 120)
+(defvar efs/default-font-size 110)
 
 ;; Function to set default fonts
 (defun jt/set-default-fonts ()
@@ -206,7 +206,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   :after lsp
 	:config
 	;; Reduce font size used in the treemacs buffer, useful for long file names
-	(set-face-attribute 'treemacs-file-face nil :height 80)
+	(set-face-attribute 'treemacs-file-face nil :height 70)
 	)
 
 (provide 'jt-emacs-ui)
