@@ -46,7 +46,7 @@
 ;; * Font Configuration ----------------------------
 
 ;; You will most likely need to adjust this font size for your system
-(defvar efs/default-font-size 110)
+(defvar efs/default-font-size 108)
 
 ;; Function to set default fonts
 (defun jt/set-default-fonts ()
