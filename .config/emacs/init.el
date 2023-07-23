@@ -33,6 +33,8 @@
 (require 'jt-emacs-ui)
 ;; org-mode related
 (require 'jt-emacs-org)
+;; org-babel
+(require 'jt-emacs-org-babel-literate)
 ;; org-roam related
 (require 'jt-emacs-org-roam)
 ;; artificial intelligence (AI)

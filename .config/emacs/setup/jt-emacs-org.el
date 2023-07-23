@@ -23,14 +23,20 @@
   :config
   ;; Debug message to check when org mode is loading
   ;; (message "Loading Org Mode...")
-  ;; Instead of ellipsis in headings, use this value
-  (setq org-ellipsis " ▾")
+
+  (setq
+	 ;; Instead of ellipsis in headings, use this value
+	 org-ellipsis " ▾"
+	 ;; Fontify code blocks
+	 org-src-fontify-natively t
+	 )
   (efs/org-font-setup)
   :bind (("C-c a" . org-agenda)
          ;; Bind C-c l to my-org-insert-link similar to org-insert-link
          ("C-c l" . my-org-insert-link)
 				 ;; Bind org-insert-heading
-				 ("C-c h" . org-insert-heading)
+				 ;; changed to this keybinding to avoid conflicts with jupyter packages
+				 ("C-c C-h" . org-insert-heading)
          ;; Override org-mode's org-open-at-point with jt/org-open-at-point
 				 ;; This allows for opening links in the same window
 				 (:map org-mode-map
@@ -118,76 +124,6 @@
 
 ;;(use-package visual-fill-column
 ;;  :hook (org-mode . efs/org-mode-visual-fill))
-
-;; Automatically tangle our literate org dotfiles when we save them
-(defun efs/org-babel-tangle-config ()
-  ;; Check if current buffer-file-name string contains word "Dotfile"
-  ;; If it contains "Dotfile", run tangle with no warning prompt
-  (when (string-match-p "Dotfile" (buffer-file-name))
-		(let ((org-confirm-babel-evaluate nil))
-			(org-babel-tangle))
-    )
-  )
-
-(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
-
-;; Defer after org is loaded
-(with-eval-after-load 'org
-
-	;; Configure Babel recognized languages:
-	;; elips, python, shell (includes bash)
-	;; See list https://orgmode.org/worg/org-contrib/babel/languages/index.html
-	(org-babel-do-load-languages
-	 'org-babel-load-languages
-	 '((emacs-lisp . t)
-		 (python . t)
-		 (shell . t)
-		 (sql . t)
-		 ;; plantuml
-		 ;; per https://plantuml.com/emacs
-		 (plantuml . t)
-		 ;; (haskell . t)
-		 ;;	(powershell . t)
-		 )
-	 )
-	(add-to-list 'org-src-lang-modes '("plantuml" . plantuml))
-	)
-
-;; Defer after org is loaded
-(with-eval-after-load 'org
-
-  ;; Structure Templates
-  ;; For org-babel source, templates for langauge e.g. <el + TAB starts template... >
-  ;; This is needed as of Org 9.2
-  (require 'org-tempo)
-
-  (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-  (add-to-list 'org-structure-template-alist '("py" . "src python"))
-  (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-  (add-to-list 'org-structure-template-alist '("txt" . "src txt"))
-  (add-to-list 'org-structure-template-alist '("hs" . "src haskell"))
-  (add-to-list 'org-structure-template-alist '("yaml" . "src yaml"))
-  (add-to-list 'org-structure-template-alist '("json" . "src json"))
-  (add-to-list 'org-structure-template-alist '("sql" . "src sql"))
-	;; Hashicorp Configuration Language (HCL)
-  (add-to-list 'org-structure-template-alist '("hcl" . "src hcl"))
-	(add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))
-	;; Replaced by yassnippet due to complexity
-  ;; (add-to-list 'org-structure-template-alist '("plant" . "src plantuml"))
-
-	;; Other
-  ;;  (add-to-list 'org-structure-template-alist '("li" . "src lisp"))
-  ;;  (add-to-list 'org-structure-template-alist '("sc" . "src scheme"))
-  ;;  (add-to-list 'org-structure-template-alist '("ts" . "src typescript"))
-  ;;  (add-to-list 'org-structure-template-alist '("go" . "src go"))
-
-	(add-to-list
-	 'org-src-lang-modes '("plantuml" . plantuml))
-
-  (setq org-plantuml-jar-path "~/.config/emacs/plantuml/plantuml.jar")
-
-  )
 
 ;; --------------------------------------------------------------------------------
 ;; * Org Links --------------------------
