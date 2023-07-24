@@ -32,4 +32,5 @@ extras/miniconda3 `
 obs-studio `
 gsudo `
 topgrade `
+mprocs
 uutils-coreutils
