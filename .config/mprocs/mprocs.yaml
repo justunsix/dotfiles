@@ -11,10 +11,15 @@ procs:
         linux: Linux
         macos: Macos
         freebsd: FreeBSD  
-  update-all:
+  update-all-noadmin:
     shell:
       $select: os
       windows: 'powershell.exe -Command "scoop update -a; scoop cleanup *"'
+    autostart: false
+  update-all-admin:
+    shell:
+      $select: os
+      windows: 'powershell.exe -Command "gsudo choco upgrade all -y"'
       linux: "topgrade -y"
     autostart: false
   nvim:
