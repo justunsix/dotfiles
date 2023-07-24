@@ -186,12 +186,12 @@ if [ -f $NVM_DIR/nvm.sh ]; then
     # This loads nvm bash_completion
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-		# Use default node version is none is set
-		if [ -f .nvmrc ]; then
-				nvm use
-		else
-				nvm use default
-		fi
+    # Use default node version is none is set
+    if [ -f .nvmrc ]; then
+        nvm use
+    else
+        nvm use default
+    fi
 fi
 
 ################################
@@ -251,12 +251,12 @@ fi
 # https://wiki.archlinux.org/title/SSH_keys#Keychain
 # see man keychain for other shells and additional certificates
 if command -v keychain >/dev/null; then
-		# If i3 is running or WSL Ubuntu, run keychain
-		if pgrep -x "i3" >/dev/null || [ "$isWSLUbuntu" = "true" ] ; then
-				eval $(keychain --eval --quiet id_ed25519)
-   			# optionally include id_rsa
-				# eval $(keychain --eval --quiet id_ed25519)
-		fi
+    # If i3 is running or WSL Ubuntu, run keychain
+    if pgrep -x "i3" >/dev/null || [ "$isWSLUbuntu" = "true" ]; then
+        eval $(keychain --eval --quiet id_ed25519)
+        # optionally include id_rsa
+        # eval $(keychain --eval --quiet id_ed25519)
+    fi
 fi
 
 ## oc - Openshift CLI
@@ -295,7 +295,27 @@ if command -v broot &>/dev/null; then
     source "$HOME/.config/broot/launcher/bash/br"
 fi
 
+## conda - package manager
+## Detect conda-shell installed by NixOS
+if command -v conda-shell >/dev/null; then
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('$HOME/.conda/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "$HOME/.conda/etc/profile.d/conda.sh" ]; then
+            . "$HOME/.conda/etc/profile.d/conda.sh"
+        else
+            export PATH="$HOME/.conda/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+# <<< conda initialize <<<
+
+fi
+
 if command -v fish >/dev/null; then
-		# Go to fish shell on non-login shells
-		fish
+    # Go to fish shell on non-login shells
+    fish
 fi

@@ -64,6 +64,11 @@
 ;; --------------------------------------------------------------------------------
 ;; * Support Packages: Search, Help, Projects ----------------------------
 
+;; Load path from shell instead of GUI defaults
+(use-package exec-path-from-shell)
+(exec-path-from-shell-initialize)
+
+
 ;; Inline file fuzzy search
 ;; Defer loading until swiper is called
 (use-package swiper

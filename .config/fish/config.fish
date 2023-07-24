@@ -68,3 +68,11 @@ if type -q zoxide
 	 # zoxide - smarter cd
 	 zoxide init fish | source
 end
+
+## conda - package manager
+if type -q conda-shell
+	# >>> conda initialize >>>
+	# !! Contents within this block are managed by 'conda init' !!
+	eval $HOME/.conda/bin/conda "shell.fish" "hook" $argv | source
+	# <<< conda initialize <<<
+end
