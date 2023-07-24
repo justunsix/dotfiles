@@ -39,12 +39,31 @@
          ("C-c n j" . org-roam-dailies-capture-today))
   :config
   ;; If you're using a vertical completion framework, you might want a more informative completion interface
-  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag))
+				;; Configure what sections are displayed in the org-roam buffer
+				;; backlinks, notes referencing it, and nodes that contain text that match the node's title/alias
+				org-roam-mode-sections
+				(list #'org-roam-backlinks-section
+							#'org-roam-reflinks-section
+							;; #'org-roam-unlinked-references-section
+							)
+				)
+
   ;; Sync org-roam database
   (org-roam-db-autosync-mode)
   ;; If using org-roam-protocol
   ;;  (require 'org-roam-protocol)
   )
+
+;; Set how org-roam buffer should be displayed
+;; See other configurations and permanent side window  at:
+;; https://www.orgroam.com/manual.html#Navigating-the-Org_002droam-Buffer
+(add-to-list 'display-buffer-alist
+             '("\\*org-roam\\*"
+               (display-buffer-in-direction)
+               (direction . right)
+               (window-width . 0.23)
+               (window-height . fit-window-to-buffer)))
 
 ;; Disable doing org-roam database sync on startup on Windows
 ;; due to query timeouts, ok to run manually after startup
