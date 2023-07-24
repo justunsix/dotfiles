@@ -296,7 +296,7 @@ if command -v broot &>/dev/null; then
 fi
 
 ## conda - package manager
-## Detect conda-shell installed by NixOS
+## Detect conda-shell installed by Nix
 if command -v conda-shell >/dev/null; then
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
