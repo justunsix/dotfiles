@@ -31,4 +31,5 @@ gitui `
 extras/miniconda3 `
 obs-studio `
 gsudo `
+topgrade `
 uutils-coreutils

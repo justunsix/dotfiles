@@ -19,7 +19,7 @@ procs:
   update-all-admin:
     shell:
       $select: os
-      windows: 'powershell.exe -Command "gsudo choco upgrade all -y"'
+      windows: 'powershell.exe -Command "topgrade -y"'
       linux: "topgrade -y"
     autostart: false
   nvim:
