@@ -39,6 +39,32 @@
 (setq user-package-always-defer t)
 
 ;; --------------------------------------------------------------------------------
+;; * Straight Package Management ----------------------------
+
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 6))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+
+(setq package-enable-at-startup nil)
+
+;; If the day is Sunday, run (straight-pull-all)
+;; Only run if want to grab updates
+;; (when (equal (nth 6 (decode-time)) 0)
+;;  (straight-pull-all))
+
+;; Use straight.el for use-package expressions
+;; (straight-use-package 'use-package)
+
+;; --------------------------------------------------------------------------------
 ;; * Package Updates ----------------------------
 
 ;; Configure packages to automatically update
@@ -65,9 +91,8 @@
 ;; * Support Packages: Search, Help, Projects ----------------------------
 
 ;; Load path from shell instead of GUI defaults
-(use-package exec-path-from-shell)
-(exec-path-from-shell-initialize)
-
+;; (use-package exec-path-from-shell)
+;; (exec-path-from-shell-initialize)
 
 ;; Inline file fuzzy search
 ;; Defer loading until swiper is called
