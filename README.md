@@ -18,6 +18,7 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `i3/` - [i3 Window Manager (WM)](https://i3wm.org/)<br/>
 ------├── `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) Status bar for use with i3<br/>
 ------├── `input-remapper/` - [input-remapper](https://github.com/sezanzeb/input-remapper) to change input behaviour like key remapping<br/>
+------├── `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage commonly executed processes and manage them<br/>
 ------├── `mpv/` - [mpv](https://mpv.io/) (Media Player)<br/>
 ------├── `nvim/` - [neovim](https://neovim.io/) (Editor)<br/>
 ------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3 and in GNOME)<br/>

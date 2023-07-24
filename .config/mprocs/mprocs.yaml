@@ -1,0 +1,28 @@
+procs:
+  update-git-repos:
+    shell:
+      $select: os
+      windows: 'powershell.exe -Command "cd ~/Code; jgs"'
+      linux: "cd ~/Code; jgs"
+    env:
+      TEXT:
+        $select: os
+        windows: Windows
+        linux: Linux
+        macos: Macos
+        freebsd: FreeBSD  
+  update-all:
+    shell:
+      $select: os
+      windows: 'powershell.exe -Command "scoop update -a; scoop cleanup *"'
+      linux: "topgrade -y"
+    autostart: false
+  nvim:
+    cmd: ["nvim"]
+    autostart: false
+  emacs:
+    shell:
+      $select: os
+      windows: 'pwsh.exe -Command "emacs -nw"'
+      linux: "emacs -nw"
+    autostart: false
