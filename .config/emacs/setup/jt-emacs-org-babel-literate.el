@@ -22,46 +22,62 @@
 (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
 
 ;; --------------------------------------------------------------------------------
-;; ** Jupyter Integration
-;; Setup recommended by:
-;; - High level settings and usage: https://michaelneuper.com/posts/replace-jupyter-notebook-with-emacs-org-mode/
-;; - Detailed configuration: https://sqrtminusone.xyz/posts/2021-05-01-org-python/
-;; See detailed configuration for additional usage and configuration
-;; Defer after org is loaded
-(with-eval-after-load 'org
-	(setq
-	 org-confirm-babel-evaluate nil)
+;; ** Python and Jupyter Integration
+(defun jt/load-python-jupyter ()
+	"Load jupyter integration."
+	(interactive)
+	;; Setup recommended by:
+	;; - High level settings and usage: https://michaelneuper.com/posts/replace-jupyter-notebook-with-emacs-org-mode/
+	;; - Detailed configuration: https://sqrtminusone.xyz/posts/2021-05-01-org-python/
+	;; See detailed configuration for additional usage and configuration
+	;; Defer after org is loaded
+	(with-eval-after-load 'org
+		(setq
+		 org-confirm-babel-evaluate nil)
 
-	;; Always see inline images after babel execution
-	(add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
+		;; Always see inline images after babel execution
+		(add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
 
-  ;; When in Windows set conda-home as scoop's miniconda3 install location
-	;; When in Linux set conda-home as ""~/miniconda3"
-	(setq jt/conda-home "~/miniconda3/")
-	(when jt/windows-p
-		(setq jt/conda-home "~/scoop/apps/miniconda3/current"))
+		;; *** Conda configuration
+		(setq jt/conda-home "~/.conda/")
+		;; When in Windows: set up miniconda3
+		;; Set conda-home as scoop's miniconda3 install location
+		(when jt/windows-p
+			(setq jt/conda-home "~/scoop/apps/miniconda3/current")
+			)
+		;; *** Anaconda / Conda Environments
+		(use-package conda
+			:config
+			(setq conda-anaconda-home (expand-file-name jt/conda-home))
+			(setq conda-env-home-directory (expand-file-name jt/conda-home))
+			(setq conda-env-subdirectory "envs"))
 
-	;; *** Anaconda / Conda Environments
-	(use-package conda
-		:config
-		(setq conda-anaconda-home (expand-file-name jt/conda-home))
-		(setq conda-env-home-directory (expand-file-name jt/conda-home))
-		(setq conda-env-subdirectory "envs"))
+		;; Load activated conda environment into Emacs or base as default
+		;; To populate CONDA_DEFAULT_ENV, activate an env and open Emacs for it to detect it
+		(unless (getenv "CONDA_DEFAULT_ENV")
+			(conda-env-activate "base"))
 
-	;; Load activated conda environment into Emacs or base as default
-	;; To populate CONDA_DEFAULT_ENV, activate an env and open Emacs for it to detect it
-	(unless (getenv "CONDA_DEFAULT_ENV")
-		(conda-env-activate "base"))
+		;; Python Virtualenv manager
+		;;(when jt/linux-p
+		;;	(use-package pyvenv)
+		;;	)
 
-	;; Jupyter Language Support
-	(use-package jupyter)
+		(use-package jupyter)
 
-	;; Refresh jupyter kernelspec after an environment switch
-	(defun my/jupyter-refresh-kernelspecs ()
-		"Refresh Jupyter kernelspecs"
-		(interactive)
-		(jupyter-available-kernelspecs t))
+		;; *** Workaround ZMQ errors https://github.com/emacs-jupyter/jupyter/issues/464
+		;; Retry jupyter connection if problem persists
+		(setq jupyter-use-zmq nil)
+		;; Do not use native compilation if you get ZMQ subprocess error:
+		;; https://github.com/emacs-jupyter/jupyter/issues/297
+		;; (setq comp-deferred-compilation-deny-list (list "jupyter"))
 
+		;; Refresh jupyter kernelspec after an environment switch
+		(defun my/jupyter-refresh-kernelspecs ()
+			"Refresh Jupyter kernelspecs"
+			(interactive)
+			(jupyter-available-kernelspecs t))
+
+		)
 	)
 
 ;; --------------------------------------------------------------------------------
