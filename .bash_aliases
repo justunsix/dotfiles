@@ -16,5 +16,9 @@ alias cd1="cd .."
 alias cd2="cd ../.."
 alias cd3="cd ../../.."
 
+# emacs
+## Simpler config for terminal use
+alias emacsnw="emacs -Q -nw -l ~\.config\emacs\setup\minimal.el"
+
 # exa
 alias exa="exa --icons -lh --group-directories-first"

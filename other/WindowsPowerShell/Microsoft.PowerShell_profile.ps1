@@ -16,6 +16,12 @@ Invoke-Expression (& {
     (zoxide init --hook $hook powershell | Out-String)
 })
 
+# Aliases
+## Emacs
+## Uses function instead of alias
+## per https://stackoverflow.com/questions/4166370/how-can-i-write-a-powershell-alias-with-arguments-in-the-middle
+function emacsnw {emacs -Q -nw -l ~\.config\emacs\setup\minimal.el $args}
+
 # PSReadline
 Import-Module PSReadLine
 # Enable Predictive IntelliSense
