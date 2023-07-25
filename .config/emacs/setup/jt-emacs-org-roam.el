@@ -65,6 +65,18 @@
                (window-width . 0.23)
                (window-height . fit-window-to-buffer)))
 
+(use-package org-roam-ui
+  ;; Defer to after startup
+  :defer 0
+  ;; init called before package is loaded
+	:diminish org-roam-ui-mode
+	:config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t)
+)
+
 ;; Disable doing org-roam database sync on startup on Windows
 ;; due to query timeouts, ok to run manually after startup
 (unless jt/windows-p

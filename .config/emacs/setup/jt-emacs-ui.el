@@ -209,6 +209,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	(set-face-attribute 'treemacs-file-face nil :height 70)
 	)
 
+;; Search
+(use-package rg)
+
 (provide 'jt-emacs-ui)
 
 ;;; jt-emacs-ui.el ends here
