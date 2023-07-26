@@ -31,53 +31,58 @@
 	;; - Detailed configuration: https://sqrtminusone.xyz/posts/2021-05-01-org-python/
 	;; See detailed configuration for additional usage and configuration
 	;; Defer after org is loaded
-	(with-eval-after-load 'org
-		(setq
-		 org-confirm-babel-evaluate nil)
 
-		;; Always see inline images after babel execution
-		(add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
+	(setq
+	 org-confirm-babel-evaluate nil)
 
-		;; *** Conda configuration
-		(setq jt/conda-home "~/.conda/")
-		;; When in Windows: set up miniconda3
-		;; Set conda-home as scoop's miniconda3 install location
-		(when jt/windows-p
-			(setq jt/conda-home "~/scoop/apps/miniconda3/current")
-			)
-		;; *** Anaconda / Conda Environments
-		(use-package conda
-			:config
-			(setq conda-anaconda-home (expand-file-name jt/conda-home))
-			(setq conda-env-home-directory (expand-file-name jt/conda-home))
-			(setq conda-env-subdirectory "envs"))
+	;; Always see inline images after babel execution
+	(add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
 
-		;; Load activated conda environment into Emacs or base as default
-		;; To populate CONDA_DEFAULT_ENV, activate an env and open Emacs for it to detect it
-		(unless (getenv "CONDA_DEFAULT_ENV")
-			(conda-env-activate "base"))
-
-		;; Python Virtualenv manager
-		;;(when jt/linux-p
-		;;	(use-package pyvenv)
-		;;	)
-
-		(use-package jupyter)
-
-		;; *** Workaround ZMQ errors https://github.com/emacs-jupyter/jupyter/issues/464
-		;; Retry jupyter connection if problem persists
-		(setq jupyter-use-zmq nil)
-		;; Do not use native compilation if you get ZMQ subprocess error:
-		;; https://github.com/emacs-jupyter/jupyter/issues/297
-		;; (setq comp-deferred-compilation-deny-list (list "jupyter"))
-
-		;; Refresh jupyter kernelspec after an environment switch
-		(defun my/jupyter-refresh-kernelspecs ()
-			"Refresh Jupyter kernelspecs"
-			(interactive)
-			(jupyter-available-kernelspecs t))
-
+	;; *** Conda configuration
+	(setq jt/conda-home "~/.conda/")
+	;; When in Windows: set up miniconda3
+	;; Set conda-home as scoop's miniconda3 install location
+	(when jt/windows-p
+		(setq jt/conda-home "~/scoop/apps/miniconda3/current")
 		)
+	;; *** Anaconda / Conda Environments
+	(use-package conda
+		:config
+		(setq conda-anaconda-home (expand-file-name jt/conda-home))
+		(setq conda-env-home-directory (expand-file-name jt/conda-home))
+		(setq conda-env-subdirectory "envs"))
+
+	;; Load activated conda environment into Emacs or base as default
+	;; To populate CONDA_DEFAULT_ENV, activate an env and open Emacs for it to detect it
+	(unless (getenv "CONDA_DEFAULT_ENV")
+		(conda-env-activate "base"))
+
+	;; Python Virtualenv manager
+	;;(when jt/linux-p
+	;;	(use-package pyvenv)
+	;;	)
+	(use-package jupyter)
+
+	;; *** Workaround ZMQ errors https://github.com/emacs-jupyter/jupyter/issues/464
+	;; Retry jupyter connection if problem persists
+	(setq jupyter-use-zmq nil)
+	;; Do not use native compilation if you get ZMQ subprocess error:
+	;; https://github.com/emacs-jupyter/jupyter/issues/297
+	;; (setq comp-deferred-compilation-deny-list (list "jupyter"))
+
+  ;; Add Jupyter to org-babel-load-languages list
+	;; and load it with org-babel-do-load-languages
+	(add-to-list 'org-babel-load-languages
+							 ;; Allow usage of source block of jupyter-LANG, e.g. jupyter-python
+							 '(jupyter . t))
+	(org-babel-do-load-languages 'org-babel-load-languages)
+
+	;; Refresh jupyter kernelspec after an environment switch
+	(defun my/jupyter-refresh-kernelspecs ()
+		"Refresh Jupyter kernelspecs"
+		(interactive)
+		(jupyter-available-kernelspecs t))
+
 	)
 
 ;; --------------------------------------------------------------------------------
@@ -93,8 +98,6 @@
 	 'org-babel-load-languages
 	 '((emacs-lisp . t)
 		 (python . t)
-		 ;; Allow usage of source block of jupyter-LANG, e.g. jupyter-python
-		 (jupyter . t)
 		 (shell . t)
 		 (sql . t)
 		 ;; plantuml
