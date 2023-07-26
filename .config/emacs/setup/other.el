@@ -104,7 +104,7 @@
 ;; Show keys available for pressed commands
 (use-package which-key
   ;; Defer to after startup
-  :defer 0
+  :defer 30
   ;; init called before package is loaded
   :diminish which-key-mode
   :config

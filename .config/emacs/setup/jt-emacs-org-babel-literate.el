@@ -23,6 +23,8 @@
 
 ;; --------------------------------------------------------------------------------
 ;; ** Python and Jupyter Integration
+
+;; Loading in a function so it does not load in start up or background if not required
 (defun jt/load-python-jupyter ()
 	"Load jupyter integration."
 	(interactive)
