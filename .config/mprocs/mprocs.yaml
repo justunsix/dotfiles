@@ -1,4 +1,10 @@
 procs:
+  main-shell:
+    shell:
+      $select: os
+      windows: "pwsh.exe"
+      linux: "fish"
+    autostart: false
   update-git-repos:
     shell:
       $select: os
@@ -10,7 +16,7 @@ procs:
         windows: Windows
         linux: Linux
         macos: Macos
-        freebsd: FreeBSD  
+        freebsd: FreeBSD
   update-all-noadmin:
     shell:
       $select: os
@@ -28,6 +34,6 @@ procs:
   emacs:
     shell:
       $select: os
-      windows: 'pwsh.exe -Command "emacs -nw"'
-      linux: "emacs -nw"
+      windows: 'pwsh.exe -Command "emacs -nw -Q"'
+      linux: "emacs -nw -Q"
     autostart: false
