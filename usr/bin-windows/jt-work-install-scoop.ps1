@@ -32,5 +32,6 @@ extras/miniconda3 `
 obs-studio `
 gsudo `
 topgrade `
-mprocs
+mprocs `
+dotnet-sdk `
 uutils-coreutils
