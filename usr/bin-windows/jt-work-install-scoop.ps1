@@ -1,3 +1,5 @@
+scoop bucket add java
+scoop bucket add extras
 # Install with scoop the following packages
 # List package on each line by itself
 scoop install `
@@ -34,4 +36,5 @@ gsudo `
 topgrade `
 mprocs `
 dotnet-sdk `
+java/temurin-lts-jdk `
 uutils-coreutils
