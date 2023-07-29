@@ -17,12 +17,13 @@ procs:
         linux: Linux
         macos: Macos
         freebsd: FreeBSD
+    autostart: true        
   update-all-noadmin:
     shell:
       $select: os
       windows: 'powershell.exe -Command "scoop update -a; scoop cleanup *"'
-      linux: 'nix-env -u'
-    autostart: false
+      linux: 'nix-env -u && nix-collect-garbage --delete-older-than 30d'
+    autostart: true
   update-all-admin:
     shell:
       $select: os
