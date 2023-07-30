@@ -118,14 +118,13 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# ---------------------------------------------------
-# ---------------------------------------------------
+########################################
+########################################
 # --- My Customizations ---
 
 ################################
 #
-# Variables &
-# Environment Variables
+# * Variables & Environment Variables
 #
 ################################
 
@@ -166,15 +165,69 @@ fi
 # Moved to .bash_profile, as Ubuntu Gnome reads from there
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 
-export PATH="$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin:$HOME/.nix-profile/bin/:$HOME/usr/bin/todotxt-cli:$HOME/.local/bin:$HOME/usr/bin:$PATH"
+################################
+# * PATH
 
-if [ "$isWSLUbuntu" = "true" ]; then
-    export PATH="$HOME/Code/dotfiles/usr/bin:$PATH"
+if [ -d "$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin" ] ;
+  then PATH="$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
 fi
 
-export EMACS_SERVER_FILE="~/.emacs.d/server/server"
+if [ -d "$HOME/.nix-profile/bin" ] ;
+  then PATH="$HOME/.nix-profile/bin:$PATH"
+fi
+
+if [ -d "$HOME/usr/bin/todotxt-cli" ] ;
+  then PATH="$HOME/usr/bin/todotxt-cli:$PATH"
+fi
+
+if [ -d "$HOME/usr/bin" ] ;
+  then PATH="$HOME/usr/bin:$PATH"
+fi
+
+if [ "$isWSLUbuntu" = "true" ] ;
+    then PATH="$HOME/Code/dotfiles/usr/bin:$PATH"
+fi
+
+export PATH="$HOME/.local/bin::$PATH"
+
+################################
+# * Other Variables
+
 # Set EDITOR environment variable
 export EDITOR="vim"
+
+# "less" as manpager
+# other options could be bat, vim, nvim
+# examples at https://gitlab.com/dwt1/dotfiles/-/blob/master/.bashrc
+export MANPAGER="less"
+
+export EMACS_SERVER_FILE="~/.emacs.d/server/server"
+
+
+# ** XDG
+# Check if they are empty and set them to default values
+
+if [ -z "$XDG_CONFIG_HOME" ] ; then
+    export XDG_CONFIG_HOME="$HOME/.config"
+fi
+if [ -z "$XDG_DATA_HOME" ] ; then
+    export XDG_DATA_HOME="$HOME/.local/share"
+fi
+if [ -z "$XDG_CACHE_HOME" ] ; then
+    export XDG_CACHE_HOME="$HOME/.cache"
+fi
+
+################################
+#
+# Programs
+#
+################################
+
+# Check programs are installed before configuring them.
+# Conditionals allow reusing this .bashrc on multiple systems
+
+## cat(1) clone with syntax highlighting and git integration
+# alias bat="batcat"
 
 # Node Version Manager (NVM)
 export NVM_DIR="$HOME/.nvm"
@@ -193,18 +246,6 @@ if [ -f $NVM_DIR/nvm.sh ]; then
         nvm use default
     fi
 fi
-
-################################
-#
-# Programs
-#
-################################
-
-# Check programs are installed before configuring them.
-# Conditionals allow reusing this .bashrc on multiple systems
-
-## cat(1) clone with syntax highlighting and git integration
-# alias bat="batcat"
 
 ## Emacs
 # Ensure in emacs (start-server) is done in init or on emacs command line
@@ -311,9 +352,73 @@ if command -v conda-shell >/dev/null; then
         fi
     fi
     unset __conda_setup
+fi
 # <<< conda initialize <<<
 
-fi
+################################
+#
+# Functions
+#
+################################
+
+
+# ** Functions from https://gitlab.com/dwt1/dotfiles/-/blob/master/.bashrc
+
+### ARCHIVE EXTRACTION
+# From
+# usage: ex <file>
+ex ()
+{
+  if [ -f "$1" ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+### navigation with cd
+### move up in directories
+up () {
+  local d=""
+  local limit="$1"
+
+  # Default to limit of 1
+  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
+    limit=1
+  fi
+
+  for ((i=1;i<=limit;i++)); do
+    d="../$d"
+  done
+
+  # perform cd. Show error if cd fails
+  if ! cd "$d"; then
+    echo "Couldn't go up $limit dirs.";
+  fi
+}
+
+
+################################
+#
+# Start Up
+#
+################################
 
 if command -v fish >/dev/null; then
     # Go to fish shell on non-login shells
