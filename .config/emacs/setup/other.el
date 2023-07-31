@@ -29,6 +29,11 @@
   (package-install 'use-package))
 
 (require 'use-package)
+
+;; Emacs 29.1: If you want to be able to use 'package-install' to upgrade use-package
+;; to newer versions released on GNU ELPA, customize the new option
+;; 'package-install-upgrade-built-in' to a non-nil value.
+
 ;; All use-package will automatically install the package
 (setq use-package-always-ensure t)
 ;; Verbose useful for debugging use-package loading
@@ -217,6 +222,11 @@
 
 ;; --------------------------------------------------------------------------------
 ;; * Key Bindings ----------------------------
+
+;; In future per Emacs 29.1:
+;; New functions for defining and manipulating keystrokes.
+;; These all take the syntax defined by 'key-valid-p'
+;; e.g. Use 'keymap-global-set' instead of 'global-set-key'.
 
 ;; magit-status with F6
 (global-set-key [f6] 'magit-status)

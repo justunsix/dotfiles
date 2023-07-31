@@ -104,6 +104,12 @@
 (dolist (mode '(org-mode-hook))
 	(add-hook mode (lambda () (display-line-numbers-mode 0))))
 
+;; Show matching parentheses, if off screen shown in option specified
+;; in variable help - Emacs 29.1
+(setq show-paren-context-when-offscreen 'overlay)
+;; proceed info from proced shows details in colour, easier to read - Emacs 29.1
+(setq proced-enable-color-flag t)
+
 ;; --------------------------------------------------------------------------------
 ;; * IDE Like Settings  ----------------------------
 
@@ -273,7 +279,7 @@
 (global-set-key (kbd "<f2> <left>")  'windmove-left)
 (global-set-key (kbd "<f2> <right>") 'windmove-right)
 (global-set-key (kbd "<f2> <up>")    'windmove-up)
-(global-set-key (kbd "<f2> <down>")  'windmove-down)
+(global-set-key (kbd "<f2> <down>")  'windmove-down)'
 
 ;; Buffer Management
 
