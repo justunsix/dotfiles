@@ -54,7 +54,7 @@
 ;; Optionally post set up Emacs configurations
 ;; for example other machine specific configurations
 (setq postsetup-el-location "~/.config/emacs/setup/post-setup.el")
-(if (file-exists-p env-el-location)
+(if (file-exists-p postsetup-el-location)
 		(load postsetup-el-location)
 	)
 
