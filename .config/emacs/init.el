@@ -50,6 +50,13 @@
 ;; directory and files
 (require 'jt-emacs-dired)
 
+;; * Post Setup  ----------------------------
+;; Optionally post set up Emacs configurations
+;; for example other machine specific configurations
+(setq postsetup-el-location "~/.config/emacs/setup/post-setup.el")
+(if (file-exists-p env-el-location)
+		(load postsetup-el-location)
+	)
 
 ;; --------------------------------------------------------------------------------
 ;; Post Emacs Start GC
