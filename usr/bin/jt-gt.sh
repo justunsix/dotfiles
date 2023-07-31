@@ -4,12 +4,12 @@
 # within this folder.
 # This script will loop through each child folder and execute a git status in each one.
 
-cd ~/Code/
+cd ~/Code/ || { echo "Error accessing ~/Code directory "; exit 1; }
 
 # Loop through each folder in the current directory
 for dir in */; do
 		# Change directory into the folder
-		cd $dir
+		cd "$dir" || { echo "Error accessing directory "; exit 1; }
 
 		# If not a git repository, then skip
 		if ! git rev-parse --git-dir >/dev/null 2>&1; then

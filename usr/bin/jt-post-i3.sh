@@ -14,17 +14,18 @@ if [ -x "$(command -v redshift)" ]; then
 		fi
 		# start redshift
 		redshift -t 2200:2200 -m randr -l 43:79 &
-		
+
 fi
 
 # if xrandr program exists
 if [ -x "$(command -v xrandr)" ]; then
 		# Using xrandr, set first connected monitor as primary
-		export PRIMARY=$(xrandr | grep " connected" | head -n 1 | cut -d " " -f1)
-		xrandr --output $PRIMARY --primary
+		PRIMARY=$(xrandr | grep " connected" | head -n 1 | cut -d " " -f1)
+		export PRIMARY
+		xrandr --output "$PRIMARY" --primary
 
 		# if multiple displays are detected
-		if [ $(xrandr | grep -c " connected") -gt 1 ]; then
+		if [ "$(xrandr | grep -c " connected")" -gt 1 ]; then
 				# run screen configuration
   		  # Rotate DP-4 screen to portrait
 				xrandr --output DP-4 --rotate left

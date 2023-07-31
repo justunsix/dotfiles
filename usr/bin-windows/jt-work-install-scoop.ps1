@@ -37,4 +37,5 @@ topgrade `
 mprocs `
 dotnet-sdk `
 java/temurin-lts-jdk `
+shellcheck `
 uutils-coreutils

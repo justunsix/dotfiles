@@ -201,7 +201,7 @@ export EDITOR="vim"
 # examples at https://gitlab.com/dwt1/dotfiles/-/blob/master/.bashrc
 export MANPAGER="less"
 
-export EMACS_SERVER_FILE="~/.emacs.d/server/server"
+export EMACS_SERVER_FILE="$HOME/.emacs.d/server/server"
 
 
 # ** XDG
@@ -233,7 +233,7 @@ fi
 export NVM_DIR="$HOME/.nvm"
 
 # If NVM binary exists, load it
-if [ -f $NVM_DIR/nvm.sh ]; then
+if [ -f "$NVM_DIR/nvm.sh" ]; then
     # This loads nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     # This loads nvm bash_completion
@@ -267,7 +267,7 @@ if command -v fzf >/dev/null; then
         # Ubuntu Debian per /usr/share/doc/fzf/README.Debian
         source /usr/share/doc/fzf/examples/key-bindings.bash
         # Should be unnecessary in later apt fzf versions
-        source ~/Code/External/fzf/shell/completion.bash
+        source "$HOME/Code/External/fzf/shell/completion.bash"
         # Change fzf find files command from default find to fd-find
         # fd-find is called fdfind on Ubuntu due to a file name clash
         # per apt-cache show fd-find
@@ -294,7 +294,7 @@ fi
 if command -v keychain >/dev/null; then
     # If i3 is running or WSL Ubuntu, run keychain
     if pgrep -x "i3" >/dev/null || [ "$isWSLUbuntu" = "true" ]; then
-        eval $(keychain --eval --quiet id_ed25519)
+        eval "$(keychain --eval --quiet id_ed25519)"
         # optionally include id_rsa
         # eval $(keychain --eval --quiet id_ed25519)
     fi
@@ -371,20 +371,20 @@ ex ()
 {
   if [ -f "$1" ] ; then
     case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;
+      *.tar.bz2)   tar xjf "$1"   ;;
+      *.tar.gz)    tar xzf "$1"   ;;
+      *.bz2)       bunzip2 "$1"   ;;
+      *.rar)       unrar x "$1"   ;;
+      *.gz)        gunzip "$1"    ;;
+      *.tar)       tar xf "$1"    ;;
+      *.tbz2)      tar xjf "$1"   ;;
+      *.tgz)       tar xzf "$1"   ;;
+      *.zip)       unzip "$1"     ;;
+      *.Z)         uncompress "$1";;
+      *.7z)        7z x "$1"      ;;
+      *.deb)       ar x "$1"      ;;
+      *.tar.xz)    tar xf "$1"    ;;
+      *.tar.zst)   unzstd "$1"    ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
   else

@@ -83,9 +83,9 @@ echo 'Update nodejs version'
 echo ' '
 # nvm is a bash function, not a builtin, file or alias
 # from https://github.com/branneman/dotfiles/blob/master/scripts/updates
-if [ -d $HOME/.nvm ] && [ -s $HOME/.nvm/nvm.sh ]; then
+if [ -d "$HOME/.nvm" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
 		NVM_DIR="$HOME/.nvm"
-		source $HOME/.nvm/nvm.sh
+		source "$NVM_DIR/nvm.sh"
 		nvm install lts/*
 		nvm alias default lts/*
 		nvm use default
