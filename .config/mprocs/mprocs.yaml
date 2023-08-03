@@ -1,3 +1,5 @@
+# Note procs is not support in global config 
+# at this time per https://github.com/pvolok/mprocs/issues/69
 procs:
   main-shell:
     shell:
