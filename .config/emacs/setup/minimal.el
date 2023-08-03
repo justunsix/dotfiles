@@ -54,6 +54,16 @@
 ;; from: https://www.masteringemacs.org/article/re-builder-interactive-regexp-builder
 (setq reb-re-syntax 'string)
 
+;; Set preferred coding system to utf-8
+;;
+;; Gets around a possible issue in encoding files and *temp* buffer
+;; with message "These default coding systems were tried to encode text in the buffer ` *temp*':
+;; ... However, each of them encountered characters it couldn't encode
+;; Issue is described at:
+;; - https://emacs.stackexchange.com/questions/7162/emacs-doesnt-let-me-exit-without-selecting-a-coding-system
+;; - and at with this solution https://www.reddit.com/r/emacs/comments/ak5pc1/why_does_emacs_keep_asking_me_for_the_right/
+(prefer-coding-system 'utf-8)
+
 ;; --------------------------------------------------------------------------------
 ;; * User Interface Setup  ----------------------------
 
