@@ -24,6 +24,7 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3 and in GNOME)<br/>
 ------├── `tmux` - [tmux](https://github.com/tmux/tmux/wiki) Terminal Multiplexer<br/>
 ------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) Task manager on command line<br/>
+------├── `topgrade/` - [topgrade](https://github.com/topgrade-rs/topgrade) Updater for all things like operating systems, packages, and others<br/>
 ------├── `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings <br/>
 ------├── `kdeglobals` - [KDE](https://kde.org/) Desktop Environment appearance settings<br/>
 ------├── `starship.toml` - [Starship](https://starship.rs/) Cross-shell prompt<br/>

@@ -8,8 +8,8 @@ procs:
   update-git-repos:
     shell:
       $select: os
-      windows: 'powershell.exe -Command "cd ~/Code; jgs"'
-      linux: 'bash -c "cd ~/Code && ~/usr/bin/jt-gs.sh"'
+      windows: 'powershell.exe -Command "topgrade --only git_repos"'
+      linux: 'bash -c "topgrade --only git_repos"'
     env:
       TEXT:
         $select: os
@@ -17,7 +17,7 @@ procs:
         linux: Linux
         macos: Macos
         freebsd: FreeBSD
-    autostart: true        
+    autostart: true
   update-all-noadmin:
     shell:
       $select: os
@@ -27,7 +27,8 @@ procs:
   update-all-admin:
     shell:
       $select: os
-      windows: 'powershell.exe -Command "topgrade -y"'
+      # Disable Windows update until issues are fixed
+      windows: 'powershell.exe -Command "topgrade -y --disable system"'
       linux: "topgrade -y"
     autostart: false
   nvim:
