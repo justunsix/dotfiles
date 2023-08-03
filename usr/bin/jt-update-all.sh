@@ -100,3 +100,24 @@ if [ -f /usr/bin/clamscan ]; then
 		echo ' '
 		sudo freshclam
 fi
+
+# Update conda and its packages in base environment
+# if conda is installed
+if command -v conda >/dev/null; then
+        echo ' '
+        echo '----------------------------------------'
+        echo 'Updating conda'
+        echo ' '
+        conda update -n base conda -c anaconda --yes
+        conda update --all --yes
+fi
+
+# Update git repositories using topgrade
+# if topgrade is installed
+if command -v topgrade >/dev/null; then
+        echo ' '
+        echo '----------------------------------------'
+        echo 'Updating git repositories'
+        echo ' '
+        topgrade -y --only git_repos
+fi
