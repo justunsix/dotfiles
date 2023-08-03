@@ -1,5 +1,5 @@
-# Note procs is not support in global config 
-# at this time per https://github.com/pvolok/mprocs/issues/69
+# Note procs object is only allowed in local config
+# per procs object description at README https://github.com/pvolok/mprocs
 procs:
   main-shell:
     shell:
