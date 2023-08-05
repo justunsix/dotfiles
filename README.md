@@ -19,12 +19,13 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) Status bar for use with i3<br/>
 ------├── `input-remapper/` - [input-remapper](https://github.com/sezanzeb/input-remapper) to change input behaviour like key remapping<br/>
 ------├── `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage commonly executed processes and manage them<br/>
-------├── `mpv/` - [mpv](https://mpv.io/) (Media Player)<br/>
+------├── `mpv/` - [mpv](https://mpv.io/) media player<br/>
 ------├── `nvim/` - [neovim](https://neovim.io/) (Editor)<br/>
 ------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3 and in GNOME)<br/>
 ------├── `tmux` - [tmux](https://github.com/tmux/tmux/wiki) Terminal Multiplexer<br/>
 ------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) Task manager on command line<br/>
 ------├── `topgrade/` - [topgrade](https://github.com/topgrade-rs/topgrade) Updater for all things like operating systems, packages, and others<br/>
+------├── `vlc/` - [vlc](https://www.videolan.org/vlc/) media player<br/>
 ------├── `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings <br/>
 ------├── `kdeglobals` - [KDE](https://kde.org/) Desktop Environment appearance settings<br/>
 ------├── `starship.toml` - [Starship](https://starship.rs/) Cross-shell prompt<br/>
