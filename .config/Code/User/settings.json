@@ -9,6 +9,7 @@
   // based on the file contents when `editor.detectIndentation` is true.
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
+  "notebook.output.wordWrap": true,  
   // Insert spaces when pressing Tab. This setting is overriden
   // based on the file contents when `editor.detectIndentation` is true.
   "editor.insertSpaces": true,
@@ -162,6 +163,12 @@
   "editor.inlineSuggest.enabled": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
   // * Security
   "security.workspace.trust.untrustedFiles": "open",
   // * Other Settings

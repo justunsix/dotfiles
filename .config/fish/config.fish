@@ -75,4 +75,6 @@ if type -q conda-shell
 	# !! Contents within this block are managed by 'conda init' !!
 	eval $HOME/.conda/bin/conda "shell.fish" "hook" $argv | source
 	# <<< conda initialize <<<
+	# deactivate base environment until called
+	conda deactivate
 end
