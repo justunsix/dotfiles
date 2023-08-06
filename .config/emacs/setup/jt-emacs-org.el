@@ -48,13 +48,21 @@
 				 )
 	)
 
+;; --------------------------------------------------------------------------------
+;; * Org Mode - Other Variables --------------------------
+
 ;; Add where are your org files
 (setq org-directory jt/org-directory)
 (setq org-agenda-files (list org-directory))
+
 ;; Set org-agenda-file-regexp as a regular expression to  match all .org files
 ;; with the word task in the filename
 ;; original value was: "\\`[^.].*\\.org\\'"
+;; Filter using only org files with the name task in them
 (setq org-agenda-file-regexp "\\`[^.].*task.*\\.org\\'")
+
+;; Default note for org-capture
+(setq org-default-notes-file (expand-file-name "Journal.org" org-directory))
 
 ;; Enable logs of recent activity
 (setq org-agenda-start-with-log-mode t)
@@ -100,7 +108,7 @@
 	(set-face-attribute 'org-level-4 nil :foreground "#56a6a9")
 
   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
-  (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-block nil :inherit 'fixed-pitch)
   (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
   (set-face-attribute 'org-table nil   :inherit '(shadow fixed-pitch))
   (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
@@ -126,6 +134,23 @@
 
 ;;(use-package visual-fill-column
 ;;  :hook (org-mode . efs/org-mode-visual-fill))
+
+;; --------------------------------------------------------------------------------
+;; * Org Export to HTML --------------------------
+
+;; Ensure htmlize is installed
+;; otherwise errors like "Cannot fontify source block (htmlize.el >= 1.34 required)" will occur
+(use-package htmlize)
+
+;; html output using css instead of inline styles
+;; per https://github.com/gongzhitaao/orgcss
+;; recommend use in org files to export  #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+(setq org-html-htmlize-output-type 'css
+			org-html-head-include-default-style nil)
+
+;;  (use-package org-preview-html
+;;    :after org
+;;    )
 
 ;; --------------------------------------------------------------------------------
 ;; * Org Links --------------------------
@@ -154,10 +179,6 @@
       (setq x2 (search-backward "<"))
       (mm-url-decode-entities-string (buffer-substring-no-properties x1 x2)))))
 
-;;  (use-package org-preview-html
-;;    :after org
-;;    )
-
 ;; --------------------------------------------------------------------------------
 ;; * Images in Org  ----------------------------
 
@@ -168,7 +189,8 @@
 	:after org
 	:custom
 	(org-download-method 'directory)
-	(org-download-image-dir (concat jt/org-directory "/../media"))
+	;; org-download will store images in <org-directory>/../media
+	(org-download-image-dir (expand-file-name "../media" org-directory))
 	(org-download-heading-lvl nil)
 	(org-download-timestamp "%Y%m%d-%H%M%S_")
 	)
@@ -181,6 +203,8 @@
 
 ;; Bind org-toggle-link-display to F2 l
 (global-set-key (kbd "<f2> l") 'org-toggle-link-display)
+;; Recommend to use org capture from anywhere in Emacs
+(global-set-key (kbd "C-c c") #'org-capture)
 
 ;; --------------------------------------------------------------------------------
 ;; * Custom Functions ----------------------------
