@@ -159,6 +159,24 @@
 ;;    )
 
 ;; --------------------------------------------------------------------------------
+;; * Images in Org  ----------------------------
+
+;; Moving images from point A (external, clipboard, web, etc. to point B (org file, directory, etc.))
+;; Favour using (org-download-clipboard) to get images or org-mode attach for links
+
+(use-package org-download
+	:after org
+	:custom
+	(org-download-method 'directory)
+	(org-download-image-dir (concat jt/org-directory "/../media"))
+	(org-download-heading-lvl nil)
+	(org-download-timestamp "%Y%m%d-%H%M%S_")
+	)
+
+;; Drag-and-drop to `dired`
+(add-hook 'dired-mode-hook 'org-download-enable)
+
+;; --------------------------------------------------------------------------------
 ;; * Key Bindings ----------------------------
 
 ;; Bind org-toggle-link-display to F2 l
