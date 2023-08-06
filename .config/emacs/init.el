@@ -37,6 +37,8 @@
 (require 'jt-emacs-org-babel-literate)
 ;; org-roam related
 (require 'jt-emacs-org-roam)
+;; org srs anki
+(require 'jt-emacs-org-srs-anki)
 ;; artificial intelligence (AI)
 (require 'jt-emacs-ai)
 ;; programming languages
