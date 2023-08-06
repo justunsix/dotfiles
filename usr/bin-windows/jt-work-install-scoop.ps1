@@ -38,4 +38,5 @@ mprocs `
 dotnet-sdk `
 java/temurin-lts-jdk `
 shellcheck `
+imagemagick `
 uutils-coreutils
