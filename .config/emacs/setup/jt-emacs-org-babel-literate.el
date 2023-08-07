@@ -72,12 +72,15 @@
 	;; https://github.com/emacs-jupyter/jupyter/issues/297
 	;; (setq comp-deferred-compilation-deny-list (list "jupyter"))
 
-  ;; Add Jupyter to org-babel-load-languages list
+	;; Add Jupyter to org-babel-load-languages list
 	;; and load it with org-babel-do-load-languages
-	(add-to-list 'org-babel-load-languages
-							 ;; Allow usage of source block of jupyter-LANG, e.g. jupyter-python
-							 '(jupyter . t))
-	(org-babel-do-load-languages 'org-babel-load-languages)
+	(org-babel-do-load-languages 'org-babel-load-languages
+															 (append org-babel-load-languages
+																			 ;; Allow usage of source block of jupyter-LANG, e.g. jupyter-python
+																			 '((jupyter . t)
+																				 )
+																			 )
+															 )
 
 	;; Refresh jupyter kernelspec after an environment switch
 	(defun my/jupyter-refresh-kernelspecs ()
