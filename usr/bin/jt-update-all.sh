@@ -60,9 +60,9 @@ if command -v python3 >/dev/null; then
 				echo '----------------------------------------'
 				echo 'Updating pip packages'
 				echo ' '
-				python3 -m pip install --upgrade pip
-				python3 -m pip install --upgrade ansible
-				python3 -m pip install --upgrade tldr
+				python3 -m pip install --user --upgrade pip
+				python3 -m pip install --user --upgrade ansible
+				python3 -m pip install --user --upgrade tldr
 		fi
 fi
 
