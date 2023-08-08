@@ -218,7 +218,7 @@
       '(("n" "New Note with Org ID" plain
 				 ;; Use a function to set the filename
          (file jt/org-capture-create-filename)
-				 "#+title: %?\n#+filetags: \n")
+				 "#+title: %^{Title}%?\n#+filetags: %^g \n")
 				)
 			)
 
@@ -232,9 +232,9 @@
 ;; Inspired from https://emacs.stackexchange.com/a/40933
 (defun jt/org-capture-create-filename ()
 	"Set a filename for a new note to be used in an 'org-capture-template'."
-	(setq my-org-note--name (read-string "Enter new filename (without extension): "))
-  (setq my-org-note--time (format-time-string "%Y%m%d%H%M%S"))
-  (expand-file-name (format "%s.org" my-org-note--name) org-directory)
+	(setq jt/org-note-name (read-string "Enter new filename (without extension): "))
+  (setq jt/org-note-time (format-time-string "%Y%m%d%H%M%S"))
+  (expand-file-name (format "%s.org" jt/org-note-name) org-directory)
 	)
 
 ;; --------------------------------------------------------------------------------
