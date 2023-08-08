@@ -204,20 +204,34 @@
 ;; Bind org-toggle-link-display to F2 l
 (global-set-key (kbd "<f2> l") 'org-toggle-link-display)
 ;; Recommend to use org capture from anywhere in Emacs
+;; per org manual: https://orgmode.org/manual/Activation.html and
+;; https://sachachua.com/blog/2015/02/learn-take-notes-efficiently-org-mode/
 (global-set-key (kbd "C-c c") #'org-capture)
 
 ;; --------------------------------------------------------------------------------
 ;; * Org Capture Templates ----------------------------
 
+;; See parts of a template at:
+;; https://orgmode.org/manual/Template-elements.html
+
 (setq org-capture-templates
-      '(("n" "New Note with Org ID" entry
+      '(("n" "New Note with Org ID" plain
+				 ;; Use a function to set the filename
          (file jt/org-capture-create-filename)
-				 "* TODO %?\n  :PROPERTIES:\n  :ID: %(org-id-get-create)\n  :END:\n  #+title: \n  #+filetags:\n  %i\n"))
+				 "#+title: %?\n#+filetags: \n")
+				)
 			)
+
+;; (setq org-capture-templates
+;;       '(("n" "New Note with Org ID" entry
+;;          (file jt/org-capture-create-filename)
+;; 				 "%(format \"#+TITLE: %s\n#+STAMP: %s\n\" my-org-note--name my-org-note--time)"
+;; 				 ))
+;; 			)
 
 ;; Inspired from https://emacs.stackexchange.com/a/40933
 (defun jt/org-capture-create-filename ()
-	"Create a filename for a new note."
+	"Set a filename for a new note to be used in an 'org-capture-template'."
 	(setq my-org-note--name (read-string "Enter new filename (without extension): "))
   (setq my-org-note--time (format-time-string "%Y%m%d%H%M%S"))
   (expand-file-name (format "%s.org" my-org-note--name) org-directory)
