@@ -207,6 +207,23 @@
 (global-set-key (kbd "C-c c") #'org-capture)
 
 ;; --------------------------------------------------------------------------------
+;; * Org Capture Templates ----------------------------
+
+(setq org-capture-templates
+      '(("n" "New Note with Org ID" entry
+         (file jt/org-capture-create-filename)
+				 "* TODO %?\n  :PROPERTIES:\n  :ID: %(org-id-get-create)\n  :END:\n  #+title: \n  #+filetags:\n  %i\n"))
+			)
+
+;; Inspired from https://emacs.stackexchange.com/a/40933
+(defun jt/org-capture-create-filename ()
+	"Create a filename for a new note."
+	(setq my-org-note--name (read-string "Enter new filename (without extension): "))
+  (setq my-org-note--time (format-time-string "%Y%m%d%H%M%S"))
+  (expand-file-name (format "%s.org" my-org-note--name) org-directory)
+	)
+
+;; --------------------------------------------------------------------------------
 ;; * Custom Functions ----------------------------
 
 ;; Customize org-link-frame-setup variable to use find file
