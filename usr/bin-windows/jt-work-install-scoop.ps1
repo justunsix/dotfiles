@@ -39,4 +39,5 @@ dotnet-sdk `
 java/temurin-lts-jdk `
 shellcheck `
 imagemagick `
+fluent-reader `
 uutils-coreutils
