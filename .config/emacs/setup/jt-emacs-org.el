@@ -140,7 +140,9 @@
 
 ;; Ensure htmlize is installed
 ;; otherwise errors like "Cannot fontify source block (htmlize.el >= 1.34 required)" will occur
-(use-package htmlize)
+(use-package htmlize
+	:after org
+	)
 
 ;; html output using css instead of inline styles
 ;; per https://github.com/gongzhitaao/orgcss
