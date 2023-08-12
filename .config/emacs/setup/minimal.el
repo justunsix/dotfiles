@@ -120,6 +120,21 @@
 ;; proceed info from proced shows details in colour, easier to read - Emacs 29.1
 (setq proced-enable-color-flag t)
 
+;; --------------------
+;; ** isearch settings
+
+;; isearch: Display a counter showing the number of the current and other matches
+;; Place it before the prompt
+;; from https://protesilaos.com/codelog/2023-06-10-emacs-search-replace-basics/
+(setq isearch-lazy-count t
+			lazy-count-prefix-format "%s/%s "
+			lazy-count-suffix-format nil)
+
+;; Make regular Isearch interpret the empty space as a regular
+;; expression that matches any character between the words you give
+;; it. Does not affect isearch regex commands
+(setq search-whitespace-regexp ".*?")
+
 ;; --------------------------------------------------------------------------------
 ;; * IDE Like Settings  ----------------------------
 
