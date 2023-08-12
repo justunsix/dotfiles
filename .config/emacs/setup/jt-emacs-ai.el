@@ -1,4 +1,4 @@
-;;; jt-emacs-ai.el --- Personal artificial intelligence, copilot configurations and related packages
+;; jt-emacs-ai.el --- Personal artificial intelligence, copilot configurations and related packages
 ;;  Author: Justin Tung
 ;;; Commentary:
 ;; Configurations related to artificial intelligence
@@ -17,7 +17,7 @@
 ;; (setq copilot-node-executable (concat (getenv "NVM_BIN") "/node"))
 
 ;; Manually set node executable as NVM_BIN is not set unless launched from shell
-(setq copilot-node-executable "~/.nvm/versions/node/v18.16.1/bin/node")
+(setq copilot-node-executable "~/.nvm/versions/node/v18.17.1/bin/node")
 
 ;; if ~/.nix-profile/bin/node exists, use it instead
 (when (file-exists-p "~/.nix-profile/bin/node")
