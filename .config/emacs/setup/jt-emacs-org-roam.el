@@ -49,21 +49,21 @@
 							)
 				)
 
+	;; Set how org-roam buffer should be displayed
+	;; See other configurations and permanent side window  at:
+	;; https://www.orgroam.com/manual.html#Navigating-the-Org_002droam-Buffer
+	(add-to-list 'display-buffer-alist
+							 '("\\*org-roam\\*"
+								 (display-buffer-in-direction)
+								 (direction . right)
+								 (window-width . 0.23)
+								 (window-height . fit-window-to-buffer)))
+
   ;; Sync org-roam database
   (org-roam-db-autosync-mode)
   ;; If using org-roam-protocol
   ;;  (require 'org-roam-protocol)
   )
-
-;; Set how org-roam buffer should be displayed
-;; See other configurations and permanent side window  at:
-;; https://www.orgroam.com/manual.html#Navigating-the-Org_002droam-Buffer
-(add-to-list 'display-buffer-alist
-             '("\\*org-roam\\*"
-               (display-buffer-in-direction)
-               (direction . right)
-               (window-width . 0.23)
-               (window-height . fit-window-to-buffer)))
 
 (use-package org-roam-ui
   ;; Defer to after startup

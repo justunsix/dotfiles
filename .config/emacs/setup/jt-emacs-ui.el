@@ -11,8 +11,10 @@
 ;; not required for terminal mode
 (when (display-graphic-p)
 	;; Different backgrounds for most visited buffers and "side" buffers like messages
-	(use-package solaire-mode)
-	(solaire-global-mode +1)
+	(use-package solaire-mode
+		:config
+		(solaire-global-mode +1)
+		)
 	)
 
 ;; --------------------------------------------------------------------------------
@@ -24,7 +26,8 @@
 	;; (load-theme 'wombat t)
 
 	:init
-	(load-theme 'doom-tokyo-night t))
+	(load-theme 'doom-tokyo-night t)
+	)
 
 ;; --------------------------------------------------------------------------------
 ;; * Modeline Configuration ----------------------------
@@ -35,7 +38,8 @@
 
 (use-package doom-modeline
   :init (doom-modeline-mode 1)
-  :custom ((doom-modeline-height 15)))
+  :custom ((doom-modeline-height 15))
+	)
 
 ;; Icons used by doom-modeline
 ;; After install, run M-x nerd-icons-install-fonts to install the necessary fonts
@@ -93,6 +97,7 @@
 ;; from https://github.com/ema2159/centaur-tabs
 (use-package centaur-tabs
   :config
+	;; begin centaur-tabs config
   (setq centaur-tabs-style "wave"
         ;; tab bar height
         centaur-tabs-height 32
@@ -172,6 +177,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
       )
      ) ; end of list
     ) ; end of defun
+	(centaur-tabs-group-buffer-groups)
+	(centaur-tabs-change-fonts "Source Code Pro" 80)
+	;; end of centaur-tabs config
   :hook
   ;; Disable tabs on these modes when full screen
   (dashboard-mode . centaur-tabs-local-mode)
@@ -192,10 +200,7 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   ;;      ("g t" . centaur-tabs-forward)
   ;;      ("g T" . centaur-tabs-backward)
   ;;      )
-  ) ; end of use package
-
-(centaur-tabs-group-buffer-groups)
-(centaur-tabs-change-fonts "Source Code Pro" 80)
+  ) ; end of centaur-tabs use package
 
 ;; Add rainbow delimiters for paratheses
 (use-package rainbow-delimiters

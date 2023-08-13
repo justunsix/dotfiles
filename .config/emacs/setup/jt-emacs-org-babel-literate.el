@@ -50,37 +50,36 @@
 	;; *** Anaconda / Conda Environments
 	(use-package conda
 		:config
-		(setq conda-anaconda-home (expand-file-name jt/conda-home))
-		(setq conda-env-home-directory (expand-file-name jt/conda-home))
-		(setq conda-env-subdirectory "envs"))
+		;; Set conda directories and environments
+		(setq conda-anaconda-home (expand-file-name jt/conda-home)
+					conda-env-home-directory (expand-file-name jt/conda-home)
+					conda-env-subdirectory "envs"
+					;; Load activated conda environment into Emacs or base as default
+					;; To populate CONDA_DEFAULT_ENV, activate an env and open Emacs for it to detect it
+					(unless (getenv "CONDA_DEFAULT_ENV")
+						(conda-env-activate "base"))
+					)
+		)
 
-	;; Load activated conda environment into Emacs or base as default
-	;; To populate CONDA_DEFAULT_ENV, activate an env and open Emacs for it to detect it
-	(unless (getenv "CONDA_DEFAULT_ENV")
-		(conda-env-activate "base"))
+	(use-package jupyter
+		:config
+		;; *** Workaround ZMQ errors https://github.com/emacs-jupyter/jupyter/issues/464
+		;; Retry jupyter connection if problem persists
+		(setq jupyter-use-zmq nil)
+		;; Do not use native compilation if you get ZMQ subprocess error:
+		;; https://github.com/emacs-jupyter/jupyter/issues/297
+		;; (setq comp-deferred-compilation-deny-list (list "jupyter"))
 
-	;; Python Virtualenv manager
-	;;(when jt/linux-p
-	;;	(use-package pyvenv)
-	;;	)
-	(use-package jupyter)
-
-	;; *** Workaround ZMQ errors https://github.com/emacs-jupyter/jupyter/issues/464
-	;; Retry jupyter connection if problem persists
-	(setq jupyter-use-zmq nil)
-	;; Do not use native compilation if you get ZMQ subprocess error:
-	;; https://github.com/emacs-jupyter/jupyter/issues/297
-	;; (setq comp-deferred-compilation-deny-list (list "jupyter"))
-
-	;; Add Jupyter to org-babel-load-languages list
-	;; and load it with org-babel-do-load-languages
-	(org-babel-do-load-languages 'org-babel-load-languages
-															 (append org-babel-load-languages
-																			 ;; Allow usage of source block of jupyter-LANG, e.g. jupyter-python
-																			 '((jupyter . t)
+		;; Add Jupyter to org-babel-load-languages list
+		;; and load it with org-babel-do-load-languages
+		(org-babel-do-load-languages 'org-babel-load-languages
+																 (append org-babel-load-languages
+																				 ;; Allow usage of source block of jupyter-LANG, e.g. jupyter-python
+																				 '((jupyter . t)
+																					 )
 																				 )
-																			 )
-															 )
+																 )
+		)
 
 	;; Refresh jupyter kernelspec after an environment switch
 	(defun my/jupyter-refresh-kernelspecs ()
@@ -132,7 +131,7 @@
 	;; Hashicorp Configuration Language (HCL)
 	(add-to-list 'org-structure-template-alist '("hcl" . "src hcl"))
 	(add-to-list 'org-structure-template-alist '("ps1" . "src powershell"))
-	;; Replaced by yassnippet due to complexity
+	;; Replaced by yassnippet due to complexity in the template
 	;; (add-to-list 'org-structure-template-alist '("plant" . "src plantuml"))
 
 	;; Other
@@ -141,13 +140,12 @@
 	;;  (add-to-list 'org-structure-template-alist '("ts" . "src typescript"))
 	;;  (add-to-list 'org-structure-template-alist '("go" . "src go"))
 
+	;; ** PlantUML config
 	(add-to-list
 	 'org-src-lang-modes '("plantuml" . plantuml))
-
 	(setq
 	 org-plantuml-jar-path "~/.config/emacs/plantuml/plantuml.jar"
    python-indent-offset 2)
-
 
 	)
 

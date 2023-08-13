@@ -21,6 +21,8 @@
   ;; Load org package when these other commands are called
   :commands (org-capture org-agenda)
   :config
+	;; Begin org config
+
   ;; Debug message to check when org mode is loading
   ;; (message "Loading Org Mode...")
 
@@ -33,6 +35,37 @@
 	 org-startup-with-inline-images t
 	 )
   (efs/org-font-setup)
+
+	;; Add where are your org files
+	(setq org-directory jt/org-directory
+				org-agenda-files (list org-directory)
+				;; Set org-agenda-file-regexp as a regular expression to  match all .org files
+				;; with the word task in the filename
+				;; original value was: "\\`[^.].*\\.org\\'"
+				;; Filter using only org files with the name task in them
+				org-agenda-file-regexp "\\`[^.].*task.*\\.org\\'"
+				;; Default note for org-capture
+				org-default-notes-file (expand-file-name "Journal.org" org-directory)
+				org-agenda-start-with-log-mode t
+				;; When task is done, log time
+				org-log-done 'time
+				org-log-into-drawer t
+				;; Prepare for image resizing
+				org-image-actual-width t
+				)
+
+	(setq org-todo-keywords
+				'((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
+					(sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
+
+	;; Set org priorities ranging from A to J
+	(setq  org-enable-priority-commands t
+				 org-highest-priority ?A
+				 org-default-priority ?J
+				 org-lowest-priority ?J
+				 )
+
+	;; end of org config
   :bind (("C-c a" . org-agenda)
          ;; Bind C-c l to my-org-insert-link similar to org-insert-link
          ("C-c l" . my-org-insert-link)
@@ -47,42 +80,6 @@
 							 )
 				 )
 	)
-
-;; --------------------------------------------------------------------------------
-;; * Org Mode - Other Variables --------------------------
-
-;; Add where are your org files
-(setq org-directory jt/org-directory)
-(setq org-agenda-files (list org-directory))
-
-;; Set org-agenda-file-regexp as a regular expression to  match all .org files
-;; with the word task in the filename
-;; original value was: "\\`[^.].*\\.org\\'"
-;; Filter using only org files with the name task in them
-(setq org-agenda-file-regexp "\\`[^.].*task.*\\.org\\'")
-
-;; Default note for org-capture
-(setq org-default-notes-file (expand-file-name "Journal.org" org-directory))
-
-;; Enable logs of recent activity
-(setq org-agenda-start-with-log-mode t)
-;; When task is done, log time
-(setq org-log-done 'time)
-(setq org-log-into-drawer t)
-
-(setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!)")
-        (sequence "BACKLOG(b)" "PLAN(p)" "READY(r)" "ACTIVE(a)" "REVIEW(v)" "WAIT(w@/!)" "HOLD(h)" "|" "COMPLETED(c)" "CANC(k@)")))
-
-;; Prepare for image resizing
-(setq org-image-actual-width t)
-
-;; Set org priorities ranging from A to J
-(setq  org-enable-priority-commands t
-       org-highest-priority ?A
-       org-default-priority ?J
-       org-lowest-priority ?J
-       )
 
 ;; Configure org font faces
 (defun efs/org-font-setup ()
@@ -142,13 +139,14 @@
 ;; otherwise errors like "Cannot fontify source block (htmlize.el >= 1.34 required)" will occur
 (use-package htmlize
 	:after org
+	:config
+	;; html output using css instead of inline styles
+	;; per https://github.com/gongzhitaao/orgcss
+	;; recommend use in org files to export
+	;; #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+	(setq org-html-htmlize-output-type 'css
+				org-html-head-include-default-style nil)
 	)
-
-;; html output using css instead of inline styles
-;; per https://github.com/gongzhitaao/orgcss
-;; recommend use in org files to export  #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
-(setq org-html-htmlize-output-type 'css
-			org-html-head-include-default-style nil)
 
 ;;  (use-package org-preview-html
 ;;    :after org
@@ -189,6 +187,9 @@
 
 (use-package org-download
 	:after org
+	:config
+	;; Drag-and-drop to `dired`
+	(add-hook 'dired-mode-hook 'org-download-enable)
 	:custom
 	(org-download-method 'directory)
 	;; org-download will store images in <org-directory>/../media
@@ -196,9 +197,6 @@
 	(org-download-heading-lvl nil)
 	(org-download-timestamp "%Y%m%d-%H%M%S_")
 	)
-
-;; Drag-and-drop to `dired`
-(add-hook 'dired-mode-hook 'org-download-enable)
 
 ;; --------------------------------------------------------------------------------
 ;; * Key Bindings ----------------------------

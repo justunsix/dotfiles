@@ -39,10 +39,14 @@
 (require 'jt-emacs-org-roam)
 ;; org srs anki
 (require 'jt-emacs-org-srs-anki)
+;; org present
+(require 'jt-emacs-org-present)
 ;; artificial intelligence (AI)
 (require 'jt-emacs-ai)
 ;; programming languages
 (require 'jt-emacs-languages)
+(require 'jt-emacs-languages-python)
+(require 'jt-emacs-languages-java)
 ;; terminal, shell
 (require 'jt-emacs-terminal)
 ;; spelling of words

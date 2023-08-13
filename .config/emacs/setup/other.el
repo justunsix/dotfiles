@@ -28,6 +28,10 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
+;; Allow imenu to find use-package and require forms
+;; Must be enabled before require 'use-package
+(setq use-package-enable-imenu-support t)
+
 (require 'use-package)
 
 ;; Emacs 29.1: If you want to be able to use 'package-install' to upgrade use-package
@@ -35,13 +39,12 @@
 ;; 'package-install-upgrade-built-in' to a non-nil value.
 
 ;; All use-package will automatically install the package
-(setq use-package-always-ensure t)
-;; Verbose useful for debugging use-package loading
-(setq use-package-verbose t)
-
-;; Always defer packages unless explicitly demanded on startup
-;; In case of errors, force loading on packages with `demand t`
-(setq user-package-always-defer t)
+(setq use-package-always-ensure t
+			;; Always defer packages unless explicitly demanded on startup
+			;; In case of errors, force loading on packages with `demand t`
+			user-package-always-defer t
+			;; If verbose useful for debugging use-package loading
+			use-package-verbose nil)
 
 ;; --------------------------------------------------------------------------------
 ;; * Straight Package Management ----------------------------
@@ -138,14 +141,16 @@
 ;; Projectile - source control repository project management
 (use-package projectile
   :diminish projectile-mode
-  :config (projectile-mode)
-  :custom ((projectile-completion-system 'ivy))
+  :config
+	(projectile-mode)
+	;; NOTE: Set this to the folder where you keep your Git repositories and projects
+	(setq projectile-project-search-path jt/project-search-path
+				projectile-switch-project-action #'projectile-dired)
+  :custom
+	((projectile-completion-system 'ivy))
+
   )
 
-;; NOTE: Set this to the folder where you keep your Git repositories and projects
-(setq projectile-project-search-path jt/project-search-path)
-
-(setq projectile-switch-project-action #'projectile-dired)
 
 (projectile-mode +1)
 ;; Recommended keymap prefix on macOS
@@ -249,20 +254,20 @@
 (use-package dashboard
   :ensure t
   :config
-  (dashboard-setup-startup-hook))
-
-(setq dashboard-center-content t
-      ; Set project package in use
-      dashboard-projects-backend 'projectile
-      ; Add navigator
-      dashboard-set-navigator t
-       ; Display packages and load time
-      dashboard-set-init-info t)
-(setq dashboard-items '((recents  . 10)
-                        (projects . 8)
-                        (bookmarks . 20)
-                        ; (agenda . 5)
-                        ))
+  (dashboard-setup-startup-hook)
+	(setq dashboard-center-content t
+																				; Set project package in use
+				dashboard-projects-backend 'projectile
+																				; Add navigator
+				dashboard-set-navigator t
+																				; Display packages and load time
+				dashboard-set-init-info t)
+	(setq dashboard-items '((recents  . 10)
+													(projects . 8)
+													(bookmarks . 20)
+																				; (agenda . 5)
+													))
+	)
 
 ;; * Bongo ----------------------------
 

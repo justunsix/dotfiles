@@ -25,15 +25,14 @@
 					treemacs-indentation 1
 		 )
 		)
+	;; Set Python on Windows
+	(when jt/windows-p
+		(setq treemacs-python-executable (executable-find "python"))
+		)
 	:bind
  	(:map global-map
 				([f8] . treemacs)
 				)
-	)
-
-;; Set Python on Windows
-(when jt/windows-p
-	(setq treemacs-python-executable (executable-find "python"))
 	)
 
 ;; File icons in dired mode if graphical environment
@@ -41,7 +40,8 @@
 ;; https://emacs.stackexchange.com/questions/71269/all-the-icons-are-all-white-in-dired
 (use-package treemacs-icons-dired
   :if (display-graphic-p)
-  :hook (dired-mode . treemacs-icons-dired-mode))
+  :hook (dired-mode . treemacs-icons-dired-mode)
+	)
 
 ;; Open files in dired with external programs
 (use-package dired-open

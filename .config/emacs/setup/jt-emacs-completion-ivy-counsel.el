@@ -36,24 +36,23 @@
          ("C-d" . ivy-reverse-i-search-kill))
   :config
   ;; Set up keybindings
-  (ivy-mode 1))
-
-;; Remove ^ which Ivy uses as a default input in counsel-M-x
-;; so search will be by substring rather than requiring the command
-;; to begin with the first search string
-;; https://emacs.stackexchange.com/questions/38841/counsel-m-x-always-shows
-(setcdr (assoc 'counsel-M-x ivy-initial-inputs-alist) "")
+  (ivy-mode 1)
+	;; Remove ^ which Ivy uses as a default input in counsel-M-x
+	;; so search will be by substring rather than requiring the command
+	;; to begin with the first search string
+	;; https://emacs.stackexchange.com/questions/38841/counsel-m-x-always-shows
+	(setcdr (assoc 'counsel-M-x ivy-initial-inputs-alist) "")
+	;; For Ivy completions, ignore order for regex to allow matches
+	;; to be in any order. See options and defaults at https://oremacs.com/swiper/
+	(setq ivy-re-builders-alist
+				'((t . ivy--regex-ignore-order)))
+	)
 
 ;; Completion descriptions for commands
 (use-package ivy-rich
   :after ivy
   :init
   (ivy-rich-mode 1))
-
-;; For Ivy completions, ignore order for regex to allow matches
-;; to be in any order. See optiosn and defaults at https://oremacs.com/swiper/
-(setq ivy-re-builders-alist
-    '((t . ivy--regex-ignore-order)))
 
 ;; Show most used commands using M-x, used by counsel M-x
 (use-package amx
