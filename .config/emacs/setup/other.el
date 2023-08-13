@@ -93,6 +93,9 @@
   ;; Around 7pm, check for updates
   ;; (auto-package-update-at-time "19:20"))
 	;; Trigger explicitly `M-x auto-package-update-now` to update
+
+	;; Delete old versions after updates
+	(setq auto-package-update-delete-old-versions t)
 )
 
 ;; --------------------------------------------------------------------------------
