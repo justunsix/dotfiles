@@ -125,6 +125,8 @@ if command -v conda >/dev/null; then
         echo ' '
         conda update -n base conda -c anaconda --yes
         conda update --all --yes
+				# clean unused packages
+				conda clean --all --yes
 fi
 
 # Update git repositories using topgrade
