@@ -1,5 +1,9 @@
 # Script to synchronize dotfiles periodically
 
+#############
+# Functions #
+#############
+
 # Function to copy source path to destination path
 # Path can be a file or directory
 # If directory, copy recursively
@@ -12,16 +16,20 @@ function Copy-SourceToDestination {
   )
   if (Test-Path $source) {
     if (Test-Path $destination) {
-      Write-Host "Copying $source to $destination"
+      Write-Host "+ Copying $source to $destination"
       Copy-Item -Recurse -Path $source -Destination $destination -Force
     } else {
-      Write-Host "Copying $source to $destination"
+      Write-Host "+ Copying $source to $destination"
       Copy-Item -Recurse -Path $source -Destination $destination
     }
   } else {
-    Write-Host "Could not find $source"
+    Write-Host "= Could not find $source"
   }
 }
+
+#############
+# Variables #
+#############
 
 # Array of dotfiles to remove
 $dotfiles_to_be_removed = @(
@@ -30,49 +38,53 @@ $dotfiles_to_be_removed = @(
   "$env:USERPROFILE\.emacs.d"
 )
 
-# For each item in $dotfiles_to_be_removed, remove file if it exists
-Write-Host "Removing dotfiles not required"
-foreach ($dotfile in $dotfiles_to_be_removed) {
-  if (Test-Path $dotfile) {
-    Write-Host "Removing $dotfile"
-    Remove-Item -Path $dotfile -Force
-  } else {
-    Write-Host "Could not find $dotfile"
-  }
-}
-
 $dotfiles_directories = @(
-  "$env:USERPROFILE\.config\", 
+  "$env:USERPROFILE\.config\",
   "$env:USERPROFILE\usr\bin",
   "$env:USERPROFILE\AppData\Local\nvim",
   "$env:USERPROFILE\AppData\Roaming\topgrade",
   "$env:USERPROFILE\.config\emacs"
 )
 
+# Array of dotfiles to synchronize with tuples of source and destination
+$dotfiles_to_be_synchronized = @(
+		("$env:USERPROFILE\Code\dotfiles\.config\emacs", "$env:USERPROFILE\.config"),
+		("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
+		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
+		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
+		("$env:USERPROFILE\Code\dotfiles\usr\bin-windows\*", "$env:USERPROFILE\usr\bin"),
+		("$env:USERPROFILE\Code\dotfiles\.gitconfig", "$env:USERPROFILE")
+)
+
+###############
+# Main Script #
+###############
+
+# For each item in $dotfiles_to_be_removed, remove file if it exists
+Write-Host "`n--- Removing dotfiles not required"
+foreach ($dotfile in $dotfiles_to_be_removed) {
+  if (Test-Path $dotfile) {
+    Write-Host "- Removing $dotfile"
+    Remove-Item -Path $dotfile -Force
+  } else {
+			Write-Host "= Could not find $dotfile : skipping"
+  }
+}
+
 # Create directories if they do not exist already
-Write-Host "Creating dotfiles directories if they do not exist"
+Write-Host "`n--- Creating dotfiles directories if they do not exist"
 foreach ($directory in $dotfiles_directories) {
   if (Test-Path $directory) {
-    Write-Host "Found $directory"
+    Write-Host "= Found $directory"
   } else {
-    Write-Host "Creating $directory"
+    Write-Host "+ Creating $directory"
     New-Item -Path $directory -ItemType Directory
   }
 }
 
-# Array of dotfiles to synchronize with tuples of source and destination
-$dotfiles_to_be_synchronized = @(
-  ("$env:USERPROFILE\Code\dotfiles\.config\emacs", "$env:USERPROFILE\.config"),
-  ("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
-  ("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
-  ("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
-  ("$env:USERPROFILE\Code\dotfiles\usr\bin-windows\*", "$env:USERPROFILE\usr\bin")
-  ("$env:USERPROFILE\Code\dotfiles\.gitconfig", "$env:USERPROFILE\.gitconfig")
-)
-
 # Synchronize Dotfiles
 # For each tuple in $dotfiles_to_be_synchronized, copy source to destination
-Write-Host "Synchronizing dotfiles"
+Write-Host "`n--- Synchronizing dotfiles"
 foreach ($dotfile in $dotfiles_to_be_synchronized) {
   Copy-SourceToDestination -source $dotfile[0] -destination $dotfile[1]
 }
