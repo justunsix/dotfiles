@@ -40,4 +40,6 @@ java/temurin-lts-jdk `
 shellcheck `
 imagemagick `
 fluent-reader `
+bleachbit `
+ccleaner `
 uutils-coreutils
