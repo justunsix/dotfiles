@@ -159,7 +159,7 @@
 	:config
 	(add-hook 'csv-mode-hook 'csv-highlight)
 	;; csv-align-mode helps with aligning columns on a set width
-  ;; (add-hook 'csv-mode-hook 'csv-highlight)
+  ;; (add-hook 'csv-mode-hook 'csv-align-mode)
 	;; truncate long lines in a buffer
 	;; (add-hook 'csv-mode-hook '(lambda () (interactive) (toggle-truncate-lines nil))))
 	)
