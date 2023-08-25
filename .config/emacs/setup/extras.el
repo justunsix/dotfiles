@@ -144,7 +144,6 @@
 ;; C-p activates (deer-from-dired), but conflicts with global key C-p
 
 ;; Neotree
-
 (use-package neotree
 	)
 

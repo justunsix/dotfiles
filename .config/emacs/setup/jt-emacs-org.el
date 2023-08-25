@@ -77,6 +77,8 @@
 				 (:map org-mode-map
 							 ("C-c C-o" . jt/org-open-at-point)
 							 ("C-b" . 'jt/org-boldify-region)
+							 ;; ace-link package keybinding
+							 ("M-o" . ace-link-org)
 							 )
 				 )
 	)

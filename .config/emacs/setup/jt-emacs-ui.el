@@ -202,6 +202,9 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
   ;;      )
   ) ; end of centaur-tabs use package
 
+;; --------------------------------------------------------------------------------
+;; * Search, Paratheses, Tree view, Links  ----------------------------
+
 ;; Add rainbow delimiters for paratheses
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
@@ -216,6 +219,16 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 
 ;; Search
 (use-package rg)
+
+;; Links
+;; Selecting a link to go into to
+;; Links become hints in Info-mode or help-mode or woman-mode or org-mode or
+;; eww-mode or compilation-mode or goto-address-mode buffer
+(use-package ace-link
+	:config
+	(ace-link-setup-default)
+	)
+
 
 (provide 'jt-emacs-ui)
 
