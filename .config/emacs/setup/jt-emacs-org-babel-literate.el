@@ -144,8 +144,7 @@
 	(add-to-list
 	 'org-src-lang-modes '("plantuml" . plantuml))
 	(setq
-	 org-plantuml-jar-path "~/.config/emacs/plantuml/plantuml.jar"
-   python-indent-offset 2)
+	 org-plantuml-jar-path "~/.config/emacs/plantuml/plantuml.jar")
 
 	)
 

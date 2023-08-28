@@ -97,10 +97,16 @@
 (use-package plantuml-mode
 	:mode "\\.plantuml\\'"
 	:config
-	(setq plantuml-executable-path "/usr/bin/plantuml"
-				plantuml-default-exec-mode 'executable
-				plantuml-output-type "png"
-				)
+	(setq
+	 plantuml-output-type "png"
+	 ;; Plantuml executable config
+	 ;; from https://github.com/skuro/plantuml-mode#execution-modes
+	 plantuml-jar-path "~/.config/emacs/plantuml/plantuml.jar"
+	 plantuml-default-exec-mode 'jar
+	 ;; Alternative executable using binary
+	 ;; plantuml-executable-path "/usr/bin/plantuml"
+	 ;; plantuml-default-exec-mode 'executable
+	 )
 	)
 
 (use-package json-mode

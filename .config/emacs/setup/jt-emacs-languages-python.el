@@ -13,6 +13,10 @@
 ;;   -  or python3 -m pip install install pyright
 ;; - $HOME/.local/bin in your PATH
 
+;; python.el
+;; Default indentation
+(setq python-indent-offset 2)
+
 (use-package python-mode
 	;; prevent loading of python.el
 	:ensure t
