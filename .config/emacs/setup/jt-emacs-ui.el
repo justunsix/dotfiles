@@ -217,8 +217,11 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	(set-face-attribute 'treemacs-file-face nil :height 70)
 	)
 
-;; Search
+;; Search file contents use ripgrep
+;; https://rgel.readthedocs.io/en/latest/
 (use-package rg)
+;; Include hidden files in ripgrep calls
+;; (setq rg-command-line-flags '("--hidden"))
 
 ;; Links
 ;; Selecting a link to go into to
