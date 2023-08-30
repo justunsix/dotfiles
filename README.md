@@ -8,11 +8,11 @@ This repository contains my personal dotfiles like configurations for software d
 
 /<br/>
 ├── `.config/` configuration files for the below mentioned programs<br/>
-------├── `Code/User/` - [Visual Studio Code](https://code.visualstudio.com/) (Editor)<br/>
-------├── `cool-retro-term/` - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) (Terminal Emulator)<br/>
-------├── `copyq/` - [copyq](https://hluk.github.io/CopyQ/) (Clipboard Manager)<br/>
-------├── `dunst/` - [dunst](https://dunst-project.org/) (Notification daemon, for use with i3)<br/>
-------├── `emacs/` - [Emacs](https://www.gnu.org/software/emacs/) (Editor)<br/>
+------├── `Code/User/` - [Visual Studio Code](https://code.visualstudio.com/) Editor<br/>
+------├── `cool-retro-term/` - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) Terminal Emulator<br/>
+------├── `copyq/` - [copyq](https://hluk.github.io/CopyQ/) Clipboard Manager<br/>
+------├── `dunst/` - [dunst](https://dunst-project.org/) Notification daemon, for use with i3<br/>
+------├── `emacs/` - [Emacs](https://www.gnu.org/software/emacs/) Editor<br/>
 ------├── `fish/` - [Fish](https://fishshell.com/) shell<br/>
 ------├── `fontconfig/conf.d/` - Fonts managed by [Nix package manager](https://nixos.org/)<br/>
 ------├── `i3/` - [i3 Window Manager (WM)](https://i3wm.org/)<br/>
@@ -20,8 +20,8 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `input-remapper/` - [input-remapper](https://github.com/sezanzeb/input-remapper) to change input behaviour like key remapping<br/>
 ------├── `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage commonly executed processes and manage them<br/>
 ------├── `mpv/` - [mpv](https://mpv.io/) media player<br/>
-------├── `nvim/` - [neovim](https://neovim.io/) (Editor)<br/>
-------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) (Application launcher, Window switcher for use with i3 and in GNOME)<br/>
+------├── `nvim/` - [neovim](https://neovim.io/) Editor<br/>
+------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) Application launcher, Window switcher for use with i3 and in GNOME<br/>
 ------├── `tmux` - [tmux](https://github.com/tmux/tmux/wiki) Terminal Multiplexer<br/>
 ------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) Task manager on command line<br/>
 ------├── `topgrade/` - [topgrade](https://github.com/topgrade-rs/topgrade) Updater for things like operating systems, software, packages, and others<br/>
