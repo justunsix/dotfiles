@@ -57,6 +57,7 @@ This repository contains my personal dotfiles like configurations for software d
   - [Bash](https://www.gnu.org/software/bash/)
     - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) library
   - [Fish](https://fishshell.com/)
+  - [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell)
   - Prompt: [Starship](https://starship.rs/)
 
 ### Programs
@@ -66,13 +67,15 @@ This repository contains my personal dotfiles like configurations for software d
   - [Emacs](https://www.gnu.org/software/emacs/)
   - [Visual Studio Code](https://code.visualstudio.com/)
   - [neovim](https://neovim.io/)
-- Video player: [mpv](https://mpv.io/)
+- Video player: [mpv](https://mpv.io/) and [vlc](https://www.videolan.org/vlc/)
 
 - Window switcher/application launcher: [rofi](https://github.com/davatorium/rofi)
 - Clipboard manager: [copyq](https://hluk.github.io/CopyQ/)
 - Terminal emulator: [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term)
 - Notification daemon: [dunst](https://dunst-project.org/)
-- Task management: [todotxt](https://github.com/todotxt/todo.txt-cli)
+- Personal Task management: [todotxt](https://github.com/todotxt/todo.txt-cli)
+- Parallel commands manager: [mprocs](https://github.com/pvolok/mprocs)
+- Updates: [topgrade](https://github.com/topgrade-rs/topgrade)
 
 ## How Dotfiles are Managed
 
