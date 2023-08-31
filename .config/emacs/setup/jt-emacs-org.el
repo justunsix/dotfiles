@@ -43,7 +43,7 @@
 				;; with the word task in the filename
 				;; original value was: "\\`[^.].*\\.org\\'"
 				;; Filter using only org files with the name task in them
-				org-agenda-file-regexp "\\`[^.].*task.*\\.org\\'"
+				org-agenda-file-regexp "\\`[^.].*Task.*\\.org\\'"
 				;; Default note for org-capture
 				org-default-notes-file (expand-file-name "Journal.org" org-directory)
 				org-agenda-start-with-log-mode t
