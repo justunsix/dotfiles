@@ -1,4 +1,25 @@
+#+title: Visual Studio Code settings.json configuration file
+#+PROPERTY: header-args:json :tangle settings.json :mkdirp yes
+
+Org Literate configuration file for Visual Studio Code user's =settings.json=.
+
+- This configuration is using a literate configuration to:
+  - Easier to have settings in sections and maintain sections
+  - Add more documentation about sections like extension settings
+- Reopen this file if =org-babel-tangle= is not writing to the JSON file.
+
+* Begin Configuration
+
+#+begin_src json
+
 {
+
+#+end_src
+
+* System Settings
+
+#+begin_src json
+
   // * System
   "telemetry.telemetryLevel": "off",
   // ** System - Spacing
@@ -13,7 +34,21 @@
   // will be detected based on the file contents. Set to false to keep
   // the values you've explicitly set, above.
   // "editor.detectIndentation": false,
+
+#+end_src
+
+* Languages
+
+#+begin_src json
+
   // * Languages
+
+#+end_src
+
+** Markdown
+
+#+begin_src json
+
   // ** Markdown
   // Enable markdown paste links and files - disabled since it was pasting images instead of text for rich text pastes
   // "markdown.experimental.editor.pasteLinks.enabled": true,
@@ -47,6 +82,13 @@
   // 	"localcomputer/codeworkspace/light-default.css",
   // 	"localcomputer/codeworkspace/dark-material.css"
   // ],
+
+#+end_src
+
+** Python
+
+#+begin_src json
+
   // ** Python
   "python.analysis.autoImportCompletions": true,
   "python.analysis.fixAll": [
@@ -56,6 +98,13 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
+
+#+end_src
+
+** Notebooks, CSV, JSON, Shell Script (Bash), YAML, XML
+
+#+begin_src json
+
   // ** Notebooks
   "notebook.output.textLineLimit": 100,
   "notebook.output.wordWrap": true,
@@ -77,21 +126,56 @@
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
+
+#+end_src
+
+** SQL
+
+#+begin_src json
+
   // ** SQL
   // *** Extension: MSSQL
   "mssql.objectExplorer.groupBySchema": false,
+
+#+end_src
+
+** Java
+
+#+begin_src json
+
   // ** Java
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+
+#+end_src
+
+** AutoHotKey (AHK)
+
+#+begin_src json
+
   // ## Extension: AutoHotKey (AHK)
   // Default location installed by chocolatey
   "ahk++.file.compilePath": "C:\\Program Files\\AutoHotkey\\Compiler\\Ahk2Exe.exe",
   "ahk++.file.helpPath": "C:\\Users\\TungJ2\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey.chm",
   "ahk++.file.executePath": "C:\\Program Files\\AutoHotkey\\AutoHotkeyU64.exe",
+
+#+end_src
+
+* Git - Distributed Version Control System
+
+#+begin_src json
+
   // * Git
   // Is git enabled and path to git binaries
   "git.enabled": true,
   "git.enableSmartCommit": true,
   "git.confirmSync": false,
+
+#+end_src
+
+* GitHub Copilot
+
+#+begin_src json
+
   // ** Extension: GitHub Copilot
   "github.copilot.enable": {
     "*": true,
@@ -99,6 +183,13 @@
     "plaintext": true,
     "markdown": true
   },
+
+#+end_src
+
+* Terminal
+
+#+begin_src json
+
   // * Terminal
   // Integrated Terminal Settings and Configurations
   "terminal.integrated.profiles.windows": {
@@ -158,28 +249,56 @@
       // "terminal.ansiYellow":"#FDA331"
     }
   },
+
+#+end_src
+
+* User Interface
+
+#+begin_src json
+
   // * User Interface
   "workbench.colorTheme": "Visual Studio Dark",
-  "window.titleBarStyle": "custom",
-  // Turn on line numbers, other options are relative, interval and off
-  // per https://code.visualstudio.com/docs/getstarted/settings
-  "editor.lineNumbers": "on",
-  "settingsSync.ignoredExtensions": [],
-  "settingsSync.ignoredSettings": [
-    "http.proxy",
-    "ahk++.file.compilePath",
-    "ahk++.file.executePath",
-    "ahk++.file.helpPath"
-  ],
+    "window.titleBarStyle": "custom",
+    // Turn on line numbers, other options are relative, interval and off
+    // per https://code.visualstudio.com/docs/getstarted/settings
+    "editor.lineNumbers": "on",
+    "settingsSync.ignoredExtensions": [],
+    "settingsSync.ignoredSettings": [
+      "http.proxy",
+      "ahk++.file.compilePath",
+      "ahk++.file.executePath",
+      "ahk++.file.helpPath"
+    ],
+
+#+end_src
+
+** Font
+
+#+begin_src json
+
   // ** Font
   // font size for editors
   "editor.fontSize": 14,
+
+#+end_src
+
+* Spelling
+
+#+begin_src json
+
   // * Spelling
   // ** Extension: SpellRight, Spell Checker
   "spellright.language": [
     "en-GB"
   ],
   "spellright.suggestionsInHints": false,
+
+#+end_src
+
+* Search
+
+#+begin_src json
+
   // * Search
   // Excludes from Search
   "search.exclude": {
@@ -192,14 +311,44 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
+
+#+end_src
+
+* Input and Output
+
+#+begin_src json
+
   // * Input and Output
   "editor.copyWithSyntaxHighlighting": true,
   "editor.accessibilitySupport": "off",
   "files.autoSave": "afterDelay",
+
+#+end_src
+
+* Editing
+
+#+begin_src json
+
   // * Editing
   "editor.suggestSelection": "first",
   "editor.inlineSuggest.enabled": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+#+end_src
+
+* Security
+
+#+begin_src json
+
   // * Security
   "security.workspace.trust.untrustedFiles": "open",
+
+#+end_src
+
+
+* End Configuration
+
+#+begin_src json
+
 }
+
+#+end_src
