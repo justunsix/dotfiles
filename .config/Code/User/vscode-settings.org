@@ -74,9 +74,6 @@ Org Literate configuration file for Visual Studio Code user's =settings.json=.
   "pasteImage.forceUnixStyleSeparator": true,
   "pasteImage.prefix": "",
   "pasteImage.namePrefix": "${currentFileNameWithoutExt}-",
-  // Update links in markdown when files are moved or renamed in VS Code explorer.
-  // https://code.visualstudio.com/updates/v1_73#_markdown-automatic-link-updates-on-file-rename-move
-  "markdown.updateLinksOnFileMove.enabled": "always",
   // Overwrite default markdown settings - moved to local workspace settings
   // "markdown.styles": [
   // 	"localcomputer/codeworkspace/light-default.css",

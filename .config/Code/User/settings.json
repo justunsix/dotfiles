@@ -1,205 +1,202 @@
 {
-  // * System
-  "telemetry.telemetryLevel": "off",
-  // ** System - Spacing
-  // The number of spaces a tab is equal to. This setting is overridden
-  // based on the file contents when `editor.detectIndentation` is true.
-  "editor.tabSize": 2,
-  "editor.wordWrap": "on",
-  // Insert spaces when pressing Tab. This setting is overriden
-  // based on the file contents when `editor.detectIndentation` is true.
-  "editor.insertSpaces": true,
-  // When opening a file, `editor.tabSize` and `editor.insertSpaces`
-  // will be detected based on the file contents. Set to false to keep
-  // the values you've explicitly set, above.
-  // "editor.detectIndentation": false,
-  // * Languages
-  // ** Markdown
-  // Enable markdown paste links and files - disabled since it was pasting images instead of text for rich text pastes
-  // "markdown.experimental.editor.pasteLinks.enabled": true,
-  // "editor.experimental.pasteActions.enabled": true,
-  // Markdown Preview Font Size
-  "markdown.preview.fontSize": 16,
-  // Markdown validate links
-  "markdown.validate.enabled": true,
-  // Update links in markdown when files are moved or renamed in VS Code explorer.
-  // https://code.visualstudio.com/updates/v1_73#_markdown-automatic-link-updates-on-file-rename-move
-  "markdown.updateLinksOnFileMove.enabled": "always",
-  // Markdown unused and duplicate link definition diagnostics
-  // detects unused or duplicated link definitions
-  // https://code.visualstudio.com/updates/v1_73#_markdown-unused-and-duplicate-link-definition-diagnostics
-  // *** Extension: Markdown All in One
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  },
-  // **** Markdown All in One Table of Contents Level setting
-  "markdown.extension.toc.levels": "1..2",
-  // Markdown paste image
-  "pasteImage.path": "${currentFileDir}/../media",
-  "pasteImage.forceUnixStyleSeparator": true,
-  "pasteImage.prefix": "",
-  "pasteImage.namePrefix": "${currentFileNameWithoutExt}-",
-  // Update links in markdown when files are moved or renamed in VS Code explorer.
-  // https://code.visualstudio.com/updates/v1_73#_markdown-automatic-link-updates-on-file-rename-move
-  "markdown.updateLinksOnFileMove.enabled": "always",
-  // Overwrite default markdown settings - moved to local workspace settings
-  // "markdown.styles": [
-  // 	"localcomputer/codeworkspace/light-default.css",
-  // 	"localcomputer/codeworkspace/dark-material.css"
-  // ],
-  // ** Python
-  "python.analysis.autoImportCompletions": true,
-  "python.analysis.fixAll": [
-    "source.unusedImports"
-  ],
-  "editor.defaultFormatter": "ms-python.black-formatter",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  // ** Notebooks
-  "notebook.output.textLineLimit": 100,
-  "notebook.output.wordWrap": true,
-  // ** Extension: Edit csv
-  "csv-edit.sidePanelAppearance": "expanded",
-  // ** JSON
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  // ** Shell script (bash)
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  // ** YAML
-  "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  // ** XML
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
-  },
-  // ** SQL
-  // *** Extension: MSSQL
-  "mssql.objectExplorer.groupBySchema": false,
-  // ** Java
-  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-  // ## Extension: AutoHotKey (AHK)
-  // Default location installed by chocolatey
-  "ahk++.file.compilePath": "C:\\Program Files\\AutoHotkey\\Compiler\\Ahk2Exe.exe",
-  "ahk++.file.helpPath": "C:\\Users\\TungJ2\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey.chm",
-  "ahk++.file.executePath": "C:\\Program Files\\AutoHotkey\\AutoHotkeyU64.exe",
-  // * Git
-  // Is git enabled and path to git binaries
-  "git.enabled": true,
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  // ** Extension: GitHub Copilot
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": true,
-    "plaintext": true,
-    "markdown": true
-  },
-  // * Terminal
-  // Integrated Terminal Settings and Configurations
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell"
-    },
-    "Command Prompt": {
-      "path": "C:\\WINDOWS\\System32\\cmd.exe",
-      "args": [],
-      "icon": "terminal-cmd"
-    },
-    "Git Bash": {
-      "source": "Git Bash"
-    },
-    "Cygwin Bash": {
-      // Default location installed by chocolatey
-      "path": "C:\\tools\\cygwin\\bin\\bash.exe",
-      "args": [
-        "--login",
-        "-i"
-      ],
-      "terminal.integrated.env.windows": {
-        "CHERE_INVOKING": "1"
-      }
-    },
-  },
-  "terminal.integrated.shellIntegration.enabled": true,
-  // default terminal
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.fontSize": 17,
-  "terminal.integrated.sendKeybindingsToShell": true,
-  "terminal.integrated.allowChords": false,
-  "workbench.colorCustomizations": {
-    "[Visual Studio Dark]": {
-      // black and green settings
-      "terminal.background": "#000000",
-      // "terminal.foreground": "#29cf98",
-      "terminalCursor.background": "#000000",
-      "terminalCursor.foreground": "#29cf98",
-      // Other settings
-      // "terminal.ansiBlack":"#000000",
-      // "terminal.ansiBlue":"#6FB3D2",
-      // "terminal.ansiBrightBlack":"#B0B0B0",
-      // "terminal.ansiBrightBlue":"#6FB3D2",
-      // "terminal.ansiBrightCyan":"#76C7B7",
-      // "terminal.ansiBrightGreen":"#A1C659",
-      // "terminal.ansiBrightMagenta":"#D381C3",
-      // "terminal.ansiBrightRed":"#FB0120",
-      // "terminal.ansiBrightWhite":"#FFFFFF",
-      // "terminal.ansiBrightYellow":"#FDA331",
-      // "terminal.ansiCyan":"#76C7B7",
-      // "terminal.ansiGreen":"#A1C659",
-      // "terminal.ansiMagenta":"#D381C3",
-      // "terminal.ansiRed":"#FB0120",
-      // "terminal.ansiWhite":"#E0E0E0",
-      // "terminal.ansiYellow":"#FDA331"
-    }
-  },
-  // * User Interface
-  "workbench.colorTheme": "Visual Studio Dark",
-  "window.titleBarStyle": "custom",
-  // Turn on line numbers, other options are relative, interval and off
-  // per https://code.visualstudio.com/docs/getstarted/settings
-  "editor.lineNumbers": "on",
-  "settingsSync.ignoredExtensions": [],
-  "settingsSync.ignoredSettings": [
-    "http.proxy",
-    "ahk++.file.compilePath",
-    "ahk++.file.executePath",
-    "ahk++.file.helpPath"
-  ],
-  // ** Font
-  // font size for editors
-  "editor.fontSize": 14,
-  // * Spelling
-  // ** Extension: SpellRight, Spell Checker
-  "spellright.language": [
-    "en-GB"
-  ],
-  "spellright.suggestionsInHints": false,
-  // * Search
-  // Excludes from Search
-  "search.exclude": {
-    "**/media": true,
-    "**/media/*": true
-  },
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
-  // * Input and Output
-  "editor.copyWithSyntaxHighlighting": true,
-  "editor.accessibilitySupport": "off",
-  "files.autoSave": "afterDelay",
-  // * Editing
-  "editor.suggestSelection": "first",
-  "editor.inlineSuggest.enabled": true,
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  // * Security
-  "security.workspace.trust.untrustedFiles": "open",
+	// * System
+	"telemetry.telemetryLevel": "off",
+	// ** System - Spacing
+	// The number of spaces a tab is equal to. This setting is overridden
+	// based on the file contents when `editor.detectIndentation` is true.
+	"editor.tabSize": 2,
+	"editor.wordWrap": "on",
+	// Insert spaces when pressing Tab. This setting is overriden
+	// based on the file contents when `editor.detectIndentation` is true.
+	"editor.insertSpaces": true,
+	// When opening a file, `editor.tabSize` and `editor.insertSpaces`
+	// will be detected based on the file contents. Set to false to keep
+	// the values you've explicitly set, above.
+	// "editor.detectIndentation": false,
+	// * Languages
+	// ** Markdown
+	// Enable markdown paste links and files - disabled since it was pasting images instead of text for rich text pastes
+	// "markdown.experimental.editor.pasteLinks.enabled": true,
+	// "editor.experimental.pasteActions.enabled": true,
+	// Markdown Preview Font Size
+	"markdown.preview.fontSize": 16,
+	// Markdown validate links
+	"markdown.validate.enabled": true,
+	// Update links in markdown when files are moved or renamed in VS Code explorer.
+	// https://code.visualstudio.com/updates/v1_73#_markdown-automatic-link-updates-on-file-rename-move
+	"markdown.updateLinksOnFileMove.enabled": "always",
+	// Markdown unused and duplicate link definition diagnostics
+	// detects unused or duplicated link definitions
+	// https://code.visualstudio.com/updates/v1_73#_markdown-unused-and-duplicate-link-definition-diagnostics
+	// *** Extension: Markdown All in One
+	"[markdown]": {
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+	},
+	// **** Markdown All in One Table of Contents Level setting
+	"markdown.extension.toc.levels": "1..2",
+	// Markdown paste image
+	"pasteImage.path": "${currentFileDir}/../media",
+	"pasteImage.forceUnixStyleSeparator": true,
+	"pasteImage.prefix": "",
+	"pasteImage.namePrefix": "${currentFileNameWithoutExt}-",
+	// Overwrite default markdown settings - moved to local workspace settings
+	// "markdown.styles": [
+	// 	"localcomputer/codeworkspace/light-default.css",
+	// 	"localcomputer/codeworkspace/dark-material.css"
+	// ],
+	// ** Python
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.fixAll": [
+		"source.unusedImports"
+	],
+	"editor.defaultFormatter": "ms-python.black-formatter",
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter-notebook"
+	},
+	// ** Notebooks
+	"notebook.output.textLineLimit": 100,
+	"notebook.output.wordWrap": true,
+	// ** Extension: Edit csv
+	"csv-edit.sidePanelAppearance": "expanded",
+	// ** JSON
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	},
+	// ** Shell script (bash)
+	"[shellscript]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	// ** YAML
+	"[yaml]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	// ** XML
+	"[xml]": {
+		"editor.defaultFormatter": "redhat.vscode-xml"
+	},
+	// ** SQL
+	// *** Extension: MSSQL
+	"mssql.objectExplorer.groupBySchema": false,
+	// ** Java
+	"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+	// ## Extension: AutoHotKey (AHK)
+	// Default location installed by chocolatey
+	"ahk++.file.compilePath": "C:\\Program Files\\AutoHotkey\\Compiler\\Ahk2Exe.exe",
+	"ahk++.file.helpPath": "C:\\Users\\TungJ2\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey.chm",
+	"ahk++.file.executePath": "C:\\Program Files\\AutoHotkey\\AutoHotkeyU64.exe",
+	// * Git
+	// Is git enabled and path to git binaries
+	"git.enabled": true,
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	// ** Extension: GitHub Copilot
+	"github.copilot.enable": {
+		"*": true,
+		"yaml": true,
+		"plaintext": true,
+		"markdown": true
+	},
+	// * Terminal
+	// Integrated Terminal Settings and Configurations
+	"terminal.integrated.profiles.windows": {
+		"PowerShell": {
+			"source": "PowerShell",
+			"icon": "terminal-powershell"
+		},
+		"Command Prompt": {
+			"path": "C:\\WINDOWS\\System32\\cmd.exe",
+			"args": [],
+			"icon": "terminal-cmd"
+		},
+		"Git Bash": {
+			"source": "Git Bash"
+		},
+		"Cygwin Bash": {
+			// Default location installed by chocolatey
+			"path": "C:\\tools\\cygwin\\bin\\bash.exe",
+			"args": [
+				"--login",
+				"-i"
+			],
+			"terminal.integrated.env.windows": {
+				"CHERE_INVOKING": "1"
+			}
+		},
+	},
+	"terminal.integrated.shellIntegration.enabled": true,
+	// default terminal
+	"terminal.integrated.defaultProfile.windows": "PowerShell",
+	"terminal.integrated.fontSize": 17,
+	"terminal.integrated.sendKeybindingsToShell": true,
+	"terminal.integrated.allowChords": false,
+	"workbench.colorCustomizations": {
+		"[Visual Studio Dark]": {
+			// black and green settings
+			"terminal.background": "#000000",
+			// "terminal.foreground": "#29cf98",
+			"terminalCursor.background": "#000000",
+			"terminalCursor.foreground": "#29cf98",
+			// Other settings
+			// "terminal.ansiBlack":"#000000",
+			// "terminal.ansiBlue":"#6FB3D2",
+			// "terminal.ansiBrightBlack":"#B0B0B0",
+			// "terminal.ansiBrightBlue":"#6FB3D2",
+			// "terminal.ansiBrightCyan":"#76C7B7",
+			// "terminal.ansiBrightGreen":"#A1C659",
+			// "terminal.ansiBrightMagenta":"#D381C3",
+			// "terminal.ansiBrightRed":"#FB0120",
+			// "terminal.ansiBrightWhite":"#FFFFFF",
+			// "terminal.ansiBrightYellow":"#FDA331",
+			// "terminal.ansiCyan":"#76C7B7",
+			// "terminal.ansiGreen":"#A1C659",
+			// "terminal.ansiMagenta":"#D381C3",
+			// "terminal.ansiRed":"#FB0120",
+			// "terminal.ansiWhite":"#E0E0E0",
+			// "terminal.ansiYellow":"#FDA331"
+		}
+	},
+	// * User Interface
+	"workbench.colorTheme": "Visual Studio Dark",
+	"window.titleBarStyle": "custom",
+	// Turn on line numbers, other options are relative, interval and off
+	// per https://code.visualstudio.com/docs/getstarted/settings
+	"editor.lineNumbers": "on",
+	"settingsSync.ignoredExtensions": [],
+	"settingsSync.ignoredSettings": [
+		"http.proxy",
+		"ahk++.file.compilePath",
+		"ahk++.file.executePath",
+		"ahk++.file.helpPath"
+	],
+	// ** Font
+	// font size for editors
+	"editor.fontSize": 14,
+	// * Spelling
+	// ** Extension: SpellRight, Spell Checker
+	"spellright.language": [
+		"en-GB"
+	],
+	"spellright.suggestionsInHints": false,
+	// * Search
+	// Excludes from Search
+	"search.exclude": {
+		"**/media": true,
+		"**/media/*": true
+	},
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	// * Input and Output
+	"editor.copyWithSyntaxHighlighting": true,
+	"editor.accessibilitySupport": "off",
+	"files.autoSave": "afterDelay",
+	// * Editing
+	"editor.suggestSelection": "first",
+	"editor.inlineSuggest.enabled": true,
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	// * Security
+	"security.workspace.trust.untrustedFiles": "open",
 }
