@@ -42,4 +42,5 @@ imagemagick `
 fluent-reader `
 bleachbit `
 ccleaner `
+cht `
 uutils-coreutils
