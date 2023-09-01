@@ -75,7 +75,8 @@ This repository contains my personal dotfiles like configurations for software d
 - Notification daemon: [dunst](https://dunst-project.org/)
 - Personal Task management: [todotxt](https://github.com/todotxt/todo.txt-cli)
 - Parallel commands manager: [mprocs](https://github.com/pvolok/mprocs)
-- Updates: [topgrade](https://github.com/topgrade-rs/topgrade)
+- Updates for software: [topgrade](https://github.com/topgrade-rs/topgrade)
+- Keyboard mapper: [input-remapper](https://github.com/sezanzeb/input-remapper)
 
 ## How Dotfiles are Managed
 
