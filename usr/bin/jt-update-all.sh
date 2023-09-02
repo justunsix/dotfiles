@@ -12,34 +12,53 @@ if [ -f /etc/fedora-release ]; then
 		sudo dnf check-update
 		sudo dnf upgrade -y
 		sudo dnf autoremove
-else
-		# In Ubuntu
-		if command -v apt >/dev/null; then
-				echo ' '
-				echo '----------------------------------------'
-				echo 'Updating APT packages'
-				echo ' '
-				sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-				sudo aptitude safe-upgrade -y
-		fi
+fi
 
-		# Update all Snaps
-		if command -v snap >/dev/null; then
-				echo ' '
-				echo '----------------------------------------'
-				echo 'Updating Snaps'
-				echo ' '
-				sudo snap refresh
-		fi
+# If Linux distribution is Arch
+if [ -f /etc/arch-release ]; then
+		echo ' '
+		echo '----------------------------------------'
+		echo 'Updating pacman packages'
+		echo ' '
+		sudo pacman -Syu --noconfirm
+fi
 
-		# update all deb-gets
-		if command -v deb-get >/dev/null; then
-				echo ' '
-				echo '----------------------------------------'
-				echo 'Updating deb-gets'
-				echo ' '
-				deb-get update && deb-get upgrade
-		fi
+# If Linux distribution is Ubuntu, set isUbuntu variable to "true"
+if [ -f /etc/os-release ]; then
+    # Get os-release variables
+    . /etc/os-release
+    if [ "$ID" = "ubuntu" ]; then
+
+				# In Ubuntu
+				if command -v apt >/dev/null; then
+						echo ' '
+						echo '----------------------------------------'
+						echo 'Updating APT packages'
+						echo ' '
+						sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+						sudo aptitude safe-upgrade -y
+				fi
+
+				# Update all Snaps
+				if command -v snap >/dev/null; then
+						echo ' '
+						echo '----------------------------------------'
+						echo 'Updating Snaps'
+						echo ' '
+						sudo snap refresh
+				fi
+
+				# update all deb-gets
+				if command -v deb-get >/dev/null; then
+						echo ' '
+						echo '----------------------------------------'
+						echo 'Updating deb-gets'
+						echo ' '
+						deb-get update && deb-get upgrade
+				fi
+
+
+    fi
 fi
 
 # Update all Flatpaks
