@@ -138,15 +138,6 @@
 ;; --------------------------------------------------------------------------------
 ;; * IDE Like Settings  ----------------------------
 
-;; Force Emacs to place shell and terminals at the bottom, with a window height of no more than 30% of the size of the frame.
-;; From: https://www.masteringemacs.org/article/demystifying-emacs-window-manager
-(add-to-list 'display-buffer-alist
-  '("\\*e?shell\\*" display-buffer-in-direction
-    (direction . bottom)
-    (window . root)
-    (window-height . 0.3))
-	)
-
 ;; switch-to-buffer-in-dedicated-window: Controls what happens if you attempt to switch buffers in a dedicated window like sidebars
 ;; - prefer pop to the default to have it pop up the buffer somewhere else than simply error out.
 ;; switch-to-buffer-obey-display-actions: If nil, the default, user-switched buffers are exempt from display buffer actions set in display-buffer-alist
@@ -154,14 +145,6 @@
 ;; from: https://www.masteringemacs.org/article/demystifying-emacs-window-manager
 (setq switch-to-buffer-in-dedicated-window 'pop)
 (setq switch-to-buffer-obey-display-actions t)
-
-;; Force Emacs to place terminmals at the bottom, with a window height of no more than 30% of the size of the frame.
-(add-to-list 'display-buffer-alist
-	'("term\\*$" display-buffer-in-direction
-		(direction . bottom)
-		(window . root)
-		(window-height . 0.3))
-	)
 
 ;; --------------------------------------------------------------------------------
 ;; * Changes adapted from Yay-Evil emacs distro by Ian Y.E. Pan -------------------

@@ -35,6 +35,25 @@
     (setq eshell-visual-commands '("htop" "zsh" "vim")))
 	)
 
+;; Terminals Window Positions
+
+;; Force Emacs to place shell and terminals at the bottom, with a window height of no more than 30% of the size of the frame.
+;; From: https://www.masteringemacs.org/article/demystifying-emacs-window-manager
+;; (add-to-list 'display-buffer-alist
+;;   '("\\*e?shell\\*" display-buffer-in-direction
+;;     (direction . bottom)
+;;     (window . root)
+;;     (window-height . 0.3))
+;; 	)
+
+;; Force Emacs to place terminmals at the bottom, with a window height of no more than 30% of the size of the frame.
+;; (add-to-list 'display-buffer-alist
+;; 	'("term\\*$" display-buffer-in-direction
+;; 		(direction . bottom)
+;; 		(window . root)
+;; 		(window-height . 0.3))
+;; 	)
+
 (provide 'jt-emacs-terminal)
 
 ;;; jt-emacs-terminal.el ends here
