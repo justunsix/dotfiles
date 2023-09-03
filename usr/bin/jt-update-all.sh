@@ -62,12 +62,14 @@ if [ -f /etc/os-release ]; then
 fi
 
 
-if [ -f "/$HOME/.config/home-manager/" ]; then
+if [ -f "$HOME/.config/home-manager/flake.nix" ]; then
 		echo ' '
 		echo '----------------------------------------'
 		echo 'Updating Nix Flake and Home Manager'
 		echo ' '
+		cd "$HOME/.config/home-manager/" || exit
     nix flake update && home-manager switch -b bak
+		cd - || exit
 fi
 
 # Update all Flatpaks
