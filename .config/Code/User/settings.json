@@ -54,7 +54,7 @@
 		"*.ipynb": "jupyter-notebook"
 	},
 	// ** Notebooks
-	"notebook.output.textLineLimit": 100,
+	"notebook.output.textLineLimit": 500,
 	"notebook.output.wordWrap": true,
 	// ** Extension: Edit csv
 	"csv-edit.sidePanelAppearance": "expanded",
