@@ -43,4 +43,5 @@ fluent-reader `
 bleachbit `
 ccleaner `
 cht `
+pycharm `
 uutils-coreutils
