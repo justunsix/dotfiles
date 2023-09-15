@@ -44,4 +44,7 @@ bleachbit `
 ccleaner `
 cht `
 pycharm `
+duf `
+bottom `
+dog `
 uutils-coreutils
