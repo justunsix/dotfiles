@@ -127,8 +127,7 @@ if [ "$(date +%u)" -ge 5 ]; then
 				echo 'Updating Emacs packages'
 				echo ' '
 				emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
-				# Update straight installed packages
-			  # emacs --batch --eval "(progn (defvar bootstrap-version)(let ((bootstrap-file (expand-file-name 'straight/repos/straight.el/bootstrap.el' user-emacs-directory))  (bootstrap-version 6)) (unless (file-exists-p bootstrap-file) (with-current-buffer (url-retrieve-synchronously 'https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el' 'silent 'inhibit-cookies) (goto-char (point-max)) (eval-print-last-sexp))) (load bootstrap-file nil 'nomessage))(straight-pull-all))"
+				emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
 		fi
 
 		# Scan font directories to build font cache files
