@@ -2,7 +2,7 @@
 
 # Update with topgrade
 # disable system updates on Windows for now
-# topgrade -y --disable system
+topgrade -y --disable system
 
 Write-Host "`nCleaning scoop packages" -ForegroundColor Green
 scoop cleanup *
