@@ -28,6 +28,7 @@
 
 ;; --------------------------------------------------------------------------------
 ;; Load 3rd party packages and their configurations
+(require 'jt-emacs-package-managers)
 (require 'other)
 ;; user interface
 (require 'jt-emacs-ui)
