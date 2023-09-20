@@ -119,7 +119,7 @@ fi
 # Updates to be run only occasionally
 # If day is Saturday or Sunday
 if [ "$(date +%u)" -ge 5 ]; then
-    
+
     # Update Emacs Packages
 		if command -v emacs >/dev/null; then
 				echo ' '
@@ -127,7 +127,7 @@ if [ "$(date +%u)" -ge 5 ]; then
 				echo 'Updating Emacs packages'
 				echo ' '
 				emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
-				emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval(straight-pull-all)'
+				emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
 		fi
 
 		# Scan font directories to build font cache files
