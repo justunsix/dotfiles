@@ -47,4 +47,5 @@ pycharm `
 duf `
 bottom `
 dog `
+azure-ps `
 uutils-coreutils
