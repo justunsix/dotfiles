@@ -27,7 +27,7 @@ function Check-GitStatus {
 								# If output does not contain "nothing to commit, working tree clean"
 								# then print the working directory
 								Write-Host "`n"$folder.FullName "has changes" -ForegroundColor Green
-								git status
+							  git -C $folder.FullName status
 						}
 				}
 		}
