@@ -4,6 +4,8 @@
 # within this folder.
 # This script will loop through each child folder and execute a git status in each one.
 
+GREEN='\033[0;32m'
+
 cd ~/Code/ || { echo "Error accessing ~/Code directory "; exit 1; }
 
 # Loop through each folder in the current directory
@@ -23,7 +25,8 @@ for dir in */; do
 						echo -n "."
 
 				else
-						echo "Working directory has changes: ~/Code/$dir"
+						echo "\n${GREEN} Working directory has changes: ~/Code/$dir"
+						git status
 				fi
 				# Change directory back to the parent folder
 				cd ..
