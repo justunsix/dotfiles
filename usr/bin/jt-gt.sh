@@ -31,7 +31,7 @@ for dir in */; do
 						git status
 						# check if command has argument true
 						if [ "$1" = "true" ]; then
-								echo -e "\n+Running git autocommit and push"
+								echo -e "\n+Running git auto commit and push"
 								git commit -am"auto commit"
 								git push
 						fi
