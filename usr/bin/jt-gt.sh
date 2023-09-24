@@ -4,6 +4,7 @@
 # within this folder.
 # This script will loop through each child folder and execute a git status in each one.
 
+# For colorizing the output
 GREEN='\033[0;32m'
 
 cd ~/Code/ || { echo "Error accessing ~/Code directory "; exit 1; }
@@ -25,8 +26,15 @@ for dir in */; do
 						echo -n "."
 
 				else
-						echo "\n${GREEN} Working directory has changes: ~/Code/$dir"
+						# echo in green text "Working directory has changes: ~/Code/$dir"
+						echo -e "\n+Working directory has changes: ~/Code/$dir"
 						git status
+						# check if command has argument true
+						if [ "$1" = "true" ]; then
+								echo -e "\n+Running git autocommit and push"
+								git commit -am"Auto commit from jt-gt.sh"
+								git push
+						fi
 				fi
 				# Change directory back to the parent folder
 				cd ..
