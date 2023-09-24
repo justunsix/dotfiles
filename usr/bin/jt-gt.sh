@@ -32,7 +32,7 @@ for dir in */; do
 						# check if command has argument true
 						if [ "$1" = "true" ]; then
 								echo -e "\n+Running git autocommit and push"
-								git commit -am"Auto commit from jt-gt.sh"
+								git commit -am"auto commit"
 								git push
 						fi
 				fi
