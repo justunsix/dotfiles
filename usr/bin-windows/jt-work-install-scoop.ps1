@@ -48,4 +48,6 @@ duf `
 bottom `
 dog `
 azure-ps `
+kubernetes-cli `
+azure-kubelogin `
 uutils-coreutils
