@@ -3,16 +3,12 @@
 choco install `
 microsoft-windows-terminal `
 autohotkey `
-python3 `
 jetbrainsmono `
 veracrypt `
 cygwin `
 hunspell.portable `
 virtualbox `
-azure-cli `
-nodejs `
 python `
-msys2 `
 -y
 
 # Chocolatey packages moved to scoop install
@@ -37,3 +33,5 @@ msys2 `
 # fd `
 # terraform `
 # obs-studio `
+# nodejs `
+# azure-cli `

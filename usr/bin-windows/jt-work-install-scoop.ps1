@@ -50,4 +50,6 @@ dog `
 azure-ps `
 kubernetes-cli `
 azure-kubelogin `
+nodejs `
+azure-cli `
 uutils-coreutils
