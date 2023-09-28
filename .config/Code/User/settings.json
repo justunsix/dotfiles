@@ -82,7 +82,7 @@
 	// ## Extension: AutoHotKey (AHK)
 	// Default location installed by chocolatey
 	"ahk++.file.compilePath": "C:\\Program Files\\AutoHotkey\\Compiler\\Ahk2Exe.exe",
-	"ahk++.file.helpPath": "C:\\Users\\TungJ2\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey.chm",
+	"ahk++.file.helpPath": "C:\\Program Files\\AutoHotkey\\AutoHotkey.chm",
 	"ahk++.file.executePath": "C:\\Program Files\\AutoHotkey\\AutoHotkeyU64.exe",
 	// * Git
 	// Is git enabled and path to git binaries
