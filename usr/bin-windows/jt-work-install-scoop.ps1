@@ -48,7 +48,7 @@ duf `
 bottom `
 dog `
 azure-ps `
-kubernetes-cli `
+kubectl `
 azure-kubelogin `
 nodejs `
 azure-cli `
