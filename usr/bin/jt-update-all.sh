@@ -93,17 +93,24 @@ fi
 
 # update main pip installed packages
 # avoid upgrading all pip packages due to possible dependency issues
-# Check if python3 and pip are installed
+# unless pipx is installed
 if command -v python3 >/dev/null; then
-		if command -v pip >/dev/null; then
+		if command -v pipx >/dev/null; then
 				echo ' '
 				echo '----------------------------------------'
-				echo 'Updating pip packages'
+				echo 'Updating pipx packages'
 				echo ' '
-				python3 -m pip install --user --upgrade pip
-				python3 -m pip install --user --upgrade ansible
-				python3 -m pip install --user --upgrade tldr
-		fi
+				pipx upgrade-all
+		else
+				if command -v pip >/dev/null; then
+						echo ' '
+						echo '----------------------------------------'
+						echo 'Updating pipx packages'
+						echo ' '
+						python3 -m pip install --user --upgrade pip
+						python3 -m pip install --user --upgrade ansible
+						python3 -m pip install --user --upgrade tldr
+				fi
 fi
 
 # Update all Nix packages
