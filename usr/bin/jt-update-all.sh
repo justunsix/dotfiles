@@ -111,6 +111,7 @@ if command -v python3 >/dev/null; then
 						python3 -m pip install --user --upgrade ansible
 						python3 -m pip install --user --upgrade tldr
 				fi
+		fi
 fi
 
 # Update all Nix packages
