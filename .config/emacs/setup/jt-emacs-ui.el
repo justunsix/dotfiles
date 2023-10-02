@@ -232,6 +232,8 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
 	(ace-link-setup-default)
 	)
 
+;; Outline, imenu
+(use-package imenu-list)
 
 (provide 'jt-emacs-ui)
 
