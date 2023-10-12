@@ -126,7 +126,8 @@ fi
 
 # Updates to be run only occasionally
 # If day is Saturday or Sunday
-if [ "$(date +%u)" -ge 5 ]; then
+# or if first argument was true
+if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
 
     # Update Emacs Packages
 		if command -v emacs >/dev/null; then
