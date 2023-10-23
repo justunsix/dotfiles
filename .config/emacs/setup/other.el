@@ -22,6 +22,18 @@
 (use-package swiper
   :commands swiper)
 
+;; Set Grep, Find program locations on Windows
+; https://www.emacswiki.org/emacs/GrepMode#h5o-4
+(when jt/windows-p
+	;; Get location of Windows user home directory
+	(setq user-home-directory (getenv "USERPROFILE"))
+	(setq scoop-git-bin-dir (concat user-home-directory "\\scoop\\apps\\git\\current\\usr\\bin"))
+  ;; Add git installed by scoop binaries to path
+	(add-to-list 'exec-path scoop-git-bin-dir)
+	(setq find-program (concat scoop-git-bin-dir "\\find.exe")
+				grep-program (concat scoop-git-bin-dir "\\grep.exe"))
+	)
+
 ;; * Help Support ----------------------------
 
 ;; Show keys available for pressed commands

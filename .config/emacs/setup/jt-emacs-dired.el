@@ -10,7 +10,12 @@
 (use-package dired
   :ensure nil
   :commands (dired dired-jump)
+	:config
   ;; Display directories first, remove user and group information
+	;; (dired-listing-switches "-alh --group-directories-first")
+	;; or use dired-hide-details-mode
+	;; Bind browser-url-of-dired-file to w
+	(define-key dired-mode-map (kbd "w") 'browse-url-of-dired-file)
   )
 
 ;; Bind wdired-change-to-wdired-mode to W in dired-mode
