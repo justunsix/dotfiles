@@ -19,18 +19,21 @@
   )
 
 
-;; It looks like dots and tilde characters needs to be escaped for ‘rgrep’, ‘dired-find’, etc to work
-;; https://www.emacswiki.org/emacs/GrepMode#h5o-4
-(defadvice shell-quote-argument (after windows-nt-special-quote (argument) activate)
-  "Add special quotes to ARGUMENT in case the system type is 'windows-nt."
-  (when
-      (and (eq system-type 'windows-nt) (w32-shell-dos-semantics))
-    (if (string-match "[\\.~]" ad-return-value)
-        (setq ad-return-value
-							(replace-regexp-in-string
-							 "\\([\\.~]\\)"
-							 "\\\\\\1"
-							 ad-return-value)))))
+(when jt/windows-p
+	;; Windows grep and related support
+	;; It looks like dots and tilde characters needs to be escaped for ‘rgrep’, ‘dired-find’, etc to work
+	;; https://www.emacswiki.org/emacs/GrepMode#h5o-4
+	(defadvice shell-quote-argument (after windows-nt-special-quote (argument) activate)
+		"Add special quotes to ARGUMENT in case the system type is 'windows-nt."
+		(when
+				(and (eq system-type 'windows-nt) (w32-shell-dos-semantics))
+			(if (string-match "[\\.~]" ad-return-value)
+					(setq ad-return-value
+								(replace-regexp-in-string
+								 "\\([\\.~]\\)"
+								 "\\\\\\1"
+								 ad-return-value)))))
+	)
 
 ;; Bind wdired-change-to-wdired-mode to W in dired-mode
 (define-key dired-mode-map (kbd "W") 'wdired-change-to-wdired-mode)
