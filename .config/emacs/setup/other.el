@@ -250,7 +250,14 @@
   (interactive)
 	;; Switch to buffer called *dashboard*
   (switch-to-buffer "*dashboard*")
-  (kill-matching-buffers "^[^*]" nil t)
+  ;; (kill-matching-buffers "^[^*]" nil t)
+	;; Kill all buffers unless they match *dashboard*, *Messages*, *scratch*, *copilot events*
+	(dolist (buffer (buffer-list))
+		(unless (or (string-match-p "^\\*dashboard\\*" (buffer-name buffer))
+								(string-match-p "^\\*Messages\\*" (buffer-name buffer))
+								(string-match-p "^\\*scratch\\*" (buffer-name buffer))
+								(string-match-p "^\\*copilot events\\*" (buffer-name buffer)))
+			(kill-buffer buffer)))
 	)
 
 (provide 'other)
