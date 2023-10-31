@@ -26,6 +26,12 @@ procs:
       windows: 'powershell.exe -NoProfile -Command "scoop update -a; scoop cleanup *"'
       linux: 'nix-env -u && nix-collect-garbage --delete-older-than 30d'
     autostart: true
+  update-dotfiles:
+    shell:
+      $select: os
+      windows: 'powershell.exe -NoProfile -Command "jt-work-dotfiles.ps1"'
+      linux: 'cd ~/Code/dotfiles-playbook && echo "Run dotfiles tag"'
+    autostart: false
   update-all-admin:
     shell:
       $select: os
