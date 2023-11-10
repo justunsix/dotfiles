@@ -16,7 +16,7 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = 'AdventureTime'
+-- config.color_scheme = 'AdventureTime'
 
 -- Enable the scrollbar.
 -- It will occupy the right window padding space.
