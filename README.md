@@ -26,6 +26,7 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) Task manager on command line<br/>
 ------├── `topgrade/` - [topgrade](https://github.com/topgrade-rs/topgrade) Updater for things like operating systems, software, packages, and others<br/>
 ------├── `vlc/` - [vlc](https://www.videolan.org/vlc/) media player<br/>
+------├── `wezterm/` - [WezTerm](https://wezfurlong.org/wezterm/index.html) Cross platform terminal emulator and multiplexer<br/>
 ------├── `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings <br/>
 ------├── `kdeglobals` - [KDE](https://kde.org/) Desktop Environment appearance settings<br/>
 ------├── `starship.toml` - [Starship](https://starship.rs/) Cross-shell prompt<br/>
@@ -71,7 +72,9 @@ This repository contains my personal dotfiles like configurations for software d
 
 - Window switcher/application launcher: [rofi](https://github.com/davatorium/rofi)
 - Clipboard manager: [copyq](https://hluk.github.io/CopyQ/)
-- Terminal emulator: [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term)
+- Terminal emulator:
+  - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term)
+  - [WezTerm](https://wezfurlong.org/wezterm/index.html)
 - Notification daemon: [dunst](https://dunst-project.org/)
 - Personal Task management: [todotxt](https://github.com/todotxt/todo.txt-cli)
 - Parallel commands manager: [mprocs](https://github.com/pvolok/mprocs)
