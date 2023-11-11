@@ -44,11 +44,13 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\AppData\Local\nvim",
   "$env:USERPROFILE\AppData\Roaming\topgrade",
   "$env:USERPROFILE\.config\emacs"
+  "$env:USERPROFILE\.config\wezterm"
 )
 
 # Array of dotfiles to synchronize with tuples of source and destination
 $dotfiles_to_be_synchronized = @(
 		("$env:USERPROFILE\Code\dotfiles\.config\emacs", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\wezterm", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
 		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
