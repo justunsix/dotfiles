@@ -58,16 +58,6 @@ if [ -f /etc/os-release ]; then
 						sudo snap refresh
 				fi
 
-				# update all deb-gets
-				if command -v deb-get >/dev/null; then
-						echo ' '
-						echo '----------------------------------------'
-						echo 'Updating deb-gets'
-						echo ' '
-						deb-get update && deb-get upgrade
-				fi
-
-
     fi
 fi
 
@@ -124,7 +114,6 @@ if [ -e "$HOME/.nix-profile/" ]; then
 		nix-env -u
 fi
 
-# Updates to be run only occasionally
 # If day is Saturday or Sunday
 # or if first argument was true
 if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
@@ -140,6 +129,15 @@ if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
 				emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
 		fi
 
+		# update all deb-gets
+		if command -v deb-get >/dev/null; then
+				echo ' '
+				echo '----------------------------------------'
+				echo 'Updating deb-gets'
+				echo ' '
+				deb-get update && deb-get upgrade
+		fi
+
 		# Scan font directories to build font cache files
 		# in case nix managed fonts were updated
 		echo ' '
@@ -148,13 +146,13 @@ if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
 		echo ' '
 		fc-cache -v
 
-		echo ' '
-		echo '----------------------------------------'
-		echo 'Update nodejs version'
-		echo ' '
 		# nvm is a bash function, not a builtin, file or alias
 		# from https://github.com/branneman/dotfiles/blob/master/scripts/updates
 		if [ -d "$HOME/.nvm" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
+				echo ' '
+				echo '----------------------------------------'
+				echo 'Update nodejs version'
+				echo ' '
 				NVM_DIR="$HOME/.nvm"
 				source "$NVM_DIR/nvm.sh"
 				nvm install lts/*
