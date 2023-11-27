@@ -18,6 +18,17 @@ end
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
 
+-- On Windows, add PowerShell and pwsh to launcher, set powershell as default shell
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+	 config.default_prog = { 'powershell.exe', '-NoProfile', '-NoLogo' }
+	 config.launch_menu = {}
+	 table.insert(config.launch_menu, { label = 'PowerShell', args = {'powershell.exe', '-NoProfile', '-NoLogo'},
+	 })
+   table.insert(config.launch_menu, { label = 'pwsh', args = {'pwsh.exe', '-NoProfile'},
+	 })
+
+end
+
 -- Enable the scrollbar.
 -- It will occupy the right window padding space.
 -- If right padding is set to 0 then it will be increased
