@@ -13,6 +13,8 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+-- ====================================================
+-- ====================================================
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
@@ -35,5 +37,6 @@ end
 -- to a single cell width
 config.enable_scroll_bar = true
 
+-- ====================================================
 -- and finally, return the configuration to wezterm
 return config
