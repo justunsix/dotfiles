@@ -99,6 +99,9 @@
 ;; (define-key dired-recent-mode-map (kbd "C-x C-d") nil)
 ;; (define-key dired-recent-mode-map (kbd "SOME OTHER KEY") #'dired-recent-open)
 
+;; dirvish file manager
+(use-package dirvish)
+
 (provide 'jt-emacs-dired)
 
 ;;; jt-emacs-dired.el ends here
