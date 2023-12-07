@@ -151,7 +151,7 @@ if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
 		if [ -d "$HOME/.nvm" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
 				echo ' '
 				echo '----------------------------------------'
-				echo 'Update nodejs version'
+				echo 'Update nodejs version in nvm'
 				echo ' '
 				NVM_DIR="$HOME/.nvm"
 				source "$NVM_DIR/nvm.sh"
