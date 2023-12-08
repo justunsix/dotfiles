@@ -43,7 +43,8 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\usr\bin",
   "$env:USERPROFILE\AppData\Local\nvim",
   "$env:USERPROFILE\AppData\Roaming\topgrade",
-  "$env:USERPROFILE\.config\emacs"
+  "$env:USERPROFILE\AppData\Roaming\nushell",
+  "$env:USERPROFILE\.config\emacs",
   "$env:USERPROFILE\.config\wezterm"
 )
 
@@ -54,6 +55,7 @@ $dotfiles_to_be_synchronized = @(
 		("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
 		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\nushell", "$env:USERPROFILE\AppData\Roaming"),
 		("$env:USERPROFILE\Code\dotfiles\usr\bin-windows\*", "$env:USERPROFILE\usr\bin"),
 		("$env:USERPROFILE\Code\dotfiles\.gitconfig", "$env:USERPROFILE")
 )

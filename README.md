@@ -20,6 +20,7 @@ This repository contains my personal dotfiles like configurations for software d
 ------├── `input-remapper/` - [input-remapper](https://github.com/sezanzeb/input-remapper) to change input behaviour like key remapping<br/>
 ------├── `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage commonly executed processes and manage them<br/>
 ------├── `mpv/` - [mpv](https://mpv.io/) media player<br/>
+------├── `nushell/` - [nushell](https://www.nushell.sh/) cross platform shell<br/>
 ------├── `nvim/` - [neovim](https://neovim.io/) Editor<br/>
 ------├── `rofi/` - [rofi](https://github.com/davatorium/rofi) Application launcher, Window switcher for use with i3 and in GNOME<br/>
 ------├── `tmux` - [tmux](https://github.com/tmux/tmux/wiki) Terminal Multiplexer<br/>
@@ -58,6 +59,7 @@ This repository contains my personal dotfiles like configurations for software d
   - [Bash](https://www.gnu.org/software/bash/)
     - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) library
   - [Fish](https://fishshell.com/)
+  - [Nushell](https://www.nushell.sh/) cross platform shell
   - [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell)
   - Prompt: [Starship](https://starship.rs/)
 
