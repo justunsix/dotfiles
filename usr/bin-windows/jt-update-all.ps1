@@ -6,12 +6,17 @@
 $runTopgrade = Read-Host "Do you want to run topgrade? (y/n)"
 
 # If user wants to run topgrade, then run topgrade with options
-if ($runTopgrade -eq "y") {
+if ($runTopgrade -eq "y") {    
+    $runTopgradeWithPS1 = Read-Host "Do you want to run topgrade with powershell? (y/n)"
     Write-Host "`nRunning topgrade" -ForegroundColor Green
-    topgrade -y --disable system
-}
 
-# topgrade -y --disable system
+    if ($runTopgradeWithPS1 -eq "y") {
+        topgrade -y --disable system
+    } else {
+        Write-Host "`nwith --disable powershell" -ForegroundColor Green
+        topgrade -y --disable system --disable powershell
+    }
+}
 
 Write-Host "`nCleaning scoop, conda  packages" -ForegroundColor Green
 scoop cleanup *
