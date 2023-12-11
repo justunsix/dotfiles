@@ -13,8 +13,13 @@ if ($runTopgrade -eq "y") {
 
 # topgrade -y --disable system
 
-Write-Host "`nCleaning scoop packages" -ForegroundColor Green
+Write-Host "`nCleaning scoop, conda  packages" -ForegroundColor Green
 scoop cleanup *
+conda clean --all --yes
+
+Write-Host "`nCleaning mpv watch info" -ForegroundColor Green
+# delete watch data in scoop installed mpv
+Remove-Item -Path ~\scoop\apps\mpv\current\portable_config\watch_later\* -Force -Recurse
 
 Write-Host "`nUpdating Emacs packages" -ForegroundColor Green
 # emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
