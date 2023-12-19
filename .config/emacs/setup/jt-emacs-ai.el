@@ -55,6 +55,12 @@
 ;; Wait in seconds before suggesting completion
 (setq copilot-idle-delay 0.4)
 
+;; Suppress warnings when a buffer exceeds the variable copilot-max-char
+;; suggested at https://github.com/zerolfx/copilot.el/pull/198
+;; and configured per https://github.com/blahgeek/emacs.d/blob/master/init.el
+(require 'warnings)
+(add-to-list 'warning-suppress-types '(copilot copilot-exceeds-max-char))
+
 ;; Set copilot-overlay-face to inherit from font-lock-comment-face
 ;; Default is `shadow` which is too light
 (set-face-attribute 'copilot-overlay-face nil
