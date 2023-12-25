@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-# Update git repositories using topgrade
-# if topgrade is installed
-if command -v topgrade >/dev/null; then
-		echo ' '
-		echo '----------------------------------------'
-		echo 'Updating git repositories'
-		echo ' '
-		topgrade -y --only git_repos
-fi
-
 # Update all packages on the system
 
 # Check if Linux Distribution is Fedora
@@ -22,6 +12,16 @@ if [ -f /etc/fedora-release ]; then
 		sudo dnf check-update
 		sudo dnf upgrade -y
 		sudo dnf autoremove
+fi
+
+# Update git repositories using topgrade
+# if topgrade is installed
+if command -v topgrade >/dev/null; then
+		echo ' '
+		echo '----------------------------------------'
+		echo 'Updating git repositories'
+		echo ' '
+		topgrade -y --only git_repos
 fi
 
 # If Linux distribution is Arch
