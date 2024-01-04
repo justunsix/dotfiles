@@ -22,7 +22,7 @@ end
 
 -- On Windows, add PowerShell and pwsh to launcher, set powershell as default shell
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-	 config.default_prog = { 'powershell.exe', '-NoProfile', '-NoLogo' }
+	 config.default_prog = { 'pwsh.exe' }
 	 config.launch_menu = {}
 	 table.insert(config.launch_menu, { label = 'PowerShell -NoProfile', args = {'powershell.exe', '-NoProfile', '-NoLogo'},
 	 })
