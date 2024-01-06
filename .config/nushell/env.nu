@@ -104,9 +104,9 @@ $env.NU_PLUGIN_DIRS = [
 # My Configurations #
 #####################
 
-# Zoxide
-zoxide init nushell | save -f ~/.zoxide.nu
-
 # Starship prompt
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
+
+# Zoxide
+zoxide init nushell | save -f ~/.zoxide.nu
