@@ -771,4 +771,6 @@ source ~/.zoxide.nu
 ## temp fix 2024-01-06 for older zoxide version in case of "did you mean 'let-env' error
 ## https://github.com/ajeetdsouza/zoxide/issues/654#issuecomment-1875476154
 ## run in nushell:
+## open ~/.zoxide.nu | str replace --all 'def-env' 'def --env' | save -f ~/.zoxide-fixed.nu; source ~\.zoxide-fixed.nu
+## or with OS with sed
 ## sed -i 's/def-env/def --env/g' ~/.zoxide.nu; source ~/.zoxide.nu
