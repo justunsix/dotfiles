@@ -763,7 +763,8 @@ $env.config = {
 #####################
 
 #####################
-# My Functions
+# My Custom Commands
+# Per https://www.nushell.sh/book/custom_commands.html
 
 # Stages, commits, and pushes Git changes with a provided commit message or "autocommit message" if no message is provided
 def jgc [
