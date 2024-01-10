@@ -781,6 +781,46 @@ def jgc [
     git push
 }
 
+# Check Git status for multiple repositories
+def jgt [
+    directories = "~/Code"              # Parent directories of the reposities to check separated by commas
+    --auto (-a) : string                # Whether to automatically commit and push changes
+] {
+
+    # Assuming directory is a string of directories separated by commas
+    # Split the string into an array of directories
+    let dirs = $directories | split row ","
+
+    # Iterate through the directories
+    for $directory in $dirs {
+        # Iterate through child directories of $directory
+        for $it in (ls $directory -a | where type == dir | get name) {
+
+                cd $it
+
+                # Check if it's a git repository, only record standard out messages
+                # Otherwise if an error, it is not a git repository
+                let git_status_check = do { git status } | complete
+
+                # Check if it's a git repository
+                if ( $git_status_check.exit_code == 0) {
+                    # Check if there are any changes                  
+                    if ($git_status_check.stdout | str contains "Changes not staged for commit") {
+                        # Changes found, print the repository name and status
+                        echo $"(ansi red_bold)---(ansi reset)" $it
+                        echo $git_status_check.stdout
+
+                        if $auto == "true" {
+                            # Commit and push the changes
+                            jgc
+                        }
+                    }
+                } 
+        }
+
+    }
+}
+
 #####################
 # Shell assitance
 
