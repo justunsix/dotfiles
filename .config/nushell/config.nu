@@ -770,12 +770,8 @@ $env.config = {
 def jgc [
   message = "auto commit": string   # Commit message
   ] {
-    # Execute Git commands
-    # Add all changes
-    git add .
-
     # Commit with the provided message
-    git commit -m $message
+    git commit -am $message
 
     # Push to the current branch
     git push
