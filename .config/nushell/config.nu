@@ -762,6 +762,27 @@ $env.config = {
 # My Configurations #
 #####################
 
+#####################
+# My Functions
+
+# Stages, commits, and pushes Git changes with a provided commit message or "autocommit message" if no message is provided
+def jgc [
+  message = "auto commit": string   # Commit message
+  ] {
+    # Execute Git commands
+    # Add all changes
+    git add .
+   
+    # Commit with the provided message
+    git commit -m $message
+    
+    # Push to the current branch
+    git push
+}
+
+#####################
+# Shell assitance
+
 # Starship prompt
 use ~/.cache/starship/init.nu
 
