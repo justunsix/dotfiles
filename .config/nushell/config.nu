@@ -773,10 +773,10 @@ def jgc [
     # Execute Git commands
     # Add all changes
     git add .
-   
+
     # Commit with the provided message
     git commit -m $message
-    
+
     # Push to the current branch
     git push
 }
@@ -804,7 +804,7 @@ def jgt [
 
                 # Check if it's a git repository
                 if ( $git_status_check.exit_code == 0) {
-                    # Check if there are any changes                  
+                    # Check if there are any changes
                     if ($git_status_check.stdout | str contains "Changes not staged for commit") {
                         # Changes found, print the repository name and status
                         echo $"(ansi red_bold)---(ansi reset)" $it
@@ -815,7 +815,7 @@ def jgt [
                             jgc
                         }
                     }
-                } 
+                }
         }
 
     }
@@ -834,5 +834,5 @@ source ~/.zoxide.nu
 ## https://github.com/ajeetdsouza/zoxide/issues/654#issuecomment-1875476154
 ## run in nushell:
 ## open ~/.zoxide.nu | str replace --all 'def-env' 'def --env' | save -f ~/.zoxide-fixed.nu; source ~\.zoxide-fixed.nu
-## or with OS with sed
-## sed -i 's/def-env/def --env/g' ~/.zoxide.nu; source ~/.zoxide.nu
+## open ~/.zoxide-fixed.nu | str replace --all '$rest' '...$rest' | save -f ~/.zoxide-fixed.nu;
+## source ~\.zoxide-fixed.nu
