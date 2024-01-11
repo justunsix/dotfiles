@@ -52,5 +52,4 @@ kubectl `
 azure-kubelogin `
 nodejs `
 azure-cli `
-lf `
-uutils-coreutils
+lf
