@@ -51,6 +51,21 @@ if [ -f /etc/os-release ]; then
     fi
 fi
 
+# Detect MacOS
+if [[ "$OSTYPE" == "darwin"* ]]; then
+		isMacOS="true"
+
+		# Update Homebrew
+		if command -v brew >/dev/null; then
+				echo ' '
+				echo '----------------------------------------'
+				echo 'Updating Homebrew packages'
+				echo ' '
+				brew update && brew upgrade && brew cleanup
+		fi
+
+fi
+
 # Update git repositories using topgrade
 # if topgrade is installed
 if command -v topgrade >/dev/null; then
@@ -104,7 +119,7 @@ if command -v python3 >/dev/null; then
 fi
 
 # Update all Nix packages
-if [ -e "$HOME/.nix-profile/" ]; then
+if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
 		echo ' '
 		echo '----------------------------------------'
 		echo 'Updating Nix packages'
@@ -183,7 +198,7 @@ if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
 		fi
 
 		# Clean Nix packages
-		if [ -e "$HOME/.nix-profile/" ]; then
+		if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
 				echo ' '
 				echo '----------------------------------------'
 				echo 'Cleaning Nix packages'
