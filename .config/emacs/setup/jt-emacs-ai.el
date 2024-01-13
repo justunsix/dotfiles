@@ -61,7 +61,9 @@
 ;;;; and configured per https://github.com/blahgeek/emacs.d/blob/master/init.el
 (setq warning-suppress-types
         '((emacs)
-          (copilot copilot-exceeds-max-char)))
+          (copilot copilot-exceeds-max-char)
+					(copilot copilot-no-mode-indent))
+				)
 ;;;; Having issues with using add-to-list to add to warning-suppress-types for some reason
 ;;;; (add-to-list 'warning-suppress-types '((emacs)
 ;;;;                 (copilot copilot-exceeds-max-char)))
