@@ -6,8 +6,14 @@
 # if output contains "nothing to commit, working tree clean", then echo "."
 # else print the working directory
 
-# Get list of folders in ~/Code
-$folders = Get-ChildItem -Path ~/Code -Directory
+# Get list of folders to scan
+param (
+    # Directory path parameter, default to ~/Code
+    [string]$directoryPath = "~/Code"
+)
+
+# Get list of folders in specified directory
+$folders = Get-ChildItem -Path $directoryPath -Directory
 
 function Check-GitStatus {
 		param (
