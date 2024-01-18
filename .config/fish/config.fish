@@ -50,12 +50,15 @@ alias nvm="echo 'Switch to bash shell to use nvm'"
 if test -e /usr/share/fzf/shell/key-bindings.fish
 		source /usr/share/fzf/shell/key-bindings.fish
 end
-# Ubuntu Debian, Arch per /usr/share/doc/fzf/README.Debian
-echo fzf_key_bindings > ~/.config/fish/functions/fish_user_key_bindings.fish
+
+if type -q fzf_key_bindings
+	 # Ubuntu Debian, Arch per /usr/share/doc/fzf/README.Debian
+	 echo fzf_key_bindings > ~/.config/fish/functions/fish_user_key_bindings.fish
+end
 
 # *** oc - Openshift CLI
 # if oc command exists, source completions
-if test -e ~/usr/bin/oc
+if type -q oc
 		oc completion fish | source
 end
 
