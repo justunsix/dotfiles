@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
 # For use in a folder with a number git repositories in sub-folders
-# within this folder.
 # This script will loop through each child folder and execute a git status in each one.
 
 # For colorizing the output
 GREEN='\033[0;32m'
 
-cd ~/Code/ || { echo "Error accessing ~/Code directory "; exit 1; }
+# If no argument is provided, use "~/Code/" as the default value
+dir_to_scan=${1:-"$HOME/Code"}
+# Replace ~ with $HOME
+dir_to_scan=${dir_to_scan/#\~/$HOME}
+
+cd "$dir_to_scan" || { echo "Error accessing $dir_to_scan directory "; exit 1; }
 
 # Loop through each folder in the current directory
 for dir in */; do
