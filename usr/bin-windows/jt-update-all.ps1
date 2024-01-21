@@ -18,7 +18,7 @@ if ($runTopgrade -eq "y") {
     }
 }
 
-Write-Host "`nCleaning scoop, conda  packages" -ForegroundColor Green
+Write-Host "`nCleaning scoop, conda packages" -ForegroundColor Green
 scoop cleanup *
 conda clean --all --yes
 
