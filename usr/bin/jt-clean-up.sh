@@ -14,7 +14,7 @@ fi
 # node_modules
 if [ -d "$HOME/Code" ]; then
 
-		echo 'Clean node_modules folders from projects'
+		echo 'Clean node_modules folders from projects, displaying impacted folders if any:'
 		cd ~/Code
 		find . -name "node_modules" -type d -prune | xargs du -chs
 		find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
@@ -23,7 +23,7 @@ fi
 # python venvs
 if [ -d "$HOME/Code" ]; then
 
-		echo 'Clean python venvs folders from projects'
+		echo 'Clean python venvs folders from projects, displaying impacted folders if any:'
 		cd ~/Code
 		find . -name "venv" -type d -prune | xargs du -chs
 		find . -name "venv" -type d -prune -exec rm -rf '{}' +
