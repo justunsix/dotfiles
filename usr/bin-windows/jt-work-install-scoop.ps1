@@ -52,4 +52,5 @@ kubectl `
 azure-kubelogin `
 nodejs `
 azure-cli `
-lf
+lf `
+cmake
