@@ -44,6 +44,23 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+local build_command, condition
+
+-- for nvim-telescope/telescope-fzf-native.nvim
+if is_windows then
+    -- Windows Operating System only:
+    build_command = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+    condition = function()
+        return vim.fn.executable 'cmake' == 1
+    end
+else
+    build_command = 'make'
+    condition = function()
+        return vim.fn.executable 'make' == 1
+    end
+end
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -237,41 +254,11 @@ require('lazy').setup({
         'nvim-telescope/telescope-fzf-native.nvim',
         -- NOTE: If you are having trouble with this installation,
         --       refer to the README for telescope-fzf-native for more instructions.
-        build = 'make',
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
+
+        build = build_command,
+        cond = condition,
       },
     },
-  },
-
-
-  -- Emacs org-mode
-  {
-  'nvim-orgmode/orgmode',
-  dependencies = {
-    { 'nvim-treesitter/nvim-treesitter', lazy = true },
-  },
-  event = 'VeryLazy',
-  config = function()
-    -- Load treesitter grammar for org
-    require('orgmode').setup_ts_grammar()
-
-    -- Setup treesitter
-    require('nvim-treesitter.configs').setup({
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'org' },
-      },
-      ensure_installed = { 'org' },
-    })
-
-    -- Setup orgmode
-    require('orgmode').setup({
-      org_agenda_files = '~/orgfiles/**/*',
-      org_default_notes_file = '~/orgfiles/refile.org',
-    })
-  end,
   },
 
   {
@@ -295,7 +282,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
