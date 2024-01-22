@@ -17,7 +17,7 @@
 ;; (setq copilot-node-executable (concat (getenv "NVM_BIN") "/node"))
 
 ;; Manually set node executable as NVM_BIN is not set unless launched from shell
-(setq copilot-node-executable "~/.nvm/versions/node/v20.10.0/bin/node")
+(setq copilot-node-executable "~/.nvm/versions/node/v20.11.0/bin/node")
 
 ;; if ~/.nix-profile/bin/node exists, use it instead
 (when (file-exists-p "~/.nix-profile/bin/node")
