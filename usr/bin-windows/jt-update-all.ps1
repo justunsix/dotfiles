@@ -18,16 +18,32 @@ if ($runTopgrade -eq "y") {
     }
 }
 
-Write-Host "`nCleaning scoop, conda packages" -ForegroundColor Green
-scoop cleanup *
-scoop cache rm --all
-conda clean --all --yes
+Write-Host "`nCleaning packages" -ForegroundColor Green
 
-Write-Host "`nCleaning mpv watch info" -ForegroundColor Green
-# delete watch data in scoop installed mpv
-Remove-Item -Path ~\scoop\apps\mpv\current\portable_config\watch_later\* -Force -Recurse
+# Check if scoop command exists, if so update scoop
+if (Test-Path ~\scoop\apps\scoop\current\bin\scoop.ps1) {
+    Write-Host "`nCleaning scoop packages and cache" -ForegroundColor Green
+    scoop cleanup *
+    scoop cache rm --all
+}
 
-Write-Host "`nUpdating Emacs packages" -ForegroundColor Green
-# emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
-emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(auto-package-update-now)'
-emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
+# Check if conda command exists, if so update conda
+if (Test-Path ~\scoop\apps\miniconda3\current\Scripts\conda.exe) {
+    Write-Host "`nCleaning conda packages" -ForegroundColor Green
+    conda clean --all --yes
+}
+
+# Check if directory "~\scoop\apps\mpv\current\portable_config\watch_later" exists, if so clean
+if (Test-Path ~\scoop\apps\mpv\current\portable_config\watch_later) {
+    Write-Host "`nCleaning mpv watch info" -ForegroundColor Green
+    # delete watch data in scoop installed mpv
+    Remove-Item -Path ~\scoop\apps\mpv\current\portable_config\watch_later\* -Force -Recurse
+}
+
+# Check if emacs command exists, if so update packages
+if (Test-Path ~\scoop\apps\emacs\current\bin\emacs.exe) {
+    Write-Host "`nUpdating Emacs packages" -ForegroundColor Green
+    # emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
+    emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(auto-package-update-now)'
+    emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
+}    
