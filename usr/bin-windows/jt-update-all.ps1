@@ -7,14 +7,14 @@ $runTopgrade = Read-Host "Do you want to run topgrade? (y/n)"
 
 # If user wants to run topgrade, then run topgrade with options
 if ($runTopgrade -eq "y") {
-    $runTopgradeWithPS1 = Read-Host "Do you want to run topgrade with powershell? (y/n)"
+    $runTopgradeWithPS1 = Read-Host "Do you want to run topgrade with powershell and vagrant? (y/n)"
     Write-Host "`nRunning topgrade" -ForegroundColor Green
 
     if ($runTopgradeWithPS1 -eq "y") {
         topgrade -y --disable system
     } else {
-        Write-Host "`nwith --disable powershell" -ForegroundColor Green
-        topgrade -y --disable system --disable powershell
+        Write-Host "`nwith --disable powershell vagrant" -ForegroundColor Green
+        topgrade -y --disable system --disable powershell vagrant
     }
 }
 
@@ -46,4 +46,4 @@ if (Test-Path ~\scoop\apps\emacs\current\bin\emacs.exe) {
     # emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
     emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(auto-package-update-now)'
     emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
-}    
+}
