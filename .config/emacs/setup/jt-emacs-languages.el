@@ -175,6 +175,16 @@ SEPARATOR is the character to use as a separator."
 	;; (add-hook 'csv-mode-hook '(lambda () (interactive) (toggle-truncate-lines nil))))
 	)
 
+(use-package rust-mode
+	:config
+	;; Use spaces instead of tabs per Rust style guide
+	(add-hook 'rust-mode-hook
+						(lambda () (setq indent-tabs-mode nil)))
+	;; Format on save using rustfmt if installed
+	(setq rust-format-on-save t)
+	(add-hook 'rust-mode-hook #'lsp)
+	)
+
 (provide 'jt-emacs-languages)
 
 ;;; jt-emacs-languages.el ends here
