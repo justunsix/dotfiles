@@ -31,8 +31,12 @@ fi
 
 # Rust targets
 if [ -d "$HOME/.cargo" ]; then
-		echo 'Clean rust targets'
-		cargo clean
+		if [ -d "$HOME/Code" ]; then
+			  echo 'Clean Rust targets'
+				cd ~/Code
+				find . -name "target" -type d -prune | xargs du -chs
+				find . -name "target" -type d -prune -exec rm -rf '{}' +
+		fi
 fi
 
 # Clean Docker images
