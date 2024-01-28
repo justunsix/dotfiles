@@ -355,6 +355,12 @@ if command -v conda-shell >/dev/null; then
 fi
 # <<< conda initialize <<<
 
+## phantonjs
+## Correct issue per https://github.com/ariya/phantomjs/issues/15449
+if command -v phantomjs &>/dev/null; then
+    export OPENSSL_CONF=/etc/ssl~
+fi
+
 ################################
 #
 # Functions
