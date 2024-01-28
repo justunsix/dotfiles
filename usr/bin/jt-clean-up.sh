@@ -29,6 +29,12 @@ if [ -d "$HOME/Code" ]; then
 		find . -name "venv" -type d -prune -exec rm -rf '{}' +
 fi
 
+# Rust targets
+if [ -d "$HOME/.cargo" ]; then
+		echo 'Clean rust targets'
+		cargo clean
+fi
+
 # Clean Docker images
 if command -v docker >/dev/null; then
 		# check Docker daemon is running
