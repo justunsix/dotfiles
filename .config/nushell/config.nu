@@ -823,10 +823,21 @@ def jgt [
 # Starship prompt
 use ~/.cache/starship/init.nu
 
+# Zoxide
+## temp fix 2024-01-06 for older zoxide version in case of "did you mean 'let-env' error
+## https://github.com/ajeetdsouza/zoxide/issues/654#issuecomment-1875476154
+## run in nushell:
+open ~/.zoxide.nu | str replace --all 'def-env' 'def --env' | save -f ~/.zoxide-fixed.nu
+## open ~/.zoxide-fixed.nu | str replace --all '$rest' '...$rest' | save -f ~/.zoxide-fixed.nu;
+source ~/.zoxide-fixed.nu
+# source ~/.zoxide.nu
+
 # Broot
 ## Let it error out if not found
 ## Windows
-source ~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br
+## source ~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br
+source ~/.config/broot/launcher/nushell/br
+
 ## Linux
 
 ## If broot is installed, source it
@@ -835,13 +846,3 @@ source ~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br
 #     source $broot_path_win
 #     echo "Broot sourced"
 # }
-
-# Zoxide
-source ~/.zoxide.nu
-
-## temp fix 2024-01-06 for older zoxide version in case of "did you mean 'let-env' error
-## https://github.com/ajeetdsouza/zoxide/issues/654#issuecomment-1875476154
-## run in nushell:
-## open ~/.zoxide.nu | str replace --all 'def-env' 'def --env' | save -f ~/.zoxide-fixed.nu; source ~\.zoxide-fixed.nu
-## open ~/.zoxide-fixed.nu | str replace --all '$rest' '...$rest' | save -f ~/.zoxide-fixed.nu;
-## source ~\.zoxide-fixed.nu

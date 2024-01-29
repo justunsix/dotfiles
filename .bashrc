@@ -361,6 +361,10 @@ if command -v phantomjs &>/dev/null; then
     export OPENSSL_CONF=/etc/ssl~
 fi
 
+if command -v broot &>/dev/null; then
+    source $HOME/.config/broot/launcher/bash/br
+fi
+
 ################################
 #
 # Functions
