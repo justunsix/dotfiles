@@ -823,6 +823,19 @@ def jgt [
 # Starship prompt
 use ~/.cache/starship/init.nu
 
+# Broot
+## Let it error out if not found
+## Windows
+source ~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br
+## Linux
+
+## If broot is installed, source it
+# const broot_path_win = "~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br"
+# if ($broot_path_win | path exists) {
+#     source $broot_path_win
+#     echo "Broot sourced"
+# }
+
 # Zoxide
 source ~/.zoxide.nu
 

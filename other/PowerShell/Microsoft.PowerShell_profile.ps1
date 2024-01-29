@@ -37,3 +37,9 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 Import-Module Az.Tools.Predictor
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Enable-AzPredictor -AllSession
+
+# Broot
+# if Broot present, source function
+if (Test-Path $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1) {
+    . $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1
+}

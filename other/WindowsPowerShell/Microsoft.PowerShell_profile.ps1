@@ -33,3 +33,8 @@ Import-Module PSFzf
 # Reverse Search Through PSReadline History (default chord: Ctrl+r)
 # replace 'Ctrl+t' and 'Ctrl+r' with your preferred bindings:
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+
+# if Broot present, source function
+if (Test-Path $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1) {
+    . $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1
+}
