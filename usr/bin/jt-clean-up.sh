@@ -8,7 +8,7 @@ if [ -d "$HOME/.nvm" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
 		echo 'Clean unused nvm versions'
 		NVM_DIR="$HOME/.nvm"
 		source "$NVM_DIR/nvm.sh"
-		cd ~/.nvm/versions/node || exit; ls -A | grep -v 'nvm current' | xargs rm -rf
+		cd ~/.nvm/versions/node; ls -A | grep -v `nvm current` | xargs rm -rf
 fi
 
 # python venvs
