@@ -55,4 +55,5 @@ nodejs `
 azure-cli `
 lf `
 cmake `
+bront `
 kondo
