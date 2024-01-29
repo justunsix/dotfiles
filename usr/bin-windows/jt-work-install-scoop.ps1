@@ -54,4 +54,5 @@ azure-kubelogin `
 nodejs `
 azure-cli `
 lf `
-cmake
+cmake `
+kondo
