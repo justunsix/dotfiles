@@ -20,7 +20,7 @@ if [ -d "$HOME/Code" ]; then
 		find . -name "venv" -type d -prune -exec rm -rf '{}' +
 
 		# kondo command exists
-		if command -v konda >/dev/null; then
+		if command -v kondo >/dev/null; then
 				echo 'Clean software projects unneeded files'
 				cd "$HOME/Code" && kondo
 		fi
