@@ -18,7 +18,15 @@ if ($runTopgrade -eq "y") {
     }
 }
 
-Write-Host "`nCleaning packages" -ForegroundColor Green
+# Check if emacs command exists, if so update packages
+if (Test-Path ~\scoop\apps\emacs\current\bin\emacs.exe) {
+    Write-Host "`nUpdating Emacs packages" -ForegroundColor Green
+    # emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
+    emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(auto-package-update-now)'
+    emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
+}
+
+Write-Host "`nCleaning packages and software projects" -ForegroundColor Green
 
 # Check if scoop command exists, if so update scoop
 if (Test-Path ~\scoop\apps\scoop\current\bin\scoop.ps1) {
@@ -40,10 +48,8 @@ if (Test-Path ~\scoop\apps\mpv\current\portable_config\watch_later) {
     Remove-Item -Path ~\scoop\apps\mpv\current\portable_config\watch_later\* -Force -Recurse
 }
 
-# Check if emacs command exists, if so update packages
-if (Test-Path ~\scoop\apps\emacs\current\bin\emacs.exe) {
-    Write-Host "`nUpdating Emacs packages" -ForegroundColor Green
-    # emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
-    emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(auto-package-update-now)'
-    emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
+if (Test-Path ~\Code) {
+		Write-Host "`nCleaning software projects unneed files" -ForegroundColor Green
+		cd ~\Code
+		kondo
 }
