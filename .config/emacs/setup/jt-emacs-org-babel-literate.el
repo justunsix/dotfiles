@@ -104,6 +104,7 @@
 		 (python . t)
 		 (shell . t)
 		 (sql . t)
+		 (makefile . t)
 		 ;; plantuml
 		 ;; per https://plantuml.com/emacs
 		 (plantuml . t)
