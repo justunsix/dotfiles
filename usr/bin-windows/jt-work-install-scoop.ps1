@@ -56,4 +56,5 @@ azure-cli `
 lf `
 cmake `
 bront `
-kondo
+kondo `
+make
