@@ -153,7 +153,9 @@
 
 
 [git]
+# How many repos to pull at max in parallel
 max_concurrency = 10
+
 # Additional git repositories to pull
 repos = [
      "~/Code/*"
@@ -226,5 +228,6 @@ repos = [
 # use_root = false
 
 # containers = ["archlinux-latest"]
-# [containers]
-# ignored_containers = ["ghcr.io/rancher-sandbox/rancher-desktop/rdx-proxy:latest"]
+[containers]
+# Specify the containers to ignore while updating (Wildcard supported)
+# ignored_containers = ["ghcr.io/rancher-sandbox/rancher-desktop/rdx-proxy:latest", "docker.io*"]
