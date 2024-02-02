@@ -13,7 +13,7 @@ if ($runTopgrade -eq "y") {
     if ($runTopgradeWithPS1 -eq "y") {
         topgrade -y --disable system
     } else {
-        Write-Host "`nwith --disable powershell vagrant" -ForegroundColor Green
+        Write-Host "`nwith --disable powershell vagrant emacs vim" -ForegroundColor Green
         topgrade -y --disable system --disable powershell vagrant emacs vim
     }
 }
