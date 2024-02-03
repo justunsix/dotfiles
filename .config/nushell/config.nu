@@ -836,7 +836,7 @@ source ~/.zoxide-fixed.nu
 ## Let it error out if not found
 ## Windows
 ## source ~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br
-source ~/.config/broot/launcher/nushell/br
+## source ~/.config/broot/launcher/nushell/br
 
 ## Linux
 
