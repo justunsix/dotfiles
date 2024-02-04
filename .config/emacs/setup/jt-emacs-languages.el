@@ -185,6 +185,9 @@ SEPARATOR is the character to use as a separator."
 	(add-hook 'rust-mode-hook #'lsp)
 	)
 
+(use-package nix-mode
+  :mode "\\.nix\\'")
+
 (provide 'jt-emacs-languages)
 
 ;;; jt-emacs-languages.el ends here
