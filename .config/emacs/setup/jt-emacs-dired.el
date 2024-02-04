@@ -100,7 +100,7 @@
 ;; (define-key dired-recent-mode-map (kbd "SOME OTHER KEY") #'dired-recent-open)
 
 ;; dirvish file manager
-(use-package dirvish)
+;; (use-package dirvish)
 
 (provide 'jt-emacs-dired)
 
