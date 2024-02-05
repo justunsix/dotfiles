@@ -31,6 +31,11 @@
 	:config
 	)
 
+;; Activate yasnippet globally
+;; can be done on per buffer with yas-minor-mode
+;; or M-x yas-reload-all if you've started YASnippet already.
+(yas-global-mode 1)
+
 ;; Install snippet collection
 (use-package yasnippet-snippets
 	:after yasnippet
@@ -41,11 +46,6 @@
 	;; to turn off warnings of elisp executions in snippets
 	(add-to-list 'warning-suppress-types '(yasnippet backquote-change))
 	)
-
-;; Activate yasnippet globally
-;; can be done on per buffer with yas-minor-mode
-;; or M-x yas-reload-all if you've started YASnippet already.
-(yas-global-mode 1)
 
 ;; UI enhancements for LSP
 ;; Can use sideline configuration for more frame help on screen
