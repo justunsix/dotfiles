@@ -53,3 +53,6 @@ if (Test-Path ~\Code) {
 		cd ~\Code
 		kondo
 }
+
+# Update VSCode extensions
+# code --update-extensions
