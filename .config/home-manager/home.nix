@@ -45,6 +45,7 @@
     pkgs.gitui
     pkgs.img2pdf
     pkgs.duf
+    ## aka btm
     pkgs.bottom
     pkgs.kondo
     pkgs.broot
