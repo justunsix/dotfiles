@@ -28,10 +28,6 @@
     pkgs.ranger
     # Productivity and Tasks
     pkgs.super-productivity
-    # RSS
-    pkgs.fluent-reader
-    # Video
-    pkgs.freetube
     # Graphics and Diagrams
     pkgs.gimp
     pkgs.inkscape
