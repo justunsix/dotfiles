@@ -20,11 +20,18 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    pkgs.hello
-    pkgs.brave
+    # pkgs.hello
+
+    # Email
     pkgs.thunderbird
+    # File Management
     pkgs.ranger
+    # Productivity and Tasks
     pkgs.super-productivity
+    # RSS
+    pkgs.fluent-reader
+    # Video
+    pkgs.freetube
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -76,4 +83,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Enable setting profile and session variables for system
+  # and update of user environment cache of programs
+  # Allow programs to show in desktop environment
+  # per https://github.com/nix-community/home-manager/issues/1439
+  targets.genericLinux.enable = true;
+  xdg.mime.enable = true;
 }
