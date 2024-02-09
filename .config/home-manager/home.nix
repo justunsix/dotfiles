@@ -22,8 +22,55 @@
     # # "Hello, world!" when run.
     # pkgs.hello
 
+    # ------------------------------------------------------------
+    # Main Packages
+
+    # System
+    pkgs.procs
     # File Management
     pkgs.ranger
+
+    # Shell
+    pkgs.fish
+    pkgs.nushell
+    pkgs.starship
+    pkgs.bat
+    # Fonts
+    pkgs.iosevka
+    pkgs.source-code-pro
+    # Even though installed by apt, require for program like exa
+    pkgs.fira-code
+    # File Management
+    pkgs.lf
+    pkgs.gitui
+    pkgs.img2pdf
+    pkgs.duf
+    pkgs.bottom
+    pkgs.kondo
+    pkgs.broot
+   # Terminal
+    pkgs.tmux
+    pkgs.mprocs
+    pkgs.dogdns
+    ## Lower Priority
+    ## - nixpkgs.bottom
+    ## - nixpkgs.sd
+    ## Former rust cargo installs
+    pkgs.du-dust
+    ### Remove unmaintained - nixpkgs.exa, replaced by eza
+    pkgs.eza
+    pkgs.monolith
+    pkgs.procs
+    pkgs.topgrade
+    pkgs.zoxide
+    # DevOps
+    pkgs.neovim
+    ## PlantUML
+    pkgs.plantuml
+    ## Document conversion, Emacs exports
+    pkgs.pandoc
+    ## Python
+    pkgs.conda
 
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
@@ -59,6 +106,12 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  # Pick up fonts
+  # per https://github.com/nix-community/home-manager/issues/605
+  fonts.fontconfig = {
+   enable = true;
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
