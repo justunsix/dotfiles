@@ -24,17 +24,27 @@
 
     # File Management
     pkgs.ranger
+
+    # ------------------------------------------------------------
+    # Graphical Applications Tested with Nix by not managed by Nix
+
     # Productivity and Tasks
-    pkgs.super-productivity
+    # pkgs.super-productivity
     # Graphics and Diagrams
-    pkgs.gimp
-    pkgs.inkscape
-    pkgs.drawio
+    # pkgs.gimp
+    # pkgs.inkscape
+    # pkgs.drawio
 
     # Files
-    pkgs.fsearch
+    # pkgs.fsearch
     # Security
-    pkgs.keepassxc
+    # pkgs.keepassxc
+    # Email
+    # pkgs.thunderbird
+    # RSS
+    # pkgs.fluent-reader
+    # Video
+    # pkgs.freetube
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
