@@ -48,7 +48,7 @@
     pkgs.bottom
     pkgs.kondo
     pkgs.broot
-   # Terminal
+    # Terminal
     pkgs.tmux
     pkgs.mprocs
     pkgs.dogdns
