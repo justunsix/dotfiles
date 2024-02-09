@@ -10,11 +10,12 @@ if ($runTopgrade -eq "y") {
     $runTopgradeWithPS1 = Read-Host "Do you want to run topgrade with powershell, emacs, vim, and vagrant? (y/n)"
     Write-Host "`nRunning topgrade" -ForegroundColor Green
 
+		# Disable vscode due to bug for now
     if ($runTopgradeWithPS1 -eq "y") {
-        topgrade -y --disable system
+        topgrade -y --disable system vscode
     } else {
         Write-Host "`nwith --disable powershell vagrant emacs vim" -ForegroundColor Green
-        topgrade -y --disable system --disable powershell vagrant emacs vim
+        topgrade -y --disable system --disable powershell vagrant emacs vim vscode
     }
 }
 
