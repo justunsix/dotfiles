@@ -126,6 +126,9 @@ if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
 		echo ' '
 		nix-channel --update
 		nix-env -u
+		if [ -x "$(command -v home-manager)" ]; then
+				home-manager switch
+		fi
 fi
 
 # If day is Saturday or Sunday

@@ -203,6 +203,10 @@ export MANPAGER="less"
 
 export EMACS_SERVER_FILE="$HOME/.emacs.d/server/server"
 
+# nix home-manager
+if [ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]; then
+	. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+fi
 
 # ** XDG
 # Check if they are empty and set them to default values
