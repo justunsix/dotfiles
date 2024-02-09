@@ -22,8 +22,6 @@
     # # "Hello, world!" when run.
     # pkgs.hello
 
-    # Email
-    pkgs.thunderbird
     # File Management
     pkgs.ranger
     # Productivity and Tasks
