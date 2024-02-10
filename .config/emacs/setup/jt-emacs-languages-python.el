@@ -74,12 +74,11 @@
 		;; Set conda directories and environments
 		(setq conda-anaconda-home (expand-file-name jt/conda-home)
 					conda-env-home-directory (expand-file-name jt/conda-home)
-					conda-env-subdirectory "envs"
+					conda-env-subdirectory "envs")
 					;; Load activated conda environment into Emacs or base as default
 					;; To populate CONDA_DEFAULT_ENV, activate an env and open Emacs for it to detect it
 					(unless (getenv "CONDA_DEFAULT_ENV")
 						(conda-env-activate "base"))
-					)
 		)
 
 	(use-package jupyter
