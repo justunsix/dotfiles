@@ -7,7 +7,7 @@
 (defvar jt/org-directory (concat (getenv "HOME") "/org"))
 
 ;; Directory containing projects, can be list of paths like ("~/projects" "~/work")
-(defvar jt/project-search-path '("~/Projects"))
+(defvar jt/project-search-path (concat (getenv "HOME") "/Code"))
 
 ;; Location of dotfiles
 (defvar jt/dotfiles-dir (concat (getenv "HOME") "/Code/dotfiles"))

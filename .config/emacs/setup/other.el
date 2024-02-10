@@ -23,7 +23,7 @@
   :commands swiper)
 
 ;; Set Grep, Find program locations on Windows
-; https://www.emacswiki.org/emacs/GrepMode#h5o-4
+;; https://www.emacswiki.org/emacs/GrepMode#h5o-4
 (when jt/windows-p
 	;; Get location of Windows user home directory
 	(setq user-home-directory (getenv "USERPROFILE"))
