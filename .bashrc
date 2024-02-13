@@ -383,7 +383,7 @@ fi
 ### ARCHIVE EXTRACTION
 # From
 # usage: ex <file>
-ex ()
+jt-extract ()
 {
   if [ -f "$1" ] ; then
     case $1 in
@@ -410,7 +410,7 @@ ex ()
 
 ### navigation with cd
 ### move up in directories
-up () {
+jt-up () {
   local d=""
   local limit="$1"
 
