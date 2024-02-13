@@ -830,7 +830,7 @@ use ~/.cache/starship/init.nu
 ## open ~/.zoxide.nu | str replace --all 'def-env' 'def --env' | save -f ~/.zoxide-fixed.nu
 ## open ~/.zoxide-fixed.nu | str replace --all '$rest' '...$rest' | save -f ~/.zoxide-fixed.nu;
 ## source ~/.zoxide-fixed.nu
-## Should be fixed as of 2024-02-13, confirmed fixed on Windows sccop
+## Should be fixed as of 2024-02-13, confirmed fixed on Windows scoop
 source ~/.zoxide.nu
 
 # Broot
