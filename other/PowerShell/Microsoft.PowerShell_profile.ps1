@@ -3,6 +3,9 @@
 # Stored in $PROFILE variable
 # Managed by Ansible
 
+# Variables
+$env:EDITOR = "nvim"
+
 # Prompt
 
 ## Starship
