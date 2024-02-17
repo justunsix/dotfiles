@@ -58,6 +58,10 @@
 	"notebook.output.wordWrap": true,
 	// ** Extension: Edit csv
 	"csv-edit.sidePanelAppearance": "expanded",
+	// ** HTML
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
 	// ** JSON
 	"[jsonc]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
@@ -65,6 +69,10 @@
 	// ** Shell script (bash)
 	"[shellscript]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format"
+	},
+	// ** PlantUML
+	"[plantuml]": {
+		"editor.defaultFormatter": "jebbs.plantuml"
 	},
 	// ** YAML
 	"[yaml]": {
@@ -80,10 +88,9 @@
 	// ** Java
 	"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
 	// ## Extension: AutoHotKey (AHK)
-	// Default location installed by chocolatey
-	"ahk++.file.compilePath": "C:\\Program Files\\AutoHotkey\\Compiler\\Ahk2Exe.exe",
-	"ahk++.file.helpPath": "C:\\Program Files\\AutoHotkey\\AutoHotkey.chm",
-	"ahk++.file.executePath": "C:\\Program Files\\AutoHotkey\\AutoHotkeyU64.exe",
+	// Default location installed by scoop
+  "ahk++.file.interpreterPathV2": "${env:USERPROFILE}\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey64.exe",
+  "ahk++.file.helpPathV2": "${env:USERPROFILE}\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey.chm",
 	// * Git
 	// Is git enabled and path to git binaries
 	"git.enabled": true,
@@ -112,8 +119,8 @@
 			"source": "Git Bash"
 		},
 		"Cygwin Bash": {
-			// Default location installed by chocolatey
-			"path": "C:\\tools\\cygwin\\bin\\bash.exe",
+			// Default location installed by scoop
+			"path": "${env:USERPROFILE}\\scoop\\apps\\cygwin\\current\\bin\\bash.exe",
 			"args": [
 				"--login",
 				"-i"
@@ -192,11 +199,13 @@
 	// * Input and Output
 	"editor.copyWithSyntaxHighlighting": true,
 	"editor.accessibilitySupport": "off",
-	"files.autoSave": "afterDelay",
+	"files.autoSave": "afterDelay",	
 	// * Editing
 	"editor.suggestSelection": "first",
 	"editor.inlineSuggest.enabled": true,
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"explorer.confirmDelete": false,
 	// * Security
 	"security.workspace.trust.untrustedFiles": "open",
 }
