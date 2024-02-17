@@ -825,25 +825,25 @@ use ~/.cache/starship/init.nu
 
 # Zoxide
 ## temp fix 2024-01-06 for older zoxide version in case of "did you mean 'let-env' error
-## https://github.com/ajeetdsouza/zoxide/issues/654#issuecomment-1875476154
-## run in nushell:
-## open ~/.zoxide.nu | str replace --all 'def-env' 'def --env' | save -f ~/.zoxide-fixed.nu
-## open ~/.zoxide-fixed.nu | str replace --all '$rest' '...$rest' | save -f ~/.zoxide-fixed.nu;
-## source ~/.zoxide-fixed.nu
-## Should be fixed as of 2024-02-13, confirmed fixed on Windows scoop
+### https://github.com/ajeetdsouza/zoxide/issues/654#issuecomment-1875476154
+### run in nushell:
+### open ~/.zoxide.nu | str replace --all 'def-env' 'def --env' | save -f ~/.zoxide-fixed.nu
+### open ~/.zoxide-fixed.nu | str replace --all '$rest' '...$rest' | save -f ~/.zoxide-fixed.nu;
+### source ~/.zoxide-fixed.nu
+### Fixed as of 2024-02-13, confirmed fixed on Windows scoop and Nix unstable
 source ~/.zoxide.nu
 
 # Broot
 ## Let it error out if not found
-## Windows
-## source ~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br
-## source ~/.config/broot/launcher/nushell/br
+## Conditional sourcing
+## per https://www.nushell.sh/blog/2023-09-19-nushell_0_85_0.html#improvements-to-parse-time-evaluation
+const BR_WINDOWS_CONFIG = "~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br"
+const BR_NIX_CONFIG = "~/.config/broot/launcher/nushell/br"
 
-## Linux
+const BR_ACTUAL_CONFIG = if $nu.os-info.name == "windows" {
+    $BR_WINDOWS_CONFIG
+} else {
+    $BR_NIX_CONFIG
+}
 
-## If broot is installed, source it
-# const broot_path_win = "~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br"
-# if ($broot_path_win | path exists) {
-#     source $broot_path_win
-#     echo "Broot sourced"
-# }
+source $BR_ACTUAL_CONFIG
