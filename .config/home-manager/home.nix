@@ -27,8 +27,6 @@
 
     # System
     pkgs.procs
-    # File Management
-    pkgs.ranger
 
     # Shell
     pkgs.fish
@@ -66,6 +64,7 @@
     pkgs.zoxide
     # DevOps
     pkgs.neovim
+    pkgs.helix
     ## PlantUML
     pkgs.plantuml
     ## Document conversion, Emacs exports
