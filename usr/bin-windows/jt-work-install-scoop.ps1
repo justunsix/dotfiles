@@ -44,7 +44,6 @@ shellcheck `
 imagemagick `
 bleachbit `
 ccleaner `
-cht `
 pycharm `
 duf `
 dog `
@@ -59,4 +58,6 @@ kondo `
 make `
 helix `
 cygwin `
-autohotkey
+autohotkey `
+python
+
