@@ -22,7 +22,6 @@ if ($runTopgrade -eq "y") {
 # Check if emacs command exists, if so update packages
 if (Test-Path ~\scoop\apps\emacs\current\bin\emacs.exe) {
     Write-Host "`nUpdating Emacs packages" -ForegroundColor Green
-    # emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
     emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(auto-package-update-now)'
     emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
 }

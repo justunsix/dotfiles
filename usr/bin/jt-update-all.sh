@@ -141,7 +141,6 @@ if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
 				echo '----------------------------------------'
 				echo 'Updating Emacs packages'
 				echo ' '
-				# emacs --batch --eval '(progn (package-refresh-contents) (package-upgrade-all))'
 				emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(auto-package-update-now)'
 				emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
 		fi
