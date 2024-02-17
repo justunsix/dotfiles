@@ -53,9 +53,10 @@ kubectl `
 azure-kubelogin `
 nodejs `
 azure-cli `
-lf `
 cmake `
-bront `
+broot `
 kondo `
 make `
-helix
+helix `
+cygwin `
+autohotkey

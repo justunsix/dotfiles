@@ -2,6 +2,7 @@
 @echo off
 
 C:
-chdir C:\tools\cygwin
+@REM Change to the directory where Cygwin is installed by scoop
+chdir %USERPROFILE%\scoop\apps\cygwin\current
 
-cygwinsetup.exe -B
+cygwin-setup.exe -B
