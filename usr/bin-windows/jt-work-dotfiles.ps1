@@ -1,5 +1,7 @@
 # Script to synchronize dotfiles periodically
 
+. $PSScriptRoot/common.ps1
+
 #############
 # Functions #
 #############
@@ -71,7 +73,7 @@ $dotfiles_to_be_synchronized = @(
 ###############
 
 # For each item in $dotfiles_to_be_removed, remove file if it exists
-Write-Host "`n--- Removing dotfiles not required"
+Write-HostWithTimestamp "Removing dotfiles not required"
 foreach ($dotfile in $dotfiles_to_be_removed) {
   if (Test-Path $dotfile) {
     Write-Host "- Removing $dotfile"
@@ -82,7 +84,7 @@ foreach ($dotfile in $dotfiles_to_be_removed) {
 }
 
 # Create directories if they do not exist already
-Write-Host "`n--- Creating dotfiles directories if they do not exist"
+Write-HostWithTimestamp "Creating dotfiles directories if they do not exist"
 foreach ($directory in $dotfiles_directories) {
   if (Test-Path $directory) {
     Write-Host "= Found $directory"
@@ -94,7 +96,7 @@ foreach ($directory in $dotfiles_directories) {
 
 # Synchronize Dotfiles
 # For each tuple in $dotfiles_to_be_synchronized, copy source to destination
-Write-Host "`n--- Synchronizing dotfiles"
+Write-HostWithTimestamp "Synchronizing dotfiles"
 foreach ($dotfile in $dotfiles_to_be_synchronized) {
   Copy-SourceToDestination -source $dotfile[0] -destination $dotfile[1]
 }
