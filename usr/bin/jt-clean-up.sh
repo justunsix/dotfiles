@@ -38,6 +38,12 @@ if command -v docker >/dev/null; then
 		fi
 fi
 
+# Clean screenshots
+if [ -d "$HOME/Pictures/Screenshots" ]; then
+		echo 'Clean screenshots'
+		rm -rf ~/Pictures/Screenshots/*
+fi
+
 # Clean mpv watch information
 if [ -d "$HOME/.config/mpv/watch_later" ]; then
 		echo 'Clean mpv watch information'
