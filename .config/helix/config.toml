@@ -7,3 +7,6 @@ line-number = "relative"
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.file-picker]
+hidden = false
