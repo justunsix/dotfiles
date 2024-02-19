@@ -13,17 +13,17 @@
   )
 
 ;; Installation and instructions at https://github.com/zerolfx/copilot.el
-;; Set copilot-node-executable to environment variable NVM_BIN managed by nvm
-;; (setq copilot-node-executable (concat (getenv "NVM_BIN") "/node"))
+(when jt/linux-p
+  ;; Set copilot-node-executable to environment variable NVM_BIN managed by nvm
+  ;; (setq copilot-node-executable (concat (getenv "NVM_BIN") "/node"))
+  ;; Manually set node executable as NVM_BIN is not set unless launched from shell
+  (setq copilot-node-executable
+        (car (directory-files-recursively "~/.nvm/versions/node/" "node$" nil t)))
 
-;; Manually set node executable as NVM_BIN is not set unless launched from shell
-(setq copilot-node-executable
-      (car (directory-files-recursively "~/.nvm/versions/node/" "node$" nil t)))
-
-;; if ~/.nix-profile/bin/node exists, use it instead
-(when (file-exists-p "~/.nix-profile/bin/node")
-  (setq copilot-node-executable "~/.nix-profile/bin/node"))
-
+  ;; if ~/.nix-profile/bin/node exists, use it instead
+  (when (file-exists-p "~/.nix-profile/bin/node")
+    (setq copilot-node-executable "~/.nix-profile/bin/node"))
+)
 (when jt/windows-p
   ;; Set to nodejs location installed by scoop in user's folder
   ;; Previous configuration was set to nodejs v17 folder structure using Windows 64 bit binary from https://nodejs.org/download/release/v17.9.1/ as if it was installed by nvm
