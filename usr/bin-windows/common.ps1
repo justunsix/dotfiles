@@ -5,5 +5,5 @@ function Write-HostWithTimestamp {
     )
 
 $timestamp = Get-Date -Format "HH:mm:ss"
-Write-Host ("`n── " + $timestamp + " - " + $Message + " ─────────────")
+Write-Host ("`n-- " + $timestamp + " - " + $Message + " ------------------")
 }
