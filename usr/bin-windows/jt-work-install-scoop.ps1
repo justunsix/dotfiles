@@ -62,4 +62,4 @@ cygwin `
 autohotkey `
 python `
 pwsh `
-JetBrains-Mono
+nerd-fonts/JetBrains-Mono
