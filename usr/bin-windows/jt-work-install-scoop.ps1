@@ -1,5 +1,6 @@
 scoop bucket add java
 scoop bucket add extras
+scoop bucket add nerd-fonts
 # Install with scoop the following packages
 # List package on each line by itself
 # Unused:
@@ -59,5 +60,6 @@ make `
 helix `
 cygwin `
 autohotkey `
-python
-
+python `
+pwsh `
+JetBrains-Mono
