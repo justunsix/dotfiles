@@ -31,16 +31,22 @@ function Install-ModuleToDirectory {
 # Example usage:
 # Install-ModuleToDirectory -Name 'YourModuleName' -Destination 'E:\Modules'
 
-Install-ModuleToDirectory -Name Az.Accounts  -Destination "~\scoop\modules"
-Install-ModuleToDirectory -Name Az.Tools.Predictor -Destination "~\scoop\modules"
-# Install-ModuleToDirectory -Name AzureAD -Destination "~\scoop\modules"
-Install-ModuleToDirectory -Name CompletionPredictor -Destination "~\scoop\modules"
-Install-ModuleToDirectory -Name Microsoft.Graph -Destination "~\scoop\modules"
+# --- Windows Powershell 5.1 modules
 
 # Install Readline supports
 Install-ModuleToDirectory -Name PSReadline -Destination "~\scoop\modules"
 # Install-Module -Name PSReadline -AllowClobber -Force
 Install-ModuleToDirectory -Name PSFzf -Destination "~\scoop\modules"
+## Azure Active Directory, deprecated 2023-06
+Install-ModuleToDirectory -Name AzureADPreview -Destination "~\scoop\modules"
+
+# --- Powershell modules
+
+Install-ModuleToDirectory -Name Az.Accounts  -Destination "~\scoop\modules"
+Install-ModuleToDirectory -Name Az.Tools.Predictor -Destination "~\scoop\modules"
+# Install-ModuleToDirectory -Name AzureAD -Destination "~\scoop\modules"
+Install-ModuleToDirectory -Name CompletionPredictor -Destination "~\scoop\modules"
+Install-ModuleToDirectory -Name Microsoft.Graph -Destination "~\scoop\modules"
 
 # Install-ModuleToDirectory -Name SqlServer -Destination "~\scoop\modules"
 # Install-ModuleToDirectory -Name Terraform -Destination "~\scoop\modules"

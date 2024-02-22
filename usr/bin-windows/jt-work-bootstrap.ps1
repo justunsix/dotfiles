@@ -16,16 +16,11 @@ gsudo jt-work-install-choco.ps1
 # Alternatively for powershell-core, install using winget to avoid powershell upgrade issues
 # winget install --id Microsoft.Powershell --source winget
 
-# Install Azure tools
-## Azure Active Directory, deprecated 2023-06
-Install-Module -Name AzureADPreview
-
 # Upgrade all installed packages
 gsudo choco upgrade all -y
 
-# Install PowerShell 7+ modules
+# Install PowerShell modules
 pwsh
-
 jt-install-pwsh-modules.ps1
 
 # Synchronize dotfiles
