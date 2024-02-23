@@ -51,7 +51,7 @@
 ;; Completion descriptions for commands
 (use-package ivy-rich
   :after ivy
-  :init
+  :config
   (ivy-rich-mode 1))
 
 ;; Show most used commands using M-x, used by counsel M-x
