@@ -1,14 +1,14 @@
 # Script to configure a new Windows desktop
 # Run under regular Windows PowerShell
 
-# Execute in PowerShell steps that are 
-# automated by Ansible at windows.yml 
+# Execute in PowerShell steps that are
+# automated by Ansible at windows.yml
 # at https://github.com/justunsix/dotfiles-playbook
 
 # Assuming Scoop is installed, install packages
-jt-work-install-scoop.ps1
+.\jt-work-install-scoop.ps1
 # Assuming Chocolatey is installed, install packages
-gsudo jt-work-install-choco.ps1
+gsudo .\jt-work-install-choco.ps1
 
 # Install PowerShell-core with arguments per
 # https://community.chocolatey.org/packages/powershell-core/
@@ -21,7 +21,7 @@ gsudo choco upgrade all -y
 
 # Install PowerShell modules
 pwsh
-jt-install-pwsh-modules.ps1
+.\jt-install-pwsh-modules.ps1
 
 # Synchronize dotfiles
-jt-work-dotfiles.ps1
+.\jt-work-dotfiles.ps1
