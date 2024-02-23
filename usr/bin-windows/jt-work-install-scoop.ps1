@@ -62,4 +62,5 @@ cygwin `
 autohotkey `
 python `
 pwsh `
+extras/wezterm `
 nerd-fonts/JetBrains-Mono
