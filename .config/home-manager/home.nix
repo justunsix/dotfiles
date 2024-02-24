@@ -17,92 +17,93 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    # pkgs.hello
+    # hello
 
     # ------------------------------------------------------------
     # Main Packages
 
     # System
-    pkgs.procs
+    procs
 
     # Shell
-    pkgs.fish
-    pkgs.nushell
-    pkgs.starship
-    pkgs.bat
+    fish
+    nushell
+    starship
+    bat
     # Fonts
-    pkgs.iosevka
-    pkgs.source-code-pro
+    iosevka
+    source-code-pro
     # Even though installed by apt, require for program like exa
-    pkgs.fira-code
+    fira-code
     # File Management
-    pkgs.lf
-    pkgs.gitui
-    pkgs.img2pdf
-    pkgs.duf
+    lf
+    gitui
+    img2pdf
+    duf
     ## aka btm
-    pkgs.bottom
-    pkgs.kondo
-    pkgs.broot
+    bottom
+    kondo
+    broot
     # Terminal
-    pkgs.tmux
-    pkgs.mprocs
-    pkgs.dogdns
+    tmux
+    mprocs
+    dogdns
     ## Lower Priority
-    ## - nixpkgs.bottom
-    ## - nixpkgs.sd
+    ## - nixbottom
+    ## - nixsd
     ## Former rust cargo installs
-    pkgs.du-dust
-    ### Remove unmaintained - nixpkgs.exa, replaced by eza
-    pkgs.eza
-    pkgs.monolith
-    pkgs.procs
-    pkgs.topgrade
-    pkgs.zoxide
+    du-dust
+    ### Remove unmaintained - nixexa, replaced by eza
+    eza
+    monolith
+    procs
+    topgrade
+    zoxide
     # DevOps
-    pkgs.neovim
-    pkgs.helix
+    emacs
+    neovim
+    helix
     ## PlantUML
-    pkgs.plantuml
+    plantuml
     ## Document conversion, Emacs exports
-    pkgs.pandoc
+    pandoc
     ## Python
-    pkgs.conda
+    conda
 
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
 
     # Productivity and Tasks
-    # pkgs.super-productivity
+    # super-productivity
     # Graphics and Diagrams
-    # pkgs.gimp
-    # pkgs.inkscape
-    # pkgs.drawio
+    # gimp
+    # inkscape
+    # drawio
 
     # Files
-    # pkgs.fsearch
+    # fsearch
     # Security
-    # pkgs.keepassxc
+    # keepassxc
     # Email
-    # pkgs.thunderbird
+    # thunderbird
     # RSS
-    # pkgs.fluent-reader
+    # fluent-reader
     # Video
-    # pkgs.freetube
+    # freetube
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    # (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
+    # (writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
