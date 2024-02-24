@@ -57,6 +57,14 @@
 ;; from: https://www.masteringemacs.org/article/re-builder-interactive-regexp-builder
 (setq reb-re-syntax 'string)
 
+;; Abbrev Mode to expand abbreviations for shorthand
+;; http://xahlee.info/emacs/emacs/emacs_abbrev_mode_tutorial.html
+;; Turn on abbrev mode globally
+(setq-default abbrev-mode t)
+;; Auto save on exit
+;; by default to Emacs config directory/abbrev_defs
+(setq save-abbrevs 'silently)
+
 ;; Set preferred coding system to utf-8
 ;;
 ;; Gets around a possible issue in encoding files and *temp* buffer
