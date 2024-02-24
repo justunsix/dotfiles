@@ -8,6 +8,7 @@ This repository contains my personal dotfiles like configurations for software d
 
 /<br/>
 ├── `.config/` configuration files for the below mentioned programs<br/>
+------├── `broot` - [Broot](https://dystroy.org/broot/) file and directory navigator<br/>
 ------├── `Code/User/` - [Visual Studio Code](https://code.visualstudio.com/) Editor<br/>
 ------├── `cool-retro-term/` - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) Terminal Emulator<br/>
 ------├── `copyq/` - [copyq](https://hluk.github.io/CopyQ/) Clipboard Manager<br/>
@@ -86,6 +87,7 @@ This repository contains my personal dotfiles like configurations for software d
 - Updates for software: [topgrade](https://github.com/topgrade-rs/topgrade)
 - Keyboard mapper: [input-remapper](https://github.com/sezanzeb/input-remapper)
 - Package Management: [Home Manager using nix](https://github.com/nix-community/home-manager)
+- File Explorer, Directory Navigator: [Broot](https://dystroy.org/broot/)
 
 ## How Dotfiles are Managed
 
