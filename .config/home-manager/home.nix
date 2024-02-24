@@ -41,11 +41,10 @@
     # Even though installed by apt, require for program like exa
     fira-code
     # File Management
-    lf
     gitui
     img2pdf
     duf
-    ## aka btm
+    ## bottom aka btm
     bottom
     kondo
     broot
@@ -53,15 +52,12 @@
     tmux
     mprocs
     dogdns
-    ## Lower Priority
-    ## - nixbottom
-    ## - nixsd
+    ## sd
     ## Former rust cargo installs
     du-dust
-    ### Remove unmaintained - nixexa, replaced by eza
+    ### Remove unmaintained - exa, replaced by eza
     eza
     monolith
-    procs
     topgrade
     zoxide
     # DevOps
@@ -74,6 +70,16 @@
     pandoc
     ## Python
     conda
+    ## Rust
+    ### https://github.com/rust-lang/rustlings/blob/main/flake.nix
+    cargo
+    rustc
+    rust-analyzer
+    clippy
+    ## Language Servers, LSP
+    ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
+    ### Markdown
+    marksman
 
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
