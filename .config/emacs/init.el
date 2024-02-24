@@ -25,6 +25,7 @@
 ;; --------------------------------------------------------------------------------
 ;; Load native emacs configurations
 (require 'minimal)
+(require 'jt-emacs-abbrev)
 
 ;; --------------------------------------------------------------------------------
 ;; Load 3rd party packages and their configurations
