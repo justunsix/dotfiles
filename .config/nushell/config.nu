@@ -796,16 +796,20 @@ def jgt [
 
                 # Check if it's a git repository, only record standard out messages
                 # Otherwise if an error, it is not a git repository
-                let git_status_check = do { git status } | complete
+                let git_status_check = do { git status --porcelain } | complete
 
                 # Check if it's a git repository
                 if ( $git_status_check.exit_code == 0) {
-                    # Check if there are any changes
-                    if ($git_status_check.stdout | str contains "Changes not staged for commit") {
+                    # if stdout is not empty
+                    if ($git_status_check.stdout | is-empty) {
+                        # no changes found
+                    } else {
                         # Changes found, print the repository name and status
                         echo $"(ansi red_bold)---(ansi reset)" $it
+                        # echo $git_status_check.stdout
+                        # Output changed or new git files
                         echo $git_status_check.stdout
-
+                        
                         if $auto == "true" {
                             # Commit and push the changes
                             jgc
