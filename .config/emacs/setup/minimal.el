@@ -9,8 +9,9 @@
 
 ;; Change yes or no to y or n to simplify typing
 ;; From Sacha Chua https://sachachua.com/dotemacs/index.html#org1f60133
-(fset 'yes-or-no-p 'y-or-n-p)
-;; As of Emacs 28, alternatively set as  (setq use-short-answers t)
+;; (fset 'yes-or-no-p 'y-or-n-p)
+;; As of Emacs 28, alternatively set as  
+(setq use-short-answers t)
 
 ;; Auto Save
 (auto-save-mode t)
