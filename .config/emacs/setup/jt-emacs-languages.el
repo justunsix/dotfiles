@@ -27,13 +27,14 @@
 
 ;; yasnippet for lsp and snippet management
 (use-package yasnippet
+	:demand t
 	:hook (lsp-mode . yas-minor-mode)
-	:config
-	;; Activate yasnippet globally
-	;; can be done on per buffer with yas-minor-mode
-	;; or M-x yas-reload-all if you've started YASnippet already.
-	(yas-global-mode 1)
 	)
+
+;; Activate yasnippet globally
+;; can be done on per buffer with yas-minor-mode
+;; or M-x yas-reload-all if you've started YASnippet already.
+(yas-global-mode 1)
 
 ;; Install snippet collection
 (use-package yasnippet-snippets
