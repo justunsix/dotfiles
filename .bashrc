@@ -340,6 +340,17 @@ if command -v broot &>/dev/null; then
     source "$HOME/.config/broot/launcher/bash/br"
 fi
 
+## atuin - history
+if command -v atuin &>/dev/null; then
+    eval "$(atuin init bash)"
+fi
+
+## carapace - shell completion
+if command -v carapace &>/dev/null; then
+    export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+    source <(carapace _carapace)
+fi
+
 ## conda - package manager
 ## Detect conda-shell installed by Nix
 if command -v conda-shell >/dev/null; then

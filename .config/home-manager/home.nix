@@ -33,6 +33,8 @@
     nushell
     starship
     bat
+    atuin
+    carapace
     # Fonts
     iosevka
     source-code-pro

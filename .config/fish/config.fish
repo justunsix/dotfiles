@@ -1,5 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+		if type -q atuin
+			atuin init fish --disable-ctrl-r | source
+		end
 end
 
 # Add ~/.local/bin to the path
@@ -23,6 +26,20 @@ end
 if type -q pip
 	# pip autocompletion
 	pip completion --fish | source
+end
+
+# *** oc - Openshift CLI
+# if oc command exists, source completions
+if type -q oc
+		oc completion fish | source
+end
+
+if type -q carapace
+  # https://rsteube.github.io/carapace-bin/setup.html
+	set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
+	mkdir -p ~/.config/fish/completions
+	carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
+	carapace _carapace | source
 end
 
 # ---------------------------------------------------
@@ -54,12 +71,6 @@ end
 if type -q fzf_key_bindings
 	 # Ubuntu Debian, Arch per /usr/share/doc/fzf/README.Debian
 	 echo fzf_key_bindings > ~/.config/fish/functions/fish_user_key_bindings.fish
-end
-
-# *** oc - Openshift CLI
-# if oc command exists, source completions
-if type -q oc
-		oc completion fish | source
 end
 
 if type -q starship

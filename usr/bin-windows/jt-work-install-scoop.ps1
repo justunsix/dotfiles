@@ -63,4 +63,5 @@ autohotkey `
 python `
 pwsh `
 extras/wezterm `
-nerd-fonts/JetBrains-Mono
+nerd-fonts/JetBrains-Mono `
+extras/carapace-bin

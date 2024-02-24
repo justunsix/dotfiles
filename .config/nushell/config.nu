@@ -833,17 +833,19 @@ use ~/.cache/starship/init.nu
 ### Fixed as of 2024-02-13, confirmed fixed on Windows scoop and Nix unstable
 source ~/.zoxide.nu
 
-# Broot
-## Let it error out if not found
+# Carapace - Shell completions
+source ~/.cache/carapace/init.nu
+
+# Conditional Sourcing based on operating system
 ## Conditional sourcing
 ## per https://www.nushell.sh/blog/2023-09-19-nushell_0_85_0.html#improvements-to-parse-time-evaluation
-const BR_WINDOWS_CONFIG = "~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br"
-const BR_NIX_CONFIG = "~/.config/broot/launcher/nushell/br"
+const CONFIG_WINDOWS = "~/AppData/Roaming/nushell/config-windows.nu"
+const CONFIG_NIX = "~/.config/nushell/config-nix.nu"
 
-const BR_ACTUAL_CONFIG = if $nu.os-info.name == "windows" {
-    $BR_WINDOWS_CONFIG
+const CONFIG_ACTUAL = if $nu.os-info.name == "windows" {
+    $CONFIG_WINDOWS
 } else {
-    $BR_NIX_CONFIG
+    $CONFIG_NIX
 }
 
-source $BR_ACTUAL_CONFIG
+source $CONFIG_ACTUAL
