@@ -36,7 +36,7 @@
     ("s" "this" nil :count 0)
     ("t" "the" nil :count 0)
     ("tt" "that" nil :count 0)
-    ("4" "for" nil :count 0)
+    ("z4" "for" nil :count 0)
 		;; - from
 		;; - has/have
 		;; - the
