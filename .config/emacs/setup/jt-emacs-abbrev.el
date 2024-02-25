@@ -72,6 +72,7 @@
 
     ;; -- Custom Abbreviations
     ("OPP" "opportunity" nil :count 0)
+    ("ZAI" "artificial intelligence" nil :count 0)
     ("GF" "girlfriend" nil :count 0)
     ("RUS" "russia" nil :count 0)
     ("JAP" "japan" nil :count 0)
