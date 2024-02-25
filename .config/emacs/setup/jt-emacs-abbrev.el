@@ -46,25 +46,27 @@
 		;; Teeline rules
 		("eltr" "electro" nil :count 0)
 		("hppy" "happy" nil :count 0)
+		("intrvw" "interview" nil :count 0)
 		("mgntc" "magnetic" nil :count 0)
     ("astrln" "austrialian" nil :count 0)
     ("bckgrnd" "background" nil :count 0)
     ("brtsh" "british" nil :count 0)
     ("chrldr" "cheerleader" nil :count 0)
+    ("chrstms" "christmas" nil :count 0)
     ("dtbse" "database" nil :count 0)
-    ("gme" "game" nil :count 0)
     ("gls" "glass" nil :count 0)
     ("glss" "glasses" nil :count 0)
+    ("gme" "game" nil :count 0)
     ("gymnstcs" "gymnastics" nil :count 0)
-		("intrvw" "interview" nil :count 0)
+    ("hlwn" "halloween" nil :count 0)
+    ("hr" "hair" nil :count 0)
     ("htl" "hotel" nil :count 0)
+    ("lbrry" "library" nil :count 0)
     ("nrse" "nurse" nil :count 0)
     ("ofce" "office" nil :count 0)
-		;; different rule vs print
-    ("prent" "parent" nil :count 0)
+    ("prent" "parent" nil :count 0) ;; different rule vs print
     ("prnt" "print" nil :count 0)
     ("tchr" "teacher" nil :count 0)
-    ("trns" "trans" nil :count 0)
     ("wtchng" "watching" nil :count 0)
 
     ;; -- Domain specific words
@@ -74,9 +76,12 @@
     ("OPP" "opportunity" nil :count 0)
     ("ZAI" "artificial intelligence" nil :count 0)
     ("GF" "girlfriend" nil :count 0)
-    ("RUS" "russia" nil :count 0)
-    ("JAP" "japan" nil :count 0)
+
+		;; --- Countries
+		("AUS" "australia" nil :count 0)
     ("CAD" "canada" nil :count 0)
+    ("JAP" "japan" nil :count 0)
+    ("RUS" "russia" nil :count 0)
 
 		))
 
