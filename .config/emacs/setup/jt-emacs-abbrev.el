@@ -25,7 +25,7 @@
 (define-abbrev-table 'global-abbrev-table
   '(
     ;; -- Common words
-    ("=" "and" nil :count 0)
+    ("za" "and" nil :count 0)
     ("r" "are" nil :count 0)
 		("u" "you" nil :count 0)
 		("wd" "would" nil :count 0)
@@ -44,8 +44,10 @@
 
     ;; English words or names using
 		;; Teeline rules
+		("cld" "cloud" nil :count 0)
 		("eltr" "electro" nil :count 0)
 		("hppy" "happy" nil :count 0)
+		("intrnt" "internet" nil :count 0)
 		("intrvw" "interview" nil :count 0)
 		("mgntc" "magnetic" nil :count 0)
     ("astrln" "austrialian" nil :count 0)
@@ -62,11 +64,14 @@
     ("hr" "hair" nil :count 0)
     ("htl" "hotel" nil :count 0)
     ("lbrry" "library" nil :count 0)
+    ("ntwrk" "network" nil :count 0)
     ("nrse" "nurse" nil :count 0)
     ("ofce" "office" nil :count 0)
     ("prent" "parent" nil :count 0) ;; different rule vs print
     ("prnt" "print" nil :count 0)
     ("tchr" "teacher" nil :count 0)
+    ("srvr" "server" nil :count 0)
+    ("srvrs" "servers" nil :count 0)
     ("wtchng" "watching" nil :count 0)
 
     ;; -- Domain specific words
