@@ -78,9 +78,10 @@
 		("Az" "Azure" nil :count 0)
 
     ;; -- Custom Abbreviations
-    ("OPP" "opportunity" nil :count 0)
-    ("ZAI" "artificial intelligence" nil :count 0)
     ("GF" "girlfriend" nil :count 0)
+    ("OPP" "opportunity" nil :count 0)
+    ("REQS" "requirements" nil :count 0)
+    ("ZAI" "artificial intelligence" nil :count 0)
 
 		;; --- Countries
 		("AUS" "australia" nil :count 0)
