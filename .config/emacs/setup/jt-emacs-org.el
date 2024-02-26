@@ -260,9 +260,11 @@
 	)
 
 (defun jt/create-org-note (title)
-  "Create a new org file in jt/org-directory, add an ID, prompt user for title, filetags."
+  "Create a new org file in current directory, add an ID, prompt user for 
+	title, filetags. Filename will be the title with spaces replaced by hyphens."
   (interactive "sEnter the title of the org file: ")
-  (let* ((filename (concat (file-name-as-directory jt/org-directory) (replace-regexp-in-string " " "-" title) ".org"))
+  (let* 
+	((filename (concat (replace-regexp-in-string " " "-" title) ".org"))
          (buffer (find-file filename))
          (tags (read-string "Enter tags separated by colon: "))
 				 (id-string (concat ":PROPERTIES:\n:ID: " (org-id-get-create) "\n:END:\n"))
