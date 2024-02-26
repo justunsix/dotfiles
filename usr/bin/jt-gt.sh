@@ -31,8 +31,9 @@ for dir in */; do
 
 				else
 						# echo in green text "Working directory has changes: ~/Code/$dir"
-						echo -e "\n-- Directory has changes: ~/Code/$dir ---------------"
+						echo -e "\n\n-- Directory has changes: ~/Code/$dir ---------------"
 						git status --porcelain
+						echo ""
 						# check if command has argument true
 						if [ "$1" = "true" ]; then
 								echo -e "\n+Running git auto commit and push"
