@@ -778,6 +778,7 @@ def jgc [
 }
 
 # Check Git status for multiple repositories
+# Usage with multiple directories on Windows: jgt "~\\Code,T:\\OtherProjects"
 def jgt [
     directories = "~/Code"              # Parent directories of the reposities to check separated by commas
     --auto (-a) : string                # Whether to automatically commit and push changes
@@ -809,7 +810,7 @@ def jgt [
                         # echo $git_status_check.stdout
                         # Output changed or new git files
                         echo $git_status_check.stdout
-                        
+
                         if $auto == "true" {
                             # Commit and push the changes
                             jgc

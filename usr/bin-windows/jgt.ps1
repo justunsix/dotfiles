@@ -6,6 +6,7 @@
 # if output contains "nothing to commit, working tree clean", then echo "."
 # else print the working directory
 
+# Usage: jgt -directoryPath "~\CodeInProject"
 # Get list of folders to scan
 param (
     # Directory path parameter, default to ~/Code
