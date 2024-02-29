@@ -26,15 +26,15 @@
   '(
     ;; -- Common words
     ("za" "and" nil :count 0)
-    ("r" "are" nil :count 0)
-		("u" "you" nil :count 0)
+    ("zr" "are" nil :count 0)
+		("zu" "you" nil :count 0)
 		("wd" "would" nil :count 0)
 		("wc" "which" nil :count 0)
-		("l" "will" nil :count 0)
-    ("w" "with" nil :count 0)
+		("zl" "will" nil :count 0)
+    ("zw" "with" nil :count 0)
     ("ur" "your" nil :count 0)
-    ("s" "this" nil :count 0)
-    ("t" "the" nil :count 0)
+    ("zs" "this" nil :count 0)
+    ("zt" "the" nil :count 0)
     ("tt" "that" nil :count 0)
     ("z4" "for" nil :count 0)
 		;; - from
