@@ -45,6 +45,7 @@
     ;; English words or names using
 		;; Teeline rules
 		("cld" "cloud" nil :count 0)
+		("dwnld" "download" nil :count 0)
 		("eltr" "electro" nil :count 0)
 		("hppy" "happy" nil :count 0)
 		("intrnt" "internet" nil :count 0)
