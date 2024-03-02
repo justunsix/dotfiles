@@ -37,6 +37,16 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 
 end
 
+-- On Linux, add bash and nushell to launch, set bash as default shell
+if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
+	 config.default_prog = { 'bash' }
+	 config.launch_menu = {}
+	 table.insert(config.launch_menu, { label = 'bash', args = {'bash'},
+	 })
+	 table.insert(config.launch_menu, { label = 'nushell', args = {'nu'},
+	 })
+end
+
 -- Enable the scrollbar.
 -- It will occupy the right window padding space.
 -- If right padding is set to 0 then it will be increased
