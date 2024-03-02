@@ -1,7 +1,7 @@
 ;;; jt-emacs-org.el --- Personal org-mode related configurations and packages
-;;  Author: Justin Tung
+;;;  Author: Justin Tung
 ;;; Commentary:
-;; Configurations related to org-mode
+;;; Configurations related to org-mode
 ;;; Code:
 
 ;; --------------------------------------------------------------------------------
@@ -260,10 +260,10 @@
 	)
 
 (defun jt/create-org-note (title)
-  "Create a new org file in current directory, add an ID, prompt user for 
+  "Create a new org file in current directory, add an ID, prompt user for
 	title, filetags. Filename will be the title with spaces replaced by hyphens."
   (interactive "sEnter the title of the org file: ")
-  (let* 
+  (let*
 	((filename (concat (replace-regexp-in-string " " "-" title) ".org"))
          (buffer (find-file filename))
          (tags (read-string "Enter tags separated by colon: "))
