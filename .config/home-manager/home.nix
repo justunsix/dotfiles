@@ -64,6 +64,8 @@
     emacs
     neovim
     helix
+    ## Doom Emacs
+    fd    
     ## PlantUML
     plantuml
     ## Document conversion, Emacs exports
