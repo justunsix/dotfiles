@@ -173,7 +173,7 @@
 (global-set-key (kbd "C-p") 'projectile-find-file)
 
 ;; Buffer Management
-(global-set-key (kbd "<f2> k") 'jt/kill-all-buffers-except-starred)
+(global-set-key (kbd "<f2> k a") 'jt/kill-all-buffers-except-starred)
 
 ;; Other
 (global-set-key (kbd "<f2> m b") 'jt/bongo-open-my-playlist)

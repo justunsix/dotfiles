@@ -10,7 +10,7 @@
 ;; Change yes or no to y or n to simplify typing
 ;; From Sacha Chua https://sachachua.com/dotemacs/index.html#org1f60133
 ;; (fset 'yes-or-no-p 'y-or-n-p)
-;; As of Emacs 28, alternatively set as  
+;; As of Emacs 28, alternatively set as
 (setq use-short-answers t)
 
 ;; Auto Save
@@ -291,7 +291,9 @@
 
 (global-set-key (kbd "<f2> c f") 'jt/copy-file-name-to-clipboard)
 
-(global-set-key (kbd "<f2> k") 'jt/kill-all-buffers-except-starred)
+(global-set-key (kbd "<f2> k a") 'jt/kill-all-buffers-except-starred)
+
+(global-set-key (kbd "<f2> k t") 'kill-this-buffer)
 
 ;; Windows navigation using windmove starting in Emacs 21
 ;; Overrides defaults which are: S-<arrow keys>
