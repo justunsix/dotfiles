@@ -323,7 +323,9 @@ if command -v starship &>/dev/null; then
 fi
 
 ## Cargo, Rust package manager
-if [ -d "$HOME/.cargo" ]; then
+## if [ -d "$HOME/.cargo" ]; then
+## Switch to checking rustup instead
+if command -v rustup &>/dev/null; then
     # rust tools
     . "$HOME/.cargo/env"
 fi
