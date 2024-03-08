@@ -59,7 +59,13 @@
 ;;   - Setting doom variables (which start with 'doom-' or '+').
 ;;
 (after! which-key
-  ( setq which-key-idle-delay 0.2)
+  (setq which-key-idle-delay 0.2)
+  )
+
+(after! yasnippet-snippets
+  ;; Add (yasnippet backquote-change) to ‘warning-suppress-types’
+  ;; to turn off warnings of elisp executions in snippets
+  (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
   )
 
 ;; Here are some additional functions/macros that will help you configure Doom.

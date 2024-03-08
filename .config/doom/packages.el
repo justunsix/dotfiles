@@ -48,3 +48,8 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+;; Disable default doom snippets
+(package! doom-snippets :ignore t)
+;; Replace it with yasnippet's default snippets
+(package! yasnippet-snippets)
