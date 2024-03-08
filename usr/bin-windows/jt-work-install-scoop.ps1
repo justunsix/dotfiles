@@ -64,4 +64,5 @@ python `
 pwsh `
 extras/wezterm `
 nerd-fonts/JetBrains-Mono `
-extras/carapace-bin
+extras/carapace-bin `
+llvm
