@@ -49,6 +49,7 @@ $dotfiles_directories = @(
 	"$env:USERPROFILE\AppData\Roaming\nushell",
   "$env:USERPROFILE\AppData\Roaming\topgrade",  
   "$env:USERPROFILE\.config\emacs",
+  "$env:USERPROFILE\.config\doom",
 	"$env:USERPROFILE\.config\wezterm",
 	"$env:USERPROFILE\.config\todotxt-cli",
   "$env:USERPROFILE\.config\fish"
@@ -67,7 +68,8 @@ $dotfiles_to_be_synchronized = @(
 		("$env:USERPROFILE\Code\dotfiles\usr\bin-windows\*", "$env:USERPROFILE\usr\bin"),
 		("$env:USERPROFILE\Code\dotfiles\.gitconfig", "$env:USERPROFILE"),
     ("$env:USERPROFILE\Code\dotfiles\.config\todotxt-cli", "$env:USERPROFILE\.config"),
-		("$env:USERPROFILE\Code\dotfiles\.config\fish", "$env:USERPROFILE\.config")
+		("$env:USERPROFILE\Code\dotfiles\.config\fish", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\doom", "$env:USERPROFILE\.config")
 )
 
 ###############
