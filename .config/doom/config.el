@@ -80,3 +80,11 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; --------------------------------------------------------------------------------
+;; * Overlay  ----------------------------
+;; Optionally load dotfiles overlay Emacs configurations
+(setq env-el-location "~/.config/emacs/setup/env.el")
+(if (file-exists-p env-el-location)
+		(load env-el-location)
+	)

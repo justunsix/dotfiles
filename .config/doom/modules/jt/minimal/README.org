@@ -1,0 +1,8 @@
+#+title:    :jt minimal
+#+subtitle: Minimal configuration that works with default Emacs 28.2+ with no extra packages
+#+created:  March 7, 2024
+#+since:    N/A
+
+* Description :unfold:
+
+Only configures settings that are in default Emacs 28.2+. No extra packages are required.

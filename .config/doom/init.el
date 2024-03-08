@@ -21,11 +21,13 @@
        ;;layout            ; auie,ctsrnm is the superior home row
 
        :completion
-       company           ; the ultimate code completion backend
+       company             ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       ;;ivy               ; a search engine for love and life
-       vertico           ; the search engine of the future
+       
+       ;; Temporary workaround to Windows issues with vertico       
+       (:if IS-WINDOWS ivy)   ; a search engine for love and life
+       (:if IS-LINUX IS-MAC vertico) ; the search engine of the future
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -192,4 +194,10 @@
 
        :config
        ;;literate
-       (default +bindings +smartparens))
+       (default +bindings +smartparens)
+            
+       ;; Personal Modules in DOOMDIR (e.g. ~/.doom.d/modules/personal, ~/.config/doom/module/personal)
+       :jt 
+       minimal                     ; Minimal configuration that works with default Emacs 28.2+ with no extra packages
+       (:if IS-LINUX music)        ; Listen to music
+       )
