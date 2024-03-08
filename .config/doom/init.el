@@ -27,7 +27,8 @@
        
        ;; Temporary workaround to Windows issues with vertico
        (:if IS-WINDOWS ivy)   ; a search engine for love and life
-       (:if IS-LINUX IS-MAC vertico) ; the search engine of the future
+       (:if IS-LINUX vertico) ; the search engine of the future
+       (:if IS-MAC vertico)
 
        :ui
        ;;deft              ; notational velocity for Emacs
