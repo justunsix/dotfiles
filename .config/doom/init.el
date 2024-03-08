@@ -25,7 +25,7 @@
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        
-       ;; Temporary workaround to Windows issues with vertico       
+       ;; Temporary workaround to Windows issues with vertico
        (:if IS-WINDOWS ivy)   ; a search engine for love and life
        (:if IS-LINUX IS-MAC vertico) ; the search engine of the future
 
