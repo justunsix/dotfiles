@@ -35,6 +35,7 @@
     bat
     atuin
     carapace
+    rofi
     # Fonts
     iosevka
     source-code-pro
