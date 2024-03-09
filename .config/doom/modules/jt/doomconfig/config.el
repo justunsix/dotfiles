@@ -20,3 +20,25 @@
   ;; Manually trigger projectile-discover-projects-in-search-path
   ;; to update the project list
 )
+
+(after! magit
+  ;; For use with magit-list-repositories
+  ;; - List of directories that are or contain Git repositories.
+  ;; - Format: directory . depth of directory where 0 is just directory itself
+  (setq magit-repository-directories
+        '(("~/Code/" . 1)
+          ("~/Code/External" . 1)))
+  ;; - Customize format of magit-list-repositories
+  (setq magit-repolist-columns
+        '(("Name"    25 magit-repolist-column-ident ())
+          ("Version" 25 magit-repolist-column-version ())
+          ("Flag" 3 magit-repolist-column-flag ())
+          ;; ("D"        1 magit-repolist-column-dirty ())
+          ("B<U"      3 magit-repolist-column-unpulled-from-upstream
+           ((:right-align t)
+            (:help-echo "Upstream changes not in branch")))
+          ("B>U"      3 magit-repolist-column-unpushed-to-upstream
+           ((:right-align t)
+            (:help-echo "Local changes not in upstream")))
+          ("Path"    99 magit-repolist-column-path ())))
+  )
