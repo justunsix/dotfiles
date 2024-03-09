@@ -77,30 +77,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-;; --------------------------------------------------------------------------------
-;; * Package Configurations  ----------------------------
-
-(after! which-key
-  (setq which-key-idle-delay 0.2)
-  )
-
-(after! yasnippet-snippets
-  ;; Add (yasnippet backquote-change) to ‘warning-suppress-types’
-  ;; to turn off warnings of elisp executions in snippets
-  (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
-  )
-
-;; --------------------------------------------------------------------------------
-;; * Other Variables  ----------------------------
-
-;; Do not prompt on exit
-(setq confirm-kill-emacs nil)
-
-;; --------------------------------------------------------------------------------
-;; * Overlay  ----------------------------
-;; Optionally load dotfiles overlay Emacs configurations
-(setq env-el-location "~/.config/emacs/setup/env.el")
-(if (file-exists-p env-el-location)
-		(load env-el-location)
-	)

@@ -197,8 +197,10 @@
        ;;literate
        (default +bindings +smartparens)
             
-       ;; Personal Modules in DOOMDIR (e.g. ~/.doom.d/modules/personal, ~/.config/doom/module/personal)
+       ;; Personal Modules in DOOMDIR (e.g. ~/.doom.d/modules/personal
+       ;; or ~/.config/doom/module/personal)
        :jt 
-       minimal                     ; Minimal configuration that works with default Emacs 28.2+ with no extra packages
-       (:if IS-LINUX music)        ; Listen to music
+       minimal                ; Minimal configuration for default Emacs
+       doomconfig             ; Post configuration for Doom framework packages
+       (:if IS-LINUX music)   ; Listen to music
        )

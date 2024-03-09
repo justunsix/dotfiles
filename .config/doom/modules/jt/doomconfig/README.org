@@ -1,0 +1,8 @@
+#+title:    :jt doomconfig
+#+subtitle: Config on doom framework packages
+#+created:  March 8, 2024
+#+since:    N/A
+
+* Description :unfold:
+
+Personal configurations to packages included in doom framework

@@ -1,3 +1,6 @@
+;;; $DOOMDIR/modules/jt/minimal/config.el -*- lexical-binding: t; -*-
+;; Minimal configurations that works with default Emacs
+
 ;; Abbrev Mode to expand abbreviations for shorthand
 ;; http://xahlee.info/emacs/emacs/emacs_abbrev_mode_tutorial.html
 ;; Turn on abbrev mode globally
@@ -5,6 +8,21 @@
 ;; Auto save on exit
 ;; by default to Emacs config directory/abbrev_defs
 (setq save-abbrevs 'silently)
+
+;; Wrap text in all buffers
+(setq-default visual-line-mode t)
+(global-visual-line-mode 1)
+
+;; Do not prompt on exit
+(setq confirm-kill-emacs nil)
+
+;; --------------------------------------------------------------------------------
+;; * Overlay  ----------------------------
+;; Optionally load dotfiles overlay Emacs configurations
+(setq env-el-location "~/.config/emacs/setup/env.el")
+(if (file-exists-p env-el-location)
+		(load env-el-location)
+	)
 
 ;; * Post Setup  ----------------------------
 ;; Optionally post set up Emacs configurations
