@@ -21,6 +21,12 @@
   ;; to update the project list
 )
 
+(after! org
+  ;; https://orgmode.org/manual/Conflicts.html
+  ;; shift-selection can select regions
+  (setq org-support-shift-select t)
+  )
+
 (after! magit
   ;; For use with magit-list-repositories
   ;; - List of directories that are or contain Git repositories.
