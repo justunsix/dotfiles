@@ -57,7 +57,8 @@ $dotfiles_directories = @(
 
 # Array of dotfiles to synchronize with tuples of source and destination
 $dotfiles_to_be_synchronized = @(
-		("$env:USERPROFILE\Code\dotfiles\.config\emacs", "$env:USERPROFILE\.config"),
+    # Reserve for Doom Emacs install
+		# ("$env:USERPROFILE\Code\dotfiles\.config\emacs", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\wezterm", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
 		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
