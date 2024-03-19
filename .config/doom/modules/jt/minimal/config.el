@@ -19,7 +19,7 @@
 ;; --------------------------------------------------------------------------------
 ;; * Overlay  ----------------------------
 ;; Optionally load dotfiles overlay Emacs configurations
-(setq env-el-location "~/.config/emacs/setup/env.el")
+(setq env-el-location "~/.config/doom/setup/env.el")
 (if (file-exists-p env-el-location)
 		(load env-el-location)
 	)
@@ -27,7 +27,7 @@
 ;; * Post Setup  ----------------------------
 ;; Optionally post set up Emacs configurations
 ;; for example other machine specific configurations
-(setq postsetup-el-location "~/.config/emacs/setup/post-setup.el")
+(setq postsetup-el-location "~/.config/doom/setup/post-setup.el")
 (if (file-exists-p postsetup-el-location)
 		(load postsetup-el-location)
 	)
