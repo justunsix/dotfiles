@@ -1,4 +1,4 @@
-;; from modules/jt/doomconfig/autoload.el
+;; from modules/jt/minimal/autoload.el
 ;;;###autoload
 (defun jt/create-org-note (title)
   "Create a new org file in current directory, add an ID, prompt user for
@@ -24,6 +24,7 @@
 	)
 
 ;; Get name of current file without full path and copy to kill ring
+;;;###autoload
 (defun jt/copy-file-name-to-clipboard ()
   "Copy the current buffer file name to the kill ring (clipboard)."
   (interactive)
