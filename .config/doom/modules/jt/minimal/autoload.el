@@ -32,3 +32,14 @@
     (kill-new filename)
     (message "Copied buffer file name '%s' to the clipboard." filename))
     )
+
+;;;###autoload
+(defun jt/sort-lines-buffer ()
+  "Sort all lines in the current buffer and save changes."
+  (interactive)
+  (save-excursion
+    (save-restriction
+      (widen)
+      (sort-lines nil (point-min) (point-max)))
+    (save-buffer))  
+  )
