@@ -22,3 +22,12 @@
     (save-buffer)
 		)
 	)
+
+;; Get name of current file without full path and copy to kill ring
+(defun jt/copy-file-name-to-clipboard ()
+  "Copy the current buffer file name to the kill ring (clipboard)."
+  (interactive)
+  (let ((filename (file-name-nondirectory (buffer-file-name))))
+    (kill-new filename)
+    (message "Copied buffer file name '%s' to the clipboard." filename))
+    )
