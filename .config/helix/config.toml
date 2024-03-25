@@ -8,7 +8,8 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
-# Soft-wrap breaks up lines to fit in view without inserting actual line break characters into the text (so called "hard-wrapping")
+# Soft-wrap breaks up lines to fit in view without inserting actual 
+# line break characters into the text (so called "hard-wrapping")
 [editor.soft-wrap]
 enable = true
 
