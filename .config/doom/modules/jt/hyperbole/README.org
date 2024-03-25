@@ -1,0 +1,8 @@
+#+title:    :jt hyperbole
+#+subtitle: Hypertextual Information Manager 
+#+created:  March 25, 2024
+#+since:    N/A
+
+* Description :unfold:
+
+Information Manager and Navigator

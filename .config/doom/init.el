@@ -202,5 +202,6 @@
        :jt 
        minimal                ; Minimal configuration for default Emacs
        doomconfig             ; Post configuration for Doom framework packages
+       hyperbole              ; Everyday Hypertextual Information Manager
        (:if IS-LINUX music)   ; Listen to music
        )
