@@ -25,10 +25,11 @@
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        
-       ;; Temporary workaround to Windows issues with vertico
-       (:if IS-WINDOWS ivy)   ; a search engine for love and life
-       (:if IS-LINUX vertico) ; the search engine of the future
-       (:if IS-MAC vertico)
+       ;; Workaround to Windows issues with vertico, seems fixed as of 2024-04-03
+       ;; (:if IS-WINDOWS ivy)   ; a search engine for love and life
+       ;; (:if IS-LINUX vertico) ; the search engine of the future
+       ;; (:if IS-MAC vertico)
+       vertico
 
        :ui
        ;;deft              ; notational velocity for Emacs
