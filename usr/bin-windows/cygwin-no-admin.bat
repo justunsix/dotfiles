@@ -5,4 +5,6 @@ C:
 @REM Change to the directory where Cygwin is installed by scoop
 chdir %USERPROFILE%\scoop\apps\cygwin\current
 
-cygwin-setup.exe -B
+@REM Run Cygwin with -B no admin and
+@REM -R set root directory and -l packages directory in scoop persist directory
+cygwin-setup.exe -B -R %USERPROFILE%\scoop\persist\cygwin\root -l %USERPROFILE%\scoop\persist\cygwin\packages
