@@ -5,8 +5,8 @@ if status is-interactive
 		end
 end
 
-# Add ~/.local/bin to the path
-set -gx PATH $PATH ~/.local/bin
+# Add ~/.local/bin and ~/usr/bin to the path
+set -gx PATH $PATH ~/.local/bin ~/usr/bin
 
 # ---------------------------------------------------
 # ---------------------------------------------------
