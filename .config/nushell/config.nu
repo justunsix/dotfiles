@@ -763,6 +763,10 @@ $env.config = {
 #####################
 
 #####################
+# Aliases
+alias jgt = bash -c "gfold | rg -e unclean -e unpushed"
+
+#####################
 # My Custom Commands
 # Per https://www.nushell.sh/book/custom_commands.html
 
@@ -781,48 +785,48 @@ def jgc [
 # Usage with multiple directories on Windows: jgt "~\\Code,T:\\OtherProjects"
 # Fix per https://github.com/nushell/nushell/pull/12232
 # Run with jgt 'C:/Users/username/Code'
-def jgt [
-    directories = "~/Code"              # Parent directories of the reposities to check separated by commas
-    --auto (-a) : string                # Whether to automatically commit and push changes
-] {
+# def jgt [
+#     directories = "~/Code"              # Parent directories of the reposities to check separated by commas
+#     --auto (-a) : string                # Whether to automatically commit and push changes
+# ] {
 
-    # Assuming directory is a string of directories separated by commas
-    # Split the string into an array of directories
-    let dirs = $directories | split row ","
+#     # Assuming directory is a string of directories separated by commas
+#     # Split the string into an array of directories
+#     let dirs = $directories | split row ","
 
-    # Iterate through the directories
-    for $directory in $dirs {
-        # Iterate through child directories of $directory
-        for $it in (ls $directory -a | where type == dir | get name) {
+#     # Iterate through the directories
+#     for $directory in $dirs {
+#         # Iterate through child directories of $directory
+#         for $it in (ls $directory -a | where type == dir | get name) {
 
-                cd $it
+#                 cd $it
 
-                # Check if it's a git repository, only record standard out messages
-                # Otherwise if an error, it is not a git repository
-                let git_status_check = do { git status --porcelain } | complete
+#                 # Check if it's a git repository, only record standard out messages
+#                 # Otherwise if an error, it is not a git repository
+#                 let git_status_check = do { git status --porcelain } | complete
 
-                # Check if it's a git repository
-                if ( $git_status_check.exit_code == 0) {
-                    # if stdout is not empty
-                    if ($git_status_check.stdout | is-empty) {
-                        # no changes found
-                    } else {
-                        # Changes found, print the repository name and status
-                        echo $"(ansi red_bold)---(ansi reset)" $it
-                        # echo $git_status_check.stdout
-                        # Output changed or new git files
-                        echo $git_status_check.stdout
+#                 # Check if it's a git repository
+#                 if ( $git_status_check.exit_code == 0) {
+#                     # if stdout is not empty
+#                     if ($git_status_check.stdout | is-empty) {
+#                         # no changes found
+#                     } else {
+#                         # Changes found, print the repository name and status
+#                         echo $"(ansi red_bold)---(ansi reset)" $it
+#                         # echo $git_status_check.stdout
+#                         # Output changed or new git files
+#                         echo $git_status_check.stdout
 
-                        if $auto == "true" {
-                            # Commit and push the changes
-                            jgc
-                        }
-                    }
-                }
-        }
+#                         if $auto == "true" {
+#                             # Commit and push the changes
+#                             jgc
+#                         }
+#                     }
+#                 }
+#         }
 
-    }
-}
+#     }
+# }
 
 #####################
 # Shell assitance
