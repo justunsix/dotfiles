@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
 Name=Firefox Profile Manager (Flatpak)
-GenericName=Firefox PM (Flatpak)
-Comment=Flatpak profile for Firefox
+GenericName=Firefox Profile Manager (Flatpak)
+Comment=Profile Manager for Firefox
 Exec=flatpak run org.mozilla.firefox -P
 Path=/usr/bin/
 Icon=browser
