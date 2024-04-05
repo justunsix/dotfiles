@@ -2,7 +2,7 @@
 
 # git
 alias jgs="jt-gs.sh"
-alias jgt="jt-gt.sh"
+alias jgt="gfold | rg -e unclean -e unpushed"
 alias jgc="jt-gc.sh"
 
 # todotxt
