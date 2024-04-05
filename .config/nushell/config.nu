@@ -779,6 +779,8 @@ def jgc [
 
 # Check Git status for multiple repositories
 # Usage with multiple directories on Windows: jgt "~\\Code,T:\\OtherProjects"
+# Fix per https://github.com/nushell/nushell/pull/12232
+# Run with jgt 'C:/Users/username/Code'
 def jgt [
     directories = "~/Code"              # Parent directories of the reposities to check separated by commas
     --auto (-a) : string                # Whether to automatically commit and push changes
