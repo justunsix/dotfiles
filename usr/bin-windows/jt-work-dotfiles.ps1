@@ -62,6 +62,7 @@ $dotfiles_to_be_synchronized = @(
     ("$env:USERPROFILE\Code\dotfiles\.config\wezterm", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
 		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\gfold.toml", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
     ("$env:USERPROFILE\Code\dotfiles\.config\nushell", "$env:USERPROFILE\AppData\Roaming"),
     ("$env:USERPROFILE\Code\dotfiles\.config\broot\*", "$env:USERPROFILE\AppData\Roaming\dystroy\broot\config"),
@@ -72,6 +73,15 @@ $dotfiles_to_be_synchronized = @(
 		("$env:USERPROFILE\Code\dotfiles\.config\fish", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\doom", "$env:USERPROFILE\.config")
 )
+
+# In .config/gfold.toml, replace string /home/justin/Code with the value of $env:USERPROFILE\Code
+$gfold_toml = "$env:USERPROFILE\.config\gfold.toml"
+if (Test-Path $gfold_toml) {
+  Write-Host "+ Replacing /home/justin/Code with $env:USERPROFILE\Code in $gfold_toml"
+  (Get-Content $gfold_toml) | ForEach-Object { $_ -replace "/home/justin/Code", "$env:USERPROFILE\Code" } | Set-Content $gfold_toml
+} else {
+  Write-Host "= Could not find $gfold_toml"
+}
 
 ###############
 # Main Script #

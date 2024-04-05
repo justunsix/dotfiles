@@ -43,6 +43,7 @@
     fira-code
     # File Management
     gitui
+    gfold
     img2pdf
     duf
     ## bottom aka btm
