@@ -43,6 +43,7 @@
     fira-code
     # File Management
     gitui
+    vcstool
     gfold
     img2pdf
     duf
