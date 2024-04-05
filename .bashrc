@@ -168,24 +168,24 @@ fi
 ################################
 # * PATH
 
-if [ -d "$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin" ] ;
-  then PATH="$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
+if [ -d "$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin" ]; then
+    PATH="$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
 fi
 
-if [ -d "$HOME/.nix-profile/bin" ] ;
-  then PATH="$HOME/.nix-profile/bin:$PATH"
+if [ -d "$HOME/.nix-profile/bin" ]; then
+    PATH="$HOME/.nix-profile/bin:$PATH"
 fi
 
-if [ -d "$HOME/usr/bin/todotxt-cli" ] ;
-  then PATH="$HOME/usr/bin/todotxt-cli:$PATH"
+if [ -d "$HOME/usr/bin/todotxt-cli" ]; then
+    PATH="$HOME/usr/bin/todotxt-cli:$PATH"
 fi
 
-if [ -d "$HOME/usr/bin" ] ;
-  then PATH="$HOME/usr/bin:$PATH"
+if [ -d "$HOME/usr/bin" ]; then
+    PATH="$HOME/usr/bin:$PATH"
 fi
 
-if [ "$isWSLUbuntu" = "true" ] ;
-    then PATH="$HOME/Code/dotfiles/usr/bin:$PATH"
+if [ "$isWSLUbuntu" = "true" ]; then
+    PATH="$HOME/Code/dotfiles/usr/bin:$PATH"
 fi
 
 export PATH="$HOME/.local/bin::$PATH"
@@ -205,19 +205,19 @@ export EMACS_SERVER_FILE="$HOME/.emacs.d/server/server"
 
 # nix home-manager
 if [ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]; then
-	. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+    . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 fi
 
 # ** XDG
 # Check if they are empty and set them to default values
 
-if [ -z "$XDG_CONFIG_HOME" ] ; then
+if [ -z "$XDG_CONFIG_HOME" ]; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
-if [ -z "$XDG_DATA_HOME" ] ; then
+if [ -z "$XDG_DATA_HOME" ]; then
     export XDG_DATA_HOME="$HOME/.local/share"
 fi
-if [ -z "$XDG_CACHE_HOME" ] ; then
+if [ -z "$XDG_CACHE_HOME" ]; then
     export XDG_CACHE_HOME="$HOME/.cache"
 fi
 
@@ -234,10 +234,10 @@ fi
 # alias bat="batcat"
 
 # Node Version Manager (NVM)
-export NVM_DIR="$HOME/.nvm"
+# If NVM directory exists, load it
+if [ -d "$HOME/.nvm" ]; then
 
-# If NVM binary exists, load it
-if [ -f "$NVM_DIR/nvm.sh" ]; then
+    export NVM_DIR="$HOME/.nvm"
     # This loads nvm
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     # This loads nvm bash_completion
@@ -249,6 +249,7 @@ if [ -f "$NVM_DIR/nvm.sh" ]; then
     else
         nvm use default
     fi
+
 fi
 
 ## Emacs
@@ -357,20 +358,20 @@ fi
 ## Detect conda-shell installed by Nix
 if command -v conda-shell >/dev/null; then
 
-		# >>> conda initialize >>>
-		# !! Contents within this block are managed by 'conda init' !!
-		__conda_setup="$('/home/justin/.conda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-		if [ $? -eq 0 ]; then
-				eval "$__conda_setup"
-		else
-				if [ -f "/home/justin/.conda/etc/profile.d/conda.sh" ]; then
-						. "/home/justin/.conda/etc/profile.d/conda.sh"
-				else
-						export PATH="/home/justin/.conda/bin:$PATH"
-				fi
-		fi
-		unset __conda_setup
-		# <<< conda initialize <<<
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/justin/.conda/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/justin/.conda/etc/profile.d/conda.sh" ]; then
+            . "/home/justin/.conda/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/justin/.conda/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
 
 fi
 
@@ -390,58 +391,55 @@ fi
 #
 ################################
 
-
 # ** Functions from https://gitlab.com/dwt1/dotfiles/-/blob/master/.bashrc
 
 ### ARCHIVE EXTRACTION
 # From
 # usage: ex <file>
-jt-extract ()
-{
-  if [ -f "$1" ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf "$1"   ;;
-      *.tar.gz)    tar xzf "$1"   ;;
-      *.bz2)       bunzip2 "$1"   ;;
-      *.rar)       unrar x "$1"   ;;
-      *.gz)        gunzip "$1"    ;;
-      *.tar)       tar xf "$1"    ;;
-      *.tbz2)      tar xjf "$1"   ;;
-      *.tgz)       tar xzf "$1"   ;;
-      *.zip)       unzip "$1"     ;;
-      *.Z)         uncompress "$1";;
-      *.7z)        7z x "$1"      ;;
-      *.deb)       ar x "$1"      ;;
-      *.tar.xz)    tar xf "$1"    ;;
-      *.tar.zst)   unzstd "$1"    ;;
-      *)           echo "'$1' cannot be extracted via ex()" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+jt-extract() {
+    if [ -f "$1" ]; then
+        case $1 in
+        *.tar.bz2) tar xjf "$1" ;;
+        *.tar.gz) tar xzf "$1" ;;
+        *.bz2) bunzip2 "$1" ;;
+        *.rar) unrar x "$1" ;;
+        *.gz) gunzip "$1" ;;
+        *.tar) tar xf "$1" ;;
+        *.tbz2) tar xjf "$1" ;;
+        *.tgz) tar xzf "$1" ;;
+        *.zip) unzip "$1" ;;
+        *.Z) uncompress "$1" ;;
+        *.7z) 7z x "$1" ;;
+        *.deb) ar x "$1" ;;
+        *.tar.xz) tar xf "$1" ;;
+        *.tar.zst) unzstd "$1" ;;
+        *) echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 ### navigation with cd
 ### move up in directories
-jt-up () {
-  local d=""
-  local limit="$1"
+jt-up() {
+    local d=""
+    local limit="$1"
 
-  # Default to limit of 1
-  if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
-    limit=1
-  fi
+    # Default to limit of 1
+    if [ -z "$limit" ] || [ "$limit" -le 0 ]; then
+        limit=1
+    fi
 
-  for ((i=1;i<=limit;i++)); do
-    d="../$d"
-  done
+    for ((i = 1; i <= limit; i++)); do
+        d="../$d"
+    done
 
-  # perform cd. Show error if cd fails
-  if ! cd "$d"; then
-    echo "Couldn't go up $limit dirs.";
-  fi
+    # perform cd. Show error if cd fails
+    if ! cd "$d"; then
+        echo "Couldn't go up $limit dirs."
+    fi
 }
-
 
 ################################
 #

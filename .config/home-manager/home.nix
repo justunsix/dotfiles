@@ -65,6 +65,9 @@
     emacs
     neovim
     helix
+    ## Node
+    ### LTS as of 2023-04
+    nodejs_20
     ## Doom Emacs
     fd    
     ## PlantUML
