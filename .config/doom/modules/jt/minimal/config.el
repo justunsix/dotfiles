@@ -8,6 +8,8 @@
 ;; Auto save on exit
 ;; by default to Emacs config directory/abbrev_defs
 (setq save-abbrevs 'silently)
+;; Store abbreviations outside of Doom Emacs folder
+(setq abbrev-file-name "~/.cache/abbrev_defs")
 
 ;; Wrap text in all buffers
 (setq-default visual-line-mode t)
