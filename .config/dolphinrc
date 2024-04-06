@@ -4,6 +4,9 @@ MenuBar=Disabled
 FontWeight=25
 PreviewSize=16
 
+[Desktop Entry]
+DefaultProfile=Profile 1.profile
+
 [DetailsMode]
 FontWeight=25
 PreviewSize=16
@@ -30,7 +33,7 @@ XWAYLAND0 Width 1600x900=509
 XWAYLAND0 Width 1920x1080=335
 
 [MainWindow]
-DP-2 Height 2560x1440=315
+DP-2 Height 2560x1440=1019
 DP-2 Width 2560x1440=1280
 DP-2 Window-Maximized 2560x1440=true
 ToolBarsMovable=Disabled
