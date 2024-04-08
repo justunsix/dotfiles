@@ -14,11 +14,13 @@
 
 ;; Installation and instructions at https://github.com/zerolfx/copilot.el
 (when jt/linux-p
+  
+  ;; Old NVM node setting
   ;; Set copilot-node-executable to environment variable NVM_BIN managed by nvm
   ;; (setq copilot-node-executable (concat (getenv "NVM_BIN") "/node"))
   ;; Manually set node executable as NVM_BIN is not set unless launched from shell
-  (setq copilot-node-executable
-        (car (directory-files-recursively "~/.nvm/versions/node/" "node$" nil t)))
+  ;;(setq copilot-node-executable
+  ;;      (car (directory-files-recursively "~/.nvm/versions/node/" "node$" nil t)))
 
   ;; if ~/.nix-profile/bin/node exists, use it instead
   (when (file-exists-p "~/.nix-profile/bin/node")
