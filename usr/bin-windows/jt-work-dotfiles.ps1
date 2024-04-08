@@ -74,15 +74,6 @@ $dotfiles_to_be_synchronized = @(
     ("$env:USERPROFILE\Code\dotfiles\.config\doom", "$env:USERPROFILE\.config")
 )
 
-# In .config/gfold.toml, replace string /home/justin/Code with the value of $env:USERPROFILE\Code
-$gfold_toml = "$env:USERPROFILE\.config\gfold.toml"
-if (Test-Path $gfold_toml) {
-  Write-Host "+ Replacing /home/justin/Code with $env:USERPROFILE\Code in $gfold_toml"
-  (Get-Content $gfold_toml) | ForEach-Object { $_ -replace "/home/justin/Code", "$env:USERPROFILE\Code" } | Set-Content $gfold_toml
-} else {
-  Write-Host "= Could not find $gfold_toml"
-}
-
 ###############
 # Main Script #
 ###############
@@ -114,4 +105,14 @@ foreach ($directory in $dotfiles_directories) {
 Write-HostWithTimestamp "Synchronizing dotfiles"
 foreach ($dotfile in $dotfiles_to_be_synchronized) {
   Copy-SourceToDestination -source $dotfile[0] -destination $dotfile[1]
+}
+
+# In .config/gfold.toml, replace string /home/justin/Code with the value of $env:USERPROFILE\Code
+$gfold_toml = "$env:USERPROFILE\.config\gfold.toml"
+$gfold_toml_windows_path = "$env:USERPROFILE\Code"
+if (Test-Path $gfold_toml) {
+  Write-Host "+c Replacing /home/justin/Code with $gfold_toml_windows_path in $gfold_toml"
+  (Get-Content $gfold_toml) | ForEach-Object { $_ -replace "/home/justin/Code", "$gfold_toml_windows_path" } | Set-Content $gfold_toml
+} else {
+  Write-Host "= Could not find $gfold_toml"
 }

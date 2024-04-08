@@ -59,6 +59,12 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 ### Enable-AzPredictor -AllSession
 
 # Aliases
+
+### Git Repositories checker
+function jgt2 {
+		gfold | rg -e unclean -e unpushed
+}
+
 ## Emacs
 ## Uses function instead of alias
 ## per https://stackoverflow.com/questions/4166370/how-can-i-write-a-powershell-alias-with-arguments-in-the-middle
