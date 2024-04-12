@@ -36,6 +36,8 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 	 })
 	 table.insert(config.launch_menu, { label = 'cmd', args = {'cmd.exe'},
 	 })
+	 table.insert(config.launch_menu, { label = 'Cygwin Shell', args = {'cygwin-shell.bat'},
+	 })
 
 
 end
