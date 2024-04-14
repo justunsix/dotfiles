@@ -20,7 +20,7 @@ procs:
         macos: Macos
         freebsd: FreeBSD
     autostart: true
-  update-all-noadmin:
+  update-noadmin:
     shell:
       $select: os
       windows: 'powershell.exe -NoProfile -Command "scoop update -a; scoop cleanup *"'
@@ -32,12 +32,12 @@ procs:
       windows: 'powershell.exe -NoProfile -Command "jt-work-dotfiles.ps1"'
       linux: 'cd ~/Code/dotfiles-playbook && make run-dotfiles'
     autostart: false
-  update-all-admin:
+  update-admin:
     shell:
       $select: os
       # Disable Windows update until issues are fixed
       windows: 'powershell.exe -NoProfile -Command "topgrade -y --disable system"'
-      linux: "topgrade -y"
+      linux: topgrade -y --disable node"
     autostart: false
   nvim:
     cmd: ["nvim"]
