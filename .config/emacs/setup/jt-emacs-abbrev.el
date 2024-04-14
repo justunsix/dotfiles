@@ -27,30 +27,31 @@
     ;; -- Common words
     ("za" "and" nil :count 0)
     ("zr" "are" nil :count 0)
-		("zu" "you" nil :count 0)
-		("wd" "would" nil :count 0)
-		("wc" "which" nil :count 0)
-		("zl" "will" nil :count 0)
+    ("zu" "you" nil :count 0)
+    ("wd" "would" nil :count 0)
+    ("wc" "which" nil :count 0)
+    ("zl" "will" nil :count 0)
     ("zw" "with" nil :count 0)
     ("ur" "your" nil :count 0)
     ("zs" "this" nil :count 0)
     ("zt" "the" nil :count 0)
     ("tt" "that" nil :count 0)
     ("z4" "for" nil :count 0)
-		;; - from
-		;; - has/have
-		;; - the
-		;; - our
+    ;; - from
+    ;; - has/have
+    ;; - the
+    ;; - our
 
     ;; English words or names using
-		;; Teeline rules
-		("cld" "cloud" nil :count 0)
-		("dwnld" "download" nil :count 0)
-		("eltr" "electro" nil :count 0)
-		("hppy" "happy" nil :count 0)
-		("intrnt" "internet" nil :count 0)
-		("intrvw" "interview" nil :count 0)
-		("mgntc" "magnetic" nil :count 0)
+    ;; Teeline rules
+    ("bbstr" "babysitter" nil :count 0)
+    ("cld" "cloud" nil :count 0)
+    ("dwnld" "download" nil :count 0)
+    ("eltr" "electro" nil :count 0)
+    ("hppy" "happy" nil :count 0)
+    ("intrnt" "internet" nil :count 0)
+    ("intrvw" "interview" nil :count 0)
+    ("mgntc" "magnetic" nil :count 0)
     ("astrln" "austrialian" nil :count 0)
     ("bckgrnd" "background" nil :count 0)
     ("brtsh" "british" nil :count 0)
@@ -71,12 +72,13 @@
     ("prent" "parent" nil :count 0) ;; different rule vs print
     ("prnt" "print" nil :count 0)
     ("tchr" "teacher" nil :count 0)
+    ("ttoo" "tattoo" nil :count 0)
     ("srvr" "server" nil :count 0)
     ("srvrs" "servers" nil :count 0)
     ("wtchng" "watching" nil :count 0)
 
     ;; -- Domain specific words
-		("Az" "Azure" nil :count 0)
+    ("Az" "Azure" nil :count 0)
 
     ;; -- Custom Abbreviations
     ("GF" "girlfriend" nil :count 0)
@@ -84,13 +86,13 @@
     ("REQS" "requirements" nil :count 0)
     ("ZAI" "artificial intelligence" nil :count 0)
 
-		;; --- Countries
-		("AUS" "australia" nil :count 0)
+    ;; --- Countries
+    ("AUS" "australia" nil :count 0)
     ("CAD" "canada" nil :count 0)
     ("JAP" "japan" nil :count 0)
     ("RUS" "russia" nil :count 0)
 
-		))
+    ))
 
 (provide 'jt-emacs-abbrev)
 

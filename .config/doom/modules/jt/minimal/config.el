@@ -4,12 +4,21 @@
 ;; Abbrev Mode to expand abbreviations for shorthand
 ;; http://xahlee.info/emacs/emacs/emacs_abbrev_mode_tutorial.html
 ;; Turn on abbrev mode globally
-(setq-default abbrev-mode t)
+;; (setq-default abbrev-mode t)
+;; Add abbrev in org mode
+(add-hook 'org-mode-hook #'abbrev-mode)
+
 ;; Auto save on exit
 ;; by default to Emacs config directory/abbrev_defs
 (setq save-abbrevs 'silently)
 ;; Store abbreviations outside of Doom Emacs folder
 (setq abbrev-file-name "~/.cache/abbrev_defs")
+
+;; Temporary load abbreviations from source file
+(setq jt-abbrev-el-location "~/Code/dotfiles/.config/emacs/setup/jt-emacs-abbrev.el")
+(if (file-exists-p jt-abbrev-el-location)
+		(load jt-abbrev-el-location)
+	)
 
 ;; Wrap text in all buffers
 (setq-default visual-line-mode t)
