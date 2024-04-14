@@ -63,7 +63,7 @@
     ("gme" "game" nil :count 0)
     ("gymnstcs" "gymnastics" nil :count 0)
     ("hlwn" "halloween" nil :count 0)
-    ("hr" "hair" nil :count 0)
+    ;; ("hr" "hair" nil :count 0)
     ("htl" "hotel" nil :count 0)
     ("lbrry" "library" nil :count 0)
     ("ntwrk" "network" nil :count 0)
@@ -77,8 +77,8 @@
     ("srvrs" "servers" nil :count 0)
     ("wtchng" "watching" nil :count 0)
 
-    ;; -- Domain specific words
-    ("Az" "Azure" nil :count 0)
+    ;; -- Domain specific words or abbreviations
+    ("AZ" "Azure" nil :count 0)
 
     ;; -- Custom Abbreviations
     ("GF" "girlfriend" nil :count 0)
