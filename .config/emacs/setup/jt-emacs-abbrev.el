@@ -78,6 +78,7 @@
     ("wtchng" "watching" nil :count 0)
 
     ;; -- Domain specific words or abbreviations
+    ("ZMS" "Microsoft" nil :count 0)
     ("AZ" "Azure" nil :count 0)
 
     ;; -- Custom Abbreviations
