@@ -65,6 +65,11 @@ function jgt2 {
 		gfold | rg -e unclean -e unpushed
 }
 
+### Git Repositories checker detailed
+function jvcs {
+		vcs status $env:USERPROFILE\Code | rg -e modified -e ===
+}
+
 ## Emacs
 ## Uses function instead of alias
 ## per https://stackoverflow.com/questions/4166370/how-can-i-write-a-powershell-alias-with-arguments-in-the-middle
