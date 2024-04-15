@@ -28,6 +28,25 @@
 (setq confirm-kill-emacs nil)
 
 ;; --------------------------------------------------------------------------------
+;; * Dired - File Management ----------------------------
+
+;; Previous setting "-alhgo --group-directories-first"
+(setq dired-listing-switches "-alh --group-directories-first")
+
+;; Dired toggle display of users and groups
+(defun dired-toggle-user-group-in-listing ()
+  "Toggle display of user and group information in dired"
+  (interactive)
+  (if (string-match-p "ahgo" dired-listing-switches)
+      (setq dired-listing-switches "-alh --group-directories-first")
+    (setq dired-listing-switches "-alhgo --group-directories-first"))
+  (revert-buffer)
+  )
+
+;; Add hook, when dired buffer is open, active (dired-hide-details-mode)
+(add-hook 'dired-mode-hook 'dired-hide-details-mode)
+
+;; --------------------------------------------------------------------------------
 ;; * Overlay  ----------------------------
 ;; Optionally load dotfiles overlay Emacs configurations
 (setq env-el-location "~/.config/doom/setup/env.el")
