@@ -1,6 +1,6 @@
 # JT's Dotfiles
 
-Configuration and customization files to personalize Linux and Windows.
+Configuration and customization files to personalize Linux, Windows, and macOS.
 
 This repository contains my personal dotfiles like configurations for software described below.
 
