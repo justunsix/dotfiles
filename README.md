@@ -17,8 +17,8 @@ This repository contains my personal dotfiles like configurations for software d
 ++ `emacs/` - [Emacs](https://www.gnu.org/software/emacs/) editor<br/>
 ++ `fish/` - [Fish](https://fishshell.com/) shell<br/>
 ++ `fontconfig/conf.d/` - Fonts managed by [Nix package manager](https://nixos.org/)<br/>
-++ `helix` - [Helix](https://helix-editor.com/)<br/> editor
-++ `home-manager` - [Home Manager using nix](https://github.com/nix-community/home-manager)<br/>
+++ `helix` - [Helix](https://helix-editor.com/) editor<br/>
+++ `home-manager` - [Home Manager using nix](https://github.com/nix-community/home-manager) for software packages<br/>
 ++ `i3/` - [i3 Window Manager (WM)](https://i3wm.org/)<br/>
 ++ `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) Status bar for use with i3<br/>
 ++ `input-remapper/` - [input-remapper](https://github.com/sezanzeb/input-remapper) to change input behaviour like key remapping<br/>
