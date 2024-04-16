@@ -71,7 +71,9 @@ $dotfiles_to_be_synchronized = @(
 		("$env:USERPROFILE\Code\dotfiles\.gitconfig", "$env:USERPROFILE"),
     ("$env:USERPROFILE\Code\dotfiles\.config\todotxt-cli", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\fish", "$env:USERPROFILE\.config"),
-    ("$env:USERPROFILE\Code\dotfiles\.config\doom", "$env:USERPROFILE\.config")
+    ("$env:USERPROFILE\Code\dotfiles\.config\doom", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\kdeglobals", "$env:USERPROFILE\AppData\Local"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\dolphinrc", "$env:USERPROFILE\AppData\Local")
 )
 
 ###############
