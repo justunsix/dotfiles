@@ -174,6 +174,8 @@ fi
 
 if [ -d "$HOME/.nix-profile/bin" ]; then
     PATH="$HOME/.nix-profile/bin:$PATH"
+    # Allow unfree packages to be installed/updated (for example terraform)
+    export NIXPKGS_ALLOW_UNFREE=1
 fi
 
 if [ -d "$HOME/usr/bin/todotxt-cli" ]; then
