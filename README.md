@@ -6,7 +6,8 @@ This repository contains my personal dotfiles like configurations for software d
 
 ## Repository Structure
 
-/<br/>
+List of folders and dotfiles in them:
+
 + `.config/` configuration files for the below mentioned programs<br/>
 ++ `broot` - [Broot](https://dystroy.org/broot/) file and directory navigator<br/>
 ++ `Code/User/` - [Visual Studio Code](https://code.visualstudio.com/) Editor<br/>
@@ -61,7 +62,7 @@ This repository contains my personal dotfiles like configurations for software d
 - Window manager (WM): [i3 tiling WM](https://i3wm.org/)
   - Status bar: [i3status](https://i3wm.org/docs/i3status.html)
 - Shell:
-  - [Bash](https://www.gnu.org/software/bash/)
+  - [Bash](https://www.gnu.org/software/bash/) 
     - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) library
   - [Fish](https://fishshell.com/)
   - [Nushell](https://www.nushell.sh/) cross platform shell
@@ -82,17 +83,23 @@ This repository contains my personal dotfiles like configurations for software d
 
 - Window switcher/application launcher: [rofi](https://github.com/davatorium/rofi)
 - Clipboard manager: [copyq](https://hluk.github.io/CopyQ/)
-- Terminal emulator:
+- Terminal:
   - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term)
-  - [WezTerm](https://wezfurlong.org/wezterm/index.html)
+  - [WezTerm](https://wezfurlong.org/wezterm/index.html) which includes multiplexer 
+  - Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
 - Notification daemon: [dunst](https://dunst-project.org/)
 - Personal Task management: [todotxt](https://github.com/todotxt/todo.txt-cli)
 - Parallel commands manager: [mprocs](https://github.com/pvolok/mprocs)
 - Updates for software: [topgrade](https://github.com/topgrade-rs/topgrade)
 - Keyboard mapper: [input-remapper](https://github.com/sezanzeb/input-remapper)
 - Package Management: [Home Manager using nix](https://github.com/nix-community/home-manager)
-- File Explorer, Directory Navigator: [Broot](https://dystroy.org/broot/)
+- File Explorer, Directory Navigator: [Broot](https://dystroy.org/broot/), [Dolphin File Manager](https://apps.kde.org/dolphin/)
+
+### Operating System Compatibility
+
+- Most software listed above runs cross-platform on Linux, Windows, and macOS and can use the same configuration files (dotfiles). The dotfiles are regularly tested on Linux and Windows using latest stable versions of software.
+- For Linux / Unix only software, it can be run on Windows using Windows Subsystem for Linux (WSL), Cygwin, and/or MSYS on Windows (examples: GNOME, i3, rofi, fish, tmux, dunst, home manager).
 
 ## How Dotfiles are Managed
 
-There are many ways to manage your dotfiles. I use an [Ansible playbook](https://github.com/justunsix/dotfiles-playbook) inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) and [dotfiles Ansible role](https://github.com/geerlingguy/ansible-role-dotfiles) which installs and configures machines I use from base installation using package managers like apt, dnf, deb-get, chocolately, and nix.
+There are many ways to manage your dotfiles. I use an [Ansible playbook](https://github.com/justunsix/dotfiles-playbook) inspired by [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook) and [dotfiles Ansible role](https://github.com/geerlingguy/ansible-role-dotfiles) which installs and configures machines I use from base installation using package managers like apt, dnf, nix, chocolately, and scoop.
