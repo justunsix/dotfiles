@@ -1,6 +1,6 @@
 # JT's Dotfiles
 
-Configuration and customization files to personalize Linux and Windows.
+Configuration and customization files to personalize Linux, Windows, and macOS.
 
 This repository contains my personal dotfiles like configurations for software described below.
 
@@ -10,31 +10,31 @@ List of folders and dotfiles in them:
 
 + `.config/` configuration files for the below mentioned programs<br/>
 ++ `broot` - [Broot](https://dystroy.org/broot/) file and directory navigator<br/>
-++ `Code/User/` - [Visual Studio Code](https://code.visualstudio.com/) Editor<br/>
+++ `Code/User/` - [Visual Studio Code](https://code.visualstudio.com/) editor<br/>
 ++ `cool-retro-term/` - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) Terminal Emulator<br/>
 ++ `copyq/` - [copyq](https://hluk.github.io/CopyQ/) Clipboard Manager<br/>
 ++ `doom/` - [Doom Emacs Framework](https://github.com/doomemacs/doomemacs)<br/>
 ++ `dunst/` - [dunst](https://dunst-project.org/) Notification daemon, for use with i3<br/>
-++ `emacs/` - [Emacs](https://www.gnu.org/software/emacs/) Editor<br/>
+++ `emacs/` - [Emacs](https://www.gnu.org/software/emacs/) editor<br/>
 ++ `fish/` - [Fish](https://fishshell.com/) shell<br/>
 ++ `fontconfig/conf.d/` - Fonts managed by [Nix package manager](https://nixos.org/)<br/>
-++ `helix` - [Helix](https://helix-editor.com/)<br/>
-++ `home-manager` - [Home Manager using nix](https://github.com/nix-community/home-manager)<br/>
+++ `helix` - [Helix](https://helix-editor.com/) editor<br/>
+++ `home-manager` - [Home Manager using nix](https://github.com/nix-community/home-manager) for software packages<br/>
 ++ `i3/` - [i3 Window Manager (WM)](https://i3wm.org/)<br/>
 ++ `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) Status bar for use with i3<br/>
 ++ `input-remapper/` - [input-remapper](https://github.com/sezanzeb/input-remapper) to change input behaviour like key remapping<br/>
-++ `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage commonly executed processes and manage them<br/>
+++ `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage parallel and commonly executed processes<br/>
 ++ `mpv/` - [mpv](https://mpv.io/) media player<br/>
 ++ `nushell/` - [nushell](https://www.nushell.sh/) cross platform shell<br/>
-++ `nvim/` - [neovim](https://neovim.io/) Editor<br/>
+++ `nvim/` - [neovim](https://neovim.io/) editor<br/>
 ++ `rofi/` - [rofi](https://github.com/davatorium/rofi) Application launcher, Window switcher for use with i3 and in GNOME<br/>
 ++ `tmux` - [tmux](https://github.com/tmux/tmux/wiki) Terminal Multiplexer<br/>
 ++ `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) Task manager on command line<br/>
 ++ `topgrade/` - [topgrade](https://github.com/topgrade-rs/topgrade) Updater for things like operating systems, software, packages, and others<br/>
 ++ `vlc/` - [vlc](https://www.videolan.org/vlc/) media player<br/>
 ++ `wezterm/` - [WezTerm](https://wezfurlong.org/wezterm/index.html) Cross platform terminal emulator and multiplexer<br/>
-++ `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings <br/>
-++ `kdeglobals` - [KDE](https://kde.org/) Desktop Environment appearance settings<br/>
+++ `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings<br/>
+++ `kdeglobals` - [KDE](https://kde.org/) KDE Desktop Environment appearance settings<br/>
 ++ `gfold.toml` - [gfold](https://github.com/nickgerace/gfold) Track git repositories<br/>
 ++ `starship.toml` - [Starship](https://starship.rs/) Cross-shell prompt<br/>[Starship](https://starship.rs/) Cross-shell prompt<br/>
 + `.fonts/` - Open source fonts<br/>
@@ -44,7 +44,7 @@ List of folders and dotfiles in them:
 + `usr/bin-windows/` - Windows scripts<br/>
 + `other/` - Other configuration files not normally stored in user home directory<br/>
 ++ `PowerShell/` - [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell) shell<br/>
-++ `WindowsPowerShell/` - [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell) 5.1 Windows shell<br/>
+++ `WindowsPowerShell/` - [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell) 5.1 shell<br/>
 + `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell<br/>
 + `.gitconfig` - [Git](https://git-scm.com/) distributed version control configuration file<br/>
 + `.inputrc` - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) for command line editing<br/>
