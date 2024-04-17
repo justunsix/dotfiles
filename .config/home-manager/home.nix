@@ -51,6 +51,7 @@
     bottom
     kondo
     broot
+    ranger
     # Terminal
     tmux
     mprocs
