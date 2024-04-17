@@ -37,7 +37,7 @@ procs:
       $select: os
       # Disable Windows update until issues are fixed
       windows: 'powershell.exe -NoProfile -Command "topgrade -y --disable system"'
-      linux: topgrade -y --disable node"
+      linux: 'topgrade -y --disable node'
     autostart: false
   nvim:
     cmd: ["nvim"]
