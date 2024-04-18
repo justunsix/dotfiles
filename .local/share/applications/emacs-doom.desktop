@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=Doom Emacs
+GenericName=Doom Emacs
+Comment=Doom Framework for Emacs
+Exec=emacs --init-directory ~/.config/doom-emacs
+Path=/home/justin/.nix-profile/bin/
+Icon=emacs
+Terminal=false
+Type=Application
+Categories=Application
