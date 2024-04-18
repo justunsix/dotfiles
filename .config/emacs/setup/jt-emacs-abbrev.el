@@ -88,10 +88,11 @@
     ("ZAI" "artificial intelligence" nil :count 0)
 
     ;; --- Countries
-    ("AUS" "australia" nil :count 0)
-    ("CAD" "canada" nil :count 0)
-    ("JAP" "japan" nil :count 0)
-    ("RUS" "russia" nil :count 0)
+    ("ZAUS" "australia" nil :count 0)
+    ("ZCAD" "canada" nil :count 0)
+    ("ZJAP" "japan" nil :count 0)
+    ("ZPHIL" "philippines" nil :count 0)
+    ("ZRUS" "russia" nil :count 0)
 
     ))
 
