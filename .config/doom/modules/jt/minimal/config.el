@@ -45,6 +45,8 @@
 
 ;; Add hook, when dired buffer is open, active (dired-hide-details-mode)
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
+;; Turn off hl-line-mode in dired due to a lag until determined what is cause
+(add-hook 'dired-mode-hook (lambda () (hl-line-mode -1)))
 
 ;; --------------------------------------------------------------------------------
 ;; * Overlay  ----------------------------
