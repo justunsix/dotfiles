@@ -39,6 +39,12 @@ procs:
       windows: 'powershell.exe -NoProfile -Command "topgrade -y --disable system"'
       linux: 'topgrade -y --disable node'
     autostart: false
+  emacs-daemon:
+    shell:
+      $select: os
+      windows: 'emacs --daemon'
+      linux: 'emacs --daemon --init-directory ~/doom-emacs'
+    autostart: false
   nvim:
     cmd: ["nvim"]
     autostart: false
