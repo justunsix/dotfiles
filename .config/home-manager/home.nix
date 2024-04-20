@@ -89,6 +89,8 @@
     ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
     ### Markdown
     marksman
+    ## Infrastructure as Code
+    vagrant
 
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
