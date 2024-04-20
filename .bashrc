@@ -274,7 +274,7 @@ if command -v fzf >/dev/null; then
         # Ubuntu Debian per /usr/share/doc/fzf/README.Debian
         source /usr/share/doc/fzf/examples/key-bindings.bash
         # Should be unnecessary in later apt fzf versions
-        source "$HOME/Code/External/fzf/shell/completion.bash"
+        # source "$HOME/Code/External/fzf/shell/completion.bash"
         # Change fzf find files command from default find to fd-find
         # fd-find is called fdfind on Ubuntu due to a file name clash
         # per apt-cache show fd-find
