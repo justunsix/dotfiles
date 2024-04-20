@@ -43,7 +43,7 @@ procs:
     shell:
       $select: os
       windows: 'emacs --daemon'
-      linux: 'emacs --daemon --init-directory ~/doom-emacs'
+      linux: 'emacs --daemon --init-directory ~/.config/doom-emacs'
     autostart: false
   nvim:
     cmd: ["nvim"]
