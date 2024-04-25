@@ -25,7 +25,7 @@ procs:
       $select: os
       windows: 'powershell.exe -NoProfile -Command "scoop update -a; scoop cleanup *"'
       linux: 'nix-env -u && nix-collect-garbage --delete-older-than 30d'
-    autostart: true
+    autostart: false
   update-dotfiles:
     shell:
       $select: os
