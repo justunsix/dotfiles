@@ -52,6 +52,7 @@
     ("hppy" "happy" nil :count 0)
     ("intrnt" "internet" nil :count 0)
     ("intrvw" "interview" nil :count 0)
+    ("mgmt" "management" nil :count 0)
     ("mgntc" "magnetic" nil :count 0)
     ("astrln" "austrialian" nil :count 0)
     ("bckgrnd" "background" nil :count 0)
