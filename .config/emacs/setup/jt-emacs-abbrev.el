@@ -44,6 +44,7 @@
 
     ;; English words or names using
     ;; Teeline rules
+    ("avlble" "available" nil :count 0)
     ("bbstr" "babysitter" nil :count 0)
     ("cld" "cloud" nil :count 0)
     ("dwnld" "download" nil :count 0)
