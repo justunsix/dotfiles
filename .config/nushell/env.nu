@@ -104,6 +104,9 @@ $env.NU_PLUGIN_DIRS = [
 # My Configurations #
 #####################
 
+# Set Helix as default editor
+$env.EDITOR = "hx"
+
 # Starship prompt
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
