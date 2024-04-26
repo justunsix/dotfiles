@@ -28,6 +28,13 @@
 (setq confirm-kill-emacs nil)
 
 ;; --------------------------------------------------------------------------------
+;; * Emacs Web Wowser - eww web browser  ----------------------------
+
+;; Fix background colour contrast
+;; https://emacs.stackexchange.com/questions/2955/how-to-customize-background-color-for-some-web-pages-opened-with-eww
+(setq shr-color-visible-luminance-min 70)
+
+;; --------------------------------------------------------------------------------
 ;; * Dired - File Management ----------------------------
 
 ;; Previous setting "-alhgo --group-directories-first"
