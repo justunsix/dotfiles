@@ -90,7 +90,7 @@
     ### Markdown
     marksman
     ## Infrastructure as Code
-    vagrant
+    ### vagrant
 
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
