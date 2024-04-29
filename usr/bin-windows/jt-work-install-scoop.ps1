@@ -65,4 +65,5 @@ pwsh `
 extras/wezterm `
 nerd-fonts/JetBrains-Mono `
 extras/carapace-bin `
-llvm
+llvm `
+k9s
