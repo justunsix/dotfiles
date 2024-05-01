@@ -27,6 +27,8 @@
 
     # System
     procs
+    htop
+    redshift
 
     # Shell
     fish
@@ -36,6 +38,9 @@
     atuin
     carapace
     rofi
+    rename
+    ripgrep
+    dogdns
     # Fonts
     iosevka
     source-code-pro
@@ -47,6 +52,7 @@
     gfold
     img2pdf
     duf
+    stow
     ## bottom aka btm
     bottom
     kondo
@@ -55,7 +61,6 @@
     # Terminal
     tmux
     mprocs
-    dogdns
     ## sd
     ## Former rust cargo installs
     du-dust
