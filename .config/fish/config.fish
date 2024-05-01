@@ -84,11 +84,28 @@ if type -q zoxide
 end
 
 ## conda - package manager
-if type -q conda-shell
+
+if type -q conda 
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
-	eval $HOME/.conda/bin/conda "shell.fish" "hook" $argv | source
+	if test -f $HOME/miniconda3/bin/conda
+			eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+	else
+			if test -f "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
+					. "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
+			else
+					set -x PATH "$HOME/miniconda3/bin" $PATH
+			end
+	end
 	# <<< conda initialize <<<
-	# deactivate base environment until called
-	conda deactivate
-end
+end	
+
+## Managed by nix's conda-shell
+# if type -q conda-shell
+# 	# >>> conda initialize >>>
+# 	# !! Contents within this block are managed by 'conda init' !!
+# 	eval $HOME/.conda/bin/conda "shell.fish" "hook" $argv | source
+# 	# <<< conda initialize <<<
+# 	# deactivate base environment until called
+# 	conda deactivate
+# end

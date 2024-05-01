@@ -357,25 +357,45 @@ if command -v carapace &>/dev/null; then
 fi
 
 ## conda - package manager
-## Detect conda-shell installed by Nix
-if command -v conda-shell >/dev/null; then
+## Installed by miniconda
+if [ -d "$HOME/miniconda3" ]; then
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('$HOME/.conda/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+    __conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
     else
-        if [ -f "$HOME/.conda/etc/profile.d/conda.sh" ]; then
-            . "$HOME/.conda/etc/profile.d/conda.sh"
+        if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "$HOME/miniconda3/etc/profile.d/conda.sh"
         else
-            export PATH="$HOME/.conda/bin:$PATH"
+            export PATH="$HOME/miniconda3/bin:$PATH"
         fi
     fi
     unset __conda_setup
-    # <<< conda initialize <<<
+# <<< conda initialize <<<
 
 fi
+
+## conda - package manager
+## Detect conda-shell installed by Nix
+# if command -v conda-shell >/dev/null; then
+
+#     # >>> conda initialize >>>
+#     # !! Contents within this block are managed by 'conda init' !!
+#     __conda_setup="$('$HOME/.conda/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+#     if [ $? -eq 0 ]; then
+#         eval "$__conda_setup"
+#     else
+#         if [ -f "$HOME/.conda/etc/profile.d/conda.sh" ]; then
+# # . "$HOME/.conda/etc/profile.d/conda.sh"  # commented out by conda initialize
+#         else
+#             export PATH="$HOME/.conda/bin:$PATH"
+#         fi
+#     fi
+#     unset __conda_setup
+#     # <<< conda initialize <<<
+# fi
 
 ## phantonjs
 ## Correct issue per https://github.com/ariya/phantomjs/issues/15449
