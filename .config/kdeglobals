@@ -136,11 +136,13 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
-ColorSchemeHash=d0b3d2da363261958945ede41bfed4e1744dd286
+ColorSchemeHash=01662607e36cd33eacc7d7d7189f69c26b9a2cc8
+ColorScheme=BreezeDark
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
 ShowDeleteCommand=false
+widgetStyle=Breeze
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -174,3 +176,6 @@ activeForeground=252,252,252
 inactiveBackground=42,46,50
 inactiveBlend=161,169,177
 inactiveForeground=161,169,177
+
+[Icons]
+Theme=breeze-dark
