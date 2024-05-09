@@ -27,6 +27,12 @@
   (setq org-support-shift-select t)
   )
 
+(after! org-roam
+  ;; Set org-roam-directory, could be before org-roam loads
+  ;; https://github.com/doomemacs/doomemacs/issues/4130
+  (setq org-roam-directory (file-truename jt/org-directory))
+  )
+
 ;; Spelling
 (after! flyspell
   (setenv "LANG" "en_GB.UTF-8")
