@@ -53,6 +53,7 @@
     img2pdf
     duf
     stow
+    yazi
     ## bottom aka btm
     bottom
     kondo
