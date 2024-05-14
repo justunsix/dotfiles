@@ -118,3 +118,13 @@ if (Test-Path $gfold_toml) {
 } else {
   Write-Host "= Could not find $gfold_toml"
 }
+# In kdeglobals, remove lines [Icons] and Theme=breeze-dark
+# to fix issue on Windows where icons will appear dark foreground on dark background
+$kdeglobals = "$env:USERPROFILE\AppData\Local\kdeglobals"
+if (Test-Path $kdeglobals) {
+  Write-Host "+c Removing [Icons] and Theme=breeze-dark from $kdeglobals"
+  (Get-Content $kdeglobals) | ForEach-Object { $_ -replace "\[Icons\]", "" } | Set-Content $kdeglobals
+  (Get-Content $kdeglobals) | ForEach-Object { $_ -replace "Theme=breeze-dark", "" } | Set-Content $kdeglobals
+} else {
+  Write-Host "= Could not find $kdeglobals"
+}
