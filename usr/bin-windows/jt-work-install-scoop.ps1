@@ -66,4 +66,5 @@ extras/wezterm `
 nerd-fonts/JetBrains-Mono `
 extras/carapace-bin `
 llvm `
-k9s
+k9s `
+extras/everything
