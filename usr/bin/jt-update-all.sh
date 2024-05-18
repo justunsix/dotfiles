@@ -21,7 +21,7 @@ fi
 # Debian, Ubuntu apt packages
 if command -v apt >/dev/null; then
 	write_host_with_timestamp "Updating APT packages"
-	sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+	sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt clean -y
 	sudo aptitude safe-upgrade -y
 fi
 
