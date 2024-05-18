@@ -90,9 +90,11 @@ if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
 
 	# Update Emacs Packages
 	if command -v emacs >/dev/null; then
-		write_host_with_timestamp "Updating Emacs packages"
-		emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(auto-package-update-now)'
-		emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
+		if [ -f ~/.config/emacs/setup/jt-emacs-package-managers.el ]; then
+			write_host_with_timestamp "Updating Emacs packages"
+			emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(auto-package-update-now)'
+			emacs --batch -l ~/.config/emacs/setup/jt-emacs-package-managers.el --eval '(straight-pull-all)'
+		fi
 	fi
 
 	# update all deb-gets
