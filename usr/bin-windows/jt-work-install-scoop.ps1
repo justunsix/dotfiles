@@ -67,4 +67,7 @@ nerd-fonts/JetBrains-Mono `
 extras/carapace-bin `
 llvm `
 k9s `
-extras/everything
+extras/everything `
+win32yank `
+tree-sitter `
+extras/lazygit
