@@ -72,13 +72,14 @@
     zoxide
     # DevOps
     emacs
+    ## Doom Emacs requirements
+    fd
+    ## Other Editors
     neovim
     helix
     ## Node
     ### LTS as of 2023-04
     nodejs_20
-    ## Doom Emacs
-    fd    
     ## PlantUML
     plantuml
     ## Document conversion, Emacs exports
