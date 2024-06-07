@@ -70,4 +70,5 @@ k9s `
 extras/everything `
 win32yank `
 tree-sitter `
-extras/lazygit
+extras/lazygit `
+extras/dolphin
