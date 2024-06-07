@@ -54,6 +54,7 @@
     duf
     stow
     yazi
+    lazygit
     ## bottom aka btm
     bottom
     kondo
