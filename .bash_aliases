@@ -39,6 +39,9 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+# Lazygit
+alias lg='lazygit'
+
 # yt-dlp
 # List formats for a URL, Check URL is downloadable
 alias ytf="yt-dlp -F URL"
