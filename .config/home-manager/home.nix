@@ -73,11 +73,13 @@
     zoxide
     # DevOps
     emacs
-    ## Doom Emacs requirements
+    ### Doom Emacs requirements
     fd
     ## Other Editors
     neovim
     helix
+    ### Astronvim requirements
+    tree-sitter
     ## Node
     ### LTS as of 2023-04
     nodejs_20
