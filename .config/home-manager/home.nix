@@ -47,7 +47,6 @@
     # Even though installed by apt, require for program like exa
     fira-code
     # File Management
-    gitui
     vcstool
     gfold
     img2pdf

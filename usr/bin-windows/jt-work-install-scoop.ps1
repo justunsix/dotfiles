@@ -34,7 +34,6 @@ gcc `
 neovim `
 terraform `
 nu `
-gitui `
 extras/miniconda3 `
 gsudo `
 topgrade `
