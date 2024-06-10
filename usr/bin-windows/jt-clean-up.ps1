@@ -20,9 +20,10 @@ if (Test-Path ~\scoop\apps\miniconda3\current\Scripts\conda.exe) {
 
 # Clean mpv watch info
 if (Test-Path ~\scoop\apps\mpv\current\portable_config\watch_later) {
-    Write-HostWithTimestamp "Cleaning mpv watch info"
+    Write-HostWithTimestamp "Cleaning mpv watch info and cache"
     # delete watch data in scoop installed mpv
     Remove-Item -Path ~\scoop\apps\mpv\current\portable_config\watch_later\* -Force -Recurse
+    Remove-Item -Path ~\scoop\apps\mpv\current\portable_config\cache\* -Force -Recurse
 }
 
 # Clean screenshots
