@@ -49,6 +49,6 @@ fi
 # Clean mpv watch information
 if [ -d "$HOME/.config/mpv/watch_later" ] || [ -d "$HOME/.local/state/mpv/watch_later" ]; then
 		write_host_with_timestamp "Clean mpv watch information"
-		rm -rf "$HOME/.config/mpv/watch_later/*"
-		rm -rf "$HOME/.local/state/mpv/watch_later/*"
+		rm -rf "$HOME"/.config/mpv/watch_later/*
+		rm -rf "$HOME"/.local/state/mpv/watch_later/*
 fi
