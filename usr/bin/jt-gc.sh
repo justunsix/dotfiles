@@ -8,8 +8,8 @@
 if [ -z "$1" ]
 then
         echo "Commiting with autocommit"
-        git add . && git commit -m"auto commit script" && git push
+        git commit -am"auto commit script" && git push
 else
         echo "Committing with: " + "$1"
-        git add . && git commit -m"$1" && git push
+        git commit -am"$1" && git push
 fi
