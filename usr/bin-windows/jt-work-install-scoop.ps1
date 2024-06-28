@@ -71,4 +71,4 @@ win32yank `
 tree-sitter `
 extras/lazygit `
 extras/dolphin `
-go-sqlcmd
+usql
