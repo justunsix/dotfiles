@@ -70,4 +70,5 @@ extras/everything `
 win32yank `
 tree-sitter `
 extras/lazygit `
-extras/dolphin
+extras/dolphin `
+go-sqlcmd
