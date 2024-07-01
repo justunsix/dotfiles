@@ -62,13 +62,13 @@ config.enable_scroll_bar = true
 
 config.keys = {
 	-- Override ToogleFullScreen keybinding to F11
-	-- Turn off the default alt-enter action, allowing it to
-  -- be potentially recognized and handled by the tab
+	-- Turn off / Disable default alt-enter action 
+  -- allowing it to be recognized and handled by the tab
   {
     key = 'Enter',
     mods = 'ALT',
     action = wezterm.action.DisableDefaultAssignment,
-  },		
+  },
 	{
 		key = "F11",
     action = wezterm.action.ToggleFullScreen,
