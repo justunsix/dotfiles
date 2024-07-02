@@ -47,7 +47,9 @@ fi
 if [ -f "$HOME/.config/home-manager/flake.nix" ]; then
 	write_host_with_timestamp "Updating Nix Flake and Home Manager"
 	cd "$HOME/.config/home-manager/" || exit
-	nix flake update && home-manager switch -b bak
+	# Update flakes and home-manager
+	# -b backup : if home-manager finds conflicting files, make backup
+	nix flake update && home-manager switch -b backup
 	cd - || exit
 fi
 
