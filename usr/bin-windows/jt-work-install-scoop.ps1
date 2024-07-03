@@ -18,9 +18,12 @@ $programsList = @(
     "kondo",
     "extras/dolphin",
     "broot",    
-    ### yazi file manager
+    ### yazi file manager and supporting programs
     "yazi",
-
+    #### yazi optional dependencies
+    "unar",
+    "jq",
+    "poppler",
     # "bottom",
     ## Media
     # "obs-studio",
