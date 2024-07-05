@@ -278,11 +278,13 @@ if command -v fzf >/dev/null; then
         # Change fzf find files command from default find to fd-find
         # fd-find is called fdfind on Ubuntu due to a file name clash
         # per apt-cache show fd-find
-        alias fd="fdfind"
+        # Not required not, since using nix
+        # alias fd="fdfind"
+
         # Find:
         # --type f = files
         # --hidden = include hidden files
-        export FZF_DEFAULT_COMMAND='fdfind --hidden --type f'
+        export FZF_DEFAULT_COMMAND='fd --hidden --type f'
     fi
     if [ "$isFedora" = "true" ]; then
         # FZF mappings and options
