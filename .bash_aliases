@@ -22,7 +22,7 @@ alias cd4="cd ../../../.."
 ## Simpler config for terminal use
 alias emacsnw="emacs -Q -nw -l ~/Code/dotfiles/.config/emacs/setup/minimal.el"
 
-# exa
+# eza
 alias exa="eza"
 alias eza="eza --icons -lh --group-directories-first"
 
