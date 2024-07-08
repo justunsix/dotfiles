@@ -1,0 +1,7 @@
+# Default from https://github.com/sxyazi/yazi/tree/latest/yazi-config/preset
+[opener]
+edit = [
+		{ run = '${EDITOR:=vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+		# Use Helix instead of code
+		{ run = 'hx "%*"', block = true,  desc = "code (block)", for = "windows" },
+]

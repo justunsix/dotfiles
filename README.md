@@ -33,6 +33,7 @@ List of folders and dotfiles in them:
 ++ `topgrade/` - [topgrade](https://github.com/topgrade-rs/topgrade) Updater for things like operating systems, software, packages, and others<br/>
 ++ `vlc/` - [vlc](https://www.videolan.org/vlc/) media player<br/>
 ++ `wezterm/` - [WezTerm](https://wezfurlong.org/wezterm/index.html) Cross platform terminal emulator and multiplexer<br/>
+++ `yazi/` - [Yazi](https://yazi-rs.github.io/) file manager<br/>
 ++ `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings<br/>
 ++ `kdeglobals` - [KDE](https://kde.org/) KDE Desktop Environment appearance settings<br/>
 ++ `gfold.toml` - [gfold](https://github.com/nickgerace/gfold) Track git repositories<br/>
