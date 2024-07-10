@@ -39,6 +39,7 @@
     carapace
     rofi
     rename
+    ## rg optional for nvim and emacs frameworks
     ripgrep
     dogdns
     # Fonts

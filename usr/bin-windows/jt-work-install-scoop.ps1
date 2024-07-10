@@ -8,11 +8,15 @@ $programsList = @(
     ## File Management
     "git",
     "extras/git-credential-manager",
+    ### lg optional for nvim frameworks
     "extras/lazygit",
     "bleachbit",
     "ccleaner",
     "fzf",
+    ### fd optional for nvim frameworks
     "fd",
+    #### rg optional for nvim, emacs frameworks
+    "ripgrep",
     "duf",
     "extras/everything",
     "kondo",
@@ -85,7 +89,6 @@ $programsList = @(
     "usql"    
     ### Emacs and Supporting Programs
     "emacs",
-    "ripgrep",
     "pandoc",
     "mremoteng",
     "zoxide",
