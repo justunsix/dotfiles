@@ -23,6 +23,7 @@ List of folders and dotfiles in them:
 ++ `i3/` - [i3 Window Manager (WM)](https://i3wm.org/)<br/>
 ++ `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) Status bar for use with i3<br/>
 ++ `input-remapper/` - [input-remapper](https://github.com/sezanzeb/input-remapper) to change input behaviour like key remapping<br/>
+++ `lazyvim` - [Lazyvim](https://www.lazyvim.org/) Neovim setup
 ++ `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage parallel and commonly executed processes<br/>
 ++ `mpv/` - [mpv](https://mpv.io/) media player<br/>
 ++ `nushell/` - [nushell](https://www.nushell.sh/) cross platform shell<br/>
