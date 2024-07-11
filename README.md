@@ -9,7 +9,7 @@ This repository contains my personal dotfiles like configurations for software d
 List of folders and dotfiles in them:
 
 + `.config/` configuration files for the below mentioned programs<br/>
-++ alacritty - [alacritty](https://alacritty.org) terminal emulator
+++ `alacritty` - [alacritty](https://alacritty.org) terminal emulator
 ++ `broot` - [Broot](https://dystroy.org/broot/) file and directory navigator<br/>
 ++ `Code/User/` - [Visual Studio Code](https://code.visualstudio.com/) editor<br/>
 ++ `cool-retro-term/` - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) Terminal Emulator<br/>
