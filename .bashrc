@@ -195,6 +195,8 @@ export PATH="$HOME/.local/bin::$PATH"
 ################################
 # * Other Variables
 
+export NVIM_APPNAME="lazyvim"
+
 # Set EDITOR environment variable
 export EDITOR="vim"
 
