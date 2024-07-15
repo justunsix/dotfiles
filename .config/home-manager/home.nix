@@ -85,6 +85,7 @@
     nodejs_20
     ## PlantUML
     plantuml
+    graphviz
     ## Document conversion, Emacs exports
     pandoc
     ## Python
