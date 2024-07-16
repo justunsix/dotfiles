@@ -34,8 +34,9 @@ if (Test-Path ~\Pictures\Screenshots) {
 
 # Clean Emacs Doom Packages
 if (Test-Path ~\.config\emacs\bin\doom.cmd) {
-  cd "~\.config\emacs\bin"
-  doom purge
+    Write-HostWithTimestamp "Cleaning Doom Emacs Packages"
+    cd "~\.config\emacs\bin"
+    .\doom gc 
 }
 
 if (Test-Path ~\Code) {

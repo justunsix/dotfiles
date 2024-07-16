@@ -49,8 +49,8 @@ fi
 
 # Clean Emacs Doom Packages
 if [ -d "$HOME/.config/emacs/bin" ]; then
-  cd "$HOME/.config/emacs/bin"
-  doom purge
+  write_host_with_timestamp "Clean Doom Emacs Packages"
+  cd "$HOME/.config/emacs/bin" && doom gc
 fi
 
 # Clean mpv watch information
