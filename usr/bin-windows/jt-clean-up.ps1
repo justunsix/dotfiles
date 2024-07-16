@@ -32,6 +32,12 @@ if (Test-Path ~\Pictures\Screenshots) {
 		Remove-Item -Path ~\Pictures\Screenshots\* -Force -Recurse
 }
 
+# Clean Emacs Doom Packages
+if (Test-Path ~\.config\emacs\bin\doom.cmd) {
+  cd "~\.config\emacs\bin"
+  doom purge
+}
+
 if (Test-Path ~\Code) {
 		Write-HostWithTimestamp "Cleaning software projects unneed files"
 		cd ~\Code
