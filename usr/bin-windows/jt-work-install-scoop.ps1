@@ -8,6 +8,7 @@ $programsList = @(
     ## File Management
     "git",
     "extras/git-credential-manager",
+    "uutils-coreutils",
     ### lg optional for nvim frameworks
     "extras/lazygit",
     "bleachbit",
