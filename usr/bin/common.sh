@@ -7,6 +7,6 @@ write_host_with_timestamp() {
         return
     fi
 
-    timestamp=$(date +"%H:%M:%S")
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
     echo -e "\n── $timestamp - $1 ─────────────"
 }
