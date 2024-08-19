@@ -80,14 +80,17 @@
     ("wtchng" "watching" nil :count 0)
 
     ;; -- Domain specific words or abbreviations
+    ;; Technology
     ("ZMS" "Microsoft" nil :count 0)
     ("AZ" "Azure" nil :count 0)
+    ("ZAI" "artificial intelligence" nil :count 0)
+    ;; Sports
+    ("photog" "photographer" nil :count 0)
 
     ;; -- Custom Abbreviations
     ("GF" "girlfriend" nil :count 0)
     ("OPP" "opportunity" nil :count 0)
     ("REQS" "requirements" nil :count 0)
-    ("ZAI" "artificial intelligence" nil :count 0)
 
     ;; --- Countries
     ("ZAUS" "australia" nil :count 0)
