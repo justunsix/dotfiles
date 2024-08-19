@@ -47,11 +47,11 @@ process {
 
 		# Disable vscode due to bug for now and vagrant due to large updates
 		if ($runTopgradeWithPS1 -eq "y") {
-			topgrade -y --disable system vscode vagrant
+			topgrade -y --disable system vagrant
 		}
 		else {
-			Write-Host "`nwith --disable powershell vagrant emacs vim" -ForegroundColor Green
-			topgrade -y --disable system --disable powershell vagrant emacs vim vscode
+			Write-Host "`nwith --disable powershell vagrant emacs vim winget" -ForegroundColor Green
+			topgrade -y --disable system --disable powershell vagrant emacs vim winget
 		}
 	}
 
