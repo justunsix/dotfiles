@@ -136,7 +136,7 @@ if (Test-Path $kdeglobals) {
 }
 
 # doom config, replace line +roam2 with ;; +roam2
-$doom_config = "$env:USERPROFILE\.config\doom\config.el"
+$doom_config = "$env:USERPROFILE\.config\doom\init.el"
 if (Test-Path $doom_config) {
   Write-Host "+c Replacing +roam2 with ;; +roam2 in $doom_config"
   (Get-Content $doom_config) | ForEach-Object { $_ -replace "\+roam2", ";; +roam2" } | Set-Content $doom_config
