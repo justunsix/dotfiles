@@ -123,6 +123,7 @@ if (Test-Path $gfold_toml) {
 } else {
   Write-Host "= Could not find $gfold_toml"
 }
+
 # In kdeglobals, remove lines [Icons] and Theme=breeze-dark
 # to fix issue on Windows where icons will appear dark foreground on dark background
 $kdeglobals = "$env:USERPROFILE\AppData\Local\kdeglobals"
@@ -132,4 +133,13 @@ if (Test-Path $kdeglobals) {
   (Get-Content $kdeglobals) | ForEach-Object { $_ -replace "Theme=breeze-dark", "" } | Set-Content $kdeglobals
 } else {
   Write-Host "= Could not find $kdeglobals"
+}
+
+# doom config, replace line +roam2 with ;; +roam2
+$doom_config = "$env:USERPROFILE\.config\doom\config.el"
+if (Test-Path $doom_config) {
+  Write-Host "+c Replacing +roam2 with ;; +roam2 in $doom_config"
+  (Get-Content $doom_config) | ForEach-Object { $_ -replace "\+roam2", ";; +roam2" } | Set-Content $doom_config
+} else {
+  Write-Host "= Could not find $doom_config"
 }
