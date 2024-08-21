@@ -5,6 +5,32 @@
 
 Write-HostWithTimestamp "Cleaning packages and software projects"
 
+# Clean Emacs and Doom Packages
+if (Test-Path ~\.config\emacs\bin\doom.cmd) {
+    Write-HostWithTimestamp "Cleaning Doom Emacs Packages and Emacs Cache"
+    Write-Host "Warning: Doom clean takes a while, cleaning Emacs cache will remove saved project, recent and files history"
+    $confirmation = Read-Host "Continue? (y/n)"
+
+    if ($confirmation -eq 'y' -or $confirmation -eq 'Y') {
+        Write-HostWithTimestamp "Cleaning Doom Emacs Packages"
+        cd "~\.config\emacs\bin"
+        .\doom gc 
+
+        if (Test-Path ~\.config\emacs\.local\cache) {
+            Write-HostWithTimestamp "Cleaning Emacs cache"
+            Remove-Item -Path ~\.config\emacs\.local\cache\* -Force -Recurse
+        }
+    } else {
+        Write-HostWithTimestamp "Skipped cleaning Emacs."
+    }
+}
+
+if (Test-Path ~\Code) {
+    Write-HostWithTimestamp "Cleaning software projects unneeded files"
+    cd ~\Code
+    kondo
+}
+
 # Check if scoop command exists, if so clean scoop packages
 if (Test-Path ~\scoop\apps\scoop\current\bin\scoop.ps1) {
     Write-HostWithTimestamp "Cleaning scoop packages and cache"
@@ -30,17 +56,4 @@ if (Test-Path ~\scoop\apps\mpv\current\portable_config\watch_later) {
 if (Test-Path ~\Pictures\Screenshots) {
 		Write-HostWithTimestamp "Cleaning screenshots"
 		Remove-Item -Path ~\Pictures\Screenshots\* -Force -Recurse
-}
-
-# Clean Emacs Doom Packages
-if (Test-Path ~\.config\emacs\bin\doom.cmd) {
-    Write-HostWithTimestamp "Cleaning Doom Emacs Packages"
-    cd "~\.config\emacs\bin"
-    .\doom gc 
-}
-
-if (Test-Path ~\Code) {
-		Write-HostWithTimestamp "Cleaning software projects unneed files"
-		cd ~\Code
-		kondo
 }

@@ -47,15 +47,25 @@ if [ -d "$HOME/Pictures/Screenshots" ]; then
   rm -rf ~/Pictures/Screenshots/*
 fi
 
-# Clean Emacs Doom Packages
-if [ -d "$HOME/.config/emacs/bin" ]; then
-  write_host_with_timestamp "Clean Doom Emacs Packages"
-  cd "$HOME/.config/emacs/bin" && doom gc
-fi
-
 # Clean mpv watch information
 if [ -d "$HOME/.config/mpv/watch_later" ] || [ -d "$HOME/.local/state/mpv/watch_later" ]; then
   write_host_with_timestamp "Clean mpv watch information"
   rm -rf "$HOME"/.config/mpv/watch_later/*
   rm -rf "$HOME"/.local/state/mpv/watch_later/*
+fi
+
+# Clean Emacs and Doom Packages
+if [ -d "$HOME/.config/emacs/bin" ]; then
+  write_host_with_timestamp "Clean Doom Emacs Packages"
+  cd "$HOME/.config/emacs/bin" && doom gc
+fi
+if [ -d "$HOME/.config/emacs/.local/cache" ]; then
+  echo 'Clean Emacs cache, warning will remove saved project, recent and files history: (y/n)? '
+  read answer
+  if [ "$answer" != "${answer#[Yy]}" ]; then
+    write_host_with_timestamp "Clean Emacs cache"
+    cd "$HOME/.config/emacs/.local/cache" && rm -rf *
+  else
+    echo "Skip clean Emacs cache"
+  fi
 fi
