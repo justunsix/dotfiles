@@ -6,8 +6,15 @@
 Write-HostWithTimestamp "Cleaning packages and software projects"
 
 # Clean Emacs and Doom Packages
+if (Test-Path ~\.config\emacs\.local\cache) {
+    Write-HostWithTimestamp "Cleaning Emacs non-essential cache"
+    Remove-Item -Path ~\.config\emacs\.local\cache\autosave -Force -Recurse
+    Remove-Item -Path ~\.config\emacs\.local\cache\org -Force -Recurse
+    Remove-Item -Path ~\.config\emacs\.local\cache\undo-fu-session -Force -Recurse
+}
+
 if (Test-Path ~\.config\emacs\bin\doom.cmd) {
-    Write-HostWithTimestamp "Cleaning Doom Emacs Packages and Emacs Cache"
+    Write-HostWithTimestamp "Cleaning Doom Emacs Packages and complete Emacs Cache"
     Write-Host "Warning: Doom clean takes a while, cleaning Emacs cache will remove saved project, recent and files history"
     $confirmation = Read-Host "Continue? (y/n)"
 
