@@ -11,6 +11,7 @@ if (Test-Path ~\.config\emacs\.local\cache) {
     Remove-Item -Path ~\.config\emacs\.local\cache\autosave -Force -Recurse
     Remove-Item -Path ~\.config\emacs\.local\cache\org -Force -Recurse
     Remove-Item -Path ~\.config\emacs\.local\cache\undo-fu-session -Force -Recurse
+    Remove-Item -Path ~\.config\emacs\.local\cache\savehist -Force 
 }
 
 if (Test-Path ~\.config\emacs\bin\doom.cmd) {

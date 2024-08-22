@@ -65,6 +65,7 @@ if [ -d "$HOME/.config/emacs/.local/cache" ]; then
   rm -rf autosave
   rm -rf org
   rm -rf undo-fu-session
+  rf -f savehist
   echo 'Clean complete Emacs cache, warning will remove saved project, recent and files history: (y/n)? '
   read answer
   if [ "$answer" != "${answer#[Yy]}" ]; then
