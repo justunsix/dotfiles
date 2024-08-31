@@ -73,6 +73,7 @@
     zoxide
     # DevOps
     emacs
+    asdf-vm
     ### Doom Emacs requirements
     fd
     ## Other Editors
