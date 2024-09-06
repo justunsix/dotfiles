@@ -47,7 +47,8 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\AppData\Local\lazyvim",  
   "$env:USERPROFILE\AppData\Roaming\alacritty",
 	"$env:USERPROFILE\AppData\Roaming\dystroy\broot\config",
-	"$env:USERPROFILE\AppData\Roaming\helix",  
+	"$env:USERPROFILE\AppData\Roaming\helix",
+	"$env:USERPROFILE\AppData\Roaming\navi",
 	"$env:USERPROFILE\AppData\Roaming\nushell",
   "$env:USERPROFILE\AppData\Roaming\topgrade",
   "$env:USERPROFILE\.config\emacs",
@@ -68,6 +69,7 @@ $dotfiles_to_be_synchronized = @(
     ("$env:USERPROFILE\Code\dotfiles\.config\gfold.toml", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
 		("$env:USERPROFILE\Code\dotfiles\.config\alacritty", "$env:USERPROFILE\AppData\Roaming"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\navi", "$env:USERPROFILE\AppData\Roaming"),
     ("$env:USERPROFILE\Code\dotfiles\.config\nushell", "$env:USERPROFILE\AppData\Roaming"),
     ("$env:USERPROFILE\Code\dotfiles\.config\broot\*", "$env:USERPROFILE\AppData\Roaming\dystroy\broot\config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\helix", "$env:USERPROFILE\AppData\Roaming"),
@@ -142,4 +144,13 @@ if (Test-Path $doom_config) {
   (Get-Content $doom_config) | ForEach-Object { $_ -replace "\+roam2", ";; +roam2" } | Set-Content $doom_config
 } else {
   Write-Host "= Could not find $doom_config"
+}
+
+# navi config, replace bash with cmd.exe for shell
+$navi_config = "$env:USERPROFILE\.config\navi\config.yaml"
+if (Test-Path $navi_config) {
+  Write-Host "+c Replacing bash with cmd.exe in $navi_config"
+  (Get-Content $navi_config) | ForEach-Object { $_ -replace "bash", "cmd.exe" } | Set-Content $navi_config
+} else {
+  Write-Host "= Could not find $navi_config"
 }
