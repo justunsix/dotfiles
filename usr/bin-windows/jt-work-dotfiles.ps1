@@ -147,7 +147,7 @@ if (Test-Path $doom_config) {
 }
 
 # navi config, replace bash with cmd.exe for shell
-$navi_config = "$env:USERPROFILE\.config\navi\config.yaml"
+$navi_config = "$env:USERPROFILE\AppData\Roaming\navi\config.yaml"
 if (Test-Path $navi_config) {
   Write-Host "+c Replacing bash with cmd.exe in $navi_config"
   (Get-Content $navi_config) | ForEach-Object { $_ -replace "bash", "cmd.exe" } | Set-Content $navi_config
