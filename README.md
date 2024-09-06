@@ -27,6 +27,7 @@ List of folders and dotfiles in them:
 ++ `lazyvim` - [Lazyvim](https://www.lazyvim.org/) Neovim setup
 ++ `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage parallel and commonly executed processes<br/>
 ++ `mpv/` - [mpv](https://mpv.io/) media player<br/>
+++ `navi/` - [navi](https://github.com/denisidoro/navi/) command line cheatsheet tool<br/>
 ++ `nushell/` - [nushell](https://www.nushell.sh/) cross platform shell<br/>
 ++ `nvim/` - [neovim](https://neovim.io/) editor<br/>
 ++ `rofi/` - [rofi](https://github.com/davatorium/rofi) Application launcher, Window switcher for use with i3 and in GNOME<br/>

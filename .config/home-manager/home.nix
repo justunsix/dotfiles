@@ -39,6 +39,7 @@
     carapace
     rofi
     rename
+    navi
     ## rg optional for nvim and emacs frameworks
     ripgrep
     dogdns
