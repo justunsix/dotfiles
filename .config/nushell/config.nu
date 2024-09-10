@@ -904,6 +904,7 @@ $env.config = {
 alias jgt = bash -c "gfold | rg -e unclean -e unpushed"
 alias jvcs = bash -c "vcs status $HOME/Code | rg -e modified -e ==="
 alias lg = lazygit
+alias e = eza -alh
 
 #####################
 # My Custom Commands

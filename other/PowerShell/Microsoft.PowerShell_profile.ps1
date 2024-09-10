@@ -79,6 +79,11 @@ function lg {
 		lazygit
 }
 
+### eza
+function e {
+		eza -alh
+}
+
 ## Emacs
 ## Uses function instead of alias
 ## per https://stackoverflow.com/questions/4166370/how-can-i-write-a-powershell-alias-with-arguments-in-the-middle

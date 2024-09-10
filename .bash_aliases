@@ -25,6 +25,7 @@ alias emacsnw="emacs -Q -nw -l ~/Code/dotfiles/.config/emacs/setup/minimal.el"
 # eza
 alias exa="eza"
 alias eza="eza --icons -lh --group-directories-first"
+alias e="eza -alh"
 
 ## Changing "ls" to "exa"
 # alias ls='eza -al --color=always --group-directories-first' # my preferred listing
