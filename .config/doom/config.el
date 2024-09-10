@@ -34,6 +34,7 @@
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-one)
 
+(setq doom-font (font-spec :family "Jetbrains Mono" :size 15))
 (setq doom-theme 'doom-tokyo-night)
 
 
