@@ -107,6 +107,9 @@ $env.NU_PLUGIN_DIRS = [
 # Set Helix as default editor
 $env.EDITOR = "hx"
 
+# Set NVIM Framework to use
+$env.NVIM_APPNAME = 'lazyvim'
+
 # Starship prompt
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
