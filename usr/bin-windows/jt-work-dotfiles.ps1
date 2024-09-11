@@ -154,3 +154,6 @@ if (Test-Path $navi_config) {
 } else {
   Write-Host "= Could not find $navi_config"
 }
+
+# Disable auto-activation of base conda environment
+conda config --set auto_activate_base false

@@ -89,3 +89,25 @@ function e {
 ## per https://stackoverflow.com/questions/4166370/how-can-i-write-a-powershell-alias-with-arguments-in-the-middle
 ## function emacsnw {emacs -Q -nw -l ~\.config\emacs\setup\minimal.el $args}
 
+# Functions
+
+# region conda initialize
+# source from https://github.com/conda/conda/issues/11648 to only init conda on use
+# Also run conda config --set auto_activate_base false to disable auto-activation
+# Usage: Use-Conda <conda_environment_name>
+## !! Contents within this block are managed by 'conda init' !!
+## Updated to us $env variable instead of hardcoded path
+function Use-Conda {
+    param (
+        [string] $Activate
+    )
+    
+    If (Test-Path "$env:USERPROFILE\scoop\apps\miniconda3\current\Scripts\conda.exe") {
+        (& "$env:USERPROFILE\scoop\apps\miniconda3\current\Scripts\conda.exe" "shell.powershell" "hook") | Out-String | ?{$_} | Invoke-Expression
+        
+        if ($Activate) {
+            conda activate $Activate
+        }
+    }
+}
+#endregion
