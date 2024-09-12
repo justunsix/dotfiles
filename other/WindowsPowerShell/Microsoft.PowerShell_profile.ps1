@@ -9,10 +9,8 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
-# Simplify powershell.exe to be close to -noprofile
-$loadAll = $false
-
-if ($loadAll) {
+# Additional PowerShell capabitilities if needed
+function Initialize-Profile {
 
 		Invoke-Expression (&starship init powershell)
 
@@ -38,4 +36,16 @@ if ($loadAll) {
 		if (Test-Path $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1) {
 				. $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1
 		}
+
 }
+
+# Simplify powershell.exe to be close to -noprofile
+$loadAll = $false
+
+if ($loadAll) {
+
+	Initialize-Profile
+	
+}
+
+Write-Host "Load full profile with Initialize-Profile"
