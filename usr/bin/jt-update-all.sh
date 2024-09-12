@@ -15,6 +15,9 @@ fi
 # Arch packages
 if command -v pacman >/dev/null; then
 	write_host_with_timestamp "Updating pacman packages"
+	# Update Arch keyring first, only required for systems
+	# that have not been updated in a while to prevent package signature trust issues
+	sudo pacman -Sy archlinux-keyring
 	sudo pacman -Syu --noconfirm
 fi
 
