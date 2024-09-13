@@ -75,6 +75,8 @@
     # DevOps
     emacs
     asdf-vm
+    ## Nix formatter
+    nixfmt-classic
     ### Doom Emacs requirements
     fd
     ## Other Editors
