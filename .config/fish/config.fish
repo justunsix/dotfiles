@@ -91,20 +91,39 @@ end
 
 ## conda - package manager
 
-if type -q conda 
-	# >>> conda initialize >>>
-	# !! Contents within this block are managed by 'conda init' !!
-	if test -f $HOME/miniconda3/bin/conda
-			eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-	else
+### Only load conda if called
+### https://stackoverflow.com/questions/52706888/anaconda-python-causing-slow-terminal-startup-prompt/73910386#73910386
+function conda-init -d "initialize conda shell functions"
+		# Initialize conda if it is an alias
+		# else set up conda with fish config / path
+    if type conda | grep -q alias
+        echo "initializing conda..."
+				eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+    else
 			if test -f "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
 					. "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
 			else
 					set -x PATH "$HOME/miniconda3/bin" $PATH
 			end
 	end
-	# <<< conda initialize <<<
-end	
+end
+
+alias conda "conda-init; conda"
+
+# if type -q conda 
+# 	# >>> conda initialize >>>
+# 	# !! Contents within this block are managed by 'conda init' !!
+# 	if test -f $HOME/miniconda3/bin/conda
+# 			eval $HOME/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# 	else
+# 			if test -f "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
+# 					. "$HOME/miniconda3/etc/fish/conf.d/conda.fish"
+# 			else
+# 					set -x PATH "$HOME/miniconda3/bin" $PATH
+# 			end
+# 	end
+# 	# <<< conda initialize <<<
+# end	
 
 ## Managed by nix's conda-shell
 # if type -q conda-shell
