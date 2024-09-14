@@ -60,18 +60,18 @@ if [ -d "$HOME/.config/emacs/bin" ]; then
   cd "$HOME/.config/emacs/bin" && doom gc
 fi
 if [ -d "$HOME/.config/emacs/.local/cache" ]; then
-  echo 'Clean non-essential Emacs cache'
+  write_host_with_timestamp 'Clean non-essential Emacs cache'
   cd "$HOME/.config/emacs/.local/cache" || exit
   rm -rf autosave
   rm -rf org
   rm -rf undo-fu-session
   rm -f savehist
-  echo 'Clean complete Emacs cache, warning will remove saved project, recent and files history: (y/n)? '
-  read answer
-  if [ "$answer" != "${answer#[Yy]}" ]; then
+
+  if [ "$1" == "--all" ]; then
     write_host_with_timestamp "Clean Emacs cache"
     cd "$HOME/.config/emacs/.local/cache" && rm -rf *
   else
-    echo "Skip clean Emacs cache"
+    echo 'To clean complete Emacs cache (warning it will remove saved project, recent and files history), run:'
+    echo 'jt-clean-up.sh --all'
   fi
 fi
