@@ -5,6 +5,8 @@
 
 # Variables
 $env:EDITOR = "hx"
+## kubectl editor
+$env:KUBE_EDITOR="nvim"
 ## Yazi File Manager to open files on Windows https://yazi-rs.github.io/docs/installation
 $env:YAZI_FILE_ONE = "$env:USERPROFILE\scoop\apps\git\current\usr\bin\file.exe"
 ## Set Lazyvim as default Neovim framework to use

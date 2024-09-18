@@ -66,13 +66,23 @@ disabled = false
 # k8s from https://medium.com/@petolofsson/supercharge-your-kubernetes-workflow-with-essential-tools-starship-kubectx-kubecolor-and-k9s-c2ce5eb88d23
 [kubernetes]
 disabled = false
-symbol = "k8s"
-format = '[$symbol](bright-black) [$context( \($namespace\))]($style)'
+# Only show the module in directories that contain a k8s file
+detect_files = ['k8s']
+symbol = "k8s "
 
 [[kubernetes.contexts]]
-context_pattern = "^production$"
+context_pattern = "^prd$"
 context_alias = "production"
-style = "green"
+style = "red"
+
+# Snippets from Preset Pastel Powerline
+## https://starship.rs/presets/pastel-powerline
+# [username]
+# show_always = true
+# style_user = "bg:#9A348E"
+# style_root = "bg:#9A348E"
+# format = '[$user ]($style)'
+# disabled = false
 
 ##############################
 ### Preset configuration

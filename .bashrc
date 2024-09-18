@@ -199,6 +199,8 @@ export NVIM_APPNAME="lazyvim"
 
 # Set EDITOR environment variable
 export EDITOR="vim"
+# kubectl editor
+export KUBE_EDITOR="nvim"
 
 # "less" as manpager
 # other options could be bat, vim, nvim
