@@ -1,5 +1,13 @@
 # Base configuration
 # https://starship.rs/config/#prompt
+# Presets:
+# - See https://starship.rs/presets/
+# - Using: plain text preset
+
+##############################
+### My configuration
+##############################
+
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -54,6 +62,21 @@ disabled = false
 # when = """ test "$fish_private_mode" = "1" """
 #when = """ test "$fish_private_mode" = "1" """
 #when = '[ "$fish_private_mode" == "1" ]'
+
+# k8s from https://medium.com/@petolofsson/supercharge-your-kubernetes-workflow-with-essential-tools-starship-kubectx-kubecolor-and-k9s-c2ce5eb88d23
+[kubernetes]
+disabled = false
+symbol = "k8s"
+format = '[$symbol](bright-black) [$context( \($namespace\))]($style)'
+
+[[kubernetes.contexts]]
+context_pattern = "^production$"
+context_alias = "production"
+style = "green"
+
+##############################
+### Preset configuration
+##############################
 
 # ** Plain text preset
 # This preset changes the symbols for each module into plain text. Great if you don't have access to Unicode.
@@ -293,13 +316,3 @@ symbol = "terraform "
 [zig]
 symbol = "zig "
 # ** End of Plain text preset
-
-[kubernetes]
-disabled = false
-symbol = "k8s"
-format = '[$symbol](bright-black) [$context( \($namespace\))]($style)'
-
-[[kubernetes.contexts]]
-context_pattern = "^production$"
-context_alias = "production"
-style = "green"
