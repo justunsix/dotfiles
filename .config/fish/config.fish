@@ -56,10 +56,12 @@ if test -e $HOME/.env-aliases
 end
 
 # Check if WezTerm Flatpak is installed
-flatpak list | grep -iq 'org.wezfurlong.wezterm' > /dev/null
-if test $status -eq 0
-		alias wezterm="flatpak run org.wezfurlong.wezterm"
-end
+if type -q flatpak
+  flatpak list | grep -iq 'org.wezfurlong.wezterm' > /dev/null
+  if test $status -eq 0
+  		alias wezterm="flatpak run org.wezfurlong.wezterm"
+  end
+end  
 
 alias nvm="echo 'Switch to bash shell to use nvm'"
 
