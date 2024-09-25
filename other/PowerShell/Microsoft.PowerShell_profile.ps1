@@ -67,7 +67,7 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 # Aliases
 
 ### Git Repositories checker
-function jgt2 {
+function jgt {
 		gfold | rg -e unclean -e unpushed
 }
 
