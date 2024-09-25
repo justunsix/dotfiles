@@ -157,29 +157,42 @@
 ;; --------------------------------------------------------------------------------
 ;; * Org Links --------------------------
 
-;; --- Org mode hacks from:
+(defun jt-org-insert-link ()
+  "Insert org link where description is set to html title."
+  (interactive)
+  (let* ((url (read-string "URL: "))
+         (title (www-get-page-title url)))
+    (org-insert-link nil url title)))
+
+;; Re: How to get title of web page by url?
+;; from https://lists.gnu.org/archive/html/help-gnu-emacs/2010-07/msg00291.html
+(defun www-get-page-title (url)
+  (let ((title))
+    (with-current-buffer (url-retrieve-synchronously url)
+      (goto-char (point-min))
+      (re-search-forward "<title>\\([^<]*\\)</title>" nil t 1)
+      (setq title (match-string 1))
+      (goto-char (point-min))
+      (re-search-forward "charset=\\([-0-9a-zA-Z]*\\)" nil t 1)
+      (decode-coding-string title (intern (match-string 1))))))
+
+;; Solution from Org mode hacks, not used due to needing mm-url
+;;
 ;; https://orgmode.org/worg/org-hacks.html
 ;; Insert link with HTML title as default description
 ;;  When using `org-insert-link' (`C-c C-l') it might be useful to extract contents from HTML <title> tag and use it as a default link description.
-(require 'mm-url) ; to include mm-url-decode-entities-string
+;; (require 'mm-url) ; to include mm-url-decode-entities-string
+;; (defun get-html-title-from-url (url)
+;;   "Return content in <title> tag."
+;;   (let (x1 x2 (download-buffer (url-retrieve-synchronously url)))
+;;     (save-excursion
+;;       (set-buffer download-buffer)
+;;       (beginning-of-buffer)
+;;       (setq x1 (search-forward "<title>"))
+;;       (search-forward "</title>")
+;;       (setq x2 (search-backward "<"))
+;;       (mm-url-decode-entities-string (buffer-substring-no-properties x1 x2)))))
 
-(defun my-org-insert-link ()
-  "Insert org link where default description is set to html title."
-  (interactive)
-  (let* ((url (read-string "URL: "))
-         (title (get-html-title-from-url url)))
-    (org-insert-link nil url title)))
-
-(defun get-html-title-from-url (url)
-  "Return content in <title> tag."
-  (let (x1 x2 (download-buffer (url-retrieve-synchronously url)))
-    (save-excursion
-      (set-buffer download-buffer)
-      (beginning-of-buffer)
-      (setq x1 (search-forward "<title>"))
-      (search-forward "</title>")
-      (setq x2 (search-backward "<"))
-      (mm-url-decode-entities-string (buffer-substring-no-properties x1 x2)))))
 
 ;; --------------------------------------------------------------------------------
 ;; * Images in Org  ----------------------------
