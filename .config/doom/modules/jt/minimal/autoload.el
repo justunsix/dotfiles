@@ -43,3 +43,24 @@
       (sort-lines nil (point-min) (point-max)))
     (save-buffer))  
   )
+
+;;;###autoload
+(defun jt-org-insert-link-with-title ()
+  "Insert org link where description is set to html title."
+  (interactive)
+  (let* ((url (read-string "URL: "))
+         (title (www-get-page-title url)))
+    (org-insert-link nil url title)))
+
+;; Re: How to get title of web page by url?
+;; from https://lists.gnu.org/archive/html/help-gnu-emacs/2010-07/msg00291.html
+;;;###autoload
+(defun www-get-page-title (url)
+  (let ((title))
+    (with-current-buffer (url-retrieve-synchronously url)
+      (goto-char (point-min))
+      (re-search-forward "<title>\\([^<]*\\)</title>" nil t 1)
+      (setq title (match-string 1))
+      (goto-char (point-min))
+      (re-search-forward "charset=\\([-0-9a-zA-Z]*\\)" nil t 1)
+      (decode-coding-string title (intern (match-string 1))))))
