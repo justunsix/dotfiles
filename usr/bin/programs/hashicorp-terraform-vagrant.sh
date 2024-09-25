@@ -3,7 +3,8 @@
 # Function to get the latest version of a HashiCorp product
 get_latest_version() {
   local product=$1
-  curl -s "https://releases.hashicorp.com/${product}/index.json" | jq -r '.versions | keys[]' | sort -V | tail -n 1
+  # Grep gets only stable versions
+  curl -s "https://releases.hashicorp.com/${product}/index.json" | jq -r '.versions | keys[]' | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1
 }
 
 # Function to download and unzip a HashiCorp product for Linux AMD64
