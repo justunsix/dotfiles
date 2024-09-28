@@ -19,12 +19,16 @@ ShowFullPathInTitlebar=true
 ShowToolTips=true
 SortingChoice=CaseInsensitiveSorting
 UseTabForSwitchingSplitView=true
-Version=201
+Version=202
 ViewPropsTimestamp=2022,10,26,0,35,22.971
 
 [IconsMode]
 FontWeight=25
 PreviewSize=16
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
 
 [KPropertiesDialog]
 XWAYLAND0 Height 1600x900=593
