@@ -106,6 +106,8 @@
     marksman
     ## Infrastructure as Code
     ### vagrant
+    # Artificial Intelligence
+    ollama
 
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
