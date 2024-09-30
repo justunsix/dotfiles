@@ -44,6 +44,11 @@
     )
   )
 
+;; Make evil snipe search visible buffer
+(after! evil-snipe
+  (setq! evil-snipe-scope 'whole-visible)
+  )
+
 (after! magit
   ;; For use with magit-list-repositories
   ;; - List of directories that are or contain Git repositories.
