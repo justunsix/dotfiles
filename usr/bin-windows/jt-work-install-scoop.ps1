@@ -64,7 +64,7 @@ $programsList = @(
     "keepassxc",
     ## DevOps    
     "vscode",
-    "pycharm",
+    # "pycharm",
     "helix",
     ### Languages    
     "make", 
