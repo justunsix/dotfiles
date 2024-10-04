@@ -911,7 +911,7 @@ alias e = eza -alh
 # Check Git repositories for pending changes
 def jvcs [] {
     let codedir = [$env.HOME, '/Code'] | str join
-    vcs status $codedir | rg -e modified -e === | complete
+    vcs status $codedir | rg -e modified -e ===
 }
 
 # Check Git repositories with unpushed or un committed changes
