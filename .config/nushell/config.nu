@@ -901,14 +901,23 @@ $env.config = {
 
 #####################
 # Aliases
-alias jgt = bash -c "gfold | rg -e unclean -e unpushed"
-alias jvcs = bash -c "vcs status $HOME/Code | rg -e modified -e ==="
 alias lg = lazygit
 alias e = eza -alh
 
 #####################
 # My Custom Commands
 # Per https://www.nushell.sh/book/custom_commands.html
+
+# Check Git repositories for pending changes
+def jvcs [] {
+    let codedir = [$env.HOME, '/Code'] | str join
+    vcs status $codedir | rg -e modified -e === | complete
+}
+
+# Check Git repositories with unpushed or un committed changes
+def jgt [] {
+    gfold | rg -e unclean -e unpushed | complete
+}
 
 # Stages, commits, and pushes Git changes with a provided commit message or "autocommit message" if no message is provided
 def jgc [
