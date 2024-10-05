@@ -3,11 +3,14 @@ return {
   dependencies = {
     {
       "mrjones2014/legendary.nvim",
-      -- version = 'v2.13.9',
       -- since legendary.nvim handles all your keymaps/commands,
       -- its recommended to load legendary.nvim before other plugins
+      -- config adapted from https://github.com/Martin1887/dotfiles/blob/main/stow/nvim/.config/nvim/lua/plugins/misc.lua
       priority = 10000,
       lazy = false,
+      keys = {
+        { "<leader>P", "<cmd>Legendary<cr>", desc = "Legendary Command Palette" },
+      },
       opts = {
         extensions = {
           lazy_nvim = true,
@@ -22,6 +25,8 @@ return {
             auto_register = true,
           },
         },
+        -- sqlite is only needed if you want to use frecency sorting
+        -- dependencies = { 'kkharji/sqlite.lua' }
       },
     },
   },
