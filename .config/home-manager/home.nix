@@ -76,7 +76,7 @@
     emacs
     asdf-vm
     ## Nix formatter
-    nixfmt-classic
+    nixpkgs-fmt
     ### Doom Emacs requirements
     fd
     ## Other Editors
