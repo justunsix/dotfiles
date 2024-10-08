@@ -9,7 +9,7 @@ This repository contains my personal dotfiles like configurations for software d
 List of folders and dotfiles in them:
 
 + `.config/` configuration files for the below mentioned programs<br/>
-++ `alacritty` - [alacritty](https://alacritty.org) terminal emulator
+++ `alacritty` - [alacritty](https://alacritty.org) terminal emulator<br/>
 ++ `broot` - [Broot](https://dystroy.org/broot/) file and directory navigator<br/>
 ++ `Code/User/` - [Visual Studio Code](https://code.visualstudio.com/) editor<br/>
 ++ `cool-retro-term/` - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term) Terminal Emulator<br/>
@@ -24,7 +24,7 @@ List of folders and dotfiles in them:
 ++ `i3/` - [i3 Window Manager (WM)](https://i3wm.org/)<br/>
 ++ `i3status/` - [i3status](https://i3wm.org/docs/i3status.html) Status bar for use with i3<br/>
 ++ `input-remapper/` - [input-remapper](https://github.com/sezanzeb/input-remapper) to change input behaviour like key remapping<br/>
-++ `lazyvim` - [Lazyvim](https://www.lazyvim.org/) Neovim setup
+++ `lazyvim` - [Lazyvim](https://www.lazyvim.org/) Neovim setup<br/>
 ++ `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage parallel and commonly executed processes<br/>
 ++ `mpv/` - [mpv](https://mpv.io/) media player<br/>
 ++ `navi/` - [navi](https://github.com/denisidoro/navi/) command line cheatsheet tool<br/>
