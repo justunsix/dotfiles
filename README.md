@@ -40,7 +40,7 @@ List of folders and dotfiles in them:
 ++ `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings<br/>
 ++ `kdeglobals` - [KDE](https://kde.org/) KDE Desktop Environment appearance settings<br/>
 ++ `gfold.toml` - [gfold](https://github.com/nickgerace/gfold) Track git repositories<br/>
-++ `starship.toml` - [Starship](https://starship.rs/) Cross-shell prompt<br/>[Starship](https://starship.rs/) Cross-shell prompt<br/>
+++ `starship.toml` - [Starship](https://starship.rs/) Cross-shell prompt<br/>
 + `.fonts/` - Open source fonts<br/>
 + `.local/share/applications/` - [Desktop entries](https://wiki.archlinux.org/title/desktop_entries)<br/>
 + `Templates/` - New file templates for [GNOME File manager](https://wiki.gnome.org/action/show/Apps/Files?action=show&redirect=Apps%2FNautilus) also known as Nautilus<br/>
