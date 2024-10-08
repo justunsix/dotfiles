@@ -6,6 +6,7 @@ source "$(dirname "$0")/common.sh"
 # - Old nvm nodejs version
 
 # nvm is a bash function, not a builtin, file or alias
+# remove older nvm versions
 if [ -d "$HOME/.nvm" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
   write_host_with_timestamp "Clean unused nvm versions"
   NVM_DIR="$HOME/.nvm"
@@ -39,6 +40,13 @@ if command -v docker >/dev/null; then
   else
     echo 'Docker daemon is not running'
   fi
+fi
+
+if command -v yazi >/dev/null; then
+
+  write_host_with_timestamp "Clear yazi cache"
+  yazi --clear-cache
+
 fi
 
 # Clean screenshots
