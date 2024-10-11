@@ -21,6 +21,8 @@ return {
 			require("orgmode").setup({
 				org_agenda_files = "~/orgfiles/**/*",
 				org_default_notes_file = "~/orgfiles/refile.org",
+				-- for folds on opening file, inherit from nvim's global foldlevel
+				org_startup_folded = "inherit",
 				-- Enter in insert mode will always do org meta return
 				-- per fix in above comments
 				mappings = {
