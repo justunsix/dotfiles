@@ -89,6 +89,8 @@
     ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
     ## For integration with Emacs and Neovim language support
 
+    ## Prettier formatter multi-language
+    nodePackages_latest.prettier
     ## Node
     ### LTS as of 2023-04
     nodejs_20
