@@ -100,20 +100,23 @@
     ## Python
     conda
     ## Rust
-    ### https://github.com/rust-lang/rustlings/blob/main/flake.nix
+    ### Key components from rustup https://rust-lang.github.io/rustup-components-history/
     cargo
     rustc
     clippy
     #### Rust LSP
     rust-analyzer
-    #### Rust Formatter
+    #### Rust formatter
     rustfmt
     ## Nix formatter
     nixpkgs-fmt
     ## Markdown LSP
     marksman
-    ## Terraform LSP
+    ## Terraform
+    ### Terraform LSP
     terraform-ls
+    ### Terraform Linter
+    tflint
     ## Shell/Bash
     ### Bash LSP
     nodePackages_latest.bash-language-server
