@@ -84,7 +84,11 @@
     helix
     ### Astronvim requirements
     tree-sitter
-    ## Node
+
+    # Languages
+    ## Language Servers installs, LSP
+    ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
+     ## Node
     ### LTS as of 2023-04
     nodejs_20
     ## PlantUML
@@ -98,12 +102,13 @@
     ### https://github.com/rust-lang/rustlings/blob/main/flake.nix
     cargo
     rustc
-    rust-analyzer
     clippy
-    ## Language Servers, LSP
-    ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
-    ### Markdown
+    #### Rust LSP
+    rust-analyzer
+    ### Markdown LSP
     marksman
+    ## Terraform LSP
+    terraform-ls
     ## Infrastructure as Code
     ### vagrant
     # Artificial Intelligence
