@@ -86,13 +86,16 @@
     # Languages
     ## Language Servers installs, LSP
     ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
-     ## Node
+    ## For integration with Emacs and Neovim language support
+
+    ## Node
     ### LTS as of 2023-04
     nodejs_20
     ## PlantUML
     plantuml
     graphviz
-    ## Document conversion, Emacs exports
+    ## pandoc
+    ### Used in document conversion, Emacs exports
     pandoc
     ## Python
     conda
@@ -111,6 +114,12 @@
     marksman
     ## Terraform LSP
     terraform-ls
+    ## Shell/Bash
+    ### Bash LSP
+    nodePackages_latest.bash-language-server
+    ### Shell formatter
+    shfmt
+
     ## Infrastructure as Code
     ### vagrant
     # Artificial Intelligence
