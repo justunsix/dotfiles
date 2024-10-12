@@ -163,10 +163,10 @@
     # '')
   ];
 
-  # Pick up fonts
+  # Allow fontconfig to discover fonts and configurations installed through home.packages and nix-env
   # per https://github.com/nix-community/home-manager/issues/605
   fonts.fontconfig = {
-   enable = true;
+    enable = true;
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
