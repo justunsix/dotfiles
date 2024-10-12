@@ -75,8 +75,6 @@
     # DevOps
     emacs
     asdf-vm
-    ## Nix formatter
-    nixpkgs-fmt
     ### Doom Emacs requirements
     fd
     ## Other Editors
@@ -105,7 +103,11 @@
     clippy
     #### Rust LSP
     rust-analyzer
-    ### Markdown LSP
+    #### Rust Formatter
+    rustfmt
+    ## Nix formatter
+    nixpkgs-fmt
+    ## Markdown LSP
     marksman
     ## Terraform LSP
     terraform-ls
