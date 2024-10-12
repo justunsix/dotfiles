@@ -105,6 +105,8 @@
     cargo
     rustc
     clippy
+    #### Rust watch source like tests
+    cargo-watch
     #### Rust LSP
     rust-analyzer
     #### Rust formatter
@@ -128,6 +130,11 @@
     nodePackages_latest.bash-language-server
     ### Shell formatter
     shfmt
+    ## Python
+    ### Python LSP (or basedpyright later)
+    pyright
+    ### Python formatter
+    black
 
     ## Infrastructure as Code
     ### vagrant
