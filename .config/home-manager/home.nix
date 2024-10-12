@@ -63,6 +63,7 @@
     ranger
     # Terminal
     tmux
+    zellij
     mprocs
     ## sd
     ## Former rust cargo installs
@@ -108,8 +109,13 @@
     rust-analyzer
     #### Rust formatter
     rustfmt
-    ## Nix formatter
+    ## Nix
+    ### Nix LSP
+    nil
+    ### Nix formatter
     nixpkgs-fmt
+    #### Older stable formatter
+    nixfmt-classic
     ## Markdown LSP
     marksman
     ## Terraform
@@ -165,9 +171,7 @@
 
   # Allow fontconfig to discover fonts and configurations installed through home.packages and nix-env
   # per https://github.com/nix-community/home-manager/issues/605
-  fonts.fontconfig = {
-    enable = true;
-  };
+  fonts.fontconfig = { enable = true; };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
