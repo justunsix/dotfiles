@@ -164,7 +164,7 @@
        plantuml            ; diagrams for confusing people more
        ;;graphviz          ; diagrams for confusing yourself even more
        ;;purescript        ; javascript, but functional
-       ;;python            ; beautiful is better than ugly
+       (python +conda +lsp +pyright +tree-sitter)            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
@@ -198,7 +198,7 @@
        :config
        ;;literate
        (default +bindings +smartparens)
-            
+
        ;; Personal Modules in DOOMDIR (e.g. ~/.doom.d/modules/personal
        ;; or ~/.config/doom/module/personal)
        :jt 
