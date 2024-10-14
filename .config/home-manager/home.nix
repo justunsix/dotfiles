@@ -122,6 +122,8 @@
     nixfmt-classic
     ## Markdown LSP
     marksman
+    ## Prose English linter for Markdown, Org
+    proselint
     ## Terraform
     ### Terraform LSP
     terraform-ls
