@@ -24,7 +24,7 @@ alias emacsnw="emacs -Q -nw -l ~/Code/dotfiles/.config/emacs/setup/minimal.el"
 
 # eza
 alias exa="eza"
-alias eza="eza --icons -lh --group-directories-first"
+alias eza="eza --icons -lh --group-directories-first --git"
 alias e="eza -alh"
 
 ## Changing "ls" to "exa"

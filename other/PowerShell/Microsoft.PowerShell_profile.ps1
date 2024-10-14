@@ -83,7 +83,7 @@ function lg {
 
 ### eza
 function e {
-		eza -alh
+		eza -alh --git
 }
 
 ## Emacs
