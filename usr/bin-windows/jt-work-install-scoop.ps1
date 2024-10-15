@@ -117,3 +117,6 @@ $programs = $programsList -join " "
 # Install list of programs
 # Use Invoke-Expression to execute as if on command line
 Invoke-Expression "scoop install $programs"
+
+# Python based installs
+pip install vcstool proselint
