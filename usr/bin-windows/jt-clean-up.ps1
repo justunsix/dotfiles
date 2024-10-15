@@ -60,8 +60,12 @@ if (Test-Path ~\scoop\apps\mpv\current\portable_config\watch_later) {
     Remove-Item -Path ~\scoop\apps\mpv\current\portable_config\cache\* -Force -Recurse
 }
 
-# Clean screenshots
 if (Test-Path ~\Pictures\Screenshots) {
 		Write-HostWithTimestamp "Cleaning screenshots"
 		Remove-Item -Path ~\Pictures\Screenshots\* -Force -Recurse
+}
+
+if (Test-Path ~\AppData\Local\Temp\yazi) {
+    Write-HostWithTimestamp "Cleaning yazi cache"
+    yazi --clear-cache
 }
