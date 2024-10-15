@@ -15,9 +15,9 @@ $programsList = @(
     "bleachbit",
     "ccleaner",
     "fzf",
-    ### fd optional for nvim frameworks
+    ### fd optional for nvim, emacs frameworks
     "fd",
-    #### rg optional for nvim, emacs frameworks
+    #### rg for nvim (optional), emacs (required) frameworks
     "ripgrep",
     "duf",
     "extras/everything",
