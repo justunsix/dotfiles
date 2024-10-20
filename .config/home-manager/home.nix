@@ -104,15 +104,16 @@
     conda
     ## Rust
     ### Key components from rustup https://rust-lang.github.io/rustup-components-history/
-    cargo
-    rustc
-    clippy
+    ### Defer to rustup based installs
+    # cargo
+    # rustc
+    # clippy
     #### Rust watch source like tests
-    cargo-watch
+    # cargo-watch
     #### Rust LSP
-    rust-analyzer
+    # rust-analyzer
     #### Rust formatter
-    rustfmt
+    # rustfmt
     ## Nix
     ### Nix LSP
     nil
