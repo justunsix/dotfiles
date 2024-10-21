@@ -4,7 +4,7 @@
 # Managed by Ansible
 
 # Variables
-$env:EDITOR = "hx"
+$env:EDITOR = "nvim"
 ## kubectl editor
 $env:KUBE_EDITOR="nvim"
 ## Yazi File Manager to open files on Windows https://yazi-rs.github.io/docs/installation

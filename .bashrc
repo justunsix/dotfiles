@@ -198,7 +198,7 @@ export PATH="$HOME/.local/bin::$PATH"
 export NVIM_APPNAME="lazyvim"
 
 # Set EDITOR environment variable
-export EDITOR="vim"
+export EDITOR="nvim"
 # kubectl editor
 export KUBE_EDITOR="nvim"
 
