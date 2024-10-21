@@ -70,7 +70,8 @@ $programsList = @(
     "make", 
     #### Python
     "python",
-    "extras/miniconda3",    
+    "extras/miniconda3",
+    "pipx",
     #### Java
     "java/temurin-lts-jdk",    
     "maven",
@@ -119,4 +120,4 @@ $programs = $programsList -join " "
 Invoke-Expression "scoop install $programs"
 
 # Python based installs
-pip install vcstool proselint
+pipx install vcstool proselint
