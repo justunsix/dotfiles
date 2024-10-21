@@ -56,7 +56,8 @@ Import-Module PSFzf
 ## Select Current Provider Path (default chord: Ctrl+t)
 ## Reverse Search Through PSReadline History (default chord: Ctrl+r)
 ## replace 'Ctrl+t' and 'Ctrl+r' with your preferred bindings:
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+## Enable aliases for editing and process stop
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r' -EnableAliasFuzzyEdit -EnableAliasFuzzyKillProcess
 
 # Intellisense
 
