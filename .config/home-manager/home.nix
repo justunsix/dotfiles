@@ -65,6 +65,8 @@
     tmux
     zellij
     mprocs
+    ## Data
+    visidata
     ## sd
     ## Former rust cargo installs
     du-dust
