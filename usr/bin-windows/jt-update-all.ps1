@@ -45,7 +45,7 @@ process {
 
 		Write-Host "`nRunning topgrade" -ForegroundColor Green
 
-		# Disable vscode due to bug for now and vagrant due to large updates
+		# Disable vagrant due to large updates and winget due to prompts
 		if ($runTopgradeWithPS1 -eq "y") {
 			topgrade -y --disable system vagrant winget
 		}
