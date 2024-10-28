@@ -9,7 +9,7 @@
   (if jt-org-presentation-mode
       (progn
         ;; Revert to default settings
-        (setq doom-font (font-spec :family "Jetbrains Mono" :size 15)):want
+        (setq doom-font (font-spec :family "Jetbrains Mono" :size 15))
         (load-theme 'doom-tokyo-night t)
         (display-line-numbers-mode 1)
         (doom/reload-font)        
