@@ -136,3 +136,14 @@ alias conda "conda-init; conda"
 # 	# deactivate base environment until called
 # 	conda deactivate
 # end
+
+## Yazi File Manager
+## Wrapper for yazi to allow change cwd when existing yazi
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
