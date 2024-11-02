@@ -42,7 +42,7 @@ alias fgrep='fgrep --color=auto'
 
 # fzf
 alias fe="fzf | xargs $EDITOR"
-alias fkill="ps -ef | fzf | awk '{print $2}' | xargs kill -9"
+alias fkill='ps -ef | fzf | awk '\''{print $2}'\'' | xargs kill -9'
 
 # Lazygit
 alias lg='lazygit'
