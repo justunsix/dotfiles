@@ -2,6 +2,36 @@
 
 source "$(dirname "$0")/common.sh"
 
+# Clean Python .venv directories
+clean_venvs() {
+
+  # Change to the specified directory
+  cd "$HOME/Code" || exit
+
+  # Find and list all 'venv' directories
+  local venv_dirs
+  venv_dirs=$(find . -name ".venv" -type d -prune)
+
+  if [ -z "$venv_dirs" ]; then
+    echo "No '.venv' directories found."
+    return
+  fi
+
+  # Display the size of each directory
+  echo "The following '.venv' directories will be cleaned:"
+  echo "$venv_dirs" | xargs du -chs
+
+  # Prompt for confirmation
+  read -p "Do you want to proceed with cleaning these directories? (y/n): " choice
+  if [[ "$choice" != [Yy] ]]; then
+    echo "Operation canceled."
+    return
+  fi
+
+  # Remove the 'venv' directories
+  echo "$venv_dirs" | xargs rm -rf
+  echo "All specified 'venv' directories have been removed."
+}
 # Clean up extra personal files such as:
 # - Old nvm nodejs version
 
@@ -15,13 +45,10 @@ if [ -d "$HOME/.nvm" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
   ls -A | grep -v $(nvm current) | xargs rm -rf
 fi
 
-# python venvs
 if [ -d "$HOME/Code" ]; then
 
   write_host_with_timestamp "Clean python virtual environments"
-  cd "$HOME/Code" || exit
-  find . -name "venv" -type d -prune | xargs du -chs
-  find . -name "venv" -type d -prune -exec rm -rf '{}' +
+  clean_venvs
 
   # kondo command exists
   if command -v kondo >/dev/null; then
