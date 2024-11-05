@@ -40,6 +40,7 @@
     rofi
     rename
     navi
+    fzf
     ## rg optional for nvim and emacs frameworks
     ripgrep
     dogdns
@@ -135,6 +136,8 @@
     ## Shell/Bash
     ### Bash LSP
     nodePackages_latest.bash-language-server
+    #### Shellcheck used by Emacs Flymake for shell scripts by default - Emacs 29.1
+    shellcheck
     ### Shell formatter
     shfmt
     ## Python
