@@ -55,7 +55,8 @@
     img2pdf
     duf
     stow
-    yazi
+    # temporarily disable yazi due to 7z issue
+    # yazi
     lazygit
     ## bottom aka btm
     bottom
