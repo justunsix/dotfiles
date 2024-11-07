@@ -89,6 +89,13 @@ if [ -d "$HOME/.config/mpv/watch_later" ] || [ -d "$HOME/.local/state/mpv/watch_
   rm -rf "$HOME"/.local/state/mpv/watch_later/*
 fi
 
+# Clean carapace cache
+## Cache contains completers, only needs clear on carapace configuration changes
+if command -v carapace &>/dev/null; then
+  write_host_with_timestamp "Clean carapace cache"
+  carapace --clear-cache
+fi
+
 # Clean Emacs and Doom Packages
 if [ -d "$HOME/.config/emacs/bin" ]; then
   write_host_with_timestamp "Clean Doom Emacs Packages"
