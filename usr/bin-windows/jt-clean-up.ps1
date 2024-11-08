@@ -54,7 +54,7 @@ if (Test-Path ~\scoop\apps\miniconda3\current\Scripts\conda.exe) {
 
 # Clean carapace cache
 ## Cache contains completers, only needs clear on carapace configuration changes
-if (Test-Path "~\scoop\apps\carapace-bin\current\carapace.exe" {
+if (Test-Path "~\scoop\apps\carapace-bin\current\carapace.exe") {
    Write-HostWithTimestamp "Cleaning carapace cache"
    carapace --clear-cache
 }
