@@ -54,10 +54,10 @@ if (Test-Path ~\scoop\apps\miniconda3\current\Scripts\conda.exe) {
 
 # Clean carapace cache
 ## Cache contains completers, only needs clear on carapace configuration changes
-# if (Test-Path ~\scoop\apps\carapace-bin\ {
-#  Write-HostWithTimestamp "Cleaning carapace cache"
-#  carapace --clear-cache
-#}
+if (Test-Path "~\scoop\apps\carapace-bin\current\carapace.exe" {
+   Write-HostWithTimestamp "Cleaning carapace cache"
+   carapace --clear-cache
+}
 
 # Clean mpv watch info
 if (Test-Path ~\scoop\apps\mpv\current\portable_config\watch_later) {
