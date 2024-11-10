@@ -910,6 +910,17 @@ alias e = eza -alh
 # My Custom Commands
 # Per https://www.nushell.sh/book/custom_commands.html
 
+# yazi directory change
+def --env y [...args] {
+	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+	yazi ...$args --cwd-file $tmp
+	let cwd = (open $tmp)
+	if $cwd != "" and $cwd != $env.PWD {
+		cd $cwd
+	}
+	rm -fp $tmp
+}
+
 # Check Git repositories for pending changes
 def jvcs [] {
     let codedir = [$env.HOME, '/Code'] | str join
