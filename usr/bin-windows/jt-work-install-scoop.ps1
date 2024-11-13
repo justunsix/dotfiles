@@ -85,9 +85,11 @@ $programsList = @(
     "kubectl",
     "azure-kubelogin",
     "k9s",
+    "stern",
+    "kubectx",
     #### cloud
     "azure-ps",
-    "azure-cli",    
+    "azure-cli",
     #### SQL
     "usql"    
     ### Emacs and Supporting Programs
