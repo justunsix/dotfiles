@@ -41,46 +41,48 @@ $dotfiles_to_be_removed = @(
 )
 
 $dotfiles_directories = @(
-  "$env:USERPROFILE\.config\",
-  "$env:USERPROFILE\usr\bin",
-  "$env:USERPROFILE\AppData\Local\nvim",
-  "$env:USERPROFILE\AppData\Local\lazyvim",  
-  "$env:USERPROFILE\AppData\Roaming\alacritty",
+	"$env:USERPROFILE\.config\todotxt-cli",
+	"$env:USERPROFILE\.config\wezterm",
 	"$env:USERPROFILE\AppData\Roaming\dystroy\broot\config",
 	"$env:USERPROFILE\AppData\Roaming\helix",
 	"$env:USERPROFILE\AppData\Roaming\navi",
 	"$env:USERPROFILE\AppData\Roaming\nushell",
-  "$env:USERPROFILE\AppData\Roaming\topgrade",
-  "$env:USERPROFILE\.config\emacs",
+  "$env:USERPROFILE\.config\",
   "$env:USERPROFILE\.config\doom",
-	"$env:USERPROFILE\.config\wezterm",
-	"$env:USERPROFILE\.config\todotxt-cli",
+  "$env:USERPROFILE\.config\emacs",
   "$env:USERPROFILE\.config\fish"
+  "$env:USERPROFILE\AppData\Local\lazyvim",
+  "$env:USERPROFILE\AppData\Local\nvim",
+  "$env:USERPROFILE\AppData\Roaming\alacritty",
+  "$env:USERPROFILE\AppData\Roaming\topgrade",
+  "$env:USERPROFILE\AppData\Roaming\yazi\config",
+  "$env:USERPROFILE\usr\bin",
 )
 
 # Array of dotfiles to synchronize with tuples of source and destination
 $dotfiles_to_be_synchronized = @(
     # Reserve for Doom Emacs install
 		# ("$env:USERPROFILE\Code\dotfiles\.config\emacs", "$env:USERPROFILE\.config"),
-    ("$env:USERPROFILE\Code\dotfiles\.config\wezterm", "$env:USERPROFILE\.config"),
-		("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
-		("$env:USERPROFILE\Code\dotfiles\.config\lazyvim", "$env:USERPROFILE\AppData\Local"),    
-		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
-    ("$env:USERPROFILE\Code\dotfiles\.config\gfold.toml", "$env:USERPROFILE\.config"),
-		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
 		("$env:USERPROFILE\Code\dotfiles\.config\alacritty", "$env:USERPROFILE\AppData\Roaming"),
+		("$env:USERPROFILE\Code\dotfiles\.config\fish", "$env:USERPROFILE\.config"),
+		("$env:USERPROFILE\Code\dotfiles\.config\lazyvim", "$env:USERPROFILE\AppData\Local"),
+		("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
+		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
+		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
+		("$env:USERPROFILE\Code\dotfiles\.gitconfig", "$env:USERPROFILE"),
+		("$env:USERPROFILE\Code\dotfiles\usr\bin-windows\*", "$env:USERPROFILE\usr\bin"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\broot\*", "$env:USERPROFILE\AppData\Roaming\dystroy\broot\config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\dolphinrc", "$env:USERPROFILE\AppData\Local"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\doom", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\gfold.toml", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\helix", "$env:USERPROFILE\AppData\Roaming"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\kdeglobals", "$env:USERPROFILE\AppData\Local"),
     ("$env:USERPROFILE\Code\dotfiles\.config\navi", "$env:USERPROFILE\AppData\Roaming"),
     ("$env:USERPROFILE\Code\dotfiles\.config\nushell", "$env:USERPROFILE\AppData\Roaming"),
-    ("$env:USERPROFILE\Code\dotfiles\.config\broot\*", "$env:USERPROFILE\AppData\Roaming\dystroy\broot\config"),
-    ("$env:USERPROFILE\Code\dotfiles\.config\helix", "$env:USERPROFILE\AppData\Roaming"),
-		("$env:USERPROFILE\Code\dotfiles\usr\bin-windows\*", "$env:USERPROFILE\usr\bin"),
-		("$env:USERPROFILE\Code\dotfiles\.gitconfig", "$env:USERPROFILE"),
     ("$env:USERPROFILE\Code\dotfiles\.config\todotxt-cli", "$env:USERPROFILE\.config"),
-		("$env:USERPROFILE\Code\dotfiles\.config\fish", "$env:USERPROFILE\.config"),
-    ("$env:USERPROFILE\Code\dotfiles\.config\doom", "$env:USERPROFILE\.config"),
-    ("$env:USERPROFILE\Code\dotfiles\.config\kdeglobals", "$env:USERPROFILE\AppData\Local"),
-    ("$env:USERPROFILE\Code\dotfiles\.config\dolphinrc", "$env:USERPROFILE\AppData\Local"),
-    ("$env:USERPROFILE\Code\dotfiles\other\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", "$PROFILE")
+    ("$env:USERPROFILE\Code\dotfiles\.config\wezterm", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\yazi\*", "$env:USERPROFILE\AppData\Roaming\yazi\config"),
+   ("$env:USERPROFILE\Code\dotfiles\other\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", "$PROFILE")
 )
 
 ###############
