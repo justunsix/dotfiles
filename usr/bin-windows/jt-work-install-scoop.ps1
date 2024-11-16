@@ -50,7 +50,9 @@ $programsList = @(
     "extras/wezterm",
     "extras/carapace-bin",
     "cygwin",
-    "nu",    
+    "nu",
+    ### protobuf required for cargo binstall atuin
+    "protobuf",
     ### Prompt
     "starship",
     ## Office, Productivity
