@@ -56,7 +56,7 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\AppData\Roaming\alacritty",
   "$env:USERPROFILE\AppData\Roaming\topgrade",
   "$env:USERPROFILE\AppData\Roaming\yazi\config",
-  "$env:USERPROFILE\usr\bin",
+  "$env:USERPROFILE\usr\bin"
 )
 
 # Array of dotfiles to synchronize with tuples of source and destination
