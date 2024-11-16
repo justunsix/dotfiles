@@ -6,3 +6,14 @@ formatter = { command = "rustfmt", args = [] }
 [language-server.rust-analyzer.config]
 cargo = { features = "all" }
 check.command = "clippy"
+
+[[language]]
+name = "python"
+auto-format = true
+formatter = { command = "black", args = ["-"] }
+
+[[language]]
+name = "yaml"
+auto-format = true
+file-types = [ "yaml", "yml"]
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
