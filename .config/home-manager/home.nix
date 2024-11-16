@@ -104,7 +104,8 @@
     ### Used in document conversion, Emacs exports
     pandoc
     ## Python
-    conda
+    ### Instead use manually installed miniconda
+    ### conda
     ## Rust
     ### Key components from rustup https://rust-lang.github.io/rustup-components-history/
     ### Defer to rustup based installs
@@ -145,6 +146,8 @@
     pyright
     ### Python formatter
     black
+    ## yaml
+    yaml-language-server
 
     ## Infrastructure as Code
     ### vagrant
