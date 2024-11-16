@@ -19,12 +19,16 @@
   (setq projectile-project-search-path jt/project-search-path)
   ;; Manually trigger projectile-discover-projects-in-search-path
   ;; to update the project list
-)
+  )
 
 (after! org
   ;; https://orgmode.org/manual/Conflicts.html
   ;; shift-selection can select regions
   (setq org-support-shift-select t)
+  ;; Prompt before babel code block execution
+  (setq
+   org-confirm-babel-evaluate t)
+
   )
 
 (after! org-roam
@@ -38,9 +42,9 @@
   (setenv "LANG" "en_GB.UTF-8")
   ;; If on Windows
   (when (eq system-type 'windows-nt)
-	  (setq ispell-hunspell-dict-paths-alist '(("en_US" "C:/Hunspell/en_US.aff" "C:/Hunspell/en_US.dic")
-																					 ("en_GB" "C:/Hunspell/en_GB.aff" "C:/Hunspell/en_GB.dic")
-																					 ))
+    (setq ispell-hunspell-dict-paths-alist '(("en_US" "C:/Hunspell/en_US.aff" "C:/Hunspell/en_US.dic")
+					     ("en_GB" "C:/Hunspell/en_GB.aff" "C:/Hunspell/en_GB.dic")
+					     ))
     )
   )
 
