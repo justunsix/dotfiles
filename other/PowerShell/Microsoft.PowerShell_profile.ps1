@@ -126,3 +126,74 @@ function y {
     }
     Remove-Item -Path $tmp
 }
+
+# Experimental Atuin integration based on 
+# https://github.com/rainersigwald/dotfiles/blob/main/Documents/PowerShell/Microsoft.PowerShell_profile.ps1 
+try {
+    # If atuin is not available, stop. Supress output of check
+    Get-Command atuin -ErrorAction Stop > $null 2>&1
+
+    # Atuin must exist so register history via https://github.com/atuinsh/atuin/issues/84#issuecomment-2053600939
+    $env:ATUIN_SESSION = (atuin uuid | Out-String).Trim()
+    # Initialize the ATUIN_HISTORY_ID environment variable to null
+    $env:ATUIN_HISTORY_ID = $null
+
+    # Set a custom key handler for the Enter key to store command history in Atuin
+    Set-PSReadLineKeyHandler -Chord Enter -ScriptBlock {
+        $line = $null
+        $cursor = $null
+        # Get current input and the position of the cursor
+        [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+
+        # If ATUIN_HISTORY_ID is not set, get a history ID
+        if (-not $env:ATUIN_HISTORY_ID) {
+            $env:ATUIN_HISTORY_ID = (atuin history start -- $line | Out-String).Trim()
+        }
+
+        # Execute the input as normal
+        [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+    }
+
+    # Save the existing prompt function
+    $existingPromptFunction = Get-Item -Path Function:\prompt
+    # Remove the existing prompt function
+    Remove-Item -Path Function:\prompt
+    # Define a new prompt function
+    function prompt {
+        # If ATUIN_HISTORY_ID is set, end the Atuin history entry with duration and exit code
+        if ($env:ATUIN_HISTORY_ID) {
+            atuin history end --duration (Get-History -Count 1).Duration.TotalNanoseconds --exit $LASTEXITCODE -- $env:ATUIN_HISTORY_ID | Out-Null
+
+            # Remove the ATUIN_HISTORY_ID environment variable
+            Remove-Item -Path env:ATUIN_HISTORY_ID -ErrorAction SilentlyContinue
+        }
+
+        # Call the existing prompt function
+        & $existingPromptFunction.ScriptBlock
+    }
+    
+    # Ctrl + r to bring up atuin search of history and insert result for input
+    # based on https://gist.github.com/lzybkr/b47b89e48a963429161836ca1443e8f5
+    Set-PSReadLineKeyHandler -Key Ctrl+r -ScriptBlock {
+        $line = $null
+        $cursor = $null
+        # Get the current command line buffer state
+        [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+        # Create a temporary file to store the search result
+        $resultFile = New-TemporaryFile
+        # Start the Atuin search process and wait for it to complete
+        Start-Process -Wait -NoNewWindow -RedirectStandardError $resultFile.FullName atuin -ArgumentList "search","-i"
+        # Read the search result from the temporary file
+        $result = (Get-Content -Raw $resultFile).Trim()
+        # Remove the temporary file
+        Remove-Item $resultFile
+
+        # Revert the current command line to its original state
+        [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+        # Insert the search result into the command line
+        [Microsoft.PowerShell.PSConsoleReadLine]::Insert($result)
+    }
+}
+catch {
+    Write-Host "Atuin is not available. Skipping Atuin integration."
+}
