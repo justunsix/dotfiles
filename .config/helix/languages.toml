@@ -9,8 +9,16 @@ check.command = "clippy"
 
 [[language]]
 name = "python"
+language-servers = [ "pyright", "ruff" ]
 auto-format = true
 formatter = { command = "black", args = ["-"] }
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+# if you choose `ruff` itself
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
 
 [[language]]
 name = "yaml"
