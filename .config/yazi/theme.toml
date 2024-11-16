@@ -1,0 +1,3 @@
+# Install using https://github.com/yazi-rs/flavors/tree/main/catppuccin-mocha.yazi
+[flavor]
+use = "catppuccin-mocha"
