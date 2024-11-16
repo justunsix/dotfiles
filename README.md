@@ -69,10 +69,10 @@ List of folders and dotfiles in them:
 - `usr/bin-windows/` - Windows scripts
 - `other/` - Other configuration files not normally stored in user home
   directory
-  - 'PowerShell/` -
+  - `PowerShell/` -
     [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell)
     shell
-  - 'WindowsPowerShell/` -
+  - `WindowsPowerShell/` -
     [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell)
     5.1 shell
 - `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell
