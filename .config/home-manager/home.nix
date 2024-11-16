@@ -88,7 +88,7 @@
     tree-sitter
 
     # Languages
-    ## Language Servers installs, LSP
+    ## Language Servers installs, LSP, Linters
     ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
     ## For integration with Emacs and Neovim language support
 
@@ -146,6 +146,8 @@
     pyright
     ### Python formatter
     black
+    ### Python linter
+    ruff
     ## yaml
     yaml-language-server
 
