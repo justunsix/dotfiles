@@ -93,10 +93,10 @@
     ## For integration with Emacs and Neovim language support
 
     ## Prettier formatter multi-language
-    nodePackages_latest.prettier
+    nodePackages.prettier
     ## Node
-    ### LTS as of 2023-04
-    nodejs_20
+    ### LTS as of 2023-11
+    nodejs_22
     ## PlantUML
     plantuml
     graphviz
@@ -136,7 +136,7 @@
     tflint
     ## Shell/Bash
     ### Bash LSP
-    nodePackages_latest.bash-language-server
+    nodePackages.bash-language-server
     #### Shellcheck used by Emacs Flymake for shell scripts by default - Emacs 29.1
     shellcheck
     ### Shell formatter
