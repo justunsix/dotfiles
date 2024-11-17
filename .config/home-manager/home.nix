@@ -95,7 +95,7 @@
     ## Prettier formatter multi-language
     nodePackages.prettier
     ## Node
-    ### LTS as of 2023-11
+    ### LTS as of 2024-11
     nodejs_22
     ## PlantUML
     plantuml
