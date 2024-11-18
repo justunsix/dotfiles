@@ -125,3 +125,6 @@ Invoke-Expression "scoop install $programs"
 
 # Python based installs
 pipx install vcstool proselint
+
+# Yazi theme
+ya pack -a yazi-rs/flavors:catppuccin-mocha
