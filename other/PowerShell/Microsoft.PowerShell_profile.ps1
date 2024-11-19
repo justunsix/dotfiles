@@ -67,6 +67,9 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 
 # Aliases
 
+Set-Alias -Name k -Value kubectl
+Set-Alias -Name lg -Value lazygit 
+
 ### Git Repositories checker
 function jgt {
 		gfold | rg -e unclean -e unpushed
@@ -75,11 +78,6 @@ function jgt {
 ### Git Repositories checker detailed
 function jvcs {
 		vcs status $env:USERPROFILE\Code | rg -e modified -e ===
-}
-
-### Git Repositories checker detailed
-function lg {
-		lazygit
 }
 
 ### eza
