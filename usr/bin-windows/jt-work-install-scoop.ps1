@@ -10,6 +10,8 @@ $programsList = @(
     "extras/git-credential-manager",
     "uutils-coreutils",
     "eza",
+    "bat",
+    "less",
     ### lg optional for nvim frameworks
     "extras/lazygit",
     "bleachbit",
