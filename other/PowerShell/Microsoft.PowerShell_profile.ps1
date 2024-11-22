@@ -15,6 +15,13 @@ $env:NVIM_APPNAME = "lazyvim"
 # Prompt
 
 ## Starship
+### Function for Starship to set Window title
+### https://starship.rs/advanced-config/
+function Invoke-Starship-PreCommand {
+  $shortPath = $pwd -replace [regex]::Escape($HOME), '~'
+  $host.ui.RawUI.WindowTitle = "$shortPath `a"
+}
+
 if (Get-Command "starship.exe" -ErrorAction SilentlyContinue) {
 	Invoke-Expression (&starship init powershell)
 }
