@@ -1,6 +1,15 @@
 {
 	// * System
 	"telemetry.telemetryLevel": "off",
+	"extensions.ignoreRecommendations": true,
+	// ** Editor
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	// *** Editor Code Actions
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "always",
+		"source.fixAll": "always"
+	},
 	// ** System - Spacing
 	// The number of spaces a tab is equal to. This setting is overridden
 	// based on the file contents when `editor.detectIndentation` is true.
@@ -82,6 +91,10 @@
 	"[xml]": {
 		"editor.defaultFormatter": "redhat.vscode-xml"
 	},
+	// ** Python
+	"[python]": {
+		"editor.defaultFormatter": "charliermarsh.ruff"
+	},
 	// ** SQL
 	// *** Extension: MSSQL
 	"mssql.objectExplorer.groupBySchema": false,
@@ -89,8 +102,8 @@
 	"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
 	// ## Extension: AutoHotKey (AHK)
 	// Default location installed by scoop
-  "ahk++.file.interpreterPathV2": "${env:USERPROFILE}\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey64.exe",
-  "ahk++.file.helpPathV2": "${env:USERPROFILE}\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey.chm",
+	"ahk++.file.interpreterPathV2": "${env:USERPROFILE}\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey64.exe",
+	"ahk++.file.helpPathV2": "${env:USERPROFILE}\\scoop\\apps\\autohotkey\\current\\v2\\AutoHotkey.chm",
 	// * Git
 	// Is git enabled and path to git binaries
 	"git.enabled": true,
@@ -99,9 +112,9 @@
 	// ** Extension: GitHub Copilot
 	"github.copilot.enable": {
 		"*": true,
-		"yaml": true,
 		"plaintext": true,
-		"markdown": true
+		"markdown": true,
+		"yaml": true
 	},
 	// * Terminal
 	// Integrated Terminal Settings and Configurations
@@ -199,12 +212,13 @@
 	// * Input and Output
 	"editor.copyWithSyntaxHighlighting": true,
 	"editor.accessibilitySupport": "off",
-	"files.autoSave": "afterDelay",	
+	"files.autoSave": "afterDelay",
 	// * Editing
 	"editor.suggestSelection": "first",
 	"editor.inlineSuggest.enabled": true,
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"diffEditor.ignoreTrimWhitespace": false,
+	"explorer.confirmDragAndDrop": false,
 	"explorer.confirmDelete": false,
 	// * Security
 	"security.workspace.trust.untrustedFiles": "open",
