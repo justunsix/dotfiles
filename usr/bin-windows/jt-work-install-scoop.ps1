@@ -76,6 +76,8 @@ $programsList = @(
     "python",
     "extras/miniconda3",
     "pipx",
+    ##### Python package, project, tool manager
+    "uv",
     #### Java
     "java/temurin-lts-jdk",    
     "maven",
