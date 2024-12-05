@@ -25,7 +25,7 @@ $programsList = @(
     "extras/everything",
     "kondo",
     "extras/dolphin",
-    "broot",    
+    "broot",
     ### yazi file manager and supporting programs
     "yazi",
     #### yazi optional dependencies
@@ -103,6 +103,8 @@ $programsList = @(
     "pandoc",
     "mremoteng",
     "zoxide",
+    #### For use with Emacs diff
+    "diffutils",
     #### Shellcheck used by Emacs Flymake for shell scripts by default - Emacs 29.1
     "shellcheck",
     #### Used by org-download for clipboard pasting to org
