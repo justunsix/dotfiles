@@ -85,7 +85,7 @@ if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
   nix-channel --update
   nix-env -u
   if [ -x "$(command -v home-manager)" ]; then
-    home-manager switch
+    home-manager switch -b backup
   fi
 fi
 
