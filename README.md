@@ -133,7 +133,7 @@ List of folders and dotfiles in them:
 - Package Management:
   [Home Manager using nix](https://github.com/nix-community/home-manager)
 - File Explorer, Directory Navigator: [Broot](https://dystroy.org/broot/),
-  [Dolphin File Manager](https://apps.kde.org/dolphin/)
+  [Dolphin File Manager](https://apps.kde.org/dolphin/), [Yazi](https://yazi-rs.github.io/)
 
 ### Operating System Compatibility
 
