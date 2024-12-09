@@ -75,7 +75,8 @@ $programsList = @(
     #### Python
     "python",
     "extras/miniconda3",
-    "pipx",
+    # Replace pipx with uv
+    # "pipx",
     ##### Python package, project, tool manager
     "uv",
     #### Java
@@ -130,7 +131,10 @@ $programs = $programsList -join " "
 Invoke-Expression "scoop install $programs"
 
 # Python based installs
-pipx install vcstool proselint
+uv tool install visidata
+uv tool install vcstool
+uv tool install proselint
+# pipx install vcstool proselint
 
 # Yazi theme
 ya pack -a yazi-rs/flavors:catppuccin-mocha
