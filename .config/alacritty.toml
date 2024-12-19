@@ -3,3 +3,6 @@
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
+[terminal]
+# Windows: change from default powershell
+# shell = "pwsh"
