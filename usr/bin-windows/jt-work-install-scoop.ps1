@@ -53,8 +53,6 @@ $programsList = @(
     "extras/carapace-bin",
     "cygwin",
     "nu",
-    ### protobuf required for cargo binstall atuin
-    "protobuf",
     ### Prompt
     "starship",
     ## Office, Productivity
@@ -119,8 +117,8 @@ $programsList = @(
     #### For Neovim and Emacs org-roam SQLite
     "gcc",    
     #### Astronvim Supporting Programs
-    "win32yank",
-    "tree-sitter"
+    # "win32yank",
+    # "tree-sitter"
 )
 
 # Convert programs to be installed by scoop into a single space-separated string
