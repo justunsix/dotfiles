@@ -24,6 +24,7 @@ List of folders and dotfiles in them:
   - `fish/` - [Fish](https://fishshell.com/) shell
   - `fontconfig/conf.d/` - Fonts managed by
     [Nix package manager](https://nixos.org/)
+  - `ghostty` - [ghostty](https://ghostty.org/) terminal emulator
   - `helix` - [Helix](https://helix-editor.com/) editor
   - `home-manager` -
     [Home Manager using nix](https://github.com/nix-community/home-manager) for
@@ -121,7 +122,6 @@ List of folders and dotfiles in them:
   [rofi](https://github.com/davatorium/rofi)
 - Clipboard manager: [copyq](https://hluk.github.io/CopyQ/)
 - Terminal:
-  - [Cool Retro Term](https://github.com/Swordfish90/cool-retro-term)
   - [WezTerm](https://wezfurlong.org/wezterm/index.html) which includes
     multiplexer
   - Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
