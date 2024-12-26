@@ -153,6 +153,7 @@
 
     ## Infrastructure as Code
     ### vagrant
+    distrobox
     # Artificial Intelligence
     ollama
 
