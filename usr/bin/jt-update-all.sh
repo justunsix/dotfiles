@@ -17,7 +17,7 @@ if command -v pacman >/dev/null; then
   write_host_with_timestamp "Updating pacman packages"
   # Update Arch keyring first, only required for systems
   # that have not been updated in a while to prevent package signature trust issues
-  sudo pacman -Sy archlinux-keyring
+  sudo pacman -Sy archlinux-keyring --noconfirm
   sudo pacman -Syu --noconfirm
 fi
 
@@ -47,15 +47,6 @@ if command -v topgrade >/dev/null; then
   topgrade -y --only git_repos
 fi
 
-if [ -f "$HOME/.config/home-manager/flake.nix" ]; then
-  write_host_with_timestamp "Updating Nix Flake and Home Manager"
-  cd "$HOME/.config/home-manager/" || exit
-  # Update flakes and home-manager
-  # -b backup : if home-manager finds conflicting files, make backup
-  nix flake update && home-manager switch -b backup
-  cd - || exit
-fi
-
 # Update all Flatpaks
 if command -v flatpak >/dev/null; then
   write_host_with_timestamp "Updating Flatpaks"
@@ -80,13 +71,40 @@ if command -v python3 >/dev/null; then
 fi
 
 # Update all Nix packages
+if [ -f "$HOME/.config/home-manager/flake.nix" ]; then
+  write_host_with_timestamp "Updating Nix Flake and Home Manager"
+  cd "$HOME/.config/home-manager/" || exit
+  # Update flakes and home-manager
+  # -b backup : if home-manager finds conflicting files, make backup
+  nix flake update && home-manager switch -b backup
+  cd - || exit
+fi
+
 if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
   write_host_with_timestamp "Updating Nix packages"
   nix-channel --update
-  nix-env -u
   if [ -x "$(command -v home-manager)" ]; then
     home-manager switch -b backup
   fi
+  # Get total memory in kB
+  total_memory=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+
+  # Convert kB to GB
+  memory_gb=$(awk "BEGIN {printf \"%.2f\", $total_memory / 1024 / 1024}")
+
+  # Check if memory is at least 8 GB before running nix-env update
+  # if less than 8 GB, nix-env -u will be too slow and should not be run
+  # Get the total RAM in GB
+  total_ram=$(free -g | awk '/^Mem:/{print $2}')
+
+  # Check if total RAM is at least 8GB
+  if [ "$total_ram" -ge 8 ]; then
+    echo "The system has at least 8GB of RAM. Running nix-env -u"
+    nix-env -u
+  else
+    echo "The system has less than 8GB of RAM. Skipping nix-env updates"
+  fi
+
 fi
 
 # If day is Saturday or Sunday
