@@ -28,7 +28,6 @@
     # System
     procs
     htop
-    redshift
 
     # Shell
     fish
@@ -61,7 +60,6 @@
     bottom
     kondo
     broot
-    ranger
     # Terminal
     tmux
     zellij
@@ -71,7 +69,6 @@
     ## sd
     ## Former rust cargo installs
     du-dust
-    ### Remove unmaintained - exa, replaced by eza
     eza
     monolith
     topgrade
@@ -84,8 +81,6 @@
     ## Other Editors
     neovim
     helix
-    ### Astronvim requirements
-    tree-sitter
 
     # Languages
     ## Language Servers installs, LSP, Linters
@@ -95,7 +90,7 @@
     ## Prettier formatter multi-language
     nodePackages.prettier
     ## Node
-    ### LTS as of 2024-11
+    ### LTS as of 2025-01
     nodejs_22
     ## PlantUML
     plantuml
@@ -152,7 +147,6 @@
     yaml-language-server
 
     ## Infrastructure as Code
-    ### vagrant
     distrobox
     # Artificial Intelligence
     ollama
