@@ -104,6 +104,8 @@
     ### Instead use manually installed miniconda
     ### conda
     ## Rust
+    ### Debugger for Rust / C / C++
+    lldb
     ### Key components from rustup https://rust-lang.github.io/rustup-components-history/
     ### Defer to rustup based installs
     # cargo
