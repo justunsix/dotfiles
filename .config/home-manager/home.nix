@@ -147,8 +147,11 @@
     black
     ### Python linter
     ruff
-    ## yaml
+    ## toml
+    taplo
+    ## yaml / Ansible
     yaml-language-server
+    ansible-language-server
 
     ## Infrastructure as Code
     distrobox
