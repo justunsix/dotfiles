@@ -28,10 +28,6 @@ style = "bold green"
 # [character] # The name of the module we are configuring is "character"
 # success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
-# Disable the package module, hiding it from the prompt completely
-# [package]
-# disabled = true
-
 # ** Shell specific indicators
 # https://mvolkmann.github.io/blog/starship/
 # https://github.com/starship/starship/discussions/1252
@@ -88,9 +84,15 @@ style = "red"
 ### Preset configuration
 ##############################
 
-# ** Plain text preset
+# ** === Plain text preset
 # This preset changes the symbols for each module into plain text. Great if you don't have access to Unicode.
 # https://starship.rs/presets/plain-text.html
+# My Changes:
+# Disable the package module, hiding it from the prompt completely
+# [package]
+# disabled = true
+#
+# Begin preset
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
@@ -267,7 +269,8 @@ Void = "void "
 Windows = "win "
 
 [package]
-symbol = "pkg "
+# symbol = "pkg "
+disabled = true
 
 [perl]
 symbol = "pl "
@@ -325,4 +328,4 @@ symbol = "terraform "
 
 [zig]
 symbol = "zig "
-# ** End of Plain text preset
+# === End plan test preset
