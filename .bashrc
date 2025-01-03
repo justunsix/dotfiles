@@ -89,11 +89,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -122,11 +117,18 @@ fi
 ########################################
 # --- My Customizations ---
 
-################################
+######################################
 #
 # * Variables & Environment Variables
 #
-################################
+######################################
+
+# XDG directories
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_PICTURES_DIR="$HOME/Pictures"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # Source overlay variables, aliases
 if [ -f "$HOME/.env" ]; then
@@ -195,10 +197,9 @@ export PATH="$HOME/.local/bin::$PATH"
 ################################
 # * Other Variables
 
-export NVIM_APPNAME="lazyvim"
-
 # Set EDITOR environment variable
 export EDITOR="nvim"
+export NVIM_APPNAME="lazyvim"
 # kubectl editor
 export KUBE_EDITOR="nvim"
 
@@ -270,9 +271,6 @@ fi
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 ## fzf
-# Set fzf to always use bat for previews
-# export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
-# If fzf command is on system, configure it
 if command -v fzf >/dev/null; then
   if [ "$isUbuntu" = "true" ]; then
     # Ubuntu Debian per /usr/share/doc/fzf/README.Debian
@@ -471,6 +469,12 @@ jt-up() {
 ################################
 
 if command -v fish >/dev/null; then
-  # Go to fish shell on non-login shells
-  fish
+  # Go to fish shell on non-login shells:
+  # - The parent process is not fish
+  # - Current shell is running interactively
+  # - Current shell is the top level shell
+  #   - Not running a command like `bash -c 'echo foo'`
+  if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]; then
+    fish
+  fi
 fi
