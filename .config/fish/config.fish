@@ -1,5 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    # atuin config
     if type -q atuin
         atuin init fish --disable-ctrl-r | source
     end
