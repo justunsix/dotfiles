@@ -56,10 +56,12 @@
     stow
     yazi
     lazygit
-    ## bottom aka btm
-    bottom
     kondo
     broot
+    # System Monitors
+    btop
+    ## bottom aka btm
+    ## bottom
     # Terminal
     tmux
     zellij
