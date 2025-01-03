@@ -74,3 +74,8 @@
             (:help-echo "Local changes not in upstream")))
           ("Path"    99 magit-repolist-column-path ())))
   )
+
+(after! nix-mode
+  ;; Per https://github.com/oxalica/nil
+  (setq lsp-nix-nil-formatter ["nixfmt"])
+  )
