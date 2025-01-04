@@ -157,13 +157,13 @@ if (Test-Path $navi_config) {
   Write-Host "= Could not find $navi_config"
 }
 
-# Lazyvim config, remove lang.nix
-$lazyvim_config = "$env:USERPROFILE\AppData\Local\lazyvim\lua\config\lazy.lua"
-if (Test-Path $lazyvim_config) {
-  Write-Host "+c removing lang.nix in $lazyvim_config" 
-  (Get-Content $lazyvim_config) | Where-Object { $_ -notmatch 'extras\.lang\.nix' } | Set-Content $lazyvim_config
+# Lazyvim extra config, remove lang.nix
+$lazyvim_extras_config = "$env:USERPROFILE\AppData\Local\lazyvim\lazyvim.json"
+if (Test-Path $lazyvim_extras_config) {
+  Write-Host "+c removing lang.nix in $lazyvim_extras_config" 
+  (Get-Content $lazyvim_extras_config) | Where-Object { $_ -notmatch 'extras\.lang\.nix' } | Set-Content $lazyvim_config
 } else {
-  Write-Host "= Could not find $lazyvim_config"
+  Write-Host "= Could not find $lazyvim_extras_config"
 }
 
 # Disable auto-activation of base conda environment
