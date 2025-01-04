@@ -35,6 +35,8 @@
   ;; Set org-roam-directory, could be before org-roam loads
   ;; https://github.com/doomemacs/doomemacs/issues/4130
   (setq org-roam-directory (file-truename jt/org-directory))
+  ;; Disable completions
+  (setq org-roam-completion-everywhere nil)
   )
 
 ;; Spelling
