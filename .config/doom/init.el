@@ -21,16 +21,12 @@
        ;;layout            ; auie,ctsrnm is the superior home row
 
        :completion
-       company           ; the ultimate code completion backend
-       ;;(corfu +icons +orderless +dabbrev)  ; complete with cap(f), cape and a flying feather!
+       ;;company           ; the ultimate code completion backend
+       (corfu +orderless +icons +dabbrev)  ; complete with cap(f), cape and a flying feather!
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       
-       ;; Workaround to Windows issues with vertico, seems fixed as of 2024-04-03
-       ;; (:if (featurep :system 'Windows) ivy)   ; a search engine for love and life
-       ;; (:if (featurep :system 'Linux) vertico) ; the search engine of the future
-       ;; (:if (featurep :system 'macos)  vertico)
-       vertico
+       ;;ivy               ; a search engine for love and life
+       vertico           ; the search engine of the future
 
        :ui
        ;;deft              ; notational velocity for Emacs
