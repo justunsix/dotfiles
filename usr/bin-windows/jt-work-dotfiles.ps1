@@ -161,7 +161,7 @@ if (Test-Path $navi_config) {
 $lazyvim_extras_config = "$env:USERPROFILE\AppData\Local\lazyvim\lazyvim.json"
 if (Test-Path $lazyvim_extras_config) {
   Write-Host "+c removing lang.nix in $lazyvim_extras_config" 
-  (Get-Content $lazyvim_extras_config) | Where-Object { $_ -notmatch 'extras\.lang\.nix' } | Set-Content $lazyvim_config
+  (Get-Content $lazyvim_extras_config) | Where-Object { $_ -notmatch 'extras\.lang\.nix' } | Set-Content $lazyvim_extras_config
 } else {
   Write-Host "= Could not find $lazyvim_extras_config"
 }
