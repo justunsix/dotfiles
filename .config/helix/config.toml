@@ -16,3 +16,8 @@ enable = true
 
 [editor.file-picker]
 hidden = false
+
+[keys.insert]
+# Maps `jk` to exit insert mode
+# per https://docs.helix-editor.com/remapping.html
+j = { k = "normal_mode" } 
