@@ -3,6 +3,16 @@ theme = "ayu_dark"
 [editor]
 line-number = "relative"
 bufferline = "multiple"
+# Minimum severity to show a diagnostic after the end of a line:
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+# https://helix-editor.com/news/release-25-01-highlights/ diagnostics section
+# Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+cursor-line = "error"
+# Minimum severity to show a diagnostic on other lines:
+# other-lines = "error"
 
 [editor.cursor-shape]
 insert = "bar"
