@@ -3,6 +3,8 @@ scoop bucket add extras
 scoop bucket add nerd-fonts
 # Lists of scoop packages to install
 $programsList = @(
+    ## System
+    "btop",
     ## Package Management
     "topgrade",
     ## File Management
