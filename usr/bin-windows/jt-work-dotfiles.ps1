@@ -11,20 +11,22 @@
 # If directory, copy recursively
 function Copy-SourceToDestination {
   param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [string]$source,
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory = $true)]
     [string]$destination
   )
   if (Test-Path $source) {
     if (Test-Path $destination) {
       Write-Host "+ Copying $source to $destination"
       Copy-Item -Recurse -Path $source -Destination $destination -Force
-    } else {
+    }
+    else {
       Write-Host "+ Copying $source to $destination"
       Copy-Item -Recurse -Path $source -Destination $destination
     }
-  } else {
+  }
+  else {
     Write-Host "= Could not find $source"
   }
 }
@@ -41,12 +43,12 @@ $dotfiles_to_be_removed = @(
 )
 
 $dotfiles_directories = @(
-	"$env:USERPROFILE\.config\todotxt-cli",
-	"$env:USERPROFILE\.config\wezterm",
-	"$env:USERPROFILE\AppData\Roaming\dystroy\broot\config",
-	"$env:USERPROFILE\AppData\Roaming\helix",
-	"$env:USERPROFILE\AppData\Roaming\navi",
-	"$env:USERPROFILE\AppData\Roaming\nushell",
+  "$env:USERPROFILE\.config\todotxt-cli",
+  "$env:USERPROFILE\.config\wezterm",
+  "$env:USERPROFILE\AppData\Roaming\dystroy\broot\config",
+  "$env:USERPROFILE\AppData\Roaming\helix",
+  "$env:USERPROFILE\AppData\Roaming\navi",
+  "$env:USERPROFILE\AppData\Roaming\nushell",
   "$env:USERPROFILE\.config\",
   "$env:USERPROFILE\.config\doom",
   "$env:USERPROFILE\.config\emacs",
@@ -61,7 +63,7 @@ $dotfiles_directories = @(
 
 # Array of dotfiles to synchronize with tuples of source and destination
 $dotfiles_to_be_synchronized = @(
-    # Reserve for Doom Emacs install
+  # Reserve for Doom Emacs install
 		# ("$env:USERPROFILE\Code\dotfiles\.config\emacs", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\alacritty", "$env:USERPROFILE\AppData\Roaming"),
 		("$env:USERPROFILE\Code\dotfiles\.config\fish", "$env:USERPROFILE\.config"),
@@ -82,7 +84,7 @@ $dotfiles_to_be_synchronized = @(
     ("$env:USERPROFILE\Code\dotfiles\.config\todotxt-cli", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\wezterm", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\yazi\*", "$env:USERPROFILE\AppData\Roaming\yazi\config"),
-   ("$env:USERPROFILE\Code\dotfiles\other\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", "$PROFILE")
+    ("$env:USERPROFILE\Code\dotfiles\usr\other\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", "$PROFILE")
 )
 
 ###############
@@ -95,8 +97,9 @@ foreach ($dotfile in $dotfiles_to_be_removed) {
   if (Test-Path $dotfile) {
     Write-Host "- Removing $dotfile"
     Remove-Item -Path $dotfile -Force
-  } else {
-			Write-Host "= Could not find $dotfile : skipping"
+  }
+  else {
+    Write-Host "= Could not find $dotfile : skipping"
   }
 }
 
@@ -105,7 +108,8 @@ Write-HostWithTimestamp "Creating dotfiles directories if they do not exist"
 foreach ($directory in $dotfiles_directories) {
   if (Test-Path $directory) {
     Write-Host "= Found $directory"
-  } else {
+  }
+  else {
     Write-Host "+ Creating $directory"
     New-Item -Path $directory -ItemType Directory
   }
@@ -124,7 +128,8 @@ $gfold_toml_windows_path = "$env:USERPROFILE\Code"
 if (Test-Path $gfold_toml) {
   Write-Host "+c Replacing /home/justin/Code with $gfold_toml_windows_path in $gfold_toml"
   (Get-Content $gfold_toml) | ForEach-Object { $_ -replace "/home/justin/Code", "$gfold_toml_windows_path" } | Set-Content $gfold_toml
-} else {
+}
+else {
   Write-Host "= Could not find $gfold_toml"
 }
 
@@ -135,7 +140,8 @@ if (Test-Path $kdeglobals) {
   Write-Host "+c Removing [Icons] and Theme=breeze-dark from $kdeglobals"
   (Get-Content $kdeglobals) | ForEach-Object { $_ -replace "\[Icons\]", "" } | Set-Content $kdeglobals
   (Get-Content $kdeglobals) | ForEach-Object { $_ -replace "Theme=breeze-dark", "" } | Set-Content $kdeglobals
-} else {
+}
+else {
   Write-Host "= Could not find $kdeglobals"
 }
 
@@ -144,7 +150,8 @@ $doom_config = "$env:USERPROFILE\.config\doom\init.el"
 if (Test-Path $doom_config) {
   Write-Host "+c Replacing +roam2 with ;; +roam2 in $doom_config"
   (Get-Content $doom_config) | ForEach-Object { $_ -replace "\+roam2", ";; +roam2" } | Set-Content $doom_config
-} else {
+}
+else {
   Write-Host "= Could not find $doom_config"
 }
 
@@ -153,7 +160,8 @@ $navi_config = "$env:USERPROFILE\AppData\Roaming\navi\config.yaml"
 if (Test-Path $navi_config) {
   Write-Host "+c Replacing bash with cmd.exe in $navi_config"
   (Get-Content $navi_config) | ForEach-Object { $_ -replace "bash", "cmd.exe" } | Set-Content $navi_config
-} else {
+}
+else {
   Write-Host "= Could not find $navi_config"
 }
 
@@ -162,7 +170,8 @@ $lazyvim_extras_config = "$env:USERPROFILE\AppData\Local\lazyvim\lazyvim.json"
 if (Test-Path $lazyvim_extras_config) {
   Write-Host "+c removing lang.nix in $lazyvim_extras_config" 
   (Get-Content $lazyvim_extras_config) | Where-Object { $_ -notmatch 'extras\.lang\.nix' } | Set-Content $lazyvim_extras_config
-} else {
+}
+else {
   Write-Host "= Could not find $lazyvim_extras_config"
 }
 
