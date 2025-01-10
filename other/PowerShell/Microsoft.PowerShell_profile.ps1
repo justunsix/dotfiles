@@ -6,7 +6,7 @@
 # Variables
 $env:EDITOR = "nvim"
 ## kubectl editor
-$env:KUBE_EDITOR="nvim"
+$env:KUBE_EDITOR = "nvim"
 ## Yazi File Manager to open files on Windows https://yazi-rs.github.io/docs/installation
 $env:YAZI_FILE_ONE = "$env:USERPROFILE\scoop\apps\git\current\usr\bin\file.exe"
 ## Set Lazyvim as default Neovim framework to use
@@ -18,12 +18,12 @@ $env:NVIM_APPNAME = "lazyvim"
 ### Function for Starship to set Window title
 ### https://starship.rs/advanced-config/
 function Invoke-Starship-PreCommand {
-  $shortPath = $pwd -replace [regex]::Escape($HOME), '~'
-  $host.ui.RawUI.WindowTitle = "$shortPath `a"
+    $shortPath = $pwd -replace [regex]::Escape($HOME), '~'
+    $host.ui.RawUI.WindowTitle = "$shortPath `a"
 }
 
 if (Get-Command "starship.exe" -ErrorAction SilentlyContinue) {
-	Invoke-Expression (&starship init powershell)
+    Invoke-Expression (&starship init powershell)
 }
 
 # Shell Support
@@ -36,25 +36,25 @@ Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 
 ## Zoxide
 if (Get-Command "zoxide.exe" -ErrorAction SilentlyContinue) {
-	Invoke-Expression (& {
-			$hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
+    Invoke-Expression (& {
+            $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
 													 (zoxide init --hook $hook powershell | Out-String)
-		})
+        })
 }
 
 ## Carapace - Shell completions
 if (Get-Command "carapace.exe" -ErrorAction SilentlyContinue) {
-	$env:CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-	Set-PSReadLineOption -Colors @{ "Selection" = "`e[7m" }
-	Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-	carapace _carapace | Out-String | Invoke-Expression
+    $env:CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+    Set-PSReadLineOption -Colors @{ "Selection" = "`e[7m" }
+    Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+    carapace _carapace | Out-String | Invoke-Expression
 }
 
 ## Broot - File explorer, directory navigator
 if (Get-Command "broot.exe" -ErrorAction SilentlyContinue) {
-	if (Test-Path $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1) {
-		. $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1
-	}
+    if (Test-Path $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1) {
+        . $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1
+    }
 }
 
 ## PSFzf
@@ -79,17 +79,17 @@ Set-Alias -Name lg -Value lazygit
 
 ### Git Repositories checker
 function jgt {
-		gfold | rg -e unclean -e unpushed
+    gfold | rg -e unclean -e unpushed
 }
 
 ### Git Repositories checker detailed
 function jvcs {
-		vcs status $env:USERPROFILE\Code | rg -e modified -e ===
+    vcs status $env:USERPROFILE\Code | rg -e modified -e ===
 }
 
 ### eza
 function e {
-		eza -alh --git
+    eza -alh --git
 }
 
 ## Emacs
@@ -111,7 +111,7 @@ function Use-Conda {
     )
     
     If (Test-Path "$env:USERPROFILE\scoop\apps\miniconda3\current\Scripts\conda.exe") {
-        (& "$env:USERPROFILE\scoop\apps\miniconda3\current\Scripts\conda.exe" "shell.powershell" "hook") | Out-String | ?{$_} | Invoke-Expression
+        (& "$env:USERPROFILE\scoop\apps\miniconda3\current\Scripts\conda.exe" "shell.powershell" "hook") | Out-String | ? { $_ } | Invoke-Expression
         
         if ($Activate) {
             conda activate $Activate
@@ -132,73 +132,77 @@ function y {
     Remove-Item -Path $tmp
 }
 
-# Experimental Atuin integration based on 
+# Activate Experimental Atuin integration based on 
 # https://github.com/rainersigwald/dotfiles/blob/main/Documents/PowerShell/Microsoft.PowerShell_profile.ps1 
-try {
-    # If atuin is not available, stop. Supress output of check
-    Get-Command atuin -ErrorAction Stop > $null 2>&1
+function Use-Atuin {
 
-    # Atuin must exist so register history via https://github.com/atuinsh/atuin/issues/84#issuecomment-2053600939
-    $env:ATUIN_SESSION = (atuin uuid | Out-String).Trim()
-    # Initialize the ATUIN_HISTORY_ID environment variable to null
-    $env:ATUIN_HISTORY_ID = $null
+    try {
+        # If atuin is not available, stop. Supress output of check
+        Get-Command atuin -ErrorAction Stop > $null 2>&1
 
-    # Set a custom key handler for the Enter key to store command history in Atuin
-    Set-PSReadLineKeyHandler -Chord Enter -ScriptBlock {
-        $line = $null
-        $cursor = $null
-        # Get current input and the position of the cursor
-        [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+        # Atuin must exist so register history via https://github.com/atuinsh/atuin/issues/84#issuecomment-2053600939
+        $env:ATUIN_SESSION = (atuin uuid | Out-String).Trim()
+        # Initialize the ATUIN_HISTORY_ID environment variable to null
+        $env:ATUIN_HISTORY_ID = $null
 
-        # If ATUIN_HISTORY_ID is not set, get a history ID
-        if (-not $env:ATUIN_HISTORY_ID) {
-            $env:ATUIN_HISTORY_ID = (atuin history start -- $line | Out-String).Trim()
+        # Set a custom key handler for the Enter key to store command history in Atuin
+        Set-PSReadLineKeyHandler -Chord Enter -ScriptBlock {
+            $line = $null
+            $cursor = $null
+            # Get current input and the position of the cursor
+            [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+
+            # If ATUIN_HISTORY_ID is not set, get a history ID
+            if (-not $env:ATUIN_HISTORY_ID) {
+                $env:ATUIN_HISTORY_ID = (atuin history start -- $line | Out-String).Trim()
+            }
+
+            # Execute the input as normal
+            [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
         }
 
-        # Execute the input as normal
-        [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
-    }
+        # Save the existing prompt function
+        $existingPromptFunction = Get-Item -Path Function:\prompt
+        # Remove the existing prompt function
+        Remove-Item -Path Function:\prompt
+        # Define a new prompt function
+        function prompt {
+            # If ATUIN_HISTORY_ID is set, end the Atuin history entry with duration and exit code
+            if ($env:ATUIN_HISTORY_ID) {
+                atuin history end --duration (Get-History -Count 1).Duration.TotalNanoseconds --exit $LASTEXITCODE -- $env:ATUIN_HISTORY_ID | Out-Null
 
-    # Save the existing prompt function
-    $existingPromptFunction = Get-Item -Path Function:\prompt
-    # Remove the existing prompt function
-    Remove-Item -Path Function:\prompt
-    # Define a new prompt function
-    function prompt {
-        # If ATUIN_HISTORY_ID is set, end the Atuin history entry with duration and exit code
-        if ($env:ATUIN_HISTORY_ID) {
-            atuin history end --duration (Get-History -Count 1).Duration.TotalNanoseconds --exit $LASTEXITCODE -- $env:ATUIN_HISTORY_ID | Out-Null
+                # Remove the ATUIN_HISTORY_ID environment variable
+                Remove-Item -Path env:ATUIN_HISTORY_ID -ErrorAction SilentlyContinue
+            }
 
-            # Remove the ATUIN_HISTORY_ID environment variable
-            Remove-Item -Path env:ATUIN_HISTORY_ID -ErrorAction SilentlyContinue
+            # Call the existing prompt function
+            & $existingPromptFunction.ScriptBlock
         }
-
-        # Call the existing prompt function
-        & $existingPromptFunction.ScriptBlock
-    }
     
-    # Ctrl + r to bring up atuin search of history and insert result for input
-    # based on https://gist.github.com/lzybkr/b47b89e48a963429161836ca1443e8f5
-    Set-PSReadLineKeyHandler -Key Ctrl+r -ScriptBlock {
-        $line = $null
-        $cursor = $null
-        # Get the current command line buffer state
-        [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-        # Create a temporary file to store the search result
-        $resultFile = New-TemporaryFile
-        # Start the Atuin search process and wait for it to complete
-        Start-Process -Wait -NoNewWindow -RedirectStandardError $resultFile.FullName atuin -ArgumentList "search","-i"
-        # Read the search result from the temporary file
-        $result = (Get-Content -Raw $resultFile).Trim()
-        # Remove the temporary file
-        Remove-Item $resultFile
+        # Ctrl + r to bring up atuin search of history and insert result for input
+        # based on https://gist.github.com/lzybkr/b47b89e48a963429161836ca1443e8f5
+        Set-PSReadLineKeyHandler -Key Ctrl+r -ScriptBlock {
+            $line = $null
+            $cursor = $null
+            # Get the current command line buffer state
+            [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+            # Create a temporary file to store the search result
+            $resultFile = New-TemporaryFile
+            # Start the Atuin search process and wait for it to complete
+            Start-Process -Wait -NoNewWindow -RedirectStandardError $resultFile.FullName atuin -ArgumentList "search", "-i"
+            # Read the search result from the temporary file
+            $result = (Get-Content -Raw $resultFile).Trim()
+            # Remove the temporary file
+            Remove-Item $resultFile
 
-        # Revert the current command line to its original state
-        [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
-        # Insert the search result into the command line
-        [Microsoft.PowerShell.PSConsoleReadLine]::Insert($result)
+            # Revert the current command line to its original state
+            [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+            # Insert the search result into the command line
+            [Microsoft.PowerShell.PSConsoleReadLine]::Insert($result)
+        }
     }
-}
-catch {
-    Write-Host "Atuin is not available. Skipping Atuin integration."
+    catch {
+        Write-Host "Atuin is not available. Skipping Atuin integration."
+    }
+
 }
