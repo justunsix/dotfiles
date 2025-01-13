@@ -47,6 +47,7 @@ process {
 
 		# Disable vagrant due to large updates and winget due to prompts
 		if ($runTopgradeWithPS1 -eq "y") {
+      Write-Host "`nwith --disable system vagrant winget"
 			topgrade -y --disable system vagrant winget
 		}
 		else {
