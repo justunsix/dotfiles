@@ -84,7 +84,7 @@ $dotfiles_to_be_synchronized = @(
     ("$env:USERPROFILE\Code\dotfiles\.config\todotxt-cli", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\wezterm", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\yazi\*", "$env:USERPROFILE\AppData\Roaming\yazi\config"),
-    ("$env:USERPROFILE\Code\dotfiles\usr\other\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", "$PROFILE")
+    ("$env:USERPROFILE\Code\dotfiles\other\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", "$PROFILE")
 )
 
 ###############
