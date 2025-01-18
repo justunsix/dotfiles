@@ -41,7 +41,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # fzf
-alias fe="fzf | xargs $EDITOR"
+alias fe="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs $EDITOR"
 alias fkill='ps -ef | fzf | awk '\''{print $2}'\'' | xargs kill -9'
 
 # Lazygit
