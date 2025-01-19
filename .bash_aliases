@@ -4,11 +4,11 @@
 alias jgs="jt-gs.sh"
 alias jgt="gfold | rg -e unclean -e unpushed || true"
 alias jgc="jt-gc.sh"
-alias jvcs="vcs status $HOME/Code | rg -e modified -e ==="
+alias jvcs='vcs status $HOME/Code | rg -e modified -e ==='
 
 # todotxt
-alias t="todo.sh -d $HOME/.config/todotxt-cli/todo.cfg"
-alias to="todo.sh -d $HOME/.config/todotxt-cli/todo-work.cfg"
+alias t='todo.sh -d $HOME/.config/todotxt-cli/todo.cfg'
+alias to='todo.sh -d $HOME/.config/todotxt-cli/todo-work.cfg'
 
 # cd
 alias ..="cd .."
@@ -41,7 +41,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # fzf
+# shellcheck disable="SC2139"
 alias fe="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs $EDITOR"
+# shellcheck disable=SC2142
 alias fkill='ps -ef | fzf | awk '\''{print $2}'\'' | xargs kill -9'
 
 # Lazygit
