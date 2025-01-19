@@ -49,9 +49,3 @@ alias lg='lazygit'
 
 # rofi UI
 alias rofi='rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3'
-
-# yt-dlp
-# List formats for a URL, Check URL is downloadable
-alias ytf="yt-dlp -F URL"
-# Download file with at best 720p resolution
-alias yt720="yt-dlp -S 'res:720'"
