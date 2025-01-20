@@ -5,10 +5,11 @@ scoop bucket add nerd-fonts
 $programsList = @(
     ## System
     "btop",
+    ### git, including bash
+    "git",
     ## Package Management
     "topgrade",
     ## File Management
-    "git",
     "extras/git-credential-manager",
     "uutils-coreutils",
     "eza",
