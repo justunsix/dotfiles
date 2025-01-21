@@ -4,9 +4,9 @@
 # Managed by Ansible
 
 # Variables
-$env:EDITOR = "nvim"
+$env:EDITOR = "hx"
 ## kubectl editor
-$env:KUBE_EDITOR = "nvim"
+$env:KUBE_EDITOR = "hx"
 ## Yazi File Manager to open files on Windows https://yazi-rs.github.io/docs/installation
 $env:YAZI_FILE_ONE = "$env:USERPROFILE\scoop\apps\git\current\usr\bin\file.exe"
 ## Set Lazyvim as default Neovim framework to use
@@ -90,6 +90,11 @@ function jvcs {
 ### eza
 function e {
     eza -alh --git
+}
+
+### Open a file selected by fzf in editors set by EDITOR environment variable
+function fed {
+    Get-ChildItem . -Recurse -Attributes !Directory | Invoke-Fzf | % { & $env:EDITOR $_ }
 }
 
 ## Emacs
