@@ -86,11 +86,6 @@ if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
   if [ -x "$(command -v home-manager)" ]; then
     home-manager switch -b backup
   fi
-  # Get total memory in kB
-  total_memory=$(grep MemTotal /proc/meminfo | awk '{print $2}')
-
-  # Convert kB to GB
-  memory_gb=$(awk "BEGIN {printf \"%.2f\", $total_memory / 1024 / 1024}")
 
   # Check if memory is at least 8 GB before running nix-env update
   # if less than 8 GB, nix-env -u will be too slow and should not be run
@@ -105,6 +100,12 @@ if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
     echo "The system has less than 8GB of RAM. Skipping nix-env updates"
   fi
 
+fi
+
+# Update yazi packages
+if command -v yazi >/dev/null; then
+  write_host_with_timestamp "Updating yazi packages"
+  ya pack -u
 fi
 
 # If day is Saturday or Sunday
@@ -157,14 +158,6 @@ if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
     conda update --all --yes
     # clean unused packages
     conda clean --all --yes
-  fi
-
-  # Clean Nix packages
-  if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
-    write_host_with_timestamp "Cleaning Nix packages"
-    # Run nix package manager garbage collection
-    # delete generations older than 30 days
-    nix-collect-garbage --delete-older-than 30d
   fi
 
 fi
