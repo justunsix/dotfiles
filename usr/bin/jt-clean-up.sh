@@ -96,6 +96,14 @@ if command -v carapace &>/dev/null; then
   carapace --clear-cache
 fi
 
+# Clean Nix packages
+if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
+  write_host_with_timestamp "Cleaning Nix packages"
+  # Run nix package manager garbage collection
+  # delete generations older than 30 days
+  nix-collect-garbage --delete-older-than 30d
+fi
+
 # Clean Emacs and Doom Packages
 if [ -d "$HOME/.config/emacs/bin" ]; then
   write_host_with_timestamp "Clean Doom Emacs Packages"
