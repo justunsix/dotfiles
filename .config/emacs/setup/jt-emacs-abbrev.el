@@ -77,6 +77,7 @@
     ("ttoo" "tattoo" nil :count 0)
     ("srvr" "server" nil :count 0)
     ("srvrs" "servers" nil :count 0)
+    ("snkrs" "sneakers" nil :count 0)
     ("wtchng" "watching" nil :count 0)
 
     ;; -- Domain specific words or abbreviations
