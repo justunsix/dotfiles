@@ -40,7 +40,7 @@ process {
 			$runTopgradeWithPS1 = "y"
 		}
 		else {
-			$runTopgradeWithPS1 = Read-Host "Do you want to run topgrade with powershell, emacs, vim? (y/n)"
+			$runTopgradeWithPS1 = Read-Host "Do you want to run topgrade with powershell, emacs? (y/n)"
 		}
 
 		Write-Host "`nRunning topgrade" -ForegroundColor Green
