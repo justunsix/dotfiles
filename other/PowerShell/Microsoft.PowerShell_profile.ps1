@@ -32,7 +32,7 @@ Import-Module PSReadLine
 Import-Module CompletionPredictor
 Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 ### List view of predictions under the cursor, toggle in session with F2
-### Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -PredictionViewStyle ListView
 
 ## Zoxide
 if (Get-Command "zoxide.exe" -ErrorAction SilentlyContinue) {
