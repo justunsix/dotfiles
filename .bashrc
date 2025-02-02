@@ -123,6 +123,9 @@ fi
 #
 ######################################
 
+# ** XDG
+# Check if they are empty and set them to default values
+
 # XDG directories
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -213,19 +216,6 @@ export EMACS_SERVER_FILE="$HOME/.emacs.d/server/server"
 # nix home-manager
 if [ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]; then
   . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-fi
-
-# ** XDG
-# Check if they are empty and set them to default values
-
-if [ -z "$XDG_CONFIG_HOME" ]; then
-  export XDG_CONFIG_HOME="$HOME/.config"
-fi
-if [ -z "$XDG_DATA_HOME" ]; then
-  export XDG_DATA_HOME="$HOME/.local/share"
-fi
-if [ -z "$XDG_CACHE_HOME" ]; then
-  export XDG_CACHE_HOME="$HOME/.cache"
 fi
 
 ################################
@@ -403,7 +393,7 @@ if command -v phantomjs &>/dev/null; then
 fi
 
 if command -v broot &>/dev/null; then
-  source $HOME/.config/broot/launcher/bash/br
+  source "$HOME"/.config/broot/launcher/bash/br
 fi
 
 ################################
