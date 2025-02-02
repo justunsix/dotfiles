@@ -60,13 +60,6 @@ if command -v python3 >/dev/null; then
   if command -v pipx >/dev/null; then
     write_host_with_timestamp "Updating pipx packages"
     pipx upgrade-all
-  else
-    if command -v pip >/dev/null; then
-      write_host_with_timestamp "Updating pip packages"
-      python3 -m pip install --user --upgrade pip
-      python3 -m pip install --user --upgrade ansible
-      python3 -m pip install --user --upgrade tldr
-    fi
   fi
 fi
 
