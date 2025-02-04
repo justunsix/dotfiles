@@ -25,10 +25,6 @@
     # ------------------------------------------------------------
     # Main Packages
 
-    # System
-    procs
-    htop
-
     # Shell
     fish
     nushell
@@ -60,11 +56,11 @@
     broot
     # System Monitors
     btop
+    procs
     ## bottom aka btm
     ## bottom
     # Terminal
     tmux
-    zellij
     mprocs
     ## Data
     visidata
@@ -89,6 +85,9 @@
     ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
     ## For integration with Emacs and Neovim language support
 
+    ## Help
+    ### tldr in rust
+    tealdeer
     ## Prettier formatter multi-language
     nodePackages.prettier
     ## Node
