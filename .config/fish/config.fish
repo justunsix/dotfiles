@@ -72,23 +72,18 @@ alias nvm="echo 'Switch to bash shell to use nvm'"
 # alias bat="batcat"
 
 # *** fzf
-# On Fedora fzf
-if test -e /usr/share/fzf/shell/key-bindings.fish
-    source /usr/share/fzf/shell/key-bindings.fish
+if type -q fzf
+    # Set up fzf key bindings
+    fzf --fish | source
 end
 
-if type -q fzf_key_bindings
-    # Ubuntu Debian, Arch per /usr/share/doc/fzf/README.Debian
-    echo fzf_key_bindings >~/.config/fish/functions/fish_user_key_bindings.fish
-end
-
+# *** Starship
 if type -q starship
-    # *** Starship
     starship init fish | source
 end
 
+# *** zoxide - smarter cd
 if type -q zoxide
-    # zoxide - smarter cd
     zoxide init fish | source
 end
 

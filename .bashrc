@@ -262,28 +262,14 @@ fi
 
 ## fzf
 if command -v fzf >/dev/null; then
-  if [ "$isUbuntu" = "true" ]; then
-    # Ubuntu Debian per /usr/share/doc/fzf/README.Debian
-    # source /usr/share/doc/fzf/examples/key-bindings.bash
-    # Should be unnecessary in later apt fzf versions
-    # source "$HOME/Code/External/fzf/shell/completion.bash"
-    # Change fzf find files command from default find to fd-find
-    # fd-find is called fdfind on Ubuntu due to a file name clash
-    # per apt-cache show fd-find
-    # Not required not, since using nix
-    # alias fd="fdfind"
+  # Set up fzf key bindings and fuzzy completion
+  eval "$(fzf --bash)"
+  # Find:
+  export FZF_DEFAULT_COMMAND='fd --hidden --type f'
+  # --type f = files
+  # --hidden = include hidden files
 
-    # Find:
-    # --type f = files
-    # --hidden = include hidden files
-    export FZF_DEFAULT_COMMAND='fd --hidden --type f'
-  fi
-  if [ "$isFedora" = "true" ]; then
-    # FZF mappings and options
-    [ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
-    source /usr/share/fzf/shell/key-bindings.bash
-    export FZF_DEFAULT_COMMAND='fd --hidden --type f'
-  fi
+
 fi
 
 ## Keychain
