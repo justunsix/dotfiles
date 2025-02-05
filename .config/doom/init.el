@@ -154,6 +154,7 @@
        ;;ocaml             ; an objective camel
        (org                ; organize your plain life in plain text
         +roam2
+        +pandoc
         +present
         )
        ;;php               ; perl's insecure younger brother
@@ -201,5 +202,6 @@
        minimal                ; Minimal configuration for default Emacs
        doomconfig             ; Post configuration for Doom framework packages
        hyperbole              ; Everyday Hypertextual Information Manager
+       org-web-tools          ; Get and process web page content into Org-mode
        (:if IS-LINUX music)   ; Listen to music
        )
