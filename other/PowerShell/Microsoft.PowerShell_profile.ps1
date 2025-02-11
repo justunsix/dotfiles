@@ -78,9 +78,7 @@ Set-Alias -Name k -Value kubectl
 Set-Alias -Name lg -Value lazygit
 # which / type
 Set-Alias -Name type -Value Get-Command
-# sort - overwrite PowerShell command
-Set-Alias -Name sort -Value coreutils sort
-Set-Alias -Name rm -Value coreutils rm
+Set-Alias -Name rm -Value "coreutils rm"
 
 ### Git Repositories checker
 function jgt {
