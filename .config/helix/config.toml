@@ -24,6 +24,8 @@ select = "underline"
 # line break characters into the text (so called "hard-wrapping")
 [editor.soft-wrap]
 enable = true
+# Remove the wrap indicator symbol
+wrap-indicator = ""
 
 [editor.file-picker]
 hidden = false

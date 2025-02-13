@@ -127,6 +127,8 @@
     marksman
     ## Prose English linter for Markdown, Org
     proselint
+    ## Grammer checker (US English)
+    ltex-ls-plus
     ## Terraform
     ### Terraform LSP
     terraform-ls

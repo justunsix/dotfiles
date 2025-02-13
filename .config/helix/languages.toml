@@ -9,7 +9,7 @@ check.command = "clippy"
 
 [[language]]
 name = "python"
-language-servers = [ "pyright", "ruff" ]
+language-servers = ["pyright", "ruff"]
 auto-format = true
 formatter = { command = "black", args = ["-"] }
 
@@ -23,7 +23,7 @@ args = ["server"]
 [[language]]
 name = "yaml"
 auto-format = true
-file-types = [ "yaml", "yml"]
+file-types = ["yaml", "yml"]
 formatter = { command = "prettier", args = ["--parser", "yaml"] }
 
 [[language]]
@@ -72,7 +72,17 @@ name = "tsx"
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
 
+# Suggestions from
+# https://helix-editor-tutorials.com/tutorials/writing-documentation-and-prose-in-markdown-using-helix/
 [[language]]
 name = "markdown"
-formatter = { command = 'prettier', args = ["--parser", "markdown"] }
+language-servers = ["marksman", "ltex-ls-plus"]
+formatter = { command = 'prettier', args = [
+  "--parser",
+  "markdown",
+  "--prose-wrap",
+  "always",       # <always|never|preserve>
+] }
+# For use with :reflow to hard wrap
+text-width = 80
 auto-format = true
