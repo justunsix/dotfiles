@@ -2,6 +2,7 @@ theme = "ayu_dark"
 
 [editor]
 line-number = "relative"
+mouse = true
 bufferline = "multiple"
 # Minimum severity to show a diagnostic after the end of a line:
 end-of-line-diagnostics = "hint"
