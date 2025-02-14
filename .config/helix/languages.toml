@@ -86,3 +86,8 @@ formatter = { command = 'prettier', args = [
 # For use with :reflow to hard wrap
 text-width = 80
 auto-format = true
+
+# Inspired by https://github.com/doomemacs/doomemacs/pull/6683
+[[language]]
+name = "org"
+language-servers = ["ltex-ls-plus"]
