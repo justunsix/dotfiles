@@ -96,6 +96,12 @@ if command -v carapace &>/dev/null; then
   carapace --clear-cache
 fi
 
+# Clean uv cache
+if command -v uv &>/dev/null; then
+  write_host_with_timestamp "Clean uv cache"
+  uv cache clean
+fi
+
 # Clean Nix packages
 if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
   write_host_with_timestamp "Cleaning Nix packages"
