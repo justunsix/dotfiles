@@ -40,7 +40,7 @@ if (Test-Path ~\Code) {
 }
 
 # Check if scoop command exists, if so clean scoop packages
-if (Test-Path ~\scoop\apps\scoop\current\bin\scoop.ps1) {
+if (Get-Command scoop) {
     Write-HostWithTimestamp "Cleaning scoop packages and cache"
     scoop cleanup *
     scoop cache rm --all
@@ -72,7 +72,12 @@ if (Test-Path ~\Pictures\Screenshots) {
 		Remove-Item -Path ~\Pictures\Screenshots\* -Force -Recurse
 }
 
-if (Test-Path ~\AppData\Local\Temp\yazi) {
+if (Get-Command yazi) {
     Write-HostWithTimestamp "Cleaning yazi cache"
     yazi --clear-cache
+}
+
+if (Get-Command uv) {
+    Write-HostWithTimestamp "Cleaning uv cache"
+    uv cache clean
 }
