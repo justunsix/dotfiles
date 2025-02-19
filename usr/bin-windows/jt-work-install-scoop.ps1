@@ -37,6 +37,7 @@ $programsList = @(
     "poppler",
     # "bottom",
     ## Media
+    "figma",
     # "obs-studio",
     # "gimp",
     # "inkscape",
