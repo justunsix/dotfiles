@@ -56,6 +56,7 @@ $programsList = @(
     "extras/wezterm",
     "extras/carapace-bin",
     "cygwin",
+    "msys2",
     "nu",
     ### Prompt
     "starship",
