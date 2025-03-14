@@ -67,7 +67,8 @@ $programsList = @(
     "autohotkey",
     ## Media
     "vlc",
-    ## Security    
+    ## Security
+    "extras/gpg4win"
     "keepassxc",
     ## DevOps    
     "vscode",
