@@ -6,6 +6,12 @@ mouse = true
 bufferline = "multiple"
 # Minimum severity to show a diagnostic after the end of a line:
 end-of-line-diagnostics = "hint"
+# Hightlight background of line that cursor is on
+cursorline = true
+
+[editor.lsp]
+# Inline hints
+display-inlay-hints = true
 
 [editor.inline-diagnostics]
 # https://helix-editor.com/news/release-25-01-highlights/ diagnostics section
