@@ -80,7 +80,7 @@ $programsList = @(
     "make", 
     #### Python
     "python",
-    "extras/miniconda3",
+    # "extras/miniconda3",
     # Replace pipx with uv
     # "pipx",
     ##### Python package, project, tool manager
