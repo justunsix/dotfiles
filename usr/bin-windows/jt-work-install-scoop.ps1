@@ -15,6 +15,7 @@ $programsList = @(
     "eza",
     "bat",
     "less",
+    "zoxide",
     ### lg optional for nvim frameworks
     "extras/lazygit",
     "bleachbit",
@@ -72,6 +73,7 @@ $programsList = @(
     "keepassxc",
     ## DevOps    
     "vscode",
+    "mremoteng",
     # "pycharm",
     "helix",
     ### Languages    
@@ -84,8 +86,8 @@ $programsList = @(
     ##### Python package, project, tool manager
     "uv",
     #### Java
-    "java/temurin-lts-jdk",    
-    "maven",
+    # "java/temurin-lts-jdk",    
+    # "maven",
     #### JavaScript / TypeScript
     "nodejs",
     #### IAC
@@ -106,8 +108,6 @@ $programsList = @(
     ### Emacs and Supporting Programs
     "emacs",
     "pandoc",
-    "mremoteng",
-    "zoxide",
     #### For use with Emacs diff
     "diffutils",
     #### Shellcheck used by Emacs Flymake for shell scripts by default - Emacs 29.1
