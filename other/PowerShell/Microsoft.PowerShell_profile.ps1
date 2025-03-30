@@ -4,6 +4,8 @@
 # Managed by Ansible
 
 # Variables
+# Disable telemetry
+$env:POWERSHELL_TELEMETRY_OPTOUT = 1
 $env:EDITOR = "hx"
 ## kubectl editor
 $env:KUBE_EDITOR = "hx"
