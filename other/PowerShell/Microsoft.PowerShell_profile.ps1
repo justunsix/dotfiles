@@ -40,7 +40,7 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 if (Get-Command "zoxide.exe" -ErrorAction SilentlyContinue) {
     Invoke-Expression (& {
             $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-													 (zoxide init --hook $hook powershell | Out-String)
+            (zoxide init --hook $hook powershell | Out-String)
         })
 }
 
@@ -80,7 +80,6 @@ Set-Alias -Name k -Value kubectl
 Set-Alias -Name lg -Value lazygit
 # which / type
 Set-Alias -Name type -Value Get-Command
-Set-Alias -Name rm -Value "coreutils rm"
 
 ### Git Repositories checker
 function jgt {
