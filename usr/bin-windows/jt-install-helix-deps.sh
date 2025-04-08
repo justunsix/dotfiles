@@ -5,4 +5,5 @@
 
 scoop install main/marksman
 npm i -g prettier
+npm i -g bash-language-server
 pipx install pyright ruff black
