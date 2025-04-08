@@ -63,9 +63,10 @@ $programsList = @(
     "starship",
     ## Office, Productivity
     "peazip",
-    "plantuml",    
+    "plantuml",
     "draw.io",
     "autohotkey",
+    "okular",
     ## Media
     "vlc",
     ## Security
