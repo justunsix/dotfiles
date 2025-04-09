@@ -122,7 +122,7 @@ $programsList = @(
     #### for telescope fzf native
     "cmake",
     #### For Neovim and Emacs org-roam SQLite
-    "gcc",    
+    "gcc"
     #### Astronvim Supporting Programs
     # "win32yank",
     # "tree-sitter"
