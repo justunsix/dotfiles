@@ -38,6 +38,8 @@ end
 if type -q carapace
     # https://carapace-sh.github.io/carapace-bin/setup.html
     set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense' # optional
+    # With fish shell With 4.0b1 onwards the following workaround is not needed anymore
+    # https://github.com/fish-shell/fish-shell/issues/6716
     mkdir -p ~/.config/fish/completions
     carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
     carapace _carapace | source
