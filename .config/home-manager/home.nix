@@ -41,6 +41,8 @@
     dogdns
     # Fonts
     iosevka
+    ## Default font for Doom Emacs
+    jetbrains-mono
     ## Starship prompt, eza nerd font
     nerd-fonts.fira-code
     source-code-pro
