@@ -41,9 +41,10 @@
     dogdns
     # Fonts
     iosevka
+    ## Starship prompt, eza nerd font
+    nerd-fonts.fira-code
     source-code-pro
-    # Even though installed by apt, require for program like exa
-    fira-code
+    nerd-fonts.jetbrains-mono
     # File Management
     vcstool
     gfold
