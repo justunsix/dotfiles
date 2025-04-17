@@ -175,5 +175,7 @@ else {
   Write-Host "= Could not find $lazyvim_extras_config"
 }
 
-# Disable auto-activation of base conda environment
-conda config --set auto_activate_base false
+if (Get-Command "conda.exe" -ErrorAction SilentlyContinue) {
+  # Disable auto-activation of base conda environment
+  conda config --set auto_activate_base false
+}
