@@ -2,7 +2,7 @@
 # name: src-plantuml
 # key: <plant
 # --
-#+begin_src plantuml :file plantuml-...png
+#+begin_src plantuml :file ../media/plantuml-...png
   @startuml
 	$0
   @enduml
