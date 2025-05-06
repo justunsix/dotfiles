@@ -40,3 +40,8 @@ hidden = false
 # Maps `jk` to exit insert mode
 # per https://docs.helix-editor.com/remapping.html
 j = { k = "normal_mode" } 
+
+[keys.normal]
+# Buffer movement, inspired by Lazyvim
+H = ":buffer-previous"
+L = ":buffer-next"
