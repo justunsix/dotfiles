@@ -4,7 +4,7 @@
 alias jgs="jt-gs.sh"
 alias jgt="gfold | rg -e unclean -e unpushed || true"
 alias jgc="jt-gc.sh"
-alias jvcs='vcs status $HOME/Code | rg -e modified -e ==='
+alias jvcs='vcs status $HOME/Code | rg -e modified -e === -e Untracked'
 
 # todotxt
 alias t='todo.sh -d $HOME/.config/todotxt-cli/todo.cfg'

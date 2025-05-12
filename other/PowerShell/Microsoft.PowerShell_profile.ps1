@@ -88,7 +88,7 @@ function jgt {
 
 ### Git Repositories checker detailed
 function jvcs {
-    vcs status $env:USERPROFILE\Code | rg -e modified -e ===
+    vcs status $env:USERPROFILE\Code | rg -e modified -e === -e Untracked
 }
 
 ### eza

@@ -94,7 +94,7 @@ def --env y [...args] {
 # Check Git repositories for pending changes
 def jvcs [] {
     let codedir = [$env.HOME, '/Code'] | str join
-    vcs status $codedir | rg -e modified -e ===
+    vcs status $codedir | rg -e modified -e === -e Untracked
 }
 
 # Check Git repositories with unpushed or un committed changes
