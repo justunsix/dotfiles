@@ -32,6 +32,21 @@ clean_venvs() {
   echo "$venv_dirs" | xargs rm -rf
   echo "All specified 'venv' directories have been removed."
 }
+
+if command -v apt >/dev/null; then
+
+  write_host_with_timestamp "Clear apt cache"
+  apt clean
+
+fi
+
+if command -v pacman >/dev/null; then
+
+  write_host_with_timestamp "Clear pacman cache"
+  pacman -Sc --noconfirm
+
+fi
+
 # Clean up extra personal files such as:
 # - Old nvm nodejs version
 
