@@ -56,7 +56,7 @@ $programsList = @(
     "dog",
     "extras/wezterm",
     "extras/carapace-bin",
-    "cygwin",
+    # "cygwin",
     "msys2",
     "nu",
     ### Prompt
@@ -94,7 +94,7 @@ $programsList = @(
     #### IAC
     "terraform",      
     #### VS Code Polyglot literate programming
-    "dotnet-sdk",
+    # "dotnet-sdk",
     #### k8s
     "kubectl",
     "azure-kubelogin",
