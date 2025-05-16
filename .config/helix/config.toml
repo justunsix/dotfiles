@@ -8,6 +8,10 @@ bufferline = "multiple"
 end-of-line-diagnostics = "hint"
 # Hightlight background of line that cursor is on
 cursorline = true
+# Read from the system clipboard instead of other registers
+# so things like paste, yank will use clipboard
+# https://github.com/helix-editor/helix/issues/2038
+default-yank-register = "+"
 
 [editor.lsp]
 # Inline hints
