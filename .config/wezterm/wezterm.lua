@@ -20,9 +20,9 @@ end
 -- For example, changing the color scheme:
 -- config.color_scheme = 'AdventureTime'
 
--- On Windows, add PowerShell and pwsh to launcher, set powershell as default shell
+-- On Windows, add PowerShell and pwsh to launcher, set default shell
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-	 config.default_prog = { 'pwsh.exe' }
+	 config.default_prog = { 'nu.exe' }
 	 config.launch_menu = {}
 	 table.insert(config.launch_menu, { label = 'PowerShell -NoProfile', args = {'powershell.exe', '-NoProfile', '-NoLogo'},
 	 })
@@ -44,7 +44,7 @@ if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 
 end
 
--- On Linux, add bash and nushell to launch, set bash as default shell
+-- On Linux, add bash and nushell to launch, set default shell
 if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
 	 config.default_prog = { 'bash' }
 	 config.launch_menu = {}
