@@ -45,10 +45,10 @@ process {
 
 		Write-Host "`nRunning topgrade" -ForegroundColor Green
 
-		# Disable vagrant due to large updates, winget due to prompts, update neovim manually
+		# Disable vagrant due to large updates, winget due to prompts, update neovim manually, uv self update
 		if ($runTopgradeWithPS1 -eq "y") {
-      Write-Host "`nwith --disable system vagrant winget vim"
-			topgrade -y --disable system vagrant winget vim
+      Write-Host "`nwith --disable system vagrant winget vim uv"
+			topgrade -y --disable system vagrant winget vim uv
 		}
 		else {
 			Write-Host "`nwith --disable powershell vagrant emacs vim winget" -ForegroundColor Green
