@@ -67,6 +67,7 @@ $programsList = @(
     "draw.io",
     "autohotkey",
     "okular",
+    "espanso",
     ## Media
     "vlc",
     ## Security

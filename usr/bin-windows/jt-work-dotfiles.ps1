@@ -59,6 +59,7 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\AppData\Roaming\topgrade",
   "$env:USERPROFILE\AppData\Roaming\yazi\config",
   "$env:USERPROFILE\usr\bin"
+  "$env:USERPROFILE\AppData\Roaming\espanso,
 )
 
 # Array of dotfiles to synchronize with tuples of source and destination
@@ -71,6 +72,7 @@ $dotfiles_to_be_synchronized = @(
 		("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
 		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
+		("$env:USERPROFILE\Code\dotfiles\.config\espanso", "$env:USERPROFILE\AppData\Roaming"),
 		("$env:USERPROFILE\Code\dotfiles\.gitconfig", "$env:USERPROFILE"),
 		("$env:USERPROFILE\Code\dotfiles\usr\bin-windows\*", "$env:USERPROFILE\usr\bin"),
     ("$env:USERPROFILE\Code\dotfiles\.config\broot\*", "$env:USERPROFILE\AppData\Roaming\dystroy\broot\config"),
