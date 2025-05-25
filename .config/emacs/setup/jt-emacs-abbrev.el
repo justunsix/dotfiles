@@ -24,24 +24,6 @@
 ;;-*-coding: utf-8;-*-
 (define-abbrev-table 'global-abbrev-table
   '(
-    ;; -- Common words
-    ("za" "and" nil :count 0)
-    ("zr" "are" nil :count 0)
-    ("zu" "you" nil :count 0)
-    ("wd" "would" nil :count 0)
-    ("wc" "which" nil :count 0)
-    ("zl" "will" nil :count 0)
-    ("zw" "with" nil :count 0)
-    ("ur" "your" nil :count 0)
-    ("zs" "this" nil :count 0)
-    ("zt" "the" nil :count 0)
-    ("tt" "that" nil :count 0)
-    ("z4" "for" nil :count 0)
-    ;; - from
-    ;; - has/have
-    ;; - the
-    ;; - our
-
     ;; English words or names using
     ;; Teeline rules
     ("avlble" "available" nil :count 0)
@@ -80,25 +62,45 @@
     ("snkrs" "sneakers" nil :count 0)
     ("wtchng" "watching" nil :count 0)
 
+    ;; Snippets below replaced by espanso
+    ;;
+    ;; -- Common words
+    ;; ("za" "and" nil :count 0)
+    ;; ("zr" "are" nil :count 0)
+    ;; ("zu" "you" nil :count 0)
+    ;; ("wd" "would" nil :count 0)
+    ;; ("wc" "which" nil :count 0)
+    ;; ("zl" "will" nil :count 0)
+    ;; ("zw" "with" nil :count 0)
+    ;; ("ur" "your" nil :count 0)
+    ;; ("zs" "this" nil :count 0)
+    ;; ("zt" "the" nil :count 0)
+    ;; ("tt" "that" nil :count 0)
+    ;; ("z4" "for" nil :count 0)
+    ;; - from
+    ;; - has/have
+    ;; - the
+    ;; - our
+
     ;; -- Domain specific words or abbreviations
     ;; Technology
-    ("ZMS" "Microsoft" nil :count 0)
-    ("AZ" "Azure" nil :count 0)
-    ("ZAI" "artificial intelligence" nil :count 0)
-    ;; Sports
-    ("photog" "photographer" nil :count 0)
+    ;; ("ZMS" "Microsoft" nil :count 0)
+    ;; ("AZ" "Azure" nil :count 0)
+    ;; ("ZAI" "artificial intelligence" nil :count 0)
+    ;; ;; Sports
+    ;; ("photog" "photographer" nil :count 0)
 
-    ;; -- Custom Abbreviations
-    ("GF" "girlfriend" nil :count 0)
-    ("OPP" "opportunity" nil :count 0)
-    ("REQS" "requirements" nil :count 0)
+    ;; ;; -- Custom Abbreviations
+    ;; ("GF" "girlfriend" nil :count 0)
+    ;; ("OPP" "opportunity" nil :count 0)
+    ;; ("REQS" "requirements" nil :count 0)
 
-    ;; --- Countries
-    ("ZAUS" "australia" nil :count 0)
-    ("ZCAD" "canada" nil :count 0)
-    ("ZJAP" "japan" nil :count 0)
-    ("ZPHIL" "philippines" nil :count 0)
-    ("ZRUS" "russia" nil :count 0)
+    ;; ;; --- Countries
+    ;; ("ZAUS" "australia" nil :count 0)
+    ;; ("ZCAD" "canada" nil :count 0)
+    ;; ("ZJAP" "japan" nil :count 0)
+    ;; ("ZPHIL" "philippines" nil :count 0)
+    ;; ("ZRUS" "russia" nil :count 0)
 
     ))
 
