@@ -57,9 +57,10 @@
     lazygit
     kondo
     broot
-    # System Monitors
+    # System and Monitors
     btop
     procs
+    espanso
     ## bottom aka btm
     ## bottom
     # Terminal

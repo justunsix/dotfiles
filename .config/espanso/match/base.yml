@@ -1,0 +1,112 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
+
+  # But matches can also be dynamic:
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+
+    # Shorthand -  Use modified Teeline shorthand for typed text
+    # https://www.wikihow.com/Write-Shorthand#Teeline-Shorthand
+    # Stage 1.
+    # - Leave out
+    #   - Middle vowels (AEIOU)
+    #   - Double vowels
+    #   - Double consonants
+    # - Keep vowels at the beginning and end of a word
+    # Stage 2.
+    # - Exclude silent letters
+    # - Use brief forms for common words
+    # - Use abbreviations
+
+    ## Common words
+  - trigger: "aa"
+    replace: "and"
+  - trigger: "zr"
+    replace: "are"
+  - trigger: "zu"
+    replace: "you"
+  - trigger: "wd"
+    replace: "would"
+  - trigger: "zl"
+    replace: "will"
+  - trigger: "ur"
+    replace: "your"
+
+  - trigger: "wc"
+    replace: "which"
+  - trigger: "zw"
+    replace: "with"
+  - trigger: "zs"
+    replace: "this"
+  - trigger: "zt"
+    replace: "the"
+  - trigger: "tt"
+    replace: "that"
+  - trigger: "z4"
+    replace: "for"
+    # - from
+    # - has/have
+    # - our
+
+  # Short forms, acronyms
+  ## Technology
+  - trigger: "Az."
+    replace: "Azure"
+  - trigger: "MS."
+    replace: "Microsoft"
+  - trigger: "AI."
+    replace: "artificial intelligence"
+
+  ## Sports
+  - trigger: "photog"
+    replace: "photographer"
+
+  ## Everyday language
+  - trigger: "GF."
+    replace: "girlfriend"
+  - trigger: "OPP."
+    replace: "opportunity"
+  - trigger: "REQS."
+    replace: "requirements"
+
+  ## Countries
+  - trigger: "CAN."
+    replace: "canada"
+  - trigger: "JAP."
+    replace: "japan"
+  - trigger: "RUS."
+    replace: "russia"
+
+  # And much more! For more information, visit the docs: https://espanso.org/docs/
