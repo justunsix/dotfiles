@@ -21,6 +21,7 @@ List of folders and dotfiles in them:
   - `dunst/` - [dunst](https://dunst-project.org/) Notification daemon, for use
     with i3
   - `emacs/` - [Emacs](https://www.gnu.org/software/emacs/) editor
+  - `espanso/` - [Espanso](https://espanso.org/) text expander
   - `fish/` - [Fish](https://fishshell.com/) shell
   - `fontconfig/conf.d/` - Fonts managed by
     [Nix package manager](https://nixos.org/)
@@ -114,7 +115,7 @@ List of folders and dotfiles in them:
   - [Emacs](https://www.gnu.org/software/emacs/) with
     [Doom Framework](https://github.com/doomemacs/doomemacs)
   - [Visual Studio Code](https://code.visualstudio.com/)
-  - [neovim](https://neovim.io/)
+  - [Neovim](https://neovim.io/) with [LazyVim distribution](https://www.lazyvim.org/)
   - [Helix](https://helix-editor.com/)
 - Video player: [mpv](https://mpv.io/) and [vlc](https://www.videolan.org/vlc/)
 
@@ -134,16 +135,17 @@ List of folders and dotfiles in them:
   [Home Manager using nix](https://github.com/nix-community/home-manager)
 - File Explorer, Directory Navigator: [Broot](https://dystroy.org/broot/),
   [Dolphin File Manager](https://apps.kde.org/dolphin/), [Yazi](https://yazi-rs.github.io/)
+- Text Expander: [Espanso](https://espanso.org/)
 
 ### Operating System Compatibility
 
 - Most software listed above runs cross-platform on Linux, Windows, and macOS
-  and can use the same configuration files (dotfiles). The dotfiles are
+  and can use the same configuration files (also called dotfiles). The dotfiles are
   regularly tested on Linux and Windows using latest stable versions of
   software.
 - For Linux / Unix only software, it can be run on Windows using Windows
-  Subsystem for Linux (WSL), Cygwin, and/or MSYS on Windows (examples: GNOME,
-  i3, rofi, fish, tmux, dunst, home manager).
+  Subsystem for Linux (WSL), Cygwin, and/or MSYS2 on Windows (examples: Dolphin,
+  GNOME, i3, rofi, fish, tmux, dunst, home manager).
 
 ## How Dotfiles are Managed
 
