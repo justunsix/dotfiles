@@ -57,6 +57,8 @@
     lazygit
     kondo
     broot
+    # Web
+    lynx
     # System and Monitors
     btop
     procs
