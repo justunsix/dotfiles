@@ -183,10 +183,6 @@ if [ -d "$HOME/.nix-profile/bin" ]; then
   export NIXPKGS_ALLOW_UNFREE=1
 fi
 
-if [ -d "$HOME/usr/bin/todotxt-cli" ]; then
-  PATH="$HOME/usr/bin/todotxt-cli:$PATH"
-fi
-
 if [ -d "$HOME/usr/bin" ]; then
   PATH="$HOME/usr/bin:$PATH"
 fi

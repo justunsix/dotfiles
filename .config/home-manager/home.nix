@@ -59,6 +59,8 @@
     broot
     # Web
     lynx
+    # Productivity and Tasks
+    todo-txt-cli
     # System and Monitors
     btop
     procs
@@ -168,8 +170,6 @@
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
 
-    # Productivity and Tasks
-    # super-productivity
     # Graphics and Diagrams
     # gimp
     # inkscape
