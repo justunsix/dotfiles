@@ -36,7 +36,7 @@ clean_venvs() {
 if command -v apt >/dev/null; then
 
   write_host_with_timestamp "Clear apt cache"
-  apt clean
+  sudo apt clean
 
 fi
 
