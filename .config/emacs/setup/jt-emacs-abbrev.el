@@ -28,6 +28,7 @@
     ;; Teeline rules
     ("avlble" "available" nil :count 0)
     ("bbstr" "babysitter" nil :count 0)
+    ("bthrm" "bathroom" nil :count 0)
     ("cld" "cloud" nil :count 0)
     ("dwnld" "download" nil :count 0)
     ("eltr" "electro" nil :count 0)
