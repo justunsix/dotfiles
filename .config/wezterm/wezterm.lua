@@ -52,8 +52,6 @@ if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
 	 })
 	 table.insert(config.launch_menu, { label = 'nushell', args = {'nu'},
 	 })
-	 table.insert(config.launch_menu, { label = 'fish', args = {'fish'},
-	 })
 end
 
 -- Enable the scrollbar.
