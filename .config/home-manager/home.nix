@@ -33,12 +33,10 @@
     atuin
     carapace
     rofi
-    rename
-    navi
     fzf
     ## rg optional for nvim and emacs frameworks
     ripgrep
-    dogdns
+    doggo
     # Fonts
     iosevka
     ## Default font for Doom Emacs
