@@ -45,6 +45,9 @@ $programsList = @(
     ## Web
     "firefox",
     ## Fonts
+    ### For general, emacs use
+    "nerd-fonts/JetBrains-Mono",
+    ### Patched for alacritty
     "nerd-fonts/JetBrainsMono-NF-Mono",
     ## OCR
     "capture2text",
