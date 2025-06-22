@@ -45,7 +45,7 @@ $programsList = @(
     ## Web
     "firefox",
     ## Fonts
-    "nerd-fonts/JetBrains-Mono",
+    "nerd-fonts/JetBrainsMono-NF-Mono",
     ## OCR
     "capture2text",
     ## Shell / Terminal

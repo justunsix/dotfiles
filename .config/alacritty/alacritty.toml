@@ -1,6 +1,6 @@
 # Windows configuration location: %APPDATA%\alacritty\
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "JetBrainsMono NFM"
 style = "Regular"
 
 [terminal]
