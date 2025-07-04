@@ -144,4 +144,4 @@ uv tool install visidata
 uv tool install vcstool
 
 # Yazi theme
-ya pack -a yazi-rs/flavors:catppuccin-mocha
+ya pkg -a yazi-rs/flavors:catppuccin-mocha
