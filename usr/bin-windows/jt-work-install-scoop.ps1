@@ -145,5 +145,8 @@ Invoke-Expression "scoop install $programs"
 uv tool install visidata
 uv tool install vcstool
 
+# npm installs
+npm install -g prettier
+
 # Yazi theme
 ya pkg add yazi-rs/flavors:catppuccin-mocha
