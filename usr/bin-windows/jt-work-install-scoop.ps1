@@ -121,6 +121,8 @@ $programsList = @(
     "imagemagick",
     #### Emacs Doom Framework
     "llvm",
+    #### Spell check
+    "aspell",
     ### Neovim and Supporting Programs
     "neovim",
     #### for telescope fzf native
