@@ -39,6 +39,7 @@ $programsList = @(
     # "bottom",
     ## Media
     "figma",
+    "extras/audacity",
     # "obs-studio",
     # "gimp",
     # "inkscape",
