@@ -25,9 +25,9 @@ return {
 				org_startup_folded = "inherit",
 				-- Enter in insert mode will always do org meta return
 				-- per fix in above comments
-				mappings = {
-					org_return_uses_meta_return = true,
-				},
+				-- mappings = {
+				--  org_return_uses_meta_return = true,
+				-- },
 			})
 		end,
 	},
