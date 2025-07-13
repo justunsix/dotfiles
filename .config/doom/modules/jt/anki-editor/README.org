@@ -1,0 +1,8 @@
+#+title:    :jt anki-editor
+#+subtitle: Making Anki cards with Org Mode
+#+created:  July 13, 2025
+#+since:    N/A
+
+* Description :unfold:
+
+anki-editor is an Emacs minor mode for making Anki cards with Org Mode

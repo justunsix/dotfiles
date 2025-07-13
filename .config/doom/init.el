@@ -202,5 +202,6 @@
        doomconfig             ; Post configuration for Doom framework packages
        hyperbole              ; Everyday Hypertextual Information Manager
        org-web-tools          ; Get and process web page content into Org-mode
+	   anki-editor            ; Making Anki cards with Org Mode
        (:if IS-LINUX music)   ; Listen to music
        )
