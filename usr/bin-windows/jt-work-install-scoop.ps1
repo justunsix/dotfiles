@@ -19,7 +19,6 @@ $programsList = @(
     ### lg optional for nvim frameworks
     "extras/lazygit",
     "bleachbit",
-    "ccleaner",
     "fzf",
     ### fd optional for nvim, emacs frameworks
     "fd",
