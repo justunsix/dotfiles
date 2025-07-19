@@ -154,7 +154,6 @@
        ;;ocaml             ; an objective camel
        (org                ; organize your plain life in plain text
         +roam2
-        +pandoc
         )
        ;;php               ; perl's insecure younger brother
        plantuml            ; diagrams for confusing people more
@@ -202,6 +201,6 @@
        doomconfig             ; Post configuration for Doom framework packages
        hyperbole              ; Everyday Hypertextual Information Manager
        org-web-tools          ; Get and process web page content into Org-mode
-	   anki-editor            ; Making Anki cards with Org Mode
+       anki-editor            ; Making Anki cards with Org Mode
        (:if IS-LINUX music)   ; Listen to music
        )
