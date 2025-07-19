@@ -142,7 +142,7 @@
     tflint
     ## Shell/Bash
     ### Bash LSP
-    nodePackages.bash-language-server
+    bash-language-server
     #### Shellcheck used by Emacs Flymake for shell scripts by default - Emacs 29.1
     shellcheck
     ### Shell formatter
