@@ -14,7 +14,7 @@ if (Test-Path ~\.config\emacs\.local\cache) {
     Remove-Item -Path ~\.config\emacs\.local\cache\savehist -Force 
 }
 
-if (Test-Path ~\.config\emacs\bin\doom.cmd) {
+if (Test-Path ~\.config\emacs\bin\doom) {
     Write-HostWithTimestamp "Cleaning Doom Emacs Packages and complete Emacs Cache"
     Write-Host "Warning: Doom clean takes a while, cleaning Emacs cache will remove saved project, recent and files history"
     $confirmation = Read-Host "Continue? (y/n)"
