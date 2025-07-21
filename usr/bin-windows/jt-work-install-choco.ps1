@@ -3,6 +3,5 @@
 choco install `
 microsoft-windows-terminal `
 veracrypt `
-hunspell.portable `
 virtualbox `
 -y
