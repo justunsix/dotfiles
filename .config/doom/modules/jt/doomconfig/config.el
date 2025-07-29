@@ -41,13 +41,7 @@
 
 ;; Spelling
 (after! flyspell
-  (setenv "LANG" "en_GB.UTF-8")
-  ;; If on Windows
-  (when (eq system-type 'windows-nt)
-    (setq ispell-hunspell-dict-paths-alist '(("en_US" "C:/Hunspell/en_US.aff" "C:/Hunspell/en_US.dic")
-					     ("en_GB" "C:/Hunspell/en_GB.aff" "C:/Hunspell/en_GB.dic")
-					     ))
-    )
+  (setenv "LANG" "en_CA.UTF-8")
   )
 
 ;; Make evil snipe search visible buffer

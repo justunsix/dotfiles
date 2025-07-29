@@ -6,8 +6,6 @@ Unless another license is indicated in certain directories and files such as:
   - todotxt configurations and actions in folder: .config/todotxt-cli
 - GNU General Public License v2.0
   - mpv scripts in folder: .config/mpv/scripts
-- Mozilla Public License Version 2.0
-  - Hunspell dictionaries in folder: other/Hunspell 
 - Other
   - Fonts in folder: .fonts
 
