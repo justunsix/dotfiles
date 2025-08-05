@@ -44,6 +44,13 @@
   (setenv "LANG" "en_CA.UTF-8")
   )
 
+;; Spelling - Completion
+(after! cape
+  ;; If on Windows where /usr/share/dict/words is not available.
+  (when (eq system-type 'windows-nt)
+    (setq cape-dict-file "~/.config/mydict/words.txt")
+    ))
+
 ;; Make evil snipe search visible buffer
 (after! evil-snipe
   (setq! evil-snipe-scope 'whole-visible)
