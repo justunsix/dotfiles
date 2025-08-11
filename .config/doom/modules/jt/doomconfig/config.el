@@ -29,6 +29,9 @@
   (setq
    org-confirm-babel-evaluate t)
 
+  ;; Set file types that will open in Emacs from org file links
+  (add-to-list 'org-file-apps '("\\.puml\\'" . emacs))
+
   )
 
 (after! org-roam
