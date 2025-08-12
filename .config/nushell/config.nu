@@ -75,6 +75,7 @@ $env.config.color_config = {
 # Aliases
 alias lg = lazygit
 alias e = eza -alh
+alias k = kubectl
 
 #####################
 # My Custom Commands
