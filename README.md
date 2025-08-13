@@ -143,9 +143,8 @@ List of folders and dotfiles in them:
   and can use the same configuration files (also called dotfiles). The dotfiles are
   regularly tested on Linux and Windows using latest stable versions of
   software.
-- For Linux / Unix only software, it can be run on Windows using Windows
-  Subsystem for Linux (WSL), Cygwin, and/or MSYS2 on Windows (examples: Dolphin,
-  GNOME, i3, rofi, fish, tmux, dunst, home manager).
+- For software usually only on Linux / Unix, it can be run on Windows using Windows
+  Subsystem for Linux (WSL), Cygwin, and/or MSYS2 on Windows
 
 ## How Dotfiles are Managed
 
