@@ -105,6 +105,7 @@ $programsList = @(
     "k9s",
     "stern",
     "kubectx",
+    "extras/headlamp",
     #### cloud
     "azure-ps",
     "azure-cli",
