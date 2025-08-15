@@ -117,8 +117,10 @@ $programsList = @(
     ### Emacs and Supporting Programs
     "emacs",
     "pandoc",
-    #### For use with Emacs diff
+    #### For use with Emacs diff, grep, gzip for undo
     "diffutils",
+    "grep",
+    "gzip",
     #### Shellcheck used by Emacs Flymake for shell scripts by default - Emacs 29.1
     "shellcheck",
     #### Used by org-download for clipboard pasting to org
