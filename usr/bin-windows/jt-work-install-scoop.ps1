@@ -106,6 +106,9 @@ $programsList = @(
     "stern",
     "kubectx",
     "extras/headlamp",
+    "podman",
+    "extras/podman-desktop",
+    "minikube",
     #### cloud
     "azure-ps",
     "azure-cli",
