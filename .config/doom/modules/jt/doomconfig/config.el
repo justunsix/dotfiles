@@ -43,9 +43,11 @@
   )
 
 ;; Spelling
-(after! flyspell
+(after! ispell
   (setenv "LANG" "en_CA.UTF-8")
-  )
+  (when (eq system-type 'windows-nt)
+    (setq ispell-alternate-dictionary "~/.config/mydict/words.txt")
+    ))
 
 ;; Spelling - Completion
 (after! cape
