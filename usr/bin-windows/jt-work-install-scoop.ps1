@@ -105,6 +105,7 @@ $programsList = @(
     "k9s",
     "stern",
     "kubectx",
+    "kubens",
     "extras/headlamp",
     "podman",
     "extras/podman-desktop",
