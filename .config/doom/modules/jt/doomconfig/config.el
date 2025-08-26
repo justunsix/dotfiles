@@ -34,6 +34,13 @@
 
   )
 
+(after! plantuml-mode
+  ;; Enable plantuml-mode for PlantUML files .puml
+  ;; auto-mode-alist already has other PlantUML formats
+  ;; https://github.com/skuro/plantuml-mode
+  (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
+  )
+
 (after! org-roam
   ;; Set org-roam-directory, could be before org-roam loads
   ;; https://github.com/doomemacs/doomemacs/issues/4130
