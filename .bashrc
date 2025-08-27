@@ -197,7 +197,7 @@ export PATH="$HOME/.local/bin::$PATH"
 # * Other Variables
 
 # Set EDITOR environment variable
-export EDITOR="nvim"
+export EDITOR="hx"
 export NVIM_APPNAME="lazyvim"
 # kubectl editor
 export KUBE_EDITOR="nvim"
@@ -264,7 +264,6 @@ if command -v fzf >/dev/null; then
   export FZF_DEFAULT_COMMAND='fd --hidden --type f'
   # --type f = files
   # --hidden = include hidden files
-
 
 fi
 
