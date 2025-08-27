@@ -42,7 +42,7 @@ alias fgrep='fgrep --color=auto'
 
 # fzf
 # shellcheck disable="SC2139"
-alias fe="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs $EDITOR"
+alias fe='fzf --preview "bat --style=numbers --color=always --line-range :500 {}" | xargs "$EDITOR"'
 # shellcheck disable=SC2142
 alias fkill='ps -ef | fzf | awk '\''{print $2}'\'' | xargs kill -9'
 
