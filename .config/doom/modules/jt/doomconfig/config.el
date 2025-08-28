@@ -16,7 +16,8 @@
 
 (after! projectile
   ;; Set this to the folder where you keep your repositories and projects
-  (setq projectile-project-search-path jt/project-search-path)
+  (setq projectile-project-search-path '("~/Code"))
+
   ;; Manually trigger projectile-discover-projects-in-search-path
   ;; to update the project list
   )
