@@ -435,14 +435,18 @@ jt-up() {
 #
 ################################
 
-if command -v fish >/dev/null; then
-  # Go to fish shell on non-login shells:
-  # - The parent process is not fish
-  # - Current shell is running interactively
-  # Used additional IF condition:
-  # - Current shell is the top level shell: && ${SHLVL} == 1
-  #   - Not running a command like `bash -c 'echo foo'`
-  if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]; then
-    fish
-  fi
+if command -v nu >/dev/null; then
+  nu
 fi
+
+# if command -v fish >/dev/null; then
+#   # Go to fish shell on non-login shells:
+#   # - The parent process is not fish
+#   # - Current shell is running interactively
+#   # Used additional IF condition:
+#   # - Current shell is the top level shell: && ${SHLVL} == 1
+#   #   - Not running a command like `bash -c 'echo foo'`
+#   if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]; then
+#     fish
+#   fi
+# fi
