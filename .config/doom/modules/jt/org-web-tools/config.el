@@ -1,5 +1,6 @@
 ;; from modules/jt/org-web-tools/config.el
 (use-package! org-web-tools
+  :defer t
   :commands
   (org-web-tools-insert-link-for-url
    org-web-tools-insert-web-page-as-entry
