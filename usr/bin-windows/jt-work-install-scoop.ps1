@@ -67,6 +67,8 @@ $programsList = @(
     ## Office, Productivity
     "peazip",
     "plantuml",
+    ### graphiz is needed by plantuml for diagram generation
+    "graphviz",
     "draw.io",
     "autohotkey",
     "okular",
@@ -114,7 +116,9 @@ $programsList = @(
     "azure-ps",
     "azure-cli",
     #### SQL
-    "usql"    
+    "usql"
+    #### sh - for use with Emacs 
+    "shfmt",
     ### Emacs and Supporting Programs
     "emacs",
     "pandoc",
