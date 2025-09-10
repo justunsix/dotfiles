@@ -98,9 +98,10 @@
 
 ;; ** Key maps
 
-;; Per https://github.com/doomemacs/doomemacs/issues/1643#issuecomment-519288725
-;; and callable function map!
-;; Replace g w > evil-fill with avy go to word in normal mode
-(map!
- :n "g w" #'avy-goto-word-1
- )
+(after! evil
+  ;; Per https://github.com/doomemacs/doomemacs/issues/1643#issuecomment-519288725
+  ;; and callable function map!
+  ;; Replace g w > evil-fill with avy go to word in normal mode
+  (map!
+   :n "g w" #'avy-goto-word-1
+   ))
