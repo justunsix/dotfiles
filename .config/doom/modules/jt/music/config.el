@@ -1,5 +1,5 @@
 ;; from modules/jt/music/config.el
 (use-package! bongo
-  defer: t
+  :defer t
   :commands bongo
   )
