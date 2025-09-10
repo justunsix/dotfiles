@@ -8,6 +8,7 @@
     "lazyvim.plugins.extras.lang.nix",
     "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.lang.rust",
+    "lazyvim.plugins.extras.lang.sql",
     "lazyvim.plugins.extras.lang.terraform",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.lang.yaml",
@@ -20,4 +21,3 @@
   },
   "version": 8
 }
-
