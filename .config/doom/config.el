@@ -46,11 +46,6 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/.cache/org")
 
-;; Enable jk as escape from Evil insert mode
-;; Solution from: https://github.com/doomemacs/doomemacs/issues/8337
-(after! evil-escape
-  (setq evil-escape-key-sequence "jk"))
-
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;

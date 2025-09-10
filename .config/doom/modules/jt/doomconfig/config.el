@@ -69,6 +69,11 @@
   (setq! evil-snipe-scope 'whole-visible)
   )
 
+;; Enable jk as escape from Evil insert mode
+;; Solution from: https://github.com/doomemacs/doomemacs/issues/8337
+(after! evil-escape
+  (setq evil-escape-key-sequence "jk"))
+
 (after! magit
   ;; For use with magit-list-repositories
   ;; - List of directories that are or contain Git repositories.
