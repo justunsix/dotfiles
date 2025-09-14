@@ -96,6 +96,23 @@
     tealdeer
     ## Prettier formatter multi-language
     nodePackages.prettier
+    ## English
+    ### Prose English linter for Markdown, Org
+    proselint
+    ### Grammer checker (US English)
+    ltex-ls-plus
+
+    ## Lua
+    lua-language-server
+    ## Markdown LSP
+    marksman
+    ## Nix
+    ### Nix LSP
+    nil
+    ### Nix formatter
+    nixpkgs-fmt
+    #### Older stable formatter
+    nixfmt-classic
     ## Node
     ### LTS as of 2025-01
     nodejs_22
@@ -105,48 +122,7 @@
     ## pandoc
     ### Used in document conversion, Emacs exports
     pandoc
-    ## Python
-    ### Instead use manually installed miniconda
-    ### conda
-    ## Rust
-    ### Debugger for Rust / C / C++
-    lldb
-    ### Key components from rustup https://rust-lang.github.io/rustup-components-history/
-    ### Defer to rustup based installs
-    # cargo
-    # rustc
-    # clippy
-    #### Rust watch source like tests
-    # cargo-watch
-    #### Rust LSP
-    # rust-analyzer
-    #### Rust formatter
-    # rustfmt
-    ## Nix
-    ### Nix LSP
-    nil
-    ### Nix formatter
-    nixpkgs-fmt
-    #### Older stable formatter
-    nixfmt-classic
-    ## Markdown LSP
-    marksman
-    ## Prose English linter for Markdown, Org
-    proselint
-    ## Grammer checker (US English)
-    ltex-ls-plus
-    ## Terraform
-    ### Terraform LSP
-    terraform-ls
-    ### Terraform Linter
-    tflint
-    ## Shell/Bash
-    ### Bash LSP
-    bash-language-server
-    #### Shellcheck used by Emacs Flymake for shell scripts by default - Emacs 29.1
-    shellcheck
-    ### Shell formatter
-    shfmt
+
     ## Python
     ### Python LSP (or basedpyright later)
     pyright
@@ -154,14 +130,46 @@
     black
     ### Python linter
     ruff
+
+    ## Rust
+    ### Debugger for Rust / C / C++
+    lldb
+    ### Key components from rustup https://rust-lang.github.io/rustup-components-history/
+    ### Defer to rustup based installs for:
+    ### cargo
+    ### rustc
+    ### clippy
+    #### Rust watch source like tests
+    ### cargo-watch
+    #### Rust LSP
+    ### rust-analyzer
+    #### Rust formatter
+    ### rustfmt
+
+    ## Shell/Bash
+    ### Bash LSP
+    bash-language-server
+    #### Shellcheck used by Emacs Flymake for shell scripts by default - Emacs 29.1
+    shellcheck
+    ### Shell formatter
+    shfmt
+
+    ## Terraform
+    ### Terraform LSP
+    terraform-ls
+    ### Terraform Linter
+    tflint
+
     ## toml
     taplo
+
     ## yaml / Ansible
     yaml-language-server
     ansible-language-server
 
-    ## Infrastructure as Code
+    # Infrastructure as Code
     distrobox
+
     # Artificial Intelligence
     ollama
 
