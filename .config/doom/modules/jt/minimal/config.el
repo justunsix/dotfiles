@@ -2,6 +2,12 @@
 ;; Minimal configurations that works with default Emacs
 
 
+;; --------------------------------------------------------------------------------
+;; * Overlay  ----------------------------
+;; Optionally load dotfiles overlay Emacs configurations
+(setq env-el-location "~/.config/doom/setup/env.el")
+(if (file-exists-p env-el-location)
+    (load env-el-location))
 ;; * Post Setup  ----------------------------
 (after! projectile
 
@@ -65,10 +71,4 @@
   (if (file-exists-p postsetup-el-location)
       (load postsetup-el-location)
     )
-  ;; --------------------------------------------------------------------------------
-  ;; * Overlay  ----------------------------
-  ;; Optionally load dotfiles overlay Emacs configurations
-  (setq env-el-location "~/.config/doom/setup/env.el")
-  (if (file-exists-p env-el-location)
-      (load env-el-location)
-    )  )
+  )
