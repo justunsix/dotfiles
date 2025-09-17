@@ -139,10 +139,9 @@ $programsList = @(
     #### for telescope fzf native
     "cmake",
     #### For Neovim and Emacs org-roam SQLite
-    "gcc"
-    #### Astronvim Supporting Programs
-    # "win32yank",
-    # "tree-sitter"
+    "gcc",
+    #### nvim-treesitter
+    "tree-sitter"
 )
 
 # Convert programs to be installed by scoop into a single space-separated string
