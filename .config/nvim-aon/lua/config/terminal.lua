@@ -1,6 +1,36 @@
+-- ## Options
+
+-- Open terminal with options
+vim.api.nvim_create_autocmd("TermOpen", {
+  desc = "Open Terminal with custom configuration",
+  group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
+  callback = function()
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+  end,
+})
+-- New terminal as bottom window
+local job_id = 0
+vim.keymap.set("n", "<space>ft", function()
+  -- Open new window, open term, switch to it and set its height
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 15)
+
+  job_id = vim.bo.channel
+end)
+-- Terminal, send commands to terminal from another window
+vim.keymap.set("n", "<space>fT", function()
+  vim.fn.chansend(job_id, { "make\r\n" })
+end)
+
+
 -- In terminal, 2 escapes will return to normal mode
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
+-- ## Floating Terminal
+--
 local state = {
   floating = {
     buf = -1,
