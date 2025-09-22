@@ -53,8 +53,8 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\.config\doom",
   "$env:USERPROFILE\.config\emacs",
   "$env:USERPROFILE\.config\fish"
-  "$env:USERPROFILE\AppData\Local\lazyvim",
   "$env:USERPROFILE\AppData\Local\nvim",
+  "$env:USERPROFILE\AppData\Local\nvim-lazyvim",
   "$env:USERPROFILE\AppData\Roaming\alacritty",
   "$env:USERPROFILE\AppData\Roaming\topgrade",
   "$env:USERPROFILE\AppData\Roaming\yazi\config",
@@ -68,7 +68,7 @@ $dotfiles_to_be_synchronized = @(
 		# ("$env:USERPROFILE\Code\dotfiles\.config\emacs", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\alacritty", "$env:USERPROFILE\AppData\Roaming"),
 		("$env:USERPROFILE\Code\dotfiles\.config\fish", "$env:USERPROFILE\.config"),
-		("$env:USERPROFILE\Code\dotfiles\.config\lazyvim", "$env:USERPROFILE\AppData\Local"),
+		("$env:USERPROFILE\Code\dotfiles\.config\nvim-lazyvim", "$env:USERPROFILE\AppData\Local"),
 		("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
 		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
@@ -168,7 +168,7 @@ else {
 }
 
 # Lazyvim extra config, remove lang.nix
-$lazyvim_extras_config = "$env:USERPROFILE\AppData\Local\lazyvim\lazyvim.json"
+$lazyvim_extras_config = "$env:USERPROFILE\AppData\Local\nvim-lazyvim\lazyvim.json"
 if (Test-Path $lazyvim_extras_config) {
   Write-Host "+c removing lang.nix in $lazyvim_extras_config" 
   (Get-Content $lazyvim_extras_config) | Where-Object { $_ -notmatch 'extras\.lang\.nix' } | Set-Content $lazyvim_extras_config

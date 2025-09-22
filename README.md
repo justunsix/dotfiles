@@ -36,14 +36,14 @@ List of folders and dotfiles in them:
   - `input-remapper/` -
     [input-remapper](https://github.com/sezanzeb/input-remapper) to change input
     behaviour like key remapping
-  - `lazyvim` - [Lazyvim](https://www.lazyvim.org/) Neovim setup
   - `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage parallel
     and commonly executed processes
   - `mpv/` - [mpv](https://mpv.io/) media player
   - `navi/` - [navi](https://github.com/denisidoro/navi/) command line
     cheatsheet tool
   - `nushell/` - [nushell](https://www.nushell.sh/) cross platform shell
-  - `nvim/` - [neovim](https://neovim.io/) editor
+  - `nvim/` - [neovim](https://neovim.io/) editor, kickstart light weight distribution
+  - `nvim-lazyvim` - [Lazyvim](https://www.lazyvim.org/) Neovim setup
   - `rofi/` - [rofi](https://github.com/davatorium/rofi) Application launcher,
     Window switcher for use with i3 and in GNOME
   - `tmux` - [tmux](https://github.com/tmux/tmux/wiki) Terminal Multiplexer

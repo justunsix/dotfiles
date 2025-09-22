@@ -43,7 +43,7 @@ $env.PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT? | default {||
 $env.EDITOR = "hx"
 
 # Set NVIM Framework to use
-$env.NVIM_APPNAME = 'lazyvim'
+$env.NVIM_APPNAME = 'nvim-lazyvim'
 
 # Starship prompt
 mkdir ~/.cache/starship
