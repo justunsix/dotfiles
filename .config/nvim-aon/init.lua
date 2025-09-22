@@ -19,6 +19,8 @@ vim.keymap.set("v", "<space>x", ":lua<CR>")
 -- Quickfix list movement
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
+-- jk --> Escape
+vim.keymap.set("i", "jk", "<Esc>", { silent = true })
 
 -- ## Autocommands
 
@@ -26,38 +28,38 @@ vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
 
 -- ## Terminal
 
 -- Open terminal with options
 vim.api.nvim_create_autocmd("TermOpen", {
-	desc = "Open Terminal with custom configuration",
-	group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
-	callback = function()
-		vim.opt.number = false
-		vim.opt.relativenumber = false
-	end,
+    desc = "Open Terminal with custom configuration",
+    group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
+    callback = function()
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+    end,
 })
 -- New terminal as bottom window
 local job_id = 0
 vim.keymap.set("n", "<space>ft", function()
-	-- Open new window, open term, switch to it and set its height
-	vim.cmd.vnew()
-	vim.cmd.term()
-	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0, 15)
+    -- Open new window, open term, switch to it and set its height
+    vim.cmd.vnew()
+    vim.cmd.term()
+    vim.cmd.wincmd("J")
+    vim.api.nvim_win_set_height(0, 15)
 
-	job_id = vim.bo.channel
+    job_id = vim.bo.channel
 end)
 -- Terminal, send commands to terminal from another window
 vim.keymap.set("n", "<space>fT", function()
-	vim.fn.chansend(job_id, { "make\r\n" })
+    vim.fn.chansend(job_id, { "make\r\n" })
 end)
 
 -- ## Plugins
@@ -81,9 +83,9 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 -- Safely execute immediately
 now(function()
-	vim.o.termguicolors = true
+    vim.o.termguicolors = true
 end)
 now(function()
-	require("mini.statusline").setup()
+    require("mini.statusline").setup()
 end)
 -- ### End nvim-mini setup and mini.nvim modules
