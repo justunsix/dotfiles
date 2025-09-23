@@ -33,116 +33,137 @@ clean_venvs() {
   echo "All specified 'venv' directories have been removed."
 }
 
-if command -v apt >/dev/null; then
+# Clean regular app caches
+clean_app_caches() {
 
-  write_host_with_timestamp "Clear apt cache"
-  sudo apt clean
+  # Clean up extra personal files such as:
+  # - Old nvm nodejs version
 
-fi
-
-if command -v pacman >/dev/null; then
-
-  write_host_with_timestamp "Clear pacman cache"
-  pacman -Sc --noconfirm
-
-fi
-
-# Clean up extra personal files such as:
-# - Old nvm nodejs version
-
-# nvm is a bash function, not a builtin, file or alias
-# remove older nvm versions
-if [ -d "$HOME/.nvm" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
-  write_host_with_timestamp "Clean unused nvm versions"
-  NVM_DIR="$HOME/.nvm"
-  source "$NVM_DIR/nvm.sh"
-  cd ~/.nvm/versions/node
-  ls -A | grep -v $(nvm current) | xargs rm -rf
-fi
-
-if [ -d "$HOME/Code" ]; then
-
-  write_host_with_timestamp "Clean python virtual environments"
-  clean_venvs
-
-  # kondo command exists
-  if command -v kondo >/dev/null; then
-    write_host_with_timestamp "Clean software projects unneeded files"
-    cd "$HOME/Code" && kondo
+  # nvm is a bash function, not a builtin, file or alias
+  # remove older nvm versions
+  if [ -d "$HOME/.nvm" ] && [ -s "$HOME/.nvm/nvm.sh" ]; then
+    write_host_with_timestamp "Clean unused nvm versions"
+    NVM_DIR="$HOME/.nvm"
+    source "$NVM_DIR/nvm.sh"
+    cd ~/.nvm/versions/node
+    ls -A | grep -v $(nvm current) | xargs rm -rf
   fi
 
-fi
+  if [ -d "$HOME/Code" ]; then
 
-# Clean Docker images
-if command -v docker >/dev/null; then
-  # check Docker daemon is running
-  if docker info >/dev/null 2>&1; then
-    write_host_with_timestamp "Clean Docker images"
-    docker system prune -a
-  else
-    echo 'Docker daemon is not running'
+    write_host_with_timestamp "Clean python virtual environments"
+    clean_venvs
+
+    # kondo command exists
+    if command -v kondo >/dev/null; then
+      write_host_with_timestamp "Clean software projects unneeded files"
+      cd "$HOME/Code" && kondo
+    fi
+
   fi
-fi
 
-if command -v yazi >/dev/null; then
-
-  write_host_with_timestamp "Clear yazi cache"
-  yazi --clear-cache
-
-fi
-
-# Clean screenshots
-if [ -d "$HOME/Pictures/Screenshots" ]; then
-  write_host_with_timestamp "Clean screenshots"
-  rm -rf ~/Pictures/Screenshots/*
-fi
-
-# Clean mpv watch information
-if [ -d "$HOME/.config/mpv/watch_later" ] || [ -d "$HOME/.local/state/mpv/watch_later" ]; then
-  write_host_with_timestamp "Clean mpv watch information"
-  rm -rf "$HOME"/.config/mpv/watch_later/*
-  rm -rf "$HOME"/.local/state/mpv/watch_later/*
-fi
-
-# Clean carapace cache
-## Cache contains completers, only needs clear on carapace configuration changes
-if command -v carapace &>/dev/null; then
-  write_host_with_timestamp "Clean carapace cache"
-  carapace --clear-cache
-fi
-
-# Clean uv cache
-if command -v uv &>/dev/null; then
-  write_host_with_timestamp "Clean uv cache"
-  uv cache clean
-fi
-
-# Clean Nix packages
-if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
-  write_host_with_timestamp "Cleaning Nix packages"
-  # Run nix package manager garbage collection
-  # delete generations older than 30 days
-  nix-collect-garbage --delete-older-than 30d
-fi
-
-# Clean Emacs and Doom Packages
-if [ -d "$HOME/.config/emacs/bin" ]; then
-  write_host_with_timestamp "Clean Doom Emacs Packages"
-  cd "$HOME/.config/emacs/bin" && doom gc
-fi
-if [ -d "$HOME/.config/emacs/.local/cache" ]; then
-  write_host_with_timestamp 'Clean non-essential Emacs cache'
-  cd "$HOME/.config/emacs/.local/cache" || exit
-  rm -rf autosave
-  rm -rf org
-  rm -rf undo-fu-session
-  rm -f savehist
-
-  if [ "$1" == "--all" ]; then
-    write_host_with_timestamp "Clean Emacs cache"
-    cd "$HOME/.config/emacs/.local/cache" && rm -rf *
-  else
-    echo 'To clean complete Emacs cache (warning it will remove saved project, recent and files history), run:'
-    echo 'jt-clean-up.sh --all'
+  # Clean Docker images
+  if command -v docker >/dev/null; then
+    # check Docker daemon is running
+    if docker info >/dev/null 2>&1; then
+      write_host_with_timestamp "Clean Docker images"
+      docker system prune -a
+    else
+      echo 'Docker daemon is not running'
+    fi
   fi
+
+  if command -v yazi >/dev/null; then
+
+    write_host_with_timestamp "Clear yazi cache"
+    yazi --clear-cache
+
+  fi
+
+  # Clean screenshots
+  if [ -d "$HOME/Pictures/Screenshots" ]; then
+    write_host_with_timestamp "Clean screenshots"
+    rm -rf ~/Pictures/Screenshots/*
+  fi
+
+  # Clean mpv watch information
+  if [ -d "$HOME/.config/mpv/watch_later" ] || [ -d "$HOME/.local/state/mpv/watch_later" ]; then
+    write_host_with_timestamp "Clean mpv watch information"
+    rm -rf "$HOME"/.config/mpv/watch_later/*
+    rm -rf "$HOME"/.local/state/mpv/watch_later/*
+  fi
+
+  # Clean carapace cache
+  ## Cache contains completers, only needs clear on carapace configuration changes
+  if command -v carapace &>/dev/null; then
+    write_host_with_timestamp "Clean carapace cache"
+    carapace --clear-cache
+  fi
+
+  # Clean uv cache
+  if command -v uv &>/dev/null; then
+    write_host_with_timestamp "Clean uv cache"
+    uv cache clean
+  fi
+
+  # Clean Nix packages
+  if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
+    write_host_with_timestamp "Cleaning Nix packages"
+    # Run nix package manager garbage collection
+    # delete generations older than 30 days
+    nix-collect-garbage --delete-older-than 30d
+  fi
+
+  # Clean Emacs and Doom Packages
+  if [ -d "$HOME/.config/emacs/bin" ]; then
+    write_host_with_timestamp "Clean Doom Emacs Packages"
+    cd "$HOME/.config/emacs/bin" && doom gc
+  fi
+  if [ -d "$HOME/.config/emacs/.local/cache" ]; then
+    write_host_with_timestamp 'Clean non-essential Emacs cache'
+    cd "$HOME/.config/emacs/.local/cache" || exit
+    rm -rf autosave
+    rm -rf org
+    rm -rf undo-fu-session
+    rm -f savehist
+
+  fi
+
+}
+
+# Help
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+
+  echo "Run with no arguments, clean various caches"
+  echo "--all: Remove OS package manager caches, Editor caches"
+  echo '       To clean complete Emacs cache (warning it will remove saved project, recent and files history), run:'
+  echo '       jt-clean-up.sh --all'
+  exit
+
+elif [ "$1" = "--all" ]; then
+
+  if command -v apt >/dev/null; then
+
+    write_host_with_timestamp "Clear apt cache"
+    sudo apt clean
+
+  fi
+
+  if command -v pacman >/dev/null; then
+
+    write_host_with_timestamp "Clear pacman cache"
+    pacman -Sc --noconfirm
+
+  fi
+
+  write_host_with_timestamp "Clean Emacs local files, Run Doom sync after to reinstall"
+  cd "$HOME/.config/emacs/.local/" && rm -rf ./*
+
+  write_host_with_timestamp "Clean Neovim local files"
+  rm -rf ~/.local/share/nvim*
+  rm -rf ~/.local/state/nvim*
+  rm -rf ~/.cache/nvim*
+
 fi
+
+clean_app_caches
