@@ -155,7 +155,7 @@
        (:if IS-LINUX (nix +lsp +treesitter))    ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org                ; organize your plain life in plain text
-        +roam2
+        +roam
         )
        ;;php               ; perl's insecure younger brother
        plantuml            ; diagrams for confusing people more
