@@ -39,6 +39,9 @@ $env.PROMPT_COMMAND_RIGHT = $env.PROMPT_COMMAND_RIGHT? | default {||
 # My Configurations #
 #####################
 
+# Do not show welcome message
+$env.config.show_banner = false
+
 # Set Helix as default editor
 $env.EDITOR = "hx"
 
