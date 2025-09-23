@@ -1,23 +1,27 @@
 -- ## Options
 
+local set = vim.opt
+
 -- Indentation
-vim.opt.shiftwidth = 4
+set.shiftwidth = 4
 -- Use system clipbard
-vim.opt.clipboard = "unnamedplus"
+set.clipboard = "unnamedplus"
 
 -- ## Keymaps, General
 
+local km = vim.keymap
+
 -- Source current file
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
+km.set("n", "<space><space>x", "<cmd>source %<CR>")
 -- Run selections
-vim.keymap.set("n", "<space>x", ":.lua<CR>")
-vim.keymap.set("v", "<space>x", ":lua<CR>")
+km.set("n", "<space>x", ":.lua<CR>")
+km.set("v", "<space>x", ":lua<CR>")
 
 -- Quickfix list movement
-vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
-vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
+km.set("n", "<M-j>", "<cmd>cnext<CR>")
+km.set("n", "<M-k>", "<cmd>cprev<CR>")
 -- jk --> Escape
-vim.keymap.set("i", "jk", "<Esc>", { silent = true })
+km.set("i", "jk", "<Esc>", { silent = true })
 
 -- ## Autocommands
 
