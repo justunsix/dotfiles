@@ -76,10 +76,28 @@ $env.config.color_config = {
 alias lg = lazygit
 alias e = eza -alh
 alias k = kubectl
+alias ff = ^$env.EDITOR (fd --hidden | fzf)
+alias ggs = git status
+alias ggd = git diff
+
+## todotxt
+alias t = todo.sh -d ~/.config/todotxt-cli/todo.cfg
+alias to = todo.sh -d ~/.config/todotxt-cli/todo-work.cfg
 
 #####################
 # My Custom Commands
 # Per https://www.nushell.sh/book/custom_commands.html
+
+def fkill [
+    # process to kill
+    process = "": string
+    ] {
+    if ($process | is-empty) {
+        echo "Process name is required: fkill <process name>"
+    } else {
+        ps | where name =~ $process | first | kill $in.pid -f
+    }
+}
 
 # yazi directory change
 def --env y [...args] {

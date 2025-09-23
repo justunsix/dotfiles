@@ -34,7 +34,6 @@ alias e="eza -alh"
 # alias lt='eza -aT --color=always --group-directories-first' # tree listing
 # alias l.='eza -a | egrep "^\."'
 
-# grep
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
@@ -42,7 +41,7 @@ alias fgrep='fgrep --color=auto'
 
 # fzf
 # shellcheck disable="SC2139"
-alias fe='fzf --preview "bat --style=numbers --color=always --line-range :500 {}" | xargs "$EDITOR"'
+alias ff='fzf --preview "bat --style=numbers --color=always --line-range :500 {}" | xargs "$EDITOR"'
 # shellcheck disable=SC2142
 alias fkill='ps -ef | fzf | awk '\''{print $2}'\'' | xargs kill -9'
 
