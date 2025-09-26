@@ -164,9 +164,8 @@
     ## toml
     taplo
 
-    ## yaml / Ansible
+    ## yaml
     yaml-language-server
-    ansible-language-server
 
     # Infrastructure as Code
     distrobox
