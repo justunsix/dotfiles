@@ -103,6 +103,13 @@
     ### Grammer checker (US English)
     ltex-ls-plus
 
+    ## Go lang
+    go
+    ### Go LSP
+    gopls
+    ### Go coding deps, See Doom Emacs Go module README
+    ### godoc, goimports
+    gotools
     ## Lua
     lua-language-server
     ## Markdown LSP
