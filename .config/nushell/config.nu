@@ -88,9 +88,12 @@ alias to = todo.sh -d ~/.config/todotxt-cli/todo-work.cfg
 # My Custom Commands
 # Per https://www.nushell.sh/book/custom_commands.html
 
+# Kill given process or select process(es) to kill
+#
+# Process to kill is optional. If not provided
+# select the process(es) to be stopped.
 def fkill [
-    # process to kill
-    process = "": string
+    process = "": string   # Process to kill
     ] {
     if ($process | is-empty) {
         echo "Kill a process with fkill <process name> or fkill to select a process"
@@ -115,7 +118,7 @@ def fkill [
     }
 }
  
-# Get Makefile tasks in directory, pick with fzf and run task
+# Get Makefile tasks in directory, pick and run task
 def fm [] {
     # Check if fzf is installed
     if (which fzf | is-empty) {
