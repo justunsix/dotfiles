@@ -77,7 +77,6 @@ alias lg = lazygit
 alias e = eza -alh
 alias k = kubectl
 alias ff = ^$env.EDITOR (fd --hidden | fzf)
-alias fm = fmake.sh
 alias ggs = git status
 alias ggd = git diff
 
@@ -94,11 +93,62 @@ def fkill [
     process = "": string
     ] {
     if ($process | is-empty) {
-        echo "Process name is required: fkill <process name>"
+        echo "Kill a process with fkill <process name> or fkill to select a process"
+
+        # Get process and multi select with fzf
+        let processes = ps | select pid name | each {|it| $'($it.pid) ($in.name)'}
+        let selected = ($processes | to text | fzf -m --height 40% --reverse --inline-info --prompt "Select process(es) to kill: ")
+
+        if ($selected | is-empty) {
+            print "No process selected."
+        } else {
+           print "Killing processes" $selected
+           # Extract PIDs from selected lines and kill them
+            $selected
+            | lines
+            | each {|line| ($line | split column " " | get 0 | get column1) }
+            | each {|pid|
+                ^kill $pid}
+        }
     } else {
         ps | where name =~ $process | first | kill $in.pid -f
     }
 }
+ 
+# Get Makefile tasks in directory, pick with fzf and run task
+def fm [] {
+    # Check if fzf is installed
+    if (which fzf | is-empty) {
+        print "fzf is not installed. Please install it to use this script."
+        exit 1
+    }
+
+    # Check if Makefile exists
+    if not (["Makefile"] | path exists | get 0) {
+        print "No Makefile found in the current directory."
+        exit 1
+    }
+
+    # Extract make targets with `##` help comments (like `target: ## description`)
+    let targets = open Makefile
+        | lines
+        | where ($it =~ '^[a-zA-Z0-9][^:]*:.*##')
+        | each {|line| $line | split row ":" | get 0 | str trim }
+        | uniq
+
+    # Pass targets to fzf for selection
+    let selected_target = ($targets | to text | fzf --height 40% --reverse --inline-info --prompt "Select a target: ")
+
+    # Run make with the selected target
+    if not ($selected_target | is-empty ) {
+        print $"Executing make ($selected_target)..."
+        ^make $selected_target
+    } else {
+        print "No target selected."
+    }
+    
+}
+
 
 # yazi directory change
 def --env y [...args] {
