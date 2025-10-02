@@ -28,8 +28,8 @@ formatter = { command = "prettier", args = ["--parser", "yaml"] }
 
 [[language]]
 name = "bash"
-indent = { tab-width = 4, unit = "    " }
-formatter = { command = 'shfmt', args = ["-i", "4"] }
+indent = { tab-width = 2, unit = "  " }
+formatter = { command = 'shfmt', args = ["-i", "2"] }
 auto-format = true
 
 [[language]]
