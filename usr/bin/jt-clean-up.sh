@@ -125,6 +125,8 @@ clean_app_caches() {
     rm -rf autosave
     rm -rf org
     rm -rf undo-fu-session
+    rm -rf url
+    rm -rf eshell
     rm -f savehist
 
   fi
