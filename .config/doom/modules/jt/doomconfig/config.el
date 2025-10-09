@@ -33,6 +33,9 @@
   ;; Set file types that will open in Emacs from org file links
   (add-to-list 'org-file-apps '("\\.puml\\'" . emacs))
 
+  ;; Included in org-mode core, need to activate for now 2025-10
+  (require 'ol-eww)
+
   )
 
 (after! plantuml-mode
