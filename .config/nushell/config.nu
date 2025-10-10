@@ -77,6 +77,7 @@ alias lg = lazygit
 alias e = eza -alh
 alias k = kubectl
 alias ff = ^$env.EDITOR (fd --hidden | fzf)
+alias ffn = nvim (fd --hidden | fzf)
 alias ggs = git status
 alias ggd = git diff
 
