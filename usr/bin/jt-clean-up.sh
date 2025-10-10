@@ -2,6 +2,13 @@
 
 source "$(dirname "$0")/common.sh"
 
+IS_WINDOWS=false
+
+# Assume run under msys2 like environment on Windows
+if [ -d "/c/Windows" ]; then
+  IS_WINDOWS=true
+fi
+
 # Clean Python .venv directories
 clean_venvs() {
 
@@ -22,7 +29,7 @@ clean_venvs() {
   echo "$venv_dirs" | xargs du -chs
 
   # Prompt for confirmation
-  read -p "Do you want to proceed with cleaning these directories? (y/n): " choice
+  read -rp "Do you want to proceed with cleaning these directories? (y/n): " choice
   if [[ "$choice" != [Yy] ]]; then
     echo "Operation canceled."
     return
@@ -45,14 +52,16 @@ clean_app_caches() {
     write_host_with_timestamp "Clean unused nvm versions"
     NVM_DIR="$HOME/.nvm"
     source "$NVM_DIR/nvm.sh"
-    cd ~/.nvm/versions/node
+    cd ~/.nvm/versions/node || exit
     ls -A | grep -v $(nvm current) | xargs rm -rf
   fi
 
   if [ -d "$HOME/Code" ]; then
 
-    write_host_with_timestamp "Clean python virtual environments"
-    clean_venvs
+    if ! [ $IS_WINDOWS ]; then
+      write_host_with_timestamp "Clean python virtual environments"
+      clean_venvs
+    fi
 
     # kondo command exists
     if command -v kondo >/dev/null; then
@@ -74,10 +83,25 @@ clean_app_caches() {
   fi
 
   if command -v yazi >/dev/null; then
-
     write_host_with_timestamp "Clear yazi cache"
     yazi --clear-cache
+  fi
 
+  if command -v scoop >/dev/null; then
+    write_host_with_timestamp "Clear scoop cache"
+    powershell -noprofile 'scoop cleanup *; scoop cache rm --all'
+  fi
+
+  # Windows mpv history
+  if [ -d "$HOME/scoop/apps/mpv/current/portable_config/watch_later/*" ]; then
+    write_host_with_timestamp "Cleaning mpv watch info and cache"
+    rm -rf "$HOME/scoop/apps/mpv/current/portable_config/watch_later/*"
+    rm -rf "$HOME/scoop/apps/mpv/current/portable_config/cache/*"
+  fi
+
+  if command -v conda >/dev/null; then
+    write_host_with_timestamp "Clear conda packages"
+    conda clean --all --yes
   fi
 
   # Clean screenshots
@@ -116,8 +140,10 @@ clean_app_caches() {
 
   # Clean Emacs and Doom Packages
   if [ -d "$HOME/.config/emacs/bin" ]; then
-    write_host_with_timestamp "Clean Doom Emacs Packages"
-    cd "$HOME/.config/emacs/bin" && doom gc
+    if ! [ $IS_WINDOWS ]; then
+      write_host_with_timestamp "Clean Doom Emacs Packages"
+      cd "$HOME/.config/emacs/bin" && doom gc
+    fi
   fi
   if [ -d "$HOME/.config/emacs/.local/cache" ]; then
     write_host_with_timestamp 'Clean non-essential Emacs cache'
@@ -128,7 +154,6 @@ clean_app_caches() {
     rm -rf url
     rm -rf eshell
     rm -f savehist
-
   fi
 
 }
@@ -159,12 +184,21 @@ elif [ "$1" = "--all" ]; then
   fi
 
   write_host_with_timestamp "Clean Emacs local files, Run Doom sync after to reinstall"
+  if [ $IS_WINDOWS ]; then
+    cd "$HOME/.config/emacs/bin" && doom gc
+  fi
   cd "$HOME/.config/emacs/.local/" && rm -rf ./*
 
   write_host_with_timestamp "Clean Neovim local files"
-  rm -rf ~/.local/share/nvim*
-  rm -rf ~/.local/state/nvim*
-  rm -rf ~/.cache/nvim*
+  if -d [ "$HOME/.local/.share/nvim" ]; then
+    rm -rf ~/.local/share/nvim*
+    rm -rf ~/.local/state/nvim*
+    rm -rf ~/.cache/nvim*
+  fi
+  if -d [ "$HOME/AppData/Local/nvim"]; then
+    cd "$HOME/AppData/Local"
+    rm -rf *nvim*
+  fi
 
 fi
 

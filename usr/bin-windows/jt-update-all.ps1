@@ -65,8 +65,6 @@ process {
 		}
 	}
 
-	jt-clean-up.ps1
-
 }
 
 begin {
