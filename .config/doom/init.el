@@ -138,7 +138,7 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       (:if IS-LINUX (go +lsp +tree-sitter))         ; the hipster dialect
+       (:if (featurep :system 'linux) (go +lsp +tree-sitter))         ; the hipster dialect
        ;;(graphql +lsp)    ; Give queries a REST
        ;;(haskell +lsp)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
@@ -155,23 +155,25 @@
        ;;lua               ; one-based indices? one-based indices
        markdown            ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
-       (:if IS-LINUX (nix +lsp +treesitter))    ; I hereby declare "nix geht mehr!"
+       (:if (featurep :system 'linux) (nix +lsp +treesitter))    ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-       (org                ; organize your plain life in plain text
-        +roam
-        )
+       
+       (:if (featurep :system 'linux) (org +roam)) ; organize your plain life in plain text
+       ;; Disable roam on Windows only
+       (:if (featurep :system 'windows) (org))     ; organize your plain life in plain text
+
        ;;php               ; perl's insecure younger brother
        plantuml            ; diagrams for confusing people more
        ;;graphviz          ; diagrams for confusing yourself even more
        ;;purescript        ; javascript, but functional
-       (:if IS-LINUX (python +lsp +pyenv +pyright +tree-sitter))   ; beautiful is better than ugly
+       (:if (featurep :system 'linux) (python +lsp +pyenv +pyright +tree-sitter))   ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       (:if IS-LINUX (rust +lsp +tree-sitter))         ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       (:if (featurep :system 'linux) (rust +lsp +tree-sitter))         ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;;(scheme +guile)   ; a fully conniving family of lisps
        (sh +fish +lsp +powershell +tree-sitter)    ; she sells {ba,z,fi}sh shells on the C xor
@@ -193,7 +195,7 @@
        ;;emms
        ;;everywhere        ; *leave* Emacs!? You must be joking
        ;;irc               ; how neckbeards socialize
-       (:if IS-LINUX (rss +org))       ; emacs as an RSS reader
+       (:if (featurep :system 'linux) (rss +org))       ; emacs as an RSS reader
 
        :config
        ;;literate
@@ -204,8 +206,8 @@
        :jt 
        minimal                ; Minimal configuration for default Emacs
        doomconfig             ; Post configuration for Doom framework packages
-       hyperbole              ; Everyday Hypertextual Information Manager
+       ;; hyperbole              ; Everyday Hypertextual Information Manager
        org-web-tools          ; Get and process web page content into Org-mode
-       (:if IS-LINUX anki-editor)            ; Making Anki cards with Org Mode
-       (:if IS-LINUX music)   ; Listen to music
+       (:if (featurep :system 'linux) anki-editor)            ; Making Anki cards with Org Mode
+       (:if (featurep :system 'linux) music)   ; Listen to music
        )

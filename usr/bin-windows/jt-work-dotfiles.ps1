@@ -147,16 +147,6 @@ else {
   Write-Host "= Could not find $kdeglobals"
 }
 
-# doom config, replace line +roam with ;; +roam
-$doom_config = "$env:USERPROFILE\.config\doom\init.el"
-if (Test-Path $doom_config) {
-  Write-Host "+c Replacing +roam with ;; +roam in $doom_config"
-  (Get-Content $doom_config) | ForEach-Object { $_ -replace "\+roam", ";; +roam" } | Set-Content $doom_config
-}
-else {
-  Write-Host "= Could not find $doom_config"
-}
-
 # navi config, replace bash with cmd.exe for shell
 $navi_config = "$env:USERPROFILE\AppData\Roaming\navi\config.yaml"
 if (Test-Path $navi_config) {
