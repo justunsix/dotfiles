@@ -80,6 +80,7 @@ alias ff = ^$env.EDITOR (fd --hidden | fzf)
 alias ffn = nvim (fd --hidden | fzf)
 alias ggs = git status
 alias ggd = git diff
+alias ggf = topgrade --only git_repos 
 
 ## todotxt
 alias t = todo.sh -d ~/.config/todotxt-cli/todo.cfg
