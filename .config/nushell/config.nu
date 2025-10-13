@@ -70,24 +70,7 @@ $env.config.color_config = {
 #####################
 # My Configurations #
 #####################
-
-#####################
-# Aliases
-alias lg = lazygit
-alias e = eza -alh
-alias k = kubectl
-alias ff = ^$env.EDITOR (fd --hidden | fzf)
-alias ffn = nvim (fd --hidden | fzf)
-alias ggs = git status
-alias ggsc = jgc
-alias gglrs = jgt()
-alias ggd = git diff
-alias ggf = topgrade --only git_repos 
-
-## todotxt
-alias t = todo.sh -d ~/.config/todotxt-cli/todo.cfg
-alias to = todo.sh -d ~/.config/todotxt-cli/todo-work.cfg
-
+ 
 #####################
 # My Custom Commands
 # Per https://www.nushell.sh/book/custom_commands.html
@@ -236,6 +219,23 @@ def jgc [
 
 #     }
 # }
+
+#####################
+# Aliases
+alias lg = lazygit
+alias e = eza -alh
+alias k = kubectl
+alias ff = ^$env.EDITOR (fd --hidden | fzf)
+alias ffn = nvim (fd --hidden | fzf)
+alias ggs = git status
+alias ggsc = jgc
+alias gglrs = jgt
+alias ggd = git diff
+alias ggf = topgrade --only git_repos 
+
+## todotxt
+alias t = todo.sh -d ~/.config/todotxt-cli/todo.cfg
+alias to = todo.sh -d ~/.config/todotxt-cli/todo-work.cfg
 
 #####################
 # Shell assitance
