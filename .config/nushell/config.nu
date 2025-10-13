@@ -79,6 +79,8 @@ alias k = kubectl
 alias ff = ^$env.EDITOR (fd --hidden | fzf)
 alias ffn = nvim (fd --hidden | fzf)
 alias ggs = git status
+alias ggsc = jgc
+alias gglrs = jgt()
 alias ggd = git diff
 alias ggf = topgrade --only git_repos 
 
