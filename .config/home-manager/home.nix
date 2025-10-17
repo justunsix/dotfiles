@@ -34,6 +34,7 @@
     carapace
     rofi
     fzf
+    television
     ## rg optional for nvim and emacs frameworks
     ripgrep
     doggo
