@@ -20,6 +20,7 @@ $programsList = @(
     "extras/lazygit",
     "bleachbit",
     "fzf",
+    "extras/television",
     ### fd optional for nvim, emacs frameworks
     "fd",
     #### rg for nvim (optional), emacs (required) frameworks
@@ -158,3 +159,6 @@ npm install -g prettier
 
 # Yazi theme
 ya pkg add yazi-rs/flavors:catppuccin-mocha
+
+# Television channels update
+tv update-channels
