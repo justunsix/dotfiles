@@ -101,6 +101,12 @@ if command -v yazi >/dev/null; then
     ya pkg upgrade
 fi
 
+# Update television (tv) channels
+if command -v tv >/dev/null; then
+    write_host_with_timestamp "Updating television channels"
+    tv update-channels
+fi
+
 # If day is Saturday or Sunday
 # or if first argument was true
 if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
