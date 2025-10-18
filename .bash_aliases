@@ -2,8 +2,8 @@
 
 # git
 alias jgs="jt-gs.sh"
-alias jgt="gfold | rg -e unclean -e unpushed || true"
-alias jgc="jt-gc.sh"
+alias gglrs="gfold | rg -e unclean -e unpushed || true"
+alias ggsc="jt-gc.sh"
 alias jvcs='vcs status $HOME/Code | rg -e modified -e === -e Untracked'
 alias ggs='git status'
 alias ggd='git diff'
@@ -49,7 +49,7 @@ alias fm='fmake.sh'
 alias fkill='ps -ef | fzf | awk '\''{print $2}'\'' | xargs kill -9'
 
 # Lazygit
-alias lg='lazygit'
+alias gg='lazygit'
 
 # rofi UI
 alias rofi='rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3'
