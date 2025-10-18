@@ -47,7 +47,6 @@
     source-code-pro
     nerd-fonts.jetbrains-mono
     # File Management
-    vcstool
     gfold
     img2pdf
     duf
