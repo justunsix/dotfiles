@@ -222,10 +222,8 @@ def jgc [
 
 #####################
 # Aliases
-alias lg = lazygit
 alias e = eza -alh
 alias k = kubectl
-alias ffn = nvim (fd --hidden | fzf)
 alias ggs = git status
 alias ggd = git diff
 
@@ -234,12 +232,17 @@ alias t = todo.sh -d ~/.config/todotxt-cli/todo.cfg
 alias to = todo.sh -d ~/.config/todotxt-cli/todo-work.cfg
 
 ## Aliases inspired by LazyVim and Doom Emacs
+### find file, open with editor
 alias ff = ^$env.EDITOR (fd --hidden | fzf)
+alias ffn = nvim (fd --hidden | fzf)
+### git status
 alias gg = lazygit
+### git status commit
 alias ggsc = jgc
+### git list repositories, status of repositories
 alias gglrs = jgt
+### git list repositories, pull all repositories
 alias gglrf = topgrade --only git_repos
-alias ggf = topgrade --only git_repos 
 
 #####################
 # Shell assitance
