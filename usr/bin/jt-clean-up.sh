@@ -89,7 +89,9 @@ clean_app_caches() {
 
   if command -v scoop >/dev/null; then
     write_host_with_timestamp "Clear scoop cache"
-    powershell -noprofile 'scoop cleanup *; scoop cache rm --all'
+    powershell -noprofile -c 'scoop cleanup *'
+    powershell -noprofile -c 'scoop cache rm --all'
+
   fi
 
   # Windows mpv history
