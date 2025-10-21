@@ -106,6 +106,11 @@ clean_app_caches() {
     conda clean --all --yes
   fi
 
+  if command -v flatpak >/dev/null; then
+    write_host_with_timestamp "Clear unused flatpak applications"
+    flatpak remove --unused -y
+  fi
+
   # Clean screenshots
   if [ -d "$HOME/Pictures/Screenshots" ]; then
     write_host_with_timestamp "Clean screenshots"
