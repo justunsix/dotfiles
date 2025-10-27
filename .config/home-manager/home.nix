@@ -180,6 +180,9 @@
     # Artificial Intelligence
     ollama
 
+    # Cloud
+    azure-cli
+
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
 
