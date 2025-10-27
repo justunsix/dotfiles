@@ -88,6 +88,8 @@ matches:
     replace: "Microsoft"
   - trigger: "AI."
     replace: "artificial intelligence"
+  - trigger: "VM."
+    replace: "virtual machine"
 
   ## Sports
   - trigger: "photog"
