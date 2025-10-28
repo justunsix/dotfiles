@@ -43,7 +43,8 @@ alias fgrep='fgrep --color=auto'
 
 # fzf
 # shellcheck disable="SC2139"
-alias ff='fzf --preview "bat --style=numbers --color=always --line-range :500 {}" | xargs "$EDITOR"'
+alias ff='$EDITOR $(fd --hidden --exclude .git | fzf --preview "bat --style=numbers --color=always --line-range :500 {}")'
+alias ffn='nvim (fd --hidden --exclude .git | fzf)'
 alias fm='fmake.sh'
 # shellcheck disable=SC2142
 alias fkill='ps -ef | fzf | awk '\''{print $2}'\'' | xargs kill -9'

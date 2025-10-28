@@ -233,8 +233,8 @@ alias to = todo.sh -d ~/.config/todotxt-cli/todo-work.cfg
 
 ## Aliases inspired by LazyVim and Doom Emacs
 ### find file, open with editor
-alias ff = ^$env.EDITOR (fd --hidden | fzf)
-alias ffn = nvim (fd --hidden | fzf)
+alias ff = ^$env.EDITOR (fd --hidden --exclude .git | fzf)
+alias ffn = nvim (fd --hidden --exclude .git | fzf)
 ### git status
 alias gg = lazygit
 ### git status commit
