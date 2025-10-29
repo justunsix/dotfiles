@@ -72,7 +72,7 @@
     visidata
     ## sd
     ## Former rust cargo installs
-    du-dust
+    dust
     eza
     monolith
     topgrade
