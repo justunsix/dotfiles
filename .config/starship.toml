@@ -29,35 +29,29 @@ style = "bold green"
 # success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 # ** Shell specific indicators
-# https://mvolkmann.github.io/blog/starship/
-# https://github.com/starship/starship/discussions/1252
+# https://starship.rs/config/#shell
 
 [shell]
+# Shortened shell indicators
 fish_indicator = "f"
-# Doller sign
 bash_indicator = "b"
 zsh_indicator = "z"
 powershell_indicator = "ps"
-unknown_indicator = "mystery shell"
 format = "[$indicator ](bold cyan) "
 disabled = false
 
-# Indicates when in fish shell private mode
-#[custom.fishprivate]
-#command = "echo 🔒"
-#when = """ test -n "$fish_private_mode" """
-#format = "$output"
+##############################
+### Preset configuration
+##############################
 
-#[env_var.fish_private_mode]
-#symbol = "fpm"
-#default = "0"
-#format = "$output"
-#disabled = false
-
-#when = """ test "$STARSHIP_SHELL" = "fish" """
-# when = """ test "$fish_private_mode" = "1" """
-#when = """ test "$fish_private_mode" = "1" """
-#when = '[ "$fish_private_mode" == "1" ]'
+# ** === Plain text preset
+# This preset changes the symbols for each module into plain text. Great if you don't have access to Unicode.
+# https://starship.rs/presets/plain-text.html
+# 
+# My Changes:
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
 
 # k8s from https://medium.com/@petolofsson/supercharge-your-kubernetes-workflow-with-essential-tools-starship-kubectx-kubecolor-and-k9s-c2ce5eb88d23
 [kubernetes]
@@ -71,32 +65,14 @@ context_pattern = "^prd$"
 context_alias = "production"
 style = "red"
 
-# Snippets from Preset Pastel Powerline
-## https://starship.rs/presets/pastel-powerline
-# [username]
-# show_always = true
-# style_user = "bg:#9A348E"
-# style_root = "bg:#9A348E"
-# format = '[$user ]($style)'
-# disabled = false
-
-##############################
-### Preset configuration
-##############################
-
-# ** === Plain text preset
-# This preset changes the symbols for each module into plain text. Great if you don't have access to Unicode.
-# https://starship.rs/presets/plain-text.html
-# My Changes:
-# Disable the package module, hiding it from the prompt completely
-# [package]
-# disabled = true
-#
-# Begin preset
+# Begin preset from https://starship.rs/presets/plain-text
 [character]
 success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
 vimcmd_symbol = "[<](bold green)"
+vimcmd_visual_symbol = "[<](bold yellow)"
+vimcmd_replace_symbol = "[<](bold purple)"
+vimcmd_replace_one_symbol = "[<](bold purple)"
 
 [git_commit]
 tag_symbol = " tag "
@@ -114,17 +90,33 @@ symbol = "aws "
 [azure]
 symbol = "az "
 
+[battery]
+full_symbol = "full "
+charging_symbol = "charging "
+discharging_symbol = "discharging "
+unknown_symbol = "unknown "
+empty_symbol = "empty "
+
+[buf]
+symbol = "buf "
+
 [bun]
 symbol = "bun "
 
 [c]
 symbol = "C "
 
+[cpp]
+symbol = "C++ "
+
 [cobol]
 symbol = "cobol "
 
 [conda]
 symbol = "conda "
+
+[container]
+symbol = "container "
 
 [crystal]
 symbol = "cr "
@@ -142,6 +134,7 @@ symbol = "dart "
 symbol = "deno "
 
 [dotnet]
+format = "via [$symbol($version )(target $tfm )]($style)"
 symbol = ".NET "
 
 [directory]
@@ -156,17 +149,25 @@ symbol = "exs "
 [elm]
 symbol = "elm "
 
+[erlang]
+symbol = "erl "
+
 [fennel]
 symbol = "fnl "
 
+[fortran]
+symbol = "fortran "
+
 [fossil_branch]
 symbol = "fossil "
+truncation_symbol = "..."
 
 [gcloud]
 symbol = "gcp "
 
 [git_branch]
 symbol = "git "
+truncation_symbol = "..."
 
 [gleam]
 symbol = "gleam "
@@ -180,11 +181,27 @@ symbol = "gradle "
 [guix_shell]
 symbol = "guix "
 
+[haskell]
+symbol = "haskell "
+
+[haxe]
+symbol = "hx "
+
+[helm]
+symbol = "helm "
+
 [hg_branch]
 symbol = "hg "
+truncation_symbol = "..."
+
+[hostname]
+ssh_symbol = "ssh "
 
 [java]
 symbol = "java "
+
+[jobs]
+symbol = "*"
 
 [julia]
 symbol = "jl "
@@ -203,9 +220,16 @@ symbol = "memory "
 
 [meson]
 symbol = "meson "
+truncation_symbol = "..."
+
+[mojo]
+symbol = "mojo "
 
 [nats]
 symbol = "nats "
+
+[netns]
+symbol = "netns "
 
 [nim]
 symbol = "nim "
@@ -216,8 +240,14 @@ symbol = "nix "
 [ocaml]
 symbol = "ml "
 
+[odin]
+symbol = "odin "
+
 [opa]
 symbol = "opa "
+
+[openstack]
+symbol = "openstack "
 
 [os.symbols]
 AIX = "aix "
@@ -226,8 +256,11 @@ AlmaLinux = "alma "
 Alpine = "alp "
 Amazon = "amz "
 Android = "andr "
+AOSC = "aosc "
 Arch = "rch "
 Artix = "atx "
+Bluefin = "blfn "
+CachyOS = "cach "
 CentOS = "cent "
 Debian = "deb "
 DragonFly = "dfbsd "
@@ -249,6 +282,7 @@ MidnightBSD = "mid "
 Mint = "mint "
 NetBSD = "nbsd "
 NixOS = "nix "
+Nobara = "nbra "
 OpenBSD = "obsd "
 OpenCloudOS = "ocos "
 openEuler = "oeul "
@@ -265,12 +299,9 @@ SUSE = "suse "
 Ubuntu = "ubnt "
 Ultramarine = "ultm "
 Unknown = "unk "
+Uos = "uos "
 Void = "void "
 Windows = "win "
-
-[package]
-# symbol = "pkg "
-disabled = true
 
 [perl]
 symbol = "pl "
@@ -280,6 +311,10 @@ symbol = "php "
 
 [pijul_channel]
 symbol = "pijul "
+truncation_symbol = "..."
+
+[pixi]
+symbol = "pixi "
 
 [pulumi]
 symbol = "pulumi "
@@ -296,6 +331,12 @@ symbol = "quarto "
 [raku]
 symbol = "raku "
 
+[red]
+symbol = "red "
+
+[rlang]
+symbol = "r "
+
 [ruby]
 symbol = "rb "
 
@@ -305,6 +346,9 @@ symbol = "rs "
 [scala]
 symbol = "scala "
 
+[shlvl]
+symbol = "shlvl "
+
 [spack]
 symbol = "spack "
 
@@ -313,6 +357,10 @@ symbol = "solidity "
 
 [status]
 symbol = "[x](bold red) "
+not_executable_symbol = "noexec"
+not_found_symbol = "notfound"
+sigint_symbol = "sigint"
+signal_symbol = "sig"
 
 [sudo]
 symbol = "sudo "
@@ -323,8 +371,14 @@ symbol = "swift "
 [typst]
 symbol = "typst "
 
+[vagrant]
+symbol = "vagrant "
+
 [terraform]
 symbol = "terraform "
+
+[xmake]
+symbol = "xmake "
 
 [zig]
 symbol = "zig "
