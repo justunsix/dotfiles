@@ -91,7 +91,7 @@
     ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
     ## For integration with Emacs and Neovim language support
     tree-sitter
-    luajitPackages.luarocks
+    # luajitPackages.luarocks
 
     ## Help
     ### tldr in rust
