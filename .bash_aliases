@@ -7,7 +7,7 @@ alias ggsc="jt-gc.sh"
 alias jvcs='vcs status $HOME/Code | rg -e modified -e === -e Untracked'
 alias ggs='git status'
 alias ggd='git diff'
-
+alias ggf='git pull'
 # todotxt
 alias t='todo.sh -d $HOME/.config/todotxt-cli/todo.cfg'
 alias to='todo.sh -d $HOME/.config/todotxt-cli/todo-work.cfg'

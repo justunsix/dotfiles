@@ -239,6 +239,7 @@ alias ffn = nvim (fd --hidden --exclude .git | fzf)
 alias gg = lazygit
 ### git status commit
 alias ggsc = jgc
+alias ggf = git pull
 ### git list repositories, status of repositories
 alias gglrs = jgt
 ### git list repositories, pull all repositories
