@@ -185,6 +185,11 @@
     # Cloud
     azure-cli
 
+    # Windows compatibility
+    # Wine with 32 and 64 bit per https://nixos.wiki/wiki/Wine
+    wineWowPackages.stable
+    winetricks
+
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
 
