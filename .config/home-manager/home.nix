@@ -38,6 +38,7 @@
     ## rg optional for nvim and emacs frameworks
     ripgrep
     doggo
+    grex
     # Fonts
     iosevka
     ## Default font for Doom Emacs
