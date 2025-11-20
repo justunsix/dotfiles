@@ -124,8 +124,8 @@
     #### Older stable formatter
     nixfmt-classic
     ## Node
-    ### LTS as of 2025-01
-    nodejs_22
+    ## alias for LTS version per https://nixos.wiki/wiki/Node.js
+    nodejs
     ## PlantUML
     plantuml
     graphviz
