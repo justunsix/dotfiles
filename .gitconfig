@@ -1,32 +1,34 @@
 [alias]
-  # ** commit
 	# commit with message
 	c = commit -m
 	# commit all with message
 	ca = commit -am
+    # branch
+    # branch (verbose)
+    b = branch -v
 
-  # branch
-  # branch (verbose)
-  b = branch -v
-
-  # status
-	## Run a short status
-	s = status --short
-
-  # diff
+    # diff
 	# diff unstaged changes
 	d = diff
 
-  # push
+    # push
 	p = push
 
+    # Suggestions from https://micahkepe.com/blog/gitconfig/
+	## log
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ## status, short status with just files
+	s = status --short
+
 [pull]
-	rebase = false
+	# Rebase (apply changes, then local commits) instead of merge (default) on pull
+	# for cleaner commit history
+	rebase = true
 
 [fetch]
     # Prune during fetch to cleanup outdated remote references
-		# in .git directory
-		# https://www.freecodecamp.org/news/git-config-how-to-configure-git-settings/
+    # in .git directory
+	# https://www.freecodecamp.org/news/git-config-how-to-configure-git-settings/
     prune = true
 
 [init]
@@ -36,3 +38,30 @@
 [include]
   # includes further configuration in these files
   path = .gitconfig.user
+
+# Suggestions from https://micahkepe.com/blog/gitconfig/
+[commit]
+	# Include the file diffs during commit mesage creation
+	verbose = true
+
+[branch]
+	# Sort branches by commit date instead of alphabetical (default)
+    sort = -committerdate
+
+[column]
+	# Show branches in columns when listed
+    ui = auto
+
+[tag]
+	# Sort tags by version number
+    sort = -version:refname
+
+[push]
+	# Automatically set up the remote repository, for example in new branches
+    autoSetupRemote = true
+
+[rerere]
+	#  When you have resolved a conflict in the past,
+	#  git rerere will keep track of the resolution and apply it to future conflicts
+    enabled = true
+    autoUpdate = true

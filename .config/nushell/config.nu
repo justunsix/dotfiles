@@ -224,7 +224,7 @@ def jgc [
 # Aliases
 alias e = eza -alh
 alias k = kubectl
-alias ggs = git status
+alias ggs = git s
 alias ggd = git diff
 
 ## todotxt
@@ -240,6 +240,7 @@ alias gg = lazygit
 ### git status commit
 alias ggsc = jgc
 alias ggf = git pull
+alias ggl = git l
 ### git list repositories, status of repositories
 alias gglrs = jgt
 ### git list repositories, pull all repositories
