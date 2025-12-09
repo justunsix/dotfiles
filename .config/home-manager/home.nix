@@ -79,7 +79,6 @@
     topgrade
     zoxide
     # DevOps
-    emacs
     asdf-vm
     ### Doom Emacs requirements
     fd
@@ -263,6 +262,13 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Emacs program and
+  # vterm package setup https://docs.doomemacs.org/latest/modules/term/vterm/
+  programs.emacs = {
+    enable = true;
+    extraPackages = epkgs: [ epkgs.vterm ];
+  };
 
   # Enable setting profile and session variables for system
   # and update of user environment cache of programs
