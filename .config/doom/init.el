@@ -82,6 +82,7 @@
        ;;shell             ; simple shell REPL for Emacs
        ;;term              ; basic terminal emulator for Emacs
        ;;vterm             ; the best terminal emulation in Emacs
+       (:if (featurep :system 'linux) vterm)
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
