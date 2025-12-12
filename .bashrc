@@ -295,11 +295,12 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
 fi
 
 ## Starship Prompt
-if command -v starship &>/dev/null; then
-  # Starship
-  eval "$(starship init bash)"
+if [[ "$TERM" != "dumb" ]]; then
+  if command -v starship &>/dev/null; then
+    # Starship
+    eval "$(starship init bash)"
+  fi
 fi
-
 ## Cargo, Rust package manager
 if [ -d "$HOME/.cargo" ]; then
   . "$HOME/.cargo/env"

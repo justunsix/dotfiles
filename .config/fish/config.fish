@@ -80,8 +80,11 @@ if type -q fzf
 end
 
 # *** Starship
-if type -q starship
-    starship init fish | source
+# if not dumb terminal https://github.com/starship/starship/issues/1588
+if test $TERM != dumb
+    if type -q starship
+        starship init fish | source
+    end
 end
 
 # *** zoxide - smarter cd
