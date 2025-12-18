@@ -46,7 +46,7 @@ end
 
 -- On Linux, add bash and nushell to launch, set default shell
 if wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
-	 config.default_prog = { 'nu' }
+	 config.default_prog = { 'bash' }
 	 config.launch_menu = {}
 	 table.insert(config.launch_menu, { label = 'bash', args = {'bash'},
 	 })
