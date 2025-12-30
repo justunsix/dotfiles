@@ -189,6 +189,9 @@
     wineWowPackages.stable
     winetricks
 
+    # Security
+    sops
+
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix by not managed by Nix
 
