@@ -79,6 +79,7 @@ $programsList = @(
     ## Security
     "extras/gpg4win"
     "keepassxc",
+    "sops",
     ## DevOps    
     "vscode",
     "mremoteng",
