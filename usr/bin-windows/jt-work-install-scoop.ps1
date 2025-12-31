@@ -151,6 +151,9 @@ $programs = $programsList -join " "
 # Use Invoke-Expression to execute as if on command line
 Invoke-Expression "scoop install $programs"
 
+# Hold msys2 update and update only within msys2 rolling updates
+scoop hold msys2
+
 # Python based installs
 uv tool install visidata
 uv tool install vcstool
