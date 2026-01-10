@@ -120,8 +120,6 @@
     nil
     ### Nix formatter
     nixpkgs-fmt
-    #### Older stable formatter
-    nixfmt-classic
     ## Node
     ## alias for LTS version configured in all-packages per https://nixos.wiki/wiki/Node.js
     nodejs
