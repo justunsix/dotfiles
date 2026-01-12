@@ -137,6 +137,24 @@ clean_app_caches() {
     uv cache clean
   fi
 
+  # Clean pip cache
+  if command -v pip &>/dev/null; then
+    write_host_with_timestamp "Clean pip cache"
+    pip cache purge
+  fi
+
+  # Clean npm cache
+  if command -v npm &>/dev/null; then
+    write_host_with_timestamp "Clean npm cache forcefully"
+    npm cache clean --force
+  fi
+
+  # Clean go cache
+  if command -v go &>/dev/null; then
+    write_host_with_timestamp "Clean go cache"
+    go clean -cache
+  fi
+
   # Clean Nix packages
   if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
     write_host_with_timestamp "Cleaning Nix packages"
@@ -203,7 +221,7 @@ elif [ "$1" = "--all" ]; then
     rm -rf ~/.cache/nvim*
   fi
   if -d [ "$HOME/AppData/Local/nvim"]; then
-    cd "$HOME/AppData/Local"
+    cd "$HOME/AppData/Local" || exit
     rm -rf *nvim*
   fi
 
