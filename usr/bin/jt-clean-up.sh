@@ -181,6 +181,12 @@ clean_app_caches() {
     rm -f savehist
   fi
 
+  # Clean proselint cache
+  if [ -d "$HOME/.cache/proselint" ]; then
+    write_host_with_timestamp 'Clean proselint cache'
+    rm -rf "$HOME/.cache/proselint"
+  fi
+
 }
 
 # Help
