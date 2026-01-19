@@ -5,4 +5,4 @@ source "~/AppData/Roaming/dystroy/broot/config/launcher/nushell/br"
 source ~/.local/share/atuin/init.nu
 
 # Yazi File Manager to open files on Windows https://yazi-rs.github.io/docs/installation 
-$env.YAZI_FILE_ONE = ($nu.home-path | path join "scoop/apps/git/current/usr/bin/file.exe")
+$env.YAZI_FILE_ONE = ($nu.home-dir | path join "scoop/apps/git/current/usr/bin/file.exe")
