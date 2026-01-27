@@ -256,7 +256,7 @@ use ~/.cache/starship/init.nu
 source ~/.zoxide.nu
 
 # Carapace - Shell completions
-source ~/.cache/carapace/init.nu
+source $"($nu.cache-dir)/carapace.nu"
 
 # Conditional Sourcing based on operating system
 ## Conditional sourcing
