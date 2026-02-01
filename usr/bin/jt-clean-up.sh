@@ -122,6 +122,7 @@ clean_app_caches() {
     write_host_with_timestamp "Clean mpv watch information"
     rm -rf "$HOME"/.config/mpv/watch_later/*
     rm -rf "$HOME"/.local/state/mpv/watch_later/*
+    rm -rf "$HOME"/.cache/mpv/*
   fi
 
   # Clean carapace cache
