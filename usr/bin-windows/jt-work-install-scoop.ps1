@@ -60,6 +60,7 @@ $programsList = @(
     "mprocs",
     "extras/wezterm",
     "extras/carapace-bin",
+    "atuin",
     # "cygwin",
     "msys2",
     "nu",
