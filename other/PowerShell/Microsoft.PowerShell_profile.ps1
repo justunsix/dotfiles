@@ -59,6 +59,11 @@ if (Get-Command "broot.exe" -ErrorAction SilentlyContinue) {
     }
 }
 
+## Atuin - shell history
+if (Get-Command "atuin.exe" -ErrorAction SilentlyContinue) {
+    atuin init powershell | Out-String | Invoke-Expression
+}
+
 ## PSFzf
 ## https://github.com/kelleyma49/PSFzf
 Import-Module PSFzf
