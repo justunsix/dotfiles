@@ -64,9 +64,8 @@ List of folders and dotfiles in them:
 - `.fonts/` - Open source fonts
 - `.local/share/applications/` -
   [Desktop entries](https://wiki.archlinux.org/title/desktop_entries)
-- `Templates/` - New file templates for
-  [GNOME File manager](https://wiki.gnome.org/action/show/Apps/Files?action=show&redirect=Apps%2FNautilus)
-  also known as Nautilus
+- `Templates/` - New file templates for 
+[GNOME File manager]https://apps.gnome.org/en-GB/Nautilus/) also known as Nautilus
 - `usr/bin/` - Linux scripts
 - `usr/bin-windows/` - Windows scripts
 - `other/` - Other configuration files not normally stored in user home
