@@ -176,12 +176,14 @@ def jgc [
 # Search for string in files and open in editor
 def fgrep [
     stringToSearch = 'todo': string # Search term
+    --ext: string = "*", # Search on files with these extensions
     --vim, # If it should open in neovim
 ] {
 
     # Search case insensitive with rg including hidden files except .git dir,
+    # and including extension in glob to search, then
     # filter file list with fzf and get filename with cut
-    let $result = rg -i $stringToSearch --hidden -g'!.git' | fzf | cut -d':' -f 1
+    let $result = rg -i $stringToSearch --hidden -g'!.git' -g $"*.($ext)" | fzf | cut -d':' -f 1
     if ($vim) {
         nvim $result
     } else {
