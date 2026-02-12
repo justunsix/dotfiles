@@ -173,6 +173,22 @@ def jgc [
     git push
 }
 
+# Search for string in files and open in editor
+def fgrep [
+    stringToSearch = 'todo': string # Search term
+    --vim, # If it should open in neovim
+] {
+
+    # Search case insensitive with rg including hidden files,
+    # filter file list with fzf and get filename with cut
+    let $result = rg -i $stringToSearch --hidden | fzf | cut -d':' -f 1
+    if ($vim) {
+        nvim $result
+    } else {
+        ^$env.EDITOR $result
+    }
+}
+
 # Check Git status for multiple repositories
 # Usage with multiple directories on Windows: jgt "~\\Code,T:\\OtherProjects"
 # Fix per https://github.com/nushell/nushell/pull/12232
