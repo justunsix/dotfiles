@@ -179,9 +179,9 @@ def fgrep [
     --vim, # If it should open in neovim
 ] {
 
-    # Search case insensitive with rg including hidden files,
+    # Search case insensitive with rg including hidden files except .git dir,
     # filter file list with fzf and get filename with cut
-    let $result = rg -i $stringToSearch --hidden | fzf | cut -d':' -f 1
+    let $result = rg -i $stringToSearch --hidden -g'!.git' | fzf | cut -d':' -f 1
     if ($vim) {
         nvim $result
     } else {
