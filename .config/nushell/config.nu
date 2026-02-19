@@ -110,13 +110,13 @@ def fm [] {
     # Check if fzf is installed
     if (which fzf | is-empty) {
         print "fzf is not installed. Please install it to use this script."
-        exit 1
+        return
     }
 
     # Check if Makefile exists
     if not (["Makefile"] | path exists | get 0) {
         print "No Makefile found in the current directory."
-        exit 1
+        return
     }
 
     # Extract make targets with `##` help comments (like `target: ## description`)
