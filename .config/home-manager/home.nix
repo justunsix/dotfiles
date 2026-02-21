@@ -184,7 +184,9 @@
 
     # Windows compatibility
     # Wine with 32 and 64 bit per https://nixos.wiki/wiki/Wine
-    wineWowPackages.stable
+    # Deprecated: wineWowPackages.stable
+    # 64 preferred by upstream 2026-02-20
+    wineWow64Packages.stable
     winetricks
 
     # Security
