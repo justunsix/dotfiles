@@ -100,8 +100,10 @@
     nodePackages.prettier
     ## English
     ### Prose English linter for Markdown, Org
+    ### Used by Doom Emacs
     proselint
     ### Grammer checker (US English)
+    ### Used by Helix
     ltex-ls-plus
 
     ## Go lang
