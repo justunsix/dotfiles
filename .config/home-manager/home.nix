@@ -188,7 +188,8 @@
     # Wine with 32 and 64 bit per https://nixos.wiki/wiki/Wine
     # Deprecated: wineWowPackages.stable
     # 64 preferred by upstream 2026-02-20
-    wineWow64Packages.stable
+    # Removed and use OS version for now
+    # wineWow64Packages.full
     winetricks
 
     # Security
@@ -229,7 +230,9 @@
 
   # Allow fontconfig to discover fonts and configurations installed through home.packages and nix-env
   # per https://github.com/nix-community/home-manager/issues/605
-  fonts.fontconfig = { enable = true; };
+  fonts.fontconfig = {
+    enable = true;
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
