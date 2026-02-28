@@ -133,6 +133,7 @@
     pandoc
 
     ## Python
+    pipx
     ### Python LSP (or basedpyright later)
     pyright
     ### Python formatter
