@@ -121,7 +121,7 @@
     ### Nix LSP
     nil
     ### Nix formatter
-    nixpkgs-fmt
+    nixfmt
     ## Node
     ## alias for LTS version configured in all-packages per https://nixos.wiki/wiki/Node.js
     nodejs
@@ -133,7 +133,6 @@
     pandoc
 
     ## Python
-    pipx
     ### Python LSP (or basedpyright later)
     pyright
     ### Python formatter
