@@ -82,7 +82,7 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 # Aliases
 
 Set-Alias -Name k -Value kubectl
-Set-Alias -Name lg -Value lazygit
+Set-Alias -Name gg -Value lazygit
 # which / type
 Set-Alias -Name type -Value Get-Command
 
@@ -104,6 +104,11 @@ function e {
 ### Open a file selected by fzf in editors set by EDITOR environment variable
 function ff {
     Get-ChildItem . -Recurse -Attributes !Directory | Invoke-Fzf | % { & $env:EDITOR $_ }
+}
+
+### Open a file selected by fzf in Neovim
+function ffn {
+    Get-ChildItem . -Recurse -Attributes !Directory | Invoke-Fzf | % { & nvim $_ }
 }
 
 ## Emacs
