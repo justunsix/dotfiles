@@ -25,14 +25,14 @@
 ;; Set Grep, Find program locations on Windows
 ;; https://www.emacswiki.org/emacs/GrepMode#h5o-4
 (when jt/windows-p
-	;; Get location of Windows user home directory
-	(setq user-home-directory (getenv "USERPROFILE"))
-	(setq scoop-git-bin-dir (concat user-home-directory "\\scoop\\apps\\git\\current\\usr\\bin"))
+  ;; Get location of Windows user home directory
+  (setq user-home-directory (getenv "USERPROFILE"))
+  (setq scoop-git-bin-dir (concat user-home-directory "\\scoop\\apps\\git\\current\\usr\\bin"))
   ;; Add git installed by scoop binaries to path
-	(add-to-list 'exec-path scoop-git-bin-dir)
-	(setq find-program (concat scoop-git-bin-dir "\\find.exe")
-				grep-program (concat scoop-git-bin-dir "\\grep.exe"))
-	)
+  (add-to-list 'exec-path scoop-git-bin-dir)
+  (setq find-program (concat scoop-git-bin-dir "\\find.exe")
+	grep-program (concat scoop-git-bin-dir "\\grep.exe"))
+  )
 
 ;; * Help Support ----------------------------
 
@@ -45,9 +45,9 @@
   :config
   (which-key-mode +1)
   ;; Delay before keys show up
-	(setq which-key-idle-delay 0.3
-				which-key-idle-secondary-delay 0.3)
-)
+  (setq which-key-idle-delay 0.3
+	which-key-idle-secondary-delay 0.3)
+  )
 
 ;; Gives better help, code, references, values. Rebind commands to better versions
 (use-package helpful
@@ -69,19 +69,19 @@
 (use-package projectile
   :diminish projectile-mode
   :config
-	(projectile-mode)
-	;; NOTE: Set this to the folder where you keep your Git repositories and projects
-	(setq projectile-project-search-path jt/project-search-path
-				projectile-switch-project-action #'projectile-dired)
+  (projectile-mode)
+  ;; NOTE: Set this to the folder where you keep your Git repositories and projects
+  (setq projectile-project-search-path jt/project-search-path
+	projectile-switch-project-action #'projectile-dired)
   :custom
-	((projectile-completion-system 'ivy))
+  ((projectile-completion-system 'ivy))
 
   )
 
 
 (projectile-mode +1)
 ;; Recommended keymap prefix on macOS
-;(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+                                        ;(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 ;; Recommended keymap prefix on Windows/Linux
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
@@ -107,15 +107,15 @@
   (setq magit-repolist-columns
         '(("Name"    25 magit-repolist-column-ident ())
           ("Version" 25 magit-repolist-column-version ())
-					("Flag" 3 magit-repolist-column-flag ())
+	  ("Flag" 3 magit-repolist-column-flag ())
           ;; ("D"        1 magit-repolist-column-dirty ())
           ("B<U"      3 magit-repolist-column-unpulled-from-upstream
-       ((:right-align t)
-        (:help-echo "Upstream changes not in branch")))
-      ("B>U"      3 magit-repolist-column-unpushed-to-upstream
-       ((:right-align t)
-        (:help-echo "Local changes not in upstream")))
-      ("Path"    99 magit-repolist-column-path ())))
+           ((:right-align t)
+            (:help-echo "Upstream changes not in branch")))
+          ("B>U"      3 magit-repolist-column-unpushed-to-upstream
+           ((:right-align t)
+            (:help-echo "Local changes not in upstream")))
+          ("Path"    99 magit-repolist-column-path ())))
   )
 
 ;; --------------------------------------------------------------------------------
@@ -124,29 +124,29 @@
 ;; Company-mode completion interface
 ;; with enhancements from https://github.com/ianyepan/yay-evil-emacs/blob/master/config.org#company-for-auto-completion
 (use-package company
-	:diminish company-mode
+  :diminish company-mode
   ;; :after lsp-mode
-	:hook (prog-mode . company-mode)
+  :hook (prog-mode . company-mode)
   ;; Use tab to complete selections and initiate completions if needed, by default
   ;; tab is mapped to company-next (next suggestion)
-																				;: bind (:map company-active-map
+                                        ;: bind (:map company-active-map
   ;;       ("<tab>" . company-complete-selection))
   ;;      (:map lsp-mode-map
   ;;       ("<tab>" . company-indent-or-complete-common))
-	:config
+  :config
   (setq
-	 ;; Triggers for when completions show up
+   ;; Triggers for when completions show up
    ;; How many characters must be typed
-	 company-minimum-prefix-length 1
-	 ;; How long for completion to come
+   company-minimum-prefix-length 1
+   ;; How long for completion to come
    company-idle-delay 0.1
    company-selection-wrap-around t
    company-tooltip-align-annotations t
    company-frontends '(company-pseudo-tooltip-frontend ; show tooltip even for single candidate
                        company-echo-metadata-frontend))
-	(define-key company-active-map (kbd "C-n") 'company-select-next)
-	(define-key company-active-map (kbd "C-p") 'company-select-previous)
-	)
+  (define-key company-active-map (kbd "C-n") 'company-select-next)
+  (define-key company-active-map (kbd "C-p") 'company-select-previous)
+  )
 
 ;; Enhance look of completion options
 (use-package company-box
@@ -155,8 +155,8 @@
 ;; Expand region increases the selected region by semantic units.
 ;; Just keep pressing the key until it selects what you want.
 (use-package expand-region
-	:bind ("C-=" . er/expand-region)
-	)
+  :bind ("C-=" . er/expand-region)
+  )
 
 ;; --------------------------------------------------------------------------------
 ;; * Key Bindings ----------------------------
@@ -188,19 +188,20 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-	(setq dashboard-center-content t
-																				; Set project package in use
-				dashboard-projects-backend 'projectile
-																				; Add navigator
-				dashboard-set-navigator t
-																				; Display packages and load time
-				dashboard-set-init-info t)
-	(setq dashboard-items '((recents  . 10)
-													(projects . 8)
-													(bookmarks . 20)
-																				; (agenda . 5)
-													))
-	)
+  (setq dashboard-center-content t
+                                        ; Set project package in use
+        dashboard-projects-backend 'projectile
+                                        ; Add navigator
+        dashboard-set-navigator t
+                                        ; Display packages and load time
+        dashboard-set-init-info t)
+
+  (setq dashboard-items '((recents  . 10)
+                          (projects . 8)
+                          (bookmarks . 20)
+                                        ; (agenda . 5)
+                          ))
+  )
 
 ;; * Bongo ----------------------------
 
@@ -209,13 +210,15 @@
     :commands bongo
     )
 
-	(defun jt/bongo-open-my-playlist()
-		"Open my playlist in bongo stored in playlist environment variable"
-		(interactive)
-		(bongo)
-		(bongo-insert-playlist-contents jt/bongo-playlist-location)
-		(bongo-playlist-mode)
-		)
+  (defun jt/bongo-open-my-playlist()
+    "Open my playlist in bongo stored in playlist environment variable"
+    (interactive)
+    (bongo)
+    (bongo-insert-playlist-contents jt/bongo-playlist-location)
+    (bongo-playlist-mode)
+    (goto-char (point-min))
+    (forward-line 21)
+    )
   )
 
 ;; Always play on random
@@ -236,8 +239,8 @@
 
 ;; On-the-fly syntax checking extension
 (use-package flycheck
-	:config (global-flycheck-mode +1)
-	)
+  :config (global-flycheck-mode +1)
+  )
 
 ;; --------------------------------------------------------------------------------
 ;; * System Runtime ----------------------------
@@ -248,17 +251,17 @@
 (defun jt/kill-all-buffers-except-starred ()
   "Kill all buffers except ones starting with * and switch to *dashboard*."
   (interactive)
-	;; Switch to buffer called *dashboard*
+  ;; Switch to buffer called *dashboard*
   (switch-to-buffer "*dashboard*")
   ;; (kill-matching-buffers "^[^*]" nil t)
-	;; Kill all buffers unless they match *dashboard*, *Messages*, *scratch*, *copilot events*
-	(dolist (buffer (buffer-list))
-		(unless (or (string-match-p "^\\*dashboard\\*" (buffer-name buffer))
-								(string-match-p "^\\*Messages\\*" (buffer-name buffer))
-								(string-match-p "^\\*scratch\\*" (buffer-name buffer))
-								(string-match-p "^\\*copilot events\\*" (buffer-name buffer)))
-			(kill-buffer buffer)))
-	)
+  ;; Kill all buffers unless they match *dashboard*, *Messages*, *scratch*, *copilot events*
+  (dolist (buffer (buffer-list))
+    (unless (or (string-match-p "^\\*dashboard\\*" (buffer-name buffer))
+		(string-match-p "^\\*Messages\\*" (buffer-name buffer))
+		(string-match-p "^\\*scratch\\*" (buffer-name buffer))
+		(string-match-p "^\\*copilot events\\*" (buffer-name buffer)))
+      (kill-buffer buffer)))
+  )
 
 (provide 'other)
 
