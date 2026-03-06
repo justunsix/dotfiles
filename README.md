@@ -42,7 +42,7 @@ List of folders and dotfiles in them:
   - `navi/` - [navi](https://github.com/denisidoro/navi/) command line
     cheatsheet tool
   - `nushell/` - [nushell](https://www.nushell.sh/) cross platform shell
-  - `nvim/` - [neovim](https://neovim.io/) editor, kickstart light weight distribution
+  - `nvim/` and `nvim-aon` - [neovim](https://neovim.io/) editor, kickstart and Advent of Neovim light weight distributions
   - `nvim-lazyvim` - [Lazyvim](https://www.lazyvim.org/) Neovim setup
   - `rofi/` - [rofi](https://github.com/davatorium/rofi) Application launcher,
     Window switcher for use with i3 and in GNOME
@@ -66,8 +66,8 @@ List of folders and dotfiles in them:
   [Desktop entries](https://wiki.archlinux.org/title/desktop_entries)
 - `Templates/` - New file templates for 
 [GNOME File manager](https://apps.gnome.org/en-GB/Nautilus/) also known as Nautilus
-- `usr/bin/` - Linux scripts
-- `usr/bin-windows/` - Windows scripts
+- `usr/bin/` - Bash, Linux scripts
+- `usr/bin-windows/` - PowerShell, bat, Windows scripts
 - `other/` - Other configuration files not normally stored in user home
   directory
   - `PowerShell/` -
@@ -153,4 +153,4 @@ There are many ways to manage your dotfiles. I use an
 and
 [dotfiles Ansible role](https://github.com/geerlingguy/ansible-role-dotfiles)
 which installs and configures machines I use from base installation using
-package managers like apt, dnf, nix, chocolately, and scoop.
+package managers like apt, dnf, nix, Chocolatey, and scoop.
