@@ -6,3 +6,9 @@
 vim.opt.wrap = true
 -- Open all folds by default
 vim.opt.foldlevelstart = 99
+-- Neovim Shared Data (shada) and history
+-- '1000: Save marks for 1000 files
+-- <50: Save up to 50 lines for each register
+-- /100: Save the last 100 search patterns.
+-- s1000: Save up to 1000 Kib for each item
+vim.opt.shada = "'1000,/100,<50,s1000"
