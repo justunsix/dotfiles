@@ -58,7 +58,7 @@ clean_app_caches() {
 
   if [ -d "$HOME/Code" ]; then
 
-    if ! [ $IS_WINDOWS ]; then
+    if [ $IS_WINDOWS = false ]; then
       write_host_with_timestamp "Clean python virtual environments"
       clean_venvs
     fi
@@ -166,7 +166,7 @@ clean_app_caches() {
 
   # Clean Emacs and Doom Packages
   if [ -d "$HOME/.config/emacs/bin" ]; then
-    if ! [ $IS_WINDOWS ]; then
+    if [ $IS_WINDOWS = false ]; then
       write_host_with_timestamp "Clean Doom Emacs Packages"
       cd "$HOME/.config/emacs/bin" && doom gc
     fi
@@ -216,13 +216,13 @@ elif [ "$1" = "--all" ]; then
   fi
 
   write_host_with_timestamp "Clean Emacs local files, Run Doom sync after to reinstall"
-  if [ $IS_WINDOWS ]; then
+  if [ $IS_WINDOWS = true ]; then
     cd "$HOME/.config/emacs/bin" && doom gc
   fi
   cd "$HOME/.config/emacs/.local/" && rm -rf ./*
 
-  write_host_with_timestamp "Clean Neovim local files"
-  if [ -d "$HOME/.local/.share/nvim" ]; then
+  if [ -d "$HOME/.local/.share/nvim-lazy" ]; then
+    write_host_with_timestamp "Clean Neovim local files"
     rm -rf ~/.local/share/nvim*
     rm -rf ~/.local/state/nvim*
     rm -rf ~/.cache/nvim*
