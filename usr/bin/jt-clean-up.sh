@@ -222,12 +222,12 @@ elif [ "$1" = "--all" ]; then
   cd "$HOME/.config/emacs/.local/" && rm -rf ./*
 
   write_host_with_timestamp "Clean Neovim local files"
-  if -d [ "$HOME/.local/.share/nvim" ]; then
+  if [ -d "$HOME/.local/.share/nvim" ]; then
     rm -rf ~/.local/share/nvim*
     rm -rf ~/.local/state/nvim*
     rm -rf ~/.cache/nvim*
   fi
-  if -d [ "$HOME/AppData/Local/nvim"]; then
+  if [ -d "$HOME/AppData/Local/nvim" ]; then
     cd "$HOME/AppData/Local" || exit
     rm -rf *nvim*
   fi
