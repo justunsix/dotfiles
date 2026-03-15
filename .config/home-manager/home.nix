@@ -199,6 +199,7 @@
     # Graphical Applications Tested with Nix by not managed by Nix
 
     # Graphics and Diagrams
+    wezterm
     # gimp
     # inkscape
     # drawio
