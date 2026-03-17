@@ -84,13 +84,13 @@ $programsList = @(
     ## DevOps    
     "vscode",
     "mremoteng",
-    # "pycharm",
     "helix",
+    ### Tool, runtime, environment management
+    "mise",
     ### Languages    
     "make", 
     #### Python
     "python",
-    # "extras/miniconda3",
     # Replace pipx with uv
     # "pipx",
     ##### Python package, project, tool manager
@@ -102,8 +102,6 @@ $programsList = @(
     "nodejs",
     #### IAC
     "terraform",      
-    #### VS Code Polyglot literate programming
-    # "dotnet-sdk",
     #### k8s
     "kubectl",
     "azure-kubelogin",
