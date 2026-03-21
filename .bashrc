@@ -329,6 +329,11 @@ if command -v carapace &>/dev/null; then
   source <(carapace _carapace)
 fi
 
+## mise
+if command -v mise &>/dev/null; then
+  eval "$(mise activate bash)"
+fi
+
 ## conda - package manager
 ## Installed by miniconda
 # if [ -d "$HOME/miniconda3" ]; then
