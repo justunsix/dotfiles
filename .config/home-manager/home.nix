@@ -80,6 +80,7 @@
     zoxide
     # DevOps
     asdf-vm
+    mise
     ### Doom Emacs requirements
     fd
     ## Other Editors
