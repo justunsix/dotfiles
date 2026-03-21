@@ -1,30 +1,30 @@
 # Nushell Config File
 #
-# version = "0.101.0"
+# version = "0.111.1"
 $env.config.color_config = {
-    separator: white
+    separator: default
     leading_trailing_space_bg: { attr: n }
     header: green_bold
     empty: blue
     bool: light_cyan
-    int: white
+    int: default
     filesize: cyan
-    duration: white
-    date: purple
-    range: white
-    float: white
-    string: white
-    nothing: white
-    binary: white
-    cell-path: white
+    duration: default
+    datetime: purple
+    range: default
+    float: default
+    string: default
+    nothing: default
+    binary: default
+    cell-path: default
     row_index: green_bold
-    record: white
-    list: white
+    record: default
+    list: default
     closure: green_bold
     glob:cyan_bold
-    block: white
+    block: default
     hints: dark_gray
-    search_result: { bg: red fg: white }
+    search_result: { bg: red fg: default }
     shape_binary: purple_bold
     shape_block: blue_bold
     shape_bool: light_cyan
@@ -61,7 +61,7 @@ $env.config.color_config = {
     shape_vardecl: purple
     shape_raw_string: light_purple
     shape_garbage: {
-        fg: white
+        fg: default
         bg: red
         attr: b
     }
@@ -70,10 +70,50 @@ $env.config.color_config = {
 #####################
 # My Configurations #
 #####################
- 
+
+##########################
+# Former env.nu settings #
+##########################
+
+# Do not show welcome message
+$env.config.show_banner = false
+
+# Set Helix as default editor
+$env.EDITOR = "hx"
+$env.config.buffer_editor = "hx"
+
+# Set NVIM Framework to use
+$env.NVIM_APPNAME = 'nvim-lazyvim'
+
+# Starship prompt
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu
+
+# Zoxide - directory navigation
+zoxide init nushell | save -f ~/.zoxide.nu
+
+# Carapace - completions
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir $"($nu.cache-dir)"
+carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
+
+# Atuin - shell history
+mkdir ~/.local/share/atuin/
+atuin init nu | save -f ~/.local/share/atuin/init.nu
+
 #####################
-# My Custom Commands
-# Per https://www.nushell.sh/book/custom_commands.html
+# Old Fixes         #
+#####################
+
+## Temporary fix for Nushell deprecating --redirect-stderr
+## https://github.com/atuinsh/atuin/pull/1913/commits/4c564aca2f385d38f26c13f5b4aeeee318dce0d4
+## open ~/.local/share/atuin/init.nu | str replace --all 'run-external --redirect-stderr atuin search' 'run-external atuin ## search' | save -f ~/.local/share/atuin/init.nu;
+## open ~/.local/share/atuin/init.nu | str replace --all '| complete | $in.stderr | str substring ..-1)' 'e>| str trim)' | ## save -f ~/.local/share/atuin/init.nu;
+ 
+########################################################
+# My Custom Commands                                   #
+# Per https://www.nushell.sh/book/custom_commands.html #
+# ######################################################
 
 # Kill given process or select process(es) to kill
 #
