@@ -35,3 +35,45 @@ $env.PROMPT_COMMAND_RIGHT = {||
     ([$last_exit_code, (char space), $time_segment] | str join)
 }
 
+#####################################
+# My Configurations env.nu settings #
+#####################################
+
+# Do not show welcome message
+$env.config.show_banner = false
+
+# Set Helix as default editor
+$env.EDITOR = "hx"
+$env.config.buffer_editor = "hx"
+
+# Set NVIM Framework to use
+$env.NVIM_APPNAME = 'nvim-lazyvim'
+
+# Starship prompt
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu
+
+# Zoxide - directory navigation
+zoxide init nushell | save -f ~/.zoxide.nu
+
+# Carapace - completions
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir $"($nu.cache-dir)"
+carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
+
+# Atuin - shell history
+mkdir ~/.local/share/atuin/
+atuin init nu | save -f ~/.local/share/atuin/init.nu
+
+# mise
+let mise_path = $nu.default-config-dir | path join mise.nu
+^mise activate nu | save $mise_path --force
+
+#####################
+# Old Fixes         #
+#####################
+
+## Temporary fix for Nushell deprecating --redirect-stderr
+## https://github.com/atuinsh/atuin/pull/1913/commits/4c564aca2f385d38f26c13f5b4aeeee318dce0d4
+## open ~/.local/share/atuin/init.nu | str replace --all 'run-external --redirect-stderr atuin search' 'run-external atuin ## search' | save -f ~/.local/share/atuin/init.nu;
+## open ~/.local/share/atuin/init.nu | str replace --all '| complete | $in.stderr | str substring ..-1)' 'e>| str trim)' | ## save -f ~/.local/share/atuin/init.nu;
