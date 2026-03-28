@@ -179,8 +179,9 @@
     # Infrastructure as Code
     distrobox
 
-    # Artificial Intelligence
+    # Data Science, Artificial Intelligence
     ollama
+    opencode
 
     # Cloud
     azure-cli
