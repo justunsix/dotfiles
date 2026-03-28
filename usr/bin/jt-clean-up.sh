@@ -164,6 +164,12 @@ clean_app_caches() {
     nix-collect-garbage --delete-older-than 30d
   fi
 
+  # Clean Mise packages
+  if command -v mise &>/dev/null; then
+    write_host_with_timestamp "Clean mise-en-place cache"
+    mise cache prune
+  fi
+
   # Clean Emacs and Doom Packages
   if [ -d "$HOME/.config/emacs/bin" ]; then
     if [ $IS_WINDOWS = false ]; then
