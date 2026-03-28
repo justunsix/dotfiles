@@ -140,7 +140,9 @@ $programsList = @(
     #### For Neovim and Emacs org-roam SQLite
     "gcc",
     #### nvim-treesitter
-    "tree-sitter"
+    "tree-sitter",
+    ## Data Science, Artificial Intelligence
+    "opencode"
 )
 
 # Convert programs to be installed by scoop into a single space-separated string
