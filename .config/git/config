@@ -67,4 +67,4 @@
     autoUpdate = true
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/.gitignore_global
