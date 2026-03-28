@@ -65,3 +65,6 @@
 	#  git rerere will keep track of the resolution and apply it to future conflicts
     enabled = true
     autoUpdate = true
+
+[core]
+	excludesfile = ~/.gitignore_global
