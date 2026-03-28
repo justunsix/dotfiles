@@ -52,6 +52,7 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\.config\",
   "$env:USERPROFILE\.config\doom",
   "$env:USERPROFILE\.config\git",
+  "$env:USERPROFILE\.config\opencode/agents",
   "$env:USERPROFILE\.config\emacs",
   "$env:USERPROFILE\.config\fish"
   "$env:USERPROFILE\AppData\Local\nvim",
@@ -80,6 +81,7 @@ $dotfiles_to_be_synchronized = @(
     ("$env:USERPROFILE\Code\dotfiles\.config\dolphinrc", "$env:USERPROFILE\AppData\Local"),
     ("$env:USERPROFILE\Code\dotfiles\.config\doom", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\git", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\opencode", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\gfold.toml", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\helix", "$env:USERPROFILE\AppData\Roaming"),
     ("$env:USERPROFILE\Code\dotfiles\.config\kdeglobals", "$env:USERPROFILE\AppData\Local"),

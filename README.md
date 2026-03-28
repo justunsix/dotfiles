@@ -25,6 +25,8 @@ List of folders and dotfiles in them:
   - `fish/` - [Fish](https://fishshell.com/) shell
   - `fontconfig/conf.d/` - Fonts managed by
     [Nix package manager](https://nixos.org/)
+  - `git/` - [Git](https://git-scm.com/) distributed version control
+    configuration files
   - `ghostty` - [ghostty](https://ghostty.org/) terminal emulator
   - `helix` - [Helix](https://helix-editor.com/) editor
   - `home-manager` -
@@ -46,6 +48,7 @@ List of folders and dotfiles in them:
   - `nvim-lazyvim` - [Lazyvim](https://www.lazyvim.org/) Neovim setup
   - `rofi/` - [rofi](https://github.com/davatorium/rofi) Application launcher,
     Window switcher for use with i3 and in GNOME
+  - `opencode/` - [OpenCode](https://opencode.ai) artificial intelligence coding agent
   - `tmux` - [tmux](https://github.com/tmux/tmux/wiki) Terminal Multiplexer
   - `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) Task
     manager on command line
@@ -61,11 +64,12 @@ List of folders and dotfiles in them:
   - `gfold.toml` - [gfold](https://github.com/nickgerace/gfold) Track git
     repositories
   - `starship.toml` - [Starship](https://starship.rs/) Cross-shell prompt
+
 - `.fonts/` - Open source fonts
 - `.local/share/applications/` -
   [Desktop entries](https://wiki.archlinux.org/title/desktop_entries)
-- `Templates/` - New file templates for 
-[GNOME File manager](https://apps.gnome.org/en-GB/Nautilus/) also known as Nautilus
+- `Templates/` - New file templates for
+  [GNOME File manager](https://apps.gnome.org/en-GB/Nautilus/) also known as Nautilus
 - `usr/bin/` - Bash, Linux scripts
 - `usr/bin-windows/` - PowerShell, bat, Windows scripts
 - `other/` - Other configuration files not normally stored in user home
@@ -77,8 +81,6 @@ List of folders and dotfiles in them:
     [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell)
     5.1 shell
 - `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell
-- `.gitconfig` - [Git](https://git-scm.com/) distributed version control
-  configuration file
 - `.inputrc` -
   [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) for
   command line editing
