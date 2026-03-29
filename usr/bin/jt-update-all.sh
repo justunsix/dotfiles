@@ -132,6 +132,12 @@ if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
     deb-get update && deb-get upgrade
   fi
 
+  # update global mise packages
+  if command -v mise >/dev/null; then
+    write_host_with_timestamp "Updating mise global packages"
+    mise upgrade
+  fi
+
   # Scan font directories to build font cache files
   # in case nix managed fonts were updated
   write_host_with_timestamp "Updating font cache"
