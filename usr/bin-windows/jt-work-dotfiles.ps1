@@ -40,6 +40,7 @@ $dotfiles_to_be_removed = @(
   "$env:USERPROFILE\AppData\Local\topgrade.toml",
   "$env:USERPROFILE\.emacs",
   "$env:USERPROFILE\.emacs.d"
+  "$env:USERPROFILE\.gitconfig"
 )
 
 $dotfiles_directories = @(
