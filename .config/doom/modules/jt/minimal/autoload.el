@@ -53,7 +53,10 @@ end and around spaces to enable fuzzy matching of filenames in the current direc
          (default-directory (if (derived-mode-p 'dired-mode)
                                 default-directory
                               (expand-file-name default-directory))))
+
     ;; let constrains find-dired to use -exec ls -ld {} + instead of -ls
     ;; to remove escaped spaces in find-dired buffer (\ )
-    (let ((find-ls-option '("-exec ls -ld {} +" . "-ld")))
-      (find-dired default-directory (concat "-iname \"" fuzzy-pattern "\"")))))
+    ;; (let ((find-ls-option '("-exec ls -ld {} +" . "-ld")))
+    ;; Commented out due to problems with dired renaming
+
+    (find-dired default-directory (concat "-iname \"" fuzzy-pattern "\""))))
