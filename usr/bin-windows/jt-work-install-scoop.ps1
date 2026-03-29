@@ -38,7 +38,7 @@ $programsList = @(
     "poppler",
     # "bottom",
     ## Media
-    "figma",
+    # "figma",
     "extras/audacity",
     # "obs-studio",
     # "gimp",
@@ -81,13 +81,13 @@ $programsList = @(
     "extras/gpg4win"
     "keepassxc",
     "sops",
-    ## DevOps    
+    ## DevOps
     "vscode",
     "mremoteng",
     "helix",
     ### Tool, runtime, environment management
     "mise",
-    ### Languages    
+    ### Languages
     "make", 
     #### Python
     "python",
@@ -96,12 +96,12 @@ $programsList = @(
     ##### Python package, project, tool manager
     "uv",
     #### Java
-    # "java/temurin-lts-jdk",    
+    # "java/temurin-lts-jdk",
     # "maven",
     #### JavaScript / TypeScript
     "nodejs",
     #### IAC
-    "terraform",      
+    "terraform",
     #### k8s
     "kubectl",
     "azure-kubelogin",
@@ -141,7 +141,7 @@ $programsList = @(
     "gcc",
     #### nvim-treesitter
     "tree-sitter",
-    ## Data Science, Artificial Intelligence
+    ## Data Science, Artificial Intelligence (AI)
     "opencode"
 )
 
