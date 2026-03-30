@@ -12,13 +12,18 @@ if command -v dnf >/dev/null; then
   sudo dnf autoremove
 fi
 
-# Arch packages
+# pacman packages
 if command -v pacman >/dev/null; then
   write_host_with_timestamp "Updating pacman packages"
-  # Update Arch keyring first, only required for systems
-  # that have not been updated in a while to prevent package signature trust issues
-  sudo pacman -Sy archlinux-keyring --noconfirm
-  sudo pacman -Syu --noconfirm
+  if [ -d /c/Users ]; then
+    # On Windows msys2
+    pacman -Syu --noconfirm
+  else
+    # Update Arch keyring first, only required for systems
+    # that have not been updated in a while to prevent package signature trust issues
+    sudo pacman -Sy archlinux-keyring --noconfirm
+    sudo pacman -Syu --noconfirm
+  fi
 fi
 
 # Debian, Ubuntu apt packages
@@ -41,7 +46,6 @@ if command -v brew >/dev/null; then
 fi
 
 # Update git repositories using topgrade
-# if topgrade is installed
 if command -v topgrade >/dev/null; then
   write_host_with_timestamp "Updating git repositories"
   topgrade -y --only git_repos
