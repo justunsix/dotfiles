@@ -28,6 +28,7 @@
     # Shell
     fish
     nushell
+    nushellPlugins.polars
     starship
     bat
     atuin
