@@ -53,7 +53,7 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\.config\",
   "$env:USERPROFILE\.config\doom",
   "$env:USERPROFILE\.config\git",
-  "$env:USERPROFILE\.config\opencode/agents",
+  "$env:USERPROFILE\.config\opencode\agents",
   "$env:USERPROFILE\.config\emacs",
   "$env:USERPROFILE\.config\fish"
   "$env:USERPROFILE\AppData\Local\nvim",
@@ -76,7 +76,7 @@ $dotfiles_to_be_synchronized = @(
 		("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
 		("$env:USERPROFILE\Code\dotfiles\.config\topgrade", "$env:USERPROFILE\AppData\Roaming"),
 		("$env:USERPROFILE\Code\dotfiles\.config\espanso", "$env:USERPROFILE\AppData\Roaming"),
-		("$env:USERPROFILE\Code\dotfiles\.gitconfig", "$env:USERPROFILE"),
+		("$env:USERPROFILE\Code\dotfiles\.config\git\*", "$env:USERPROFILE\.config\git"),
 		("$env:USERPROFILE\Code\dotfiles\usr\bin-windows\*", "$env:USERPROFILE\usr\bin"),
     ("$env:USERPROFILE\Code\dotfiles\.config\broot\*", "$env:USERPROFILE\AppData\Roaming\dystroy\broot\config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\dolphinrc", "$env:USERPROFILE\AppData\Local"),
