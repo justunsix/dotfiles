@@ -156,9 +156,6 @@ Invoke-Expression "scoop install $programs"
 # Hold msys2 update and update only within msys2 rolling updates
 scoop hold msys2
 
-# Python based installs
-uv tool install visidata
-uv tool install vcstool
 ## Install LSPs, formatters, linters for use
 ## with helix editor
 uv tool install pyright
