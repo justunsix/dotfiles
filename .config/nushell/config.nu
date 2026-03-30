@@ -239,6 +239,7 @@ def fgrep [
 # Aliases
 alias e = eza -alh
 alias k = kubectl
+alias mr = mise run
 alias ggs = git s
 alias ggd = git diff
 
