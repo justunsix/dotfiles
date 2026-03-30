@@ -63,6 +63,16 @@ if command -v python3 >/dev/null; then
   fi
 fi
 
+if command -v uv >/dev/null; then
+  write_host_with_timestamp "Updating uv tools"
+  uv tool upgrade --all
+fi
+
+if command -v npm >/dev/null; then
+  write_host_with_timestamp "Updating npm global packages"
+  npm update -g
+fi
+
 # Update all Nix packages
 if [ -f "$HOME/.config/home-manager/flake.nix" ]; then
   write_host_with_timestamp "Updating Nix Flake and Home Manager"
