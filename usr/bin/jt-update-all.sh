@@ -127,6 +127,12 @@ if command -v tldr >/dev/null; then
   tldr --update
 fi
 
+# update global mise packages
+if command -v mise >/dev/null; then
+  write_host_with_timestamp "Updating mise global packages"
+  mise upgrade
+fi
+
 # If day is Saturday or Sunday
 # or if first argument was true
 if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
@@ -144,12 +150,6 @@ if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
   if command -v deb-get >/dev/null; then
     write_host_with_timestamp "Updating deb-gets"
     deb-get update && deb-get upgrade
-  fi
-
-  # update global mise packages
-  if command -v mise >/dev/null; then
-    write_host_with_timestamp "Updating mise global packages"
-    mise upgrade
   fi
 
   # Scan font directories to build font cache files
