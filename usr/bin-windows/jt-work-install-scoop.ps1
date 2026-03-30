@@ -1,6 +1,7 @@
 scoop bucket add java
 scoop bucket add extras
 scoop bucket add nerd-fonts
+scoop bucket add versions
 # Lists of scoop packages to install
 $programsList = @(
     ## System
@@ -58,7 +59,7 @@ $programsList = @(
     "gsudo",
     "doggo",
     "mprocs",
-    "extras/wezterm",
+    "versions/wezterm-nightly"
     "extras/carapace-bin",
     "atuin",
     # "cygwin",
@@ -158,9 +159,17 @@ scoop hold msys2
 # Python based installs
 uv tool install visidata
 uv tool install vcstool
-
-# npm installs
+## Install LSPs, formatters, linters for use
+## with helix editor
+uv tool install pyright
+uv tool install ruff
+uv tool install black
+uv tool upgrade --all
+scoop install main/marksman
+## npm installs
 npm install -g prettier
+npm install -g bash-language-server
+npm update -g
 
 # Yazi theme
 ya pkg add yazi-rs/flavors:catppuccin-mocha
