@@ -20,6 +20,16 @@ typeCheckingMode = "basic"
 command = "ruff"
 args = ["server"]
 
+# Golang
+[language-server.gopls.config]
+gofumpt = true
+
+[[language]]
+name = "go"
+auto-format = true
+# LSP formatter (gofmt) does not fix imports, goimports should be used instead
+formatter = { command = "goimports" }
+
 [[language]]
 name = "yaml"
 auto-format = true
