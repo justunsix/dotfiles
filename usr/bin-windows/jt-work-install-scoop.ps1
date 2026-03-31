@@ -101,6 +101,11 @@ $programsList = @(
     # "maven",
     #### JavaScript / TypeScript
     "nodejs",
+    #### XML
+    ##### XML Formatter, linter
+    "extras/xmllint",
+    ##### XML LSP
+    "lemminx",
     #### IAC
     "terraform",
     #### k8s
