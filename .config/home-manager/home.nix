@@ -177,6 +177,12 @@
     ## yaml
     yaml-language-server
 
+    ## xml
+    ### xml LSP
+    lemminx
+    ### xmllint - linter, format
+    libxml2
+
     # Infrastructure as Code
     distrobox
 
