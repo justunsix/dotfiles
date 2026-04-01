@@ -99,7 +99,7 @@
     ### tldr in rust
     tealdeer
     ## Prettier formatter multi-language
-    nodePackages.prettier
+    prettier
     ## English
     ### Prose English linter for Markdown, Org
     ### Used by Doom Emacs
