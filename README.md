@@ -44,11 +44,13 @@ List of folders and dotfiles in them:
   - `navi/` - [navi](https://github.com/denisidoro/navi/) command line
     cheatsheet tool
   - `nushell/` - [nushell](https://www.nushell.sh/) cross platform shell
-  - `nvim/` and `nvim-aon` - [neovim](https://neovim.io/) editor, kickstart and Advent of Neovim light weight distributions
+  - `nvim/` and `nvim-aon` - [neovim](https://neovim.io/) editor, kickstart and
+    Advent of Neovim light weight distributions
   - `nvim-lazyvim` - [Lazyvim](https://www.lazyvim.org/) Neovim setup
   - `rofi/` - [rofi](https://github.com/davatorium/rofi) Application launcher,
     Window switcher for use with i3 and in GNOME
-  - `opencode/` - [OpenCode](https://opencode.ai) artificial intelligence coding agent
+  - `opencode/` - [OpenCode](https://opencode.ai) artificial intelligence coding
+    agent
   - `tmux` - [tmux](https://github.com/tmux/tmux/wiki) Terminal Multiplexer
   - `todotxt-cli/` - [todotxt](https://github.com/todotxt/todo.txt-cli) Task
     manager on command line
@@ -69,7 +71,8 @@ List of folders and dotfiles in them:
 - `.local/share/applications/` -
   [Desktop entries](https://wiki.archlinux.org/title/desktop_entries)
 - `Templates/` - New file templates for
-  [GNOME File manager](https://apps.gnome.org/en-GB/Nautilus/) also known as Nautilus
+  [GNOME File manager](https://apps.gnome.org/en-GB/Nautilus/) also known as
+  Nautilus
 - `usr/bin/` - Bash, Linux scripts
 - `usr/bin-windows/` - PowerShell, bat, Windows scripts
 - `other/` - Other configuration files not normally stored in user home
@@ -116,7 +119,8 @@ List of folders and dotfiles in them:
   - [Emacs](https://www.gnu.org/software/emacs/) with
     [Doom Framework](https://github.com/doomemacs/doomemacs)
   - [Visual Studio Code](https://code.visualstudio.com/)
-  - [Neovim](https://neovim.io/) with [LazyVim distribution](https://www.lazyvim.org/)
+  - [Neovim](https://neovim.io/) with
+    [LazyVim distribution](https://www.lazyvim.org/)
   - [Helix](https://helix-editor.com/)
 - Video player: [mpv](https://mpv.io/) and [vlc](https://www.videolan.org/vlc/)
 
@@ -135,17 +139,18 @@ List of folders and dotfiles in them:
 - Package Management:
   [Home Manager using nix](https://github.com/nix-community/home-manager)
 - File Explorer, Directory Navigator: [Broot](https://dystroy.org/broot/),
-  [Dolphin File Manager](https://apps.kde.org/dolphin/), [Yazi](https://yazi-rs.github.io/)
+  [Dolphin File Manager](https://apps.kde.org/dolphin/),
+  [Yazi](https://yazi-rs.github.io/)
 - Text Expander: [Espanso](https://espanso.org/)
 
 ### Operating System Compatibility
 
 - Most software listed above runs cross-platform on Linux, Windows, and macOS
-  and can use the same configuration files (also called dotfiles). The dotfiles are
-  regularly tested on Linux and Windows using latest stable versions of
+  and can use the same configuration files (also called dotfiles). The dotfiles
+  are regularly tested on Linux and Windows using latest stable versions of
   software.
-- For software usually only on Linux / Unix, it can be run on Windows using Windows
-  Subsystem for Linux (WSL), Cygwin, and/or MSYS2 on Windows
+- For software usually only on Linux / Unix, it can be run on Windows using
+  Windows Subsystem for Linux (WSL), Cygwin, and/or MSYS2 on Windows
 
 ## How Dotfiles are Managed
 
