@@ -211,7 +211,7 @@
     # Graphical Applications Tested with Nix
 
     # Graphics and Diagrams
-    wezterm
+    # wezterm
     # gimp
     # inkscape
     # drawio
