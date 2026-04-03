@@ -339,6 +339,11 @@ if [ -d /home/linuxbrew/.linuxbrew/bin ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 fi
 
+## Worktrunk
+if command -v wt >/dev/null; then
+  eval "$(command wt config shell init bash)"
+fi
+
 ## conda - package manager
 ## Installed by miniconda
 # if [ -d "$HOME/miniconda3" ]; then

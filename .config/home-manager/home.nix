@@ -54,9 +54,11 @@
     duf
     stow
     yazi
-    lazygit
     kondo
     broot
+    ## Git
+    lazygit
+    worktrunk
     # Web
     lynx
     ## Media and Web, yt-dlp, metadata
