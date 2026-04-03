@@ -67,10 +67,7 @@
     todo-txt-cli
     # System and Monitors
     btop
-    procs
     espanso
-    ## bottom aka btm
-    ## bottom
     # Terminal
     tmux
     mprocs
@@ -209,7 +206,7 @@
     sops
 
     # ------------------------------------------------------------
-    # Graphical Applications Tested with Nix by not managed by Nix
+    # Graphical Applications Tested with Nix
 
     # Graphics and Diagrams
     wezterm
