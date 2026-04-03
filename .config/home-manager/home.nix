@@ -59,6 +59,10 @@
     broot
     # Web
     lynx
+    ## Media and Web, yt-dlp, metadata
+    ffmpeg_7-full
+    aria2
+    atomicparsley
     # Productivity and Tasks
     todo-txt-cli
     # System and Monitors
