@@ -1,0 +1,8 @@
+#+title:    :jt video
+#+subtitle: Watch videos
+#+created:  April 3, 2026
+#+since:    N/A
+
+* Description :unfold:
+
+Video players to be used with =elfeed-tube=

@@ -197,7 +197,7 @@
        ;;emms
        ;;everywhere        ; *leave* Emacs!? You must be joking
        ;;irc               ; how neckbeards socialize
-       (:if (featurep :system 'linux) (rss +org))       ; emacs as an RSS reader
+       (:if (featurep :system 'linux) (rss +org +youtube))       ; emacs as an RSS reader
 
        :config
        ;;literate
@@ -212,4 +212,5 @@
        org-web-tools          ; Get and process web page content into Org-mode
        (:if (featurep :system 'linux) anki-editor)            ; Making Anki cards with Org Mode
        (:if (featurep :system 'linux) music)   ; Listen to music
+       (:if (featurep :system 'linux) video)   ; Watch videos
        )
