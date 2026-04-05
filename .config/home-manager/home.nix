@@ -62,9 +62,33 @@
     # Web
     lynx
     ## Media and Web, yt-dlp, metadata
+    ### yt-dlp requirements and optionals
+    yt-dlp
+    #### Video processing
     ffmpeg_7-full
-    aria2
+    #### YouTube Support
+    python314Packages.yt-dlp-ejs
+    ##### Root Certificates
+    python314Packages.certifi
+    ##### Encoding
+    python314Packages.brotli
+    ##### Downloading
+    python314Packages.websockets
+    #### HTTP library
+    python314Packages.requests
+    #### Impersonation
+    python314Packages.curl-cffi
+    #### Metadata
+    ##### thumbnail
+    python314Packages.mutagen
     atomicparsley
+    #### xattr metadata
+    python314Packages.xattr
+    #### Other
+    ##### Decryption of streams
+    python314Packages.pycryptodome
+    #### Downloader
+    aria2
     # Productivity and Tasks
     todo-txt-cli
     # System and Monitors
