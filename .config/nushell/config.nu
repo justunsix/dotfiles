@@ -103,21 +103,23 @@ def fkill [
 
 # Pick and run Makefile task
 def fm [] {
+
+    # Check if Makefile exists
+    if not (["Makefile"] | path exists | get 0) {
+        print "No Makefile found in the current directory."
+        return
+    }
+
     # On Linux and television is present use tv instead
     if $nu.os-info.name == "linux" {
         if (which tv | is-not-empty) {
-            ^tv make-targets
+            tv make-targets
             return
         }
     }
     # Check if fzf is installed
     if (which fzf | is-empty) {
         print "fzf is not installed. Please install it to use this script."
-        return
-    }
-    # Check if Makefile exists
-    if not (["Makefile"] | path exists | get 0) {
-        print "No Makefile found in the current directory."
         return
     }
     # Extract make targets with `##` help comments (like `target: ## description`)
