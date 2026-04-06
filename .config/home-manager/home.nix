@@ -29,6 +29,8 @@
     fish
     nushell
     nushellPlugins.polars
+    ## Nushell formatter
+    nufmt
     starship
     bat
     atuin
