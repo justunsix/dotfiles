@@ -16,6 +16,11 @@ $env.config.color_config = {
     string: default
     nothing: default
     binary: default
+    binary_null_char: grey42
+    binary_printable: cyan_bold
+    binary_whitespace: green_bold
+    binary_ascii_other: purple_bold
+    binary_non_ascii: yellow_bold
     cell-path: default
     row_index: green_bold
     record: default
@@ -66,12 +71,11 @@ $env.config.color_config = {
         attr: b
     }
 }
- 
+
 ########################################################
 # My Custom Commands                                   #
 # Per https://www.nushell.sh/book/custom_commands.html #
 # ######################################################
-
 # Kill given process or select process(es) to kill
 #
 # Process to kill is optional. If not provided
@@ -81,76 +85,73 @@ def fkill [
     ] {
     if ($process | is-empty) {
         echo "Kill a process with fkill <process name> or fkill to select a process"
-
         # Get process and multi select with fzf
         let processes = ps | select pid name | each {|it| $'($it.pid) ($in.name)'}
         let selected = ($processes | to text | fzf -m --height 40% --reverse --inline-info --prompt "Select process(es) to kill: ")
-
         if ($selected | is-empty) {
             print "No process selected."
         } else {
-           print "Killing processes" $selected
-           # Extract PIDs from selected lines and kill them
-            $selected
-            | lines
-            | each {|line| ($line | split column " " | get 0 | get column1) }
-            | each {|pid|
+            print "Killing processes" $selected
+            # Extract PIDs from selected lines and kill them
+            $selected | lines | each {|line| ($line | split column " " | get 0 | get column1) } | each {|pid|
                 ^kill $pid}
         }
     } else {
         ps | where name =~ $process | first | kill $in.pid -f
     }
 }
- 
-# Get Makefile tasks in directory, pick and run task
+
+# Pick and run Makefile task
 def fm [] {
+    # On Linux and television is present use tv instead
+    if $nu.os-info.name == "linux" {
+        if (which tv | is-not-empty) {
+            ^tv make-targets
+            return
+        }
+    }
     # Check if fzf is installed
     if (which fzf | is-empty) {
         print "fzf is not installed. Please install it to use this script."
         return
     }
-
     # Check if Makefile exists
     if not (["Makefile"] | path exists | get 0) {
         print "No Makefile found in the current directory."
         return
     }
-
     # Extract make targets with `##` help comments (like `target: ## description`)
-    let targets = open Makefile
-        | lines
-        | where ($it =~ '^[a-zA-Z0-9][^:]*:.*##')
-        | each {|line| $line | split row ":" | get 0 | str trim }
-        | uniq
-
+    let targets = open Makefile | lines | where ($it =~ '^[a-zA-Z0-9][^:]*:.*##') | each {|line| $line | split row ":" | get 0 | str trim } | uniq
     # Pass targets to fzf for selection
     let selected_target = ($targets | to text | fzf --height 40% --reverse --inline-info --prompt "Select a target: ")
-
     # Run make with the selected target
-    if not ($selected_target | is-empty ) {
+    if not ($selected_target | is-empty) {
         print $"Executing make ($selected_target)..."
         ^make $selected_target
+        return
     } else {
         print "No target selected."
+        return
     }
-    
 }
-
 
 # yazi directory change
 def --env y [...args] {
-	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
-	yazi ...$args --cwd-file $tmp
-	let cwd = (open $tmp)
-	if $cwd != "" and $cwd != $env.PWD {
-		cd $cwd
-	}
-	rm -fp $tmp
+    let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+    yazi ...$args --cwd-file $tmp
+    let cwd = (open $tmp)
+    if $cwd != "" and $cwd != $env.PWD {
+        cd $cwd
+    }
+    rm -fp $tmp
 }
 
 # Check Git repositories for pending changes
 def jvcs [] {
-    let codedir = [$env.HOME, '/Code'] | str join
+    let codedir = [
+        $env.HOME
+        '/Code'
+    ] | str join
     vcs status $codedir | rg -e modified -e === -e Untracked
 }
 
@@ -165,7 +166,6 @@ def jgc [
   ] {
     # Commit with the provided message
     git commit -am $message
-
     # Push to the current branch
     git push
 }
@@ -176,7 +176,6 @@ def fgrep [
     --ext: string = "*", # Search on files with these extensions
     --vim, # If it should open in neovim
 ] {
-
     # Search case insensitive with rg including hidden files except .git dir,
     # and including extension in glob to search, then
     # filter file list with fzf and get filename with cut
@@ -187,7 +186,6 @@ def fgrep [
         ^$env.EDITOR $result
     }
 }
-
 # Check Git status for multiple repositories
 # Usage with multiple directories on Windows: jgt "~\\Code,T:\\OtherProjects"
 # Fix per https://github.com/nushell/nushell/pull/12232
@@ -196,22 +194,17 @@ def fgrep [
 #     directories = "~/Code"              # Parent directories of the reposities to check separated by commas
 #     --auto (-a) : string                # Whether to automatically commit and push changes
 # ] {
-
 #     # Assuming directory is a string of directories separated by commas
 #     # Split the string into an array of directories
 #     let dirs = $directories | split row ","
-
 #     # Iterate through the directories
 #     for $directory in $dirs {
 #         # Iterate through child directories of $directory
 #         for $it in (ls $directory -a | where type == dir | get name) {
-
 #                 cd $it
-
 #                 # Check if it's a git repository, only record standard out messages
 #                 # Otherwise if an error, it is not a git repository
 #                 let git_status_check = do { git status --porcelain } | complete
-
 #                 # Check if it's a git repository
 #                 if ( $git_status_check.exit_code == 0) {
 #                     # if stdout is not empty
@@ -223,7 +216,6 @@ def fgrep [
 #                         # echo $git_status_check.stdout
 #                         # Output changed or new git files
 #                         echo $git_status_check.stdout
-
 #                         if $auto == "true" {
 #                             # Commit and push the changes
 #                             jgc
@@ -231,7 +223,6 @@ def fgrep [
 #                     }
 #                 }
 #         }
-
 #     }
 # }
 
@@ -264,7 +255,7 @@ alias gglrf = topgrade --only git_repos
 
 #####################
 # Shell assitance
-
+#
 # Starship prompt
 use ~/.cache/starship/init.nu
 
@@ -282,12 +273,9 @@ use ($nu.default-config-dir | path join mise.nu)
 ## per https://www.nushell.sh/blog/2023-09-19-nushell_0_85_0.html#improvements-to-parse-time-evaluation
 const CONFIG_WINDOWS = "~/AppData/Roaming/nushell/config-windows.nu"
 const CONFIG_NIX = "~/.config/nushell/config-nix.nu"
-
 const CONFIG_ACTUAL = if $nu.os-info.name == "windows" {
     $CONFIG_WINDOWS
 } else {
     $CONFIG_NIX
 }
-
 source $CONFIG_ACTUAL
-

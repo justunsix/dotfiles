@@ -72,7 +72,6 @@ let mise_path = $nu.default-config-dir | path join mise.nu
 #####################
 # Old Fixes         #
 #####################
-
 ## Temporary fix for Nushell deprecating --redirect-stderr
 ## https://github.com/atuinsh/atuin/pull/1913/commits/4c564aca2f385d38f26c13f5b4aeeee318dce0d4
 ## open ~/.local/share/atuin/init.nu | str replace --all 'run-external --redirect-stderr atuin search' 'run-external atuin ## search' | save -f ~/.local/share/atuin/init.nu;
