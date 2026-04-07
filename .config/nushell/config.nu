@@ -113,7 +113,9 @@ def fm [] {
     # On Linux and television is present use tv instead
     if $nu.os-info.name == "linux" {
         if (which tv | is-not-empty) {
-            tv make-targets
+            try {
+              tv make-targets
+            }
             return
         }
     }
