@@ -69,7 +69,7 @@
 
 ;; Make evil snipe search visible buffer
 (after! evil-snipe
-  (setq! evil-snipe-scope 'whole-visible)
+  (setopt evil-snipe-scope 'whole-visible)
   )
 
 ;; Enable jk as escape from Evil insert mode
