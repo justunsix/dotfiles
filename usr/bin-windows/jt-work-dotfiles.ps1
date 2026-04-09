@@ -176,3 +176,9 @@ if (Get-Command "conda.exe" -ErrorAction SilentlyContinue) {
   # Disable auto-activation of base conda environment
   conda config --set auto_activate_base false
 }
+
+Write-Host "+c Setting git config, trust all directories, allow long paths"
+# Add all directories as safe for git
+git config --global --add safe.directory '*'
+# Enable long paths on Windows
+git config --global core.longpaths true
