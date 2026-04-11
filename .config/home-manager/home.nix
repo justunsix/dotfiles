@@ -44,8 +44,11 @@
     grex
     # Fonts
     iosevka
-    ## Default font for Doom Emacs
+    ## Doom Emacs
+    ### Default font
     jetbrains-mono
+    ### Fallback font
+    symbola
     ## Starship prompt, eza nerd font
     nerd-fonts.fira-code
     source-code-pro
