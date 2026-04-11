@@ -96,6 +96,8 @@ $programsList = @(
     # "pipx",
     ##### Python package, project, tool manager
     "uv",
+    ##### Python LSP
+    "ty",
     #### Java
     # "java/temurin-lts-jdk",
     # "maven",

@@ -166,6 +166,7 @@
     ## Python
     ### Python LSP (or basedpyright later)
     pyright
+    ty
     ### Python formatter
     black
     ### Python linter
