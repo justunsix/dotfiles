@@ -60,6 +60,7 @@ $programsList = @(
     "doggo",
     "mprocs",
     "versions/wezterm-nightly"
+    "zellij",
     "extras/carapace-bin",
     "atuin",
     # "cygwin",
