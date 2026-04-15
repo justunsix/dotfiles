@@ -32,11 +32,6 @@ function Initialize-Profile {
 		# replace 'Ctrl+t' and 'Ctrl+r' with your preferred bindings:
 		Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
-		# if Broot present, source function
-		if (Test-Path $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1) {
-				. $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1
-		}
-
 }
 
 # Simplify powershell.exe to be close to -noprofile

@@ -52,13 +52,6 @@ if (Get-Command "carapace.exe" -ErrorAction SilentlyContinue) {
     carapace _carapace | Out-String | Invoke-Expression
 }
 
-## Broot - File explorer, directory navigator
-if (Get-Command "broot.exe" -ErrorAction SilentlyContinue) {
-    if (Test-Path $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1) {
-        . $env:USERPROFILE\AppData\Roaming\dystroy\broot\config\launcher\powershell\br.ps1
-    }
-}
-
 ## Atuin - shell history
 if (Get-Command "atuin.exe" -ErrorAction SilentlyContinue) {
     atuin init powershell | Out-String | Invoke-Expression
