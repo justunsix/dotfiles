@@ -12,3 +12,11 @@ vim.opt.foldlevelstart = 99
 -- /100: Save the last 100 search patterns.
 -- s1000: Save up to 1000 Kib for each item
 vim.opt.shada = "'1000,/100,<50,s1000"
+
+-- Extras
+-- 
+-- lang.python
+-- https://www.lazyvim.org/extras/lang/python
+-- LSP Server to use for Python.
+-- Use ty instead of basedpyright or pyright and install ty in OS or Mason
+vim.g.lazyvim_python_lsp = "ty"
