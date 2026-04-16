@@ -36,9 +36,11 @@
     atuin
     carapace
     rofi
+    ### fzf optional dependency for yazi file search
     fzf
     television
     ## rg optional for nvim and emacs frameworks
+    ### rg optional dependency for yazi content search
     ripgrep
     doggo
     grex
@@ -69,7 +71,7 @@
     ## Media and Web, yt-dlp, metadata
     ### yt-dlp requirements and optionals
     yt-dlp
-    #### Video processing
+    #### Video processing, yazi optional dependency for video thumbnails
     ffmpeg_7-full
     #### YouTube Support
     python314Packages.yt-dlp-ejs
@@ -110,11 +112,13 @@
     eza
     monolith
     topgrade
+    ### zoxide optional dependency for yazi directory navigation
     zoxide
     # DevOps
     asdf-vm
     mise
     ### Doom Emacs requirements
+    #### fd also yazi dependency for file search
     fd
     ## Other Editors
     neovim
