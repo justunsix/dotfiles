@@ -30,7 +30,6 @@ $programsList = @(
     "extras/everything",
     "kondo",
     "extras/dolphin",
-    "broot",
     ### yazi file manager and supporting programs
     "yazi",
     #### yazi optional dependencies
@@ -76,7 +75,6 @@ $programsList = @(
     "draw.io",
     "autohotkey",
     "okular",
-    "espanso",
     ## Media
     "vlc",
     ## Security
@@ -109,9 +107,9 @@ $programsList = @(
     "extras/xmllint",
     ##### XML LSP
     "lemminx",
-    #### IAC
+    ### Terraform
     "terraform",
-    #### k8s
+    ### Kubernetes (k8s)
     "kubectl",
     "azure-kubelogin",
     "k9s",
