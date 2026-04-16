@@ -12,6 +12,14 @@ if command -v dnf >/dev/null; then
   sudo dnf autoremove
 fi
 
+# Windows related packages
+if [ -d /c/Users ]; then
+  if command -v scoop >/dev/null; then
+    write_host_with_timestamp "Updating scoop packages"
+    scoop update -a
+  fi
+fi
+
 # pacman packages
 if command -v pacman >/dev/null; then
   write_host_with_timestamp "Updating pacman packages"
