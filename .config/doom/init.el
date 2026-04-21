@@ -209,7 +209,9 @@
        minimal                ; Minimal configuration for default Emacs
        doomconfig             ; Post configuration for Doom framework packages
        ;; hyperbole              ; Everyday Hypertextual Information Manager
-       ;; org-web-tools          ; Get and process web page content into Org-mode
+       ;; Enable org-web-tools on Windows since org-cliplink doesn't work there
+       ;; https://github.com/rexim/org-cliplink#windows
+       (:if (featurep :system 'windows)  org-web-tools)       ; Get and process web page content into Org-mode
        (:if (featurep :system 'linux) anki-editor)            ; Making Anki cards with Org Mode
        (:if (featurep :system 'linux) music)   ; Listen to music
        (:if (featurep :system 'linux) video)   ; Watch videos
