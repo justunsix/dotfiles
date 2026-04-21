@@ -1,6 +1,7 @@
 # JT's Dotfiles
 
-Configuration and customization files to personalize Linux, Windows, and macOS.
+Configuration and customization files to personalize Linux, Windows, macOS, and
+FreeBSD.
 
 This repository contains my personal dotfiles like configurations for software
 described below.
@@ -145,10 +146,10 @@ List of folders and dotfiles in them:
 
 ### Operating System Compatibility
 
-- Most software listed above runs cross-platform on Linux, Windows, and macOS
-  and can use the same configuration files (also called dotfiles). The dotfiles
-  are regularly tested on Linux and Windows using latest stable versions of
-  software.
+- Most software listed above runs cross-platform on Linux, Windows, macOS, and
+  FreeBSD and can use the same configuration files (also called dotfiles). The
+  dotfiles are regularly tested on Linux and Windows using latest stable
+  versions of software.
 - For software usually only on Linux / Unix, it can be run on Windows using
   Windows Subsystem for Linux (WSL), Cygwin, and/or MSYS2 on Windows
 
