@@ -244,6 +244,10 @@
     # ------------------------------------------------------------
     # Graphical Applications Tested with Nix
 
+    # Information Management
+    ## Library and Bibliography management
+    zotero
+
     # Graphics and Diagrams
     # wezterm
     # gimp
