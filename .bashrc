@@ -344,6 +344,15 @@ if command -v wt >/dev/null; then
   eval "$(command wt config shell init bash)"
 fi
 
+## Yazi
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd <"$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+  rm -f -- "$tmp"
+}
+
 ## conda - package manager
 ## Installed by miniconda
 # if [ -d "$HOME/miniconda3" ]; then
