@@ -38,7 +38,10 @@ fi
 if command -v apt >/dev/null; then
   write_host_with_timestamp "Updating APT packages"
   sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt clean -y
-  sudo aptitude safe-upgrade -y
+
+  if command -v aptitude >/dev/null; then
+    sudo aptitude safe-upgrade -y
+  fi
 fi
 
 # Snap packages
