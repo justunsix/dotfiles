@@ -49,8 +49,6 @@
     ## Doom Emacs
     ### Default font
     jetbrains-mono
-    ### Fallback font
-    symbola
     ## Starship prompt, eza nerd font
     nerd-fonts.fira-code
     source-code-pro
@@ -136,12 +134,15 @@
     tealdeer
     ## Prettier formatter multi-language
     prettier
-    ## English
+    ## English, Other Spoken Languages
     ### Prose English linter for Markdown, Org
     ### Used by Doom Emacs
     proselint
     ### Grammer checker (US English)
-    ### Used by Helix
+    ### Language Tool
+    #### Java version used by Emacs
+    languagetool
+    #### LSP used by Helix
     ltex-ls-plus
 
     ## Go lang
@@ -226,9 +227,6 @@
     # Data Science, Artificial Intelligence
     ollama
     opencode
-
-    # Cloud
-    azure-cli
 
     # Windows compatibility
     # Wine with 32 and 64 bit per https://nixos.wiki/wiki/Wine
