@@ -60,7 +60,6 @@
     stow
     yazi
     kondo
-    broot
     ## Git
     lazygit
     worktrunk
