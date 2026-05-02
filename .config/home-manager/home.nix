@@ -72,6 +72,8 @@
     ffmpeg_7-full
     #### YouTube Support
     python314Packages.yt-dlp-ejs
+    ##### YT Support, JS Engine
+    deno
     ##### Root Certificates
     python314Packages.certifi
     ##### Encoding
