@@ -163,7 +163,7 @@
     ### Nix formatter
     nixfmt
     ## Node
-    ## alias for LTS version configured in all-packages per https://nixos.wiki/wiki/Node.js
+    ### alias for LTS version configured in all-packages per https://nixos.wiki/wiki/Node.js
     nodejs
     ## PlantUML
     plantuml
