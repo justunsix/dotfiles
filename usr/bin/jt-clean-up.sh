@@ -235,7 +235,7 @@ elif [ "$1" = "--all" ]; then
   fi
   if [ -d "$HOME/AppData/Local/nvim" ]; then
     cd "$HOME/AppData/Local" || exit
-    rm -rf *nvim*
+    rm -rf ./*nvim*
   fi
 
 fi
