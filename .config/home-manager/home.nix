@@ -322,10 +322,10 @@
   programs.home-manager.enable = true;
 
   # Emacs program and
-  # vterm package setup https://docs.doomemacs.org/latest/modules/term/vterm/
   programs.emacs = {
     enable = true;
-    extraPackages = epkgs: [ epkgs.vterm ];
+    # vterm package setup https://docs.doomemacs.org/latest/modules/term/vterm/
+    # extraPackages = epkgs: [ epkgs.vterm ];
   };
 
   # Enable setting profile and session variables for system
