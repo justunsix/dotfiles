@@ -5,7 +5,7 @@ style = "Regular"
 
 [terminal]
 # Windows: change from default powershell
-# shell = "pwsh"
+shell = "nu"
 
 [colors.primary]
 background = "#000000"
