@@ -174,21 +174,21 @@ fi
 # * PATH
 
 if [ -d "$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin" ]; then
-  PATH="$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
+  export PATH="$HOME/usr/bin/phantomjs-2.1.1-linux-x86_64/bin:$PATH"
 fi
 
 if [ -d "$HOME/.nix-profile/bin" ]; then
-  PATH="$HOME/.nix-profile/bin:$PATH"
+  export PATH="$HOME/.nix-profile/bin:$PATH"
   # Allow unfree packages to be installed/updated (for example terraform)
   export NIXPKGS_ALLOW_UNFREE=1
 fi
 
 if [ -d "$HOME/usr/bin" ]; then
-  PATH="$HOME/usr/bin:$PATH"
+  export PATH="$HOME/usr/bin:$PATH"
 fi
 
 if [ "$isWSLUbuntu" = "true" ]; then
-  PATH="$HOME/Code/dotfiles/usr/bin:$PATH"
+  export PATH="$HOME/Code/dotfiles/usr/bin:$PATH"
 fi
 
 export PATH="$HOME/.local/bin::$PATH"
@@ -304,6 +304,7 @@ fi
 ## Cargo, Rust package manager
 if [ -d "$HOME/.cargo" ]; then
   . "$HOME/.cargo/env"
+  export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 ## Zoxide - smarter cd
