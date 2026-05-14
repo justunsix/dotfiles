@@ -166,6 +166,8 @@
     ## Node
     ### alias for LTS version configured in all-packages per https://nixos.wiki/wiki/Node.js
     nodejs
+    ### Package and version manager
+    pnpm
     ## PlantUML
     plantuml
     graphviz
