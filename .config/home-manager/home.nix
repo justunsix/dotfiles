@@ -102,6 +102,7 @@
     espanso
     # Terminal
     tmux
+    zellij
     mprocs
     ## Data
     visidata
@@ -247,8 +248,11 @@
     ## Library and Bibliography management
     zotero
 
-    # Graphics and Diagrams
+    # Terminals
     # wezterm
+    # alacritty
+
+    # Graphics and Diagrams
     # gimp
     # inkscape
     # drawio
