@@ -20,6 +20,10 @@ alias cd2="cd ../.."
 alias cd3="cd ../../.."
 alias cd4="cd ../../../.."
 
+# rm
+## Ask for confirmation, do not delete root file system
+alias rm="rm -i --preserve-root"
+
 # emacs
 ## Simpler config for terminal use
 alias emacsnw="emacs -Q -nw -l ~/Code/dotfiles/.config/emacs/setup/minimal.el"

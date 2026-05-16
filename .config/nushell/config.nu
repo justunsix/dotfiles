@@ -232,6 +232,12 @@ def fgrep [
 
 #####################
 # Aliases
+
+# Alias of system commands
+# Ask confirm interactively (-i), move files to system trash (--trash | -t)
+alias rm = rm -it
+
+# Custom Aliases
 alias e = eza -alh
 alias k = kubectl
 alias mr = mise run
