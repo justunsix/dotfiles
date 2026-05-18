@@ -193,6 +193,11 @@ fi
 
 export PATH="$HOME/.local/bin::$PATH"
 
+# Performant NPM (pnpm)
+if command -v pnpm >/dev/null; then
+  export PATH="$HOME/.local/share/pnpm/bin::$PATH"
+fi
+
 ################################
 # * Other Variables
 
