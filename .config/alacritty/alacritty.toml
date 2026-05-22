@@ -4,8 +4,8 @@ family = "JetBrainsMono NFM"
 style = "Regular"
 
 [terminal]
-# Windows: change from default powershell
-shell = "nu"
+# Windows: change from default powershell or cmd
+# shell = "nu"
 
 [colors.primary]
 background = "#000000"
