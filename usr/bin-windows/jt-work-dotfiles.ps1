@@ -89,7 +89,7 @@ $dotfiles_to_be_synchronized = @(
     ("$env:USERPROFILE\Code\dotfiles\.config\kdeglobals", "$env:USERPROFILE\AppData\Local"),
     ("$env:USERPROFILE\Code\dotfiles\.config\navi", "$env:USERPROFILE\AppData\Roaming"),
     ("$env:USERPROFILE\Code\dotfiles\.config\nushell", "$env:USERPROFILE\AppData\Roaming"),
-    ("$env:USERPROFILE\Code\dotfiles\.config\zellij", "$env:USERPROFILE\AppData\Roaming\Zellij\config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\zellij\*", "$env:USERPROFILE\AppData\Roaming\Zellij\config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\todotxt-cli", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\wezterm", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\yazi\*", "$env:USERPROFILE\AppData\Roaming\yazi\config"),
