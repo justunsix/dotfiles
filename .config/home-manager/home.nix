@@ -189,6 +189,7 @@
     lldb
     ### Key components from rustup https://rust-lang.github.io/rustup-components-history/
     ### Defer to rustup based installs for:
+    ### rustup # after, run rustup default stable && rustup component add rust-analyzer
     ### cargo
     ### rustc
     ### clippy
