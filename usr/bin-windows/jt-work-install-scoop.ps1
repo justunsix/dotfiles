@@ -118,7 +118,6 @@ $programsList = @(
     "kubens",
     "extras/headlamp",
     #### cloud
-    "azure-ps",
     "azure-cli",
     #### SQL
     "usql"
