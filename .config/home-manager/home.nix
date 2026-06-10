@@ -190,11 +190,11 @@
     ### Key components from rustup https://rust-lang.github.io/rustup-components-history/
     ### Defer to rustup based installs for:
     ### rustup # after, run rustup default stable && rustup component add rust-analyzer
-    ### cargo
+    #### Rust compiler, package and task management
     ### rustc
+    ### cargo
+    #### Rust Linter
     ### clippy
-    #### Rust watch source like tests
-    ### cargo-watch
     #### Rust LSP
     ### rust-analyzer
     #### Rust formatter
