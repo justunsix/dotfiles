@@ -1,3 +1,6 @@
+# Template from Configuration Example
+# section of home-manager manual at
+# https://nix-community.github.io/home-manager/index.xhtml#sec-usage-configuration
 { config, pkgs, ... }:
 
 {
@@ -36,7 +39,7 @@
     atuin
     carapace
     rofi
-    ### fzf optional dependency for yazi file search
+    ### fzf optional dependency for yazi file search and editors
     fzf
     television
     ## rg optional for nvim and emacs frameworks
@@ -95,6 +98,7 @@
     python314Packages.pycryptodome
     #### Downloader
     aria2
+
     # Productivity and Tasks
     todo-txt-cli
     # System and Monitors
@@ -106,7 +110,6 @@
     mprocs
     ## Data
     visidata
-    ## sd
     ## Former rust cargo installs
     dust
     eza
@@ -154,29 +157,35 @@
     ### Go coding deps, See Doom Emacs Go module README
     ### godoc, goimports
     # gotools
+
     ## Lua
     lua-language-server
     ## Markdown LSP
     marksman
+
     ## Nix
     ### Nix LSP
     nil
     ### Nix formatter
     nixfmt
-    ## Node
+
+    ## JavaScript
     ### alias for LTS version configured in all-packages per https://nixos.wiki/wiki/Node.js
     nodejs
+
     ### Package and version manager
     pnpm
+
     ## PlantUML
     plantuml
     graphviz
+
     ## pandoc
     ### Used in document conversion, Emacs exports
     pandoc
 
     ## Python
-    ### Python LSP (or basedpyright later)
+    ### Python LSP
     pyright
     ty
     ### Python formatter
@@ -189,7 +198,7 @@
     lldb
     ### Key components from rustup https://rust-lang.github.io/rustup-components-history/
     ### Defer to rustup based installs for:
-    ### rustup # after, run rustup default stable && rustup component add rust-analyzer
+    ### rustup after, run rustup default stable && rustup component add rust-analyzer
     #### Rust compiler, package and task management
     ### rustc
     ### cargo
@@ -334,6 +343,13 @@
     # vterm package setup https://docs.doomemacs.org/latest/modules/term/vterm/
     # extraPackages = epkgs: [ epkgs.vterm ];
   };
+
+  # Services example from https://nix-community.github.io/home-manager/#sec-install-standalone
+  # services.gpg-agent = {
+  #   enable = true;
+  #   defaultCacheTtl = 1800;
+  #   enableSshSupport = true;
+  # };
 
   # Enable setting profile and session variables for system
   # and update of user environment cache of programs
