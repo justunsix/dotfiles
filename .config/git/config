@@ -36,8 +36,8 @@
     defaultBranch = main
 
 [include]
-  # includes further configuration in these files
-  path = .gitconfig.user
+    # includes further configuration in these files
+    path = .gitconfig.user
 
 # Suggestions from https://micahkepe.com/blog/gitconfig/
 [commit]
@@ -68,3 +68,15 @@
 
 [core]
 	excludesfile = ~/.config/git/.gitignore_global
+	pager = delta # https://github.com/dandavison/delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+	navigate = true  # use n and N to move between diff sections
+	dark = true # or light = true, or omit for auto-detection
+	hyperlinks = true	
+
+[merge]
+    conflictStyle = zdiff3

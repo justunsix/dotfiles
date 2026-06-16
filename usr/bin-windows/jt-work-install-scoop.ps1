@@ -8,6 +8,8 @@ $programsList = @(
     "btop",
     ### git, including bash
     "git",
+    #### git diff
+    "delta",
     ## Package Management
     "topgrade",
     ## File Management

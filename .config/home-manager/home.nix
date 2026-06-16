@@ -65,6 +65,8 @@
     kondo
     ## Git
     lazygit
+    ### git diff
+    delta
     worktrunk
     # Web
     lynx

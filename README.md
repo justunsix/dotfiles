@@ -39,6 +39,8 @@ List of folders and dotfiles in them:
   - `input-remapper/` -
     [input-remapper](https://github.com/sezanzeb/input-remapper) to change input
     behaviour like key remapping
+  - `lazygit` - [lazygit](https://github.com/jesseduffield/lazygit) terminal
+    user interface for git commands
   - `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage parallel
     and commonly executed processes
   - `mpv/` - [mpv](https://mpv.io/) media player

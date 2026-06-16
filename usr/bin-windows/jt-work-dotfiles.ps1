@@ -62,6 +62,7 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\AppData\Roaming\alacritty",
   "$env:USERPROFILE\AppData\Roaming\topgrade",
   "$env:USERPROFILE\AppData\Roaming\yazi\config",
+  "$env:USERPROFILE\AppData\Local\lazygit",
   "$env:USERPROFILE\usr\bin",
   "$env:USERPROFILE\AppData\Roaming\espanso"
 )
@@ -93,6 +94,7 @@ $dotfiles_to_be_synchronized = @(
     ("$env:USERPROFILE\Code\dotfiles\.config\todotxt-cli", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\wezterm", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\yazi\*", "$env:USERPROFILE\AppData\Roaming\yazi\config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\lazygit", "$env:USERPROFILE\AppData\Local"),
     ("$env:USERPROFILE\Code\dotfiles\other\WindowsPowerShell\Microsoft.PowerShell_profile.ps1", "$PROFILE")
 )
 
