@@ -19,3 +19,8 @@ flycheck_init.el
 history.txt
 mise.nu
 lazy-lock.json
+
+# Ignore overlay directories and files
+/.config/doom/setup
+/.config/git/.gitconfig.user
+/.config/zellij/layouts
