@@ -14,3 +14,8 @@ tramp
 .env
 env.el
 flycheck_init.el
+
+# Program outputs
+history.txt
+mise.nu
+lazy-lock.json
