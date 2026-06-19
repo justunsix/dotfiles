@@ -120,6 +120,13 @@ if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
 
 fi
 
+if [ -d /etc/nixos ]; then
+  dotfilesnix="$HOME/Code/dotfiles-nix/bm"
+  if [ -d "$dotfilesnix" ]; then
+    sudo nixos-rebuild switch --flake "$dotfilesnix"#nixos-btw
+  fi
+fi
+
 # Update yazi packages
 if command -v yazi >/dev/null; then
   write_host_with_timestamp "Updating yazi packages"
