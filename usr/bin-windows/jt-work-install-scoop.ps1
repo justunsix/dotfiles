@@ -170,6 +170,7 @@ scoop install main/marksman
 ## npm installs
 npm install -g prettier
 npm install -g bash-language-server
+npm install -g vscode-langservers-extracted
 npm update -g
 
 # Yazi theme
