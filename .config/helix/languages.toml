@@ -3,6 +3,12 @@ name = "rust"
 auto-format = true
 formatter = { command = "rustfmt", args = [] }
 
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "jq", args = ["."] }
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] } ]
+
 [language-server.rust-analyzer.config]
 cargo = { features = "all" }
 check.command = "clippy"

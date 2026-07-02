@@ -152,6 +152,10 @@
     #### LSP used by Helix
     ltex-ls-plus
 
+    ## JSON
+    ### LSP used by Helix
+    vscode-langservers-extracted
+
     ## Go lang
     go
     ### Go LSP
