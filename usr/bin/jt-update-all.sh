@@ -123,6 +123,8 @@ fi
 if [ -d /etc/nixos ]; then
   dotfilesnix="$HOME/Code/dotfiles-nix/bm"
   if [ -d "$dotfilesnix" ]; then
+    cd "$dotfilesnix" || exit
+    nix flake update
     sudo nixos-rebuild switch --flake "$dotfilesnix"#nixos-btw
   fi
 fi
