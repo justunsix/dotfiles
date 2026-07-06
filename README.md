@@ -41,6 +41,7 @@ List of folders and dotfiles in them:
     behaviour like key remapping
   - `lazygit` - [lazygit](https://github.com/jesseduffield/lazygit) terminal
     user interface for git commands
+  - `mise/` - [mise](https://mise.jdx.dev/) tool to manage languages, env vars, and tasks per project
   - `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage parallel
     and commonly executed processes
   - `mpv/` - [mpv](https://mpv.io/) media player
