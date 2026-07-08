@@ -57,6 +57,8 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\.config\opencode\agents",
   "$env:USERPROFILE\.config\emacs",
   "$env:USERPROFILE\.config\fish"
+  "$env:USERPROFILE\.config\mise",
+  "$env:USERPROFILE\AppData\Local\mise",
   "$env:USERPROFILE\AppData\Local\nvim",
   "$env:USERPROFILE\AppData\Local\nvim-lazyvim",
   "$env:USERPROFILE\AppData\Roaming\alacritty",
@@ -73,6 +75,8 @@ $dotfiles_to_be_synchronized = @(
     # ("$env:USERPROFILE\Code\dotfiles\.config\emacs", "$env:USERPROFILE\.config"),
     ("$env:USERPROFILE\Code\dotfiles\.config\alacritty", "$env:USERPROFILE\AppData\Roaming"),
     ("$env:USERPROFILE\Code\dotfiles\.config\fish", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\mise", "$env:USERPROFILE\.config"),
+    ("$env:USERPROFILE\Code\dotfiles\.config\mise", "$env:USERPROFILE\AppData\Local"),
     ("$env:USERPROFILE\Code\dotfiles\.config\nvim-lazyvim", "$env:USERPROFILE\AppData\Local"),
     ("$env:USERPROFILE\Code\dotfiles\.config\nvim", "$env:USERPROFILE\AppData\Local"),
     ("$env:USERPROFILE\Code\dotfiles\.config\starship.toml", "$env:USERPROFILE\.config"),
