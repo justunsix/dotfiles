@@ -60,7 +60,6 @@ $programsList = @(
     "gsudo",
     "doggo",
     "mprocs",
-    "versions/wezterm-nightly"
     "zellij",
     "extras/carapace-bin",
     "atuin",
