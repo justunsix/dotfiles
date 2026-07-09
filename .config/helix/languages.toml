@@ -7,7 +7,11 @@ formatter = { command = "rustfmt", args = [] }
 name = "json"
 auto-format = true
 formatter = { command = "jq", args = ["."] }
-language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] } ]
+language-servers = [
+  { name = "vscode-json-language-server", except-features = [
+    "format",
+  ] },
+]
 
 [language-server.rust-analyzer.config]
 cargo = { features = "all" }
@@ -18,7 +22,7 @@ name = "python"
 # language-servers = ["pyright", "ruff"]
 language-servers = ["ty", "ruff"]
 auto-format = true
-formatter = { command = "black", args = ["-"] }
+# formatter = { command = "black", args = ["-"] }
 
 [language-server.pyright.config.python.analysis]
 typeCheckingMode = "basic"
