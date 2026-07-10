@@ -77,8 +77,7 @@
     ffmpeg_7-full
     #### YouTube Support
     python314Packages.yt-dlp-ejs
-    ##### YT Support, JS Engine
-    deno
+    ##### YT Support, JS Engine, declared below using deno
     ##### Root Certificates
     python314Packages.certifi
     ##### Encoding
@@ -178,6 +177,8 @@
     ## JavaScript
     ### alias for LTS version configured in all-packages per https://nixos.wiki/wiki/Node.js
     nodejs
+    ### Faster, security permissions JS runtime
+    deno
 
     ### Package and version manager
     pnpm
