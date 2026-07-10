@@ -75,6 +75,7 @@ $programsList = @(
     "graphviz",
     "draw.io",
     "autohotkey",
+    #### PDF
     "okular",
     ## Media
     "vlc",
