@@ -166,7 +166,8 @@
     git
     # Desktop key binds
     input-remapper
-    # wget
+    # exfat disk utilities like fsck.exfat
+    exfatprogs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
