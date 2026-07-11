@@ -231,7 +231,4 @@
     # '')
   ];
 
-  # Services
-  services.copyq.enable = true;
-
 }

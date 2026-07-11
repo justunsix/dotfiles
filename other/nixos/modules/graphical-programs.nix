@@ -43,4 +43,7 @@
     # Video
     vlc
   ];
+
+  # Services
+  services.copyq.enable = true;
 }
