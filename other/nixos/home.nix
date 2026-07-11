@@ -122,6 +122,7 @@
     ### Used by Doom Emacs
     proselint
     aspell
+    aspellDicts.en
     ### Grammer checker (US English)
     ### Language Tool
     #### Java version used by Emacs
