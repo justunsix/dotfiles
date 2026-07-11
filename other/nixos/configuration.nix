@@ -31,6 +31,10 @@
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
+  # Setting RTC time standard to localtime, compatible with Windows in its default configuration
+  # https://nixos.wiki/wiki/Dual_Booting_NixOS_and_Windows
+  time.hardwareClockInLocalTime = true;
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
