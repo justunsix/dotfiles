@@ -308,7 +308,9 @@ if [[ "$TERM" != "dumb" ]]; then
 fi
 ## Cargo, Rust package manager
 if [ -d "$HOME/.cargo" ]; then
-  . "$HOME/.cargo/env"
+  if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+  fi
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
