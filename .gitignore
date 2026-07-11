@@ -24,3 +24,6 @@ lazy-lock.json
 /.config/doom/setup
 /.config/git/.gitconfig.user
 /.config/zellij/layouts
+
+# Nix
+flake.lock
