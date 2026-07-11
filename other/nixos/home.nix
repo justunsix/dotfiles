@@ -88,6 +88,8 @@
     mprocs
     # Video, Music
     mpv
+    ## Media, Sound, Volume control
+    pavucontrol
     ## Former rust cargo installs
     dust
     eza
