@@ -5,10 +5,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -76,18 +76,22 @@
   users.users."justin" = {
     isNormalUser = true;
     description = "justin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
-    keepassxc
-    git
-    # Desktop key binds
-    input-remapper
+      keepassxc
+
     ];
   };
 
   # Install firefox.
   programs.firefox.enable = true;
+
+  # Run unpatched dynamic binaries on NixOS
+  # like uv https://wiki.nixos.org/wiki/Python_quickstart_using_uv
+  programs.nix-ld.enable = true;
 
   # Steam gaming
   programs.steam = {
@@ -109,8 +113,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
+    git
+    # Desktop key binds
+    input-remapper
+    # wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -125,7 +132,7 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-  
+
   # Key binding service
   services.input-remapper.enable = true;
 
