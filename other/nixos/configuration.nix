@@ -93,6 +93,9 @@
   # like uv https://wiki.nixos.org/wiki/Python_quickstart_using_uv
   programs.nix-ld.enable = true;
 
+  # Allow removable media management
+  services.udisks2.enable = true;
+
   # Steam gaming
   programs.steam = {
     enable = true;
