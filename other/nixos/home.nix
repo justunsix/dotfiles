@@ -278,8 +278,10 @@
     opencode
 
     # Security
-    sops
     proton-vpn-cli
+    ## Files
+    sops
+    veracrypt
     ## Anti-virus
     clamav
 
