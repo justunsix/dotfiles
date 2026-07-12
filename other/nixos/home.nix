@@ -35,6 +35,8 @@
 
     # System
     curl
+    ## Wayland clipboard management
+    wl-clipboard
 
     # Shell
     nushell
@@ -178,6 +180,7 @@
     ltex-ls-plus
 
     ## JSON
+    jq
     ### LSP used by Helix
     vscode-langservers-extracted
 
