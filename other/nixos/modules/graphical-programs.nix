@@ -8,10 +8,15 @@
   home.packages = with pkgs; [
 
     # ------------------------------------------------------------
-    # Graphical Applications Tested with Nix
+    # Graphical Applications with Nix
 
     # Browser
     firefox
+    ungoogled-chromium
+
+    # Books, Library, Knowledge
+    calibre
+    anki
 
     # Clipboard manager
     copyq
@@ -25,23 +30,28 @@
     alacritty
 
     # Graphics and Diagrams
-    # gimp
-    # inkscape
+    gimp
+    inkscape
     # drawio
 
     # Files
-    # fsearch
+    fsearch
+    peazip
+
     # Security
     keepassxc
-    # Email
-    # thunderbird
-    # RSS
-    # fluent-reader
-    # Video
-    freetube
 
     # Video
+    freetube
     vlc
+    kdePackages.kdenlive
+
+    # Productivity
+    libreoffice
+    keepassxc
+    ## Email
+    ## thunderbird
+
   ];
 
   # Services

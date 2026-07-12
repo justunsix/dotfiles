@@ -62,6 +62,7 @@
     source-code-pro
     nerd-fonts.jetbrains-mono
     # File Management
+    p7zip
     gfold
     duf
     stow
@@ -69,9 +70,40 @@
     kondo
     ## Git
     lazygit
+    worktrunk
     ### git diff
     delta
-    worktrunk
+
+    ## Media and Web, yt-dlp, metadata
+    ### yt-dlp requirements and optionals
+    yt-dlp
+    #### Video processing, yazi optional dependency for video thumbnails
+    ffmpeg_7-full
+    #### YouTube Support
+    python314Packages.yt-dlp-ejs
+    ##### YT Support, JS Engine, declared below using deno
+    ##### Root Certificates
+    python314Packages.certifi
+    ##### Encoding
+    python314Packages.brotli
+    ##### Downloading
+    python314Packages.websockets
+    #### HTTP library
+    python314Packages.requests
+    #### Impersonation
+    python314Packages.curl-cffi
+    #### Metadata
+    ##### thumbnail
+    python314Packages.mutagen
+    atomicparsley
+    #### xattr metadata
+    python314Packages.xattr
+    #### Other
+    ##### Decryption of streams
+    python314Packages.pycryptodome
+    #### Downloader
+    aria2
+
     # Web
     lynx
 
@@ -80,6 +112,7 @@
     gnumake
     # System and Monitors
     btop
+    espanso
     ## Clean files
     bleachbit
 
@@ -97,6 +130,10 @@
     ### zoxide optional dependency for yazi directory navigation
     zoxide
     # DevOps
+    ## Containers
+    podman
+    ## Tools, Env
+    asdf-vm
     mise
     ### Doom Emacs requirements
     emacs
@@ -111,6 +148,7 @@
     ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
     ## For integration with Emacs and Neovim language support
     tree-sitter
+    ## C
     gcc
     # luajitPackages.luarocks
 
@@ -123,14 +161,23 @@
     ### Prose English linter, spell check for Markdown, Org
     ### Used by Doom Emacs
     proselint
-    aspell
-    aspellDicts.en
+    (aspellWithDicts (
+      dicts: with dicts; [
+        en
+        en-computers
+        en-science
+      ]
+    ))
     ### Grammer checker (US English)
     ### Language Tool
     #### Java version used by Emacs
     languagetool
     #### LSP used by Helix
     ltex-ls-plus
+
+    ## JSON
+    ### LSP used by Helix
+    vscode-langservers-extracted
 
     ## Lua
     lua-language-server
@@ -150,6 +197,8 @@
     ## JavaScript
     ### alias for LTS version configured in all-packages per https://nixos.wiki/wiki/Node.js
     nodejs
+    ### Faster, security permissions JS runtime
+    deno
 
     ### Package and version manager
     pnpm
@@ -205,6 +254,12 @@
     ### Shell formatter
     shfmt
 
+    ## Terraform
+    ### Terraform LSP
+    terraform-ls
+    ### Terraform Linter
+    tflint
+
     ## toml
     taplo
 
@@ -220,6 +275,8 @@
     # Security
     sops
     proton-vpn-cli
+    ## Anti-virus
+    clamav
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -234,6 +291,18 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  # GNOME Settings
+  dconf = {
+    settings = {
+      # Dark mode for GTK apps
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    };
+  };
+
   services.udiskie = {
     enable = true;
     settings = {
