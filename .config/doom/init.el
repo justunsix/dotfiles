@@ -85,7 +85,9 @@
 
        :checkers
        syntax              ; tasing you for every semicolon you forget
-       (spell +aspell)     ; tasing you for misspelling mispelling
+       ;; Use flyspell on Linux NixOS for now as spell-fu can't read dictionaries in nix store
+       (:if (featurep :system 'linux) (spell +aspell +flyspell)) ; tasing you for misspelling mispelling
+       (:if (featurep :system 'windows) (spell +aspell))
        (:if (featurep :system 'linux) grammar)  ; tasing grammar mistake every you make
 
        :tools
