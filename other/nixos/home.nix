@@ -148,6 +148,8 @@
     ## https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
     ## For integration with Emacs and Neovim language support
     tree-sitter
+    ### Neovim Mason dependencies
+    unzip
     ## C
     gcc
     # luajitPackages.luarocks
