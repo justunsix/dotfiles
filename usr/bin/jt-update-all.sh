@@ -121,11 +121,17 @@ if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
 fi
 
 if [ -d /etc/nixos ]; then
-  dotfilesnix="$HOME/Code/dotfiles-nix/bm"
-  if [ -d "$dotfilesnix" ]; then
-    cd "$dotfilesnix" || exit
+  dotfiles_nix="$HOME/Code/dotfiles-nix/bm"
+  dotfiles_nixos="$HOME/Code/dotfiles/other/nixos/"
+  if [ -d "$dotfiles_nix" ]; then
+    cd "$dotfiles_nix" || exit
     nix flake update
     sudo nixos-rebuild switch --flake "$dotfilesnix"#nixos-btw
+  fi
+  if [ -d "$dotfiles_nixos" ]; then
+    cd "$dotfiles_nixos" || exit
+    nix flake update
+    sudo nixos-rebuild switch --flake "$dotfiles_nixos"#nixos-btw
   fi
 fi
 
