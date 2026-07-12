@@ -45,8 +45,7 @@ List of folders and dotfiles in them:
     and tasks per project
   - `mprocs/` - [mprocs](https://github.com/pvolok/mprocs) to manage parallel
     and commonly executed processes
-  - `mpv/` - [mpv](https://mpv.io/) media player
-    system
+  - `mpv/` - [mpv](https://mpv.io/) media player system
   - `navi/` - [navi](https://github.com/denisidoro/navi/) command line
     cheatsheet tool
   - `nix/` - [Nix package manager](https://nixos.org/) configured on non-NixOS
@@ -91,12 +90,15 @@ List of folders and dotfiles in them:
   - `WindowsPowerShell/` -
     [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell)
     5.1 shell
-- `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell
-- `.inputrc` -
-  [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) for
-  command line editing
-- `.Xresources` , `.xinitrc` - [X Window System](https://www.x.org/wiki/)
-  configuration files
+  - `nixos` - [NixOS](https://nixos.org/) tool for package management and system
+    configuration to make reproducible, declarative and reliable systems.
+- `home/`
+  - `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell
+  - `.inputrc` -
+    [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) for
+    command line editing
+  - `.Xresources` , `.xinitrc` - [X Window System](https://www.x.org/wiki/)
+    configuration files
 
 ## Programs and Software Configured
 
