@@ -280,6 +280,7 @@
     # Security
     proton-vpn-cli
     ## Files
+    gnupg
     sops
     veracrypt
     ## Anti-virus
