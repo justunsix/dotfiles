@@ -270,7 +270,7 @@ alias gglrf = topgrade --only git_repos
 use ~/.cache/starship/init.nu
 
 # Zoxide
-source ~/.zoxide.nu
+source ~/.config/nushell/zoxide.nu
 
 # Carapace - Shell completions
 source $"($nu.cache-dir)/carapace.nu"

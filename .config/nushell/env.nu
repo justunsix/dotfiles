@@ -54,7 +54,7 @@ mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 
 # Zoxide - directory navigation
-zoxide init nushell | save -f ~/.zoxide.nu
+zoxide init nushell | save -f ~/.config/nushell/zoxide.nu
 
 # Carapace - completions
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
