@@ -184,8 +184,6 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
     git
-    # Desktop key binds
-    input-remapper
     # exfat disk utilities like fsck.exfat
     exfatprogs
   ];
@@ -204,8 +202,10 @@
   # services.openssh.enable = true;
 
   # Key binding service
-  services.input-remapper.enable = true;
-
+  services.input-remapper = {
+    enable = true;
+    serviceWantedBy = [ "graphical.target" ];
+  };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
