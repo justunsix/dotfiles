@@ -40,7 +40,6 @@ XWAYLAND0 Width 1920x1080=335
 DP-2 Height 2560x1440=1019
 DP-2 Width 2560x1440=1280
 DP-2 Window-Maximized 2560x1440=true
-ToolBarsMovable=Disabled
 XWAYLAND0 Height 1600x900=721
 XWAYLAND0 Height 1920x1080=749
 XWAYLAND0 Width 1600x900=1352
@@ -57,6 +56,9 @@ XWAYLAND0 YPosition 1920x1080=317
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,djvuthumbnail,ebookthumbnail
+
+[UiSettings]
+ColorScheme=BreezeDark
 
 [ViewPropertiesDialog]
 XWAYLAND0 Height 1920x1080=372

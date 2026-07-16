@@ -70,6 +70,7 @@
     stow
     yazi
     kondo
+    kdePackages.dolphin
     ## Git
     lazygit
     worktrunk
