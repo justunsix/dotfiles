@@ -58,6 +58,8 @@ $dotfiles_directories = @(
   "$env:USERPROFILE\.config\emacs",
   "$env:USERPROFILE\.config\fish"
   "$env:USERPROFILE\.config\mise",
+  # Hold nushell scripts
+  "$env:USERPROFILE\.config\nushell",
   "$env:USERPROFILE\AppData\Local\mise",
   "$env:USERPROFILE\AppData\Local\nvim",
   "$env:USERPROFILE\AppData\Local\nvim-lazyvim",
