@@ -113,3 +113,16 @@
   (map!
    :n "g w" #'avy-goto-word-1
    ))
+
+(after! citar
+  ;; biblio doom module README recommended variable settings
+  ;; (setq org-cite-csl-styles-dir "~/Zotero/styles")
+  (setopt citar-bibliography '("~/Documents/ref/references.bib"))
+  (setopt org-cite-global-bibliography '("~/Documents/ref/references.bib"))
+  ;; Bibliography related notes
+  ;; (setopt citar-library-paths '("/path/to/library/files/")
+  ;;         citar-notes-paths '("/path/to/your/notes/"))
+
+  ;; Set styles to Zotero's default styles directory
+  ;; https://blog.tecosaur.com/tmio/2021-07-31-citations.html#working-with-zotero
+  (setopt org-cite-csl-styles-dir "~/Zotero/styles"))
