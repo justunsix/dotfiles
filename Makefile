@@ -7,12 +7,6 @@ help: ## Show this help
 .ONESHELL:
 stow-files: ## Stow files
 	# Link all files explicitly with --no-folding instead of symlink directories
-	# git clone https://github.com/LazyVim/starter ~/.config/nvim-lazyvim
-	# rm ~/.config/nvim-lazyvim/init.lua
-	# rm ~/.config/nvim-lazyvim/lua/config/autocmds.lua
-	# rm ~/.config/nvim-lazyvim/lua/config/keymaps.lua
-	# rm ~/.config/nvim-lazyvim/lua/config/lazy.lua
-	# rm ~/.config/nvim-lazyvim/lua/config/options.lua
 	stow --target="$$HOME"/.config .config \
 	--no-folding \
 	--ignore=emacs \
