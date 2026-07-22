@@ -170,7 +170,13 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # package = config.boot.kernelPackages.nvidiaPackages.stable;
+    #
+    # LTSB supported until Aug 2028
+    # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/os-specific/linux/nvidia-x11/default.nix
+    # Try due to error, unknown if caused by 595 and other series drivers:
+    # https://forums.developer.nvidia.com/t/nvidia-drm-error-flip-event-timeout-on-head-0-system-hangs-during-boot/374743
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
   # Enable flakes https://nix.dev/concepts/flakes.html
