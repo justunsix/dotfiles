@@ -40,6 +40,9 @@
 
     # Security
     keepassxc
+    ## Certificate manager and GUI for OpenPGP, GNUPG and CMS cryptography
+    ### Remove for now due to inference with GPUPG sockets
+    ### kdePackages.kleopatra
 
     # Video
     freetube

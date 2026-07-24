@@ -284,6 +284,8 @@
     proton-vpn-cli
     ## Files
     gnupg
+    ### Password entry of gpupg
+    pinentry-gnome3
     sops
     veracrypt
     ## Anti-virus
@@ -327,6 +329,15 @@
         file_manager = "${pkgs.nautilus}/bin/nautilus";
       };
     };
+  };
+
+  # https://nix-community.github.io/home-manager/options/home-manager/services/gpg-agent.html#opt-services.gpg-agent.enable
+  # https://tsawyer87.github.io/posts/gpg-agent_on_nixos/
+  services.gpg-agent = {
+    enable = true;
+    # pinentry is a collection of simple PIN or passphrase dialogs used for
+    # password entry
+    pinentry.package = pkgs.pinentry-gnome3;
   };
 
 }
