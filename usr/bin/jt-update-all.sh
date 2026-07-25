@@ -4,6 +4,22 @@ source "$(dirname "$0")/common.sh"
 
 # Update all packages on the system
 
+# NixOS packages
+if [ -d /etc/nixos ]; then
+  dotfiles_nix="$HOME/Code/dotfiles-nix/bm"
+  dotfiles_nixos="$HOME/Code/dotfiles/other/nixos/"
+  if [ -d "$dotfiles_nix" ]; then
+    cd "$dotfiles_nix" || exit
+    nix flake update
+    sudo nixos-rebuild switch --flake "$dotfilesnix"#nixos-btw
+  fi
+  if [ -d "$dotfiles_nixos" ]; then
+    cd "$dotfiles_nixos" || exit
+    nix flake update
+    sudo nixos-rebuild switch --flake "$dotfiles_nixos"#nixos-btw
+  fi
+fi
+
 # Fedora packages
 if command -v dnf >/dev/null; then
   write_host_with_timestamp "Updating DNF packages"
@@ -118,21 +134,6 @@ if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
     echo "The system has less than 8GB of RAM. Skipping nix-env updates"
   fi
 
-fi
-
-if [ -d /etc/nixos ]; then
-  dotfiles_nix="$HOME/Code/dotfiles-nix/bm"
-  dotfiles_nixos="$HOME/Code/dotfiles/other/nixos/"
-  if [ -d "$dotfiles_nix" ]; then
-    cd "$dotfiles_nix" || exit
-    nix flake update
-    sudo nixos-rebuild switch --flake "$dotfilesnix"#nixos-btw
-  fi
-  if [ -d "$dotfiles_nixos" ]; then
-    cd "$dotfiles_nixos" || exit
-    nix flake update
-    sudo nixos-rebuild switch --flake "$dotfiles_nixos"#nixos-btw
-  fi
 fi
 
 # Update yazi packages
