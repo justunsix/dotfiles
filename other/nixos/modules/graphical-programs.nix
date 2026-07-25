@@ -28,6 +28,7 @@
     # Terminals
     # wezterm
     alacritty
+    ghostty
 
     # Graphics and Diagrams
     gimp
