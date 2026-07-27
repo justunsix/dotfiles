@@ -157,6 +157,10 @@
     unzip
     ## C
     gcc
+
+    ### Containers
+    dockerfmt
+    dockerfile-language-server
     # luajitPackages.luarocks
 
     ## Help
