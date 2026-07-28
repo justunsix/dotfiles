@@ -155,13 +155,21 @@
     tree-sitter
     ### Neovim Mason dependencies
     unzip
+
     ## C
     gcc
 
-    ### Containers
+    ### Containers, Docker/Podman
     dockerfmt
     dockerfile-language-server
-    # luajitPackages.luarocks
+
+    ## Go lang
+    go
+    ### Go LSP
+    gopls
+    ### Go coding deps, See Doom Emacs Go module README
+    ### godoc, goimports
+    # gotools
 
     ## Help
     ### tldr in rust
@@ -193,6 +201,7 @@
 
     ## Lua
     lua-language-server
+    # luajitPackages.luarocks
     ## Markdown LSP
     marksman
 
@@ -222,14 +231,6 @@
     ## pandoc
     ### Used in document conversion, Emacs exports
     pandoc
-
-    ## Go lang
-    go
-    ### Go LSP
-    gopls
-    ### Go coding deps, See Doom Emacs Go module README
-    ### godoc, goimports
-    # gotools
 
     ## Python
     python3
