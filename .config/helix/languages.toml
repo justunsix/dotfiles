@@ -13,6 +13,11 @@ language-servers = [
   ] },
 ]
 
+[[language]]
+name = "dockerfile"
+auto-format = true
+formatter = { command = "dockerfmt" }
+
 [language-server.rust-analyzer.config]
 cargo = { features = "all" }
 check.command = "clippy"
