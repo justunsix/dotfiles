@@ -52,7 +52,6 @@
 
     # Productivity
     libreoffice
-    keepassxc
     ## Email
     ## thunderbird
 

@@ -15,8 +15,10 @@
     };
     
     # Home manager
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-26-05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
   };
 
   outputs = {
@@ -70,24 +72,24 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nixosbtw/configuration.nix
-          ./modules/graphical-programs.nix
         ];
       };
     };
 
-    # # Standalone home-manager configuration entrypoint
-    # # Available through 'home-manager --flake .#your-username@your-hostname'
-    # homeConfigurations = {
-    #   # FIXME replace with your username@hostname
-    #   "your-username@your-hostname" = home-manager.lib.homeManagerConfiguration {
-    #     # Home-manager requires 'pkgs' instance
-    #     pkgs = nixpkgs.legacyPackages.x86_64-linux; # FIXME replace x86_64-linux with your architecture 
-    #     extraSpecialArgs = {inherit inputs;};
-    #     modules = [
-    #       # > Our main home-manager configuration file <
-    #       ./home-manager/home.nix
-    #     ];
-    #   };
-    # };
+    # Standalone home-manager configuration entrypoint
+    # Available through 'home-manager --flake .#your-username@your-hostname'
+    homeConfigurations = {
+      # replace with your username@hostname
+      "justin@nixosbtw" = home-manager.lib.homeManagerConfiguration {
+        # Home-manager requires 'pkgs' instance
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture 
+        extraSpecialArgs = {inherit inputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home-manager/home.nix
+        ];
+      };
+    };
+    
   };
 }
