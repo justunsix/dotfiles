@@ -316,6 +316,9 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Allow unfree packages in home-manager packages
+  nixpkgs.config.allowUnfree = true;
+
   # GNOME Settings
   dconf = {
     settings = {
