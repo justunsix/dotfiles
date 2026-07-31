@@ -58,8 +58,7 @@
       # Opinionated: disable global registry
       flake-registry = "";
     };
-    # Opinionated: disable channels
-    channel.enable = false;
+
   };
 
   # Bootloader.
