@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-# 
+#
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
@@ -9,7 +9,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -64,20 +65,19 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   # Set your hostname
   networking.hostName = "surface";
-
 
   # Enable networking
   networking.networkmanager.enable = true;
 
   # Configure your system-wide user settings (groups, etc), add more users as needed.
-  
+
   # Leave commented for now as most useful hardware is functional
   # and avoid long nix build times
-  # hardware.microsoft-surface.kernelVersion = "stable";
-  
+  hardware.microsoft-surface.kernelVersion = "stable";
+
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
@@ -123,9 +123,12 @@
   users.users."justin" = {
     isNormalUser = true;
     description = "justin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -135,14 +138,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     helix
-     git
-     yazi
-     nushell
-     gnumake
-     stow
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    helix
+    git
+    yazi
+    nushell
+    gnumake
+    stow
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -171,6 +174,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
-
 
 }

@@ -68,7 +68,7 @@
           modules = [
             # > Our main nixos configuration file <
             ./hosts/surface/configuration.nix
-            # nixos-hardware.nixosModules.microsoft-surface-common
+            nixos-hardware.nixosModules.microsoft-surface-common
           ];
         };
         nixosbtw = nixpkgs.lib.nixosSystem {
@@ -92,7 +92,7 @@
             ./home-manager/home.nix
           ];
         };
-         "justin@surface" = home-manager.lib.homeManagerConfiguration {
+        "justin@surface" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
           extraSpecialArgs = { inherit inputs; };
