@@ -194,6 +194,16 @@
     exfatprogs
   ];
 
+  # VirtualBox - https://wiki.nixos.org/wiki/VirtualBox
+  virtualisation = {
+    virtualbox.host.enable = true;
+    virtualbox.host.enableExtensionPack = true;
+    virtualbox.guest.enable = true;
+    virtualbox.guest.dragAndDrop = true;
+  };
+  # Users with access to VirtualBox
+  users.extraGroups.vboxusers.members = [ "justin" ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
