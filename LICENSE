@@ -1,15 +1,22 @@
-MIT License
+Mixed License
 
-Unless another license is indicated in certain directories and files such as:
+MIT License unless another license is indicated in certain directories and files such as:
+
 - GNU General Public License v3.0 
-  - Emacs configurations in folder: .config/emacs
+  - Emacs configurations in folder: .config/emacs and .config/doom
   - todotxt configurations and actions in folder: .config/todotxt-cli
 - GNU General Public License v2.0
   - mpv scripts in folder: .config/mpv/scripts
+- CC0 1.0 Universal
+  - other/nixos
 - Other
   - Fonts in folder: .fonts
 
-Copyright (c) 2023 Justin Tung
+---
+
+MIT Licence
+
+Copyright (c) 2023-2026 Justin Tung
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
