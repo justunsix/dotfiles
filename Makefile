@@ -7,6 +7,7 @@ help: ## Show this help
 .ONESHELL:
 stow-files: ## Stow files
 	# Link all files explicitly with --no-folding instead of symlink directories
+	mkdir -p "$$HOME"/.config
 	stow --target="$$HOME"/.config .config \
 	--no-folding \
 	--ignore=emacs \
@@ -25,4 +26,3 @@ stow-files: ## Stow files
 unstow-files: ## Unstow files
 	stow --target="$$HOME"/.config --delete .config --no-folding
 	stow --target="$$HOME" --delete home --no-folding
-	
