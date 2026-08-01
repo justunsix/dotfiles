@@ -90,8 +90,9 @@ List of folders and dotfiles in them:
   - `WindowsPowerShell/` -
     [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell)
     5.1 shell
-  - `nixos` - [NixOS](https://nixos.org/) tool for package management and system
-    configuration to make reproducible, declarative and reliable systems.
+  - `nixos` - [NixOS and Nix](https://nixos.org/) tool for package management
+    and system configuration to make reproducible, declarative and reliable
+    systems.
 - `home/`
   - `.bash...` - [Bash](https://www.gnu.org/software/bash/) shell
   - `.inputrc` -
