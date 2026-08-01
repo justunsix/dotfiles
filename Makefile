@@ -17,8 +17,10 @@ stow-files: ## Stow files
 	--ignore=input-remapper \
 	--ignore=navi \
 	--ignore=rofi \
-	--ignore=tmux
-	stow --target="$$HOME" home --no-folding
+	--ignore=tmux \
+	--adopt
+	stow --target="$$HOME" home --no-folding --adopt
+	git restore .
 
 unstow-files: ## Unstow files
 	stow --target="$$HOME"/.config --delete .config --no-folding
