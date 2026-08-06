@@ -25,6 +25,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
       nixos-hardware,
       ...
