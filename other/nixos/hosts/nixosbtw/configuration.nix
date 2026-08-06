@@ -2,8 +2,20 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
+let
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    # Use same platform as host
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -192,6 +204,8 @@
     git
     # exfat disk utilities like fsck.exfat
     exfatprogs
+    # Portmaster only exists in unstable as of 2026-08-06
+    pkgs-unstable.portmaster
   ];
 
   # VirtualBox - https://wiki.nixos.org/wiki/VirtualBox
@@ -223,11 +237,12 @@
     serviceWantedBy = [ "graphical.target" ];
   };
 
-  # Portmaster
-  services.portmaster = {
-    # package = nixpkgs-unstable.portmaster;
-    enable = true;
-  }
+  # Portmaster - Secure DNS, firewall, network monitoring
+  # services.portmaster = {
+  #   package = pkgs-unstable.portmaster;
+  #   enable = true;
+  # };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
