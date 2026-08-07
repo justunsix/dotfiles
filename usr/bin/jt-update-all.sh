@@ -4,20 +4,56 @@ source "$(dirname "$0")/common.sh"
 
 # Update all packages on the system
 
-# NixOS packages
+# Nix packages
+## NixOS Packages
 if [ -d /etc/nixos ]; then
-  dotfiles_nix="$HOME/Code/dotfiles-nix/bm"
   dotfiles_nixos="$HOME/Code/dotfiles/other/nixos/"
-  if [ -d "$dotfiles_nix" ]; then
-    cd "$dotfiles_nix" || exit
-    nix flake update
-    sudo nixos-rebuild switch --flake "$dotfilesnix"#nixos-btw
+  if [[ "nixosbtw" == $(uname -n) ]]; then
+    if [ -d "$dotfiles_nixos" ]; then
+      cd "$dotfiles_nixos" || exit
+      nix flake update
+      sudo nixos-rebuild switch --flake "$dotfiles_nixos"#nixosbtw
+      home-manager switch -b backup --flake "$dotfiles_nixos"#justin@nixbtw
+    fi
   fi
-  if [ -d "$dotfiles_nixos" ]; then
-    cd "$dotfiles_nixos" || exit
-    nix flake update
-    sudo nixos-rebuild switch --flake "$dotfiles_nixos"#nixos-btw
+
+  if [[ "surface" == $(uname -n) ]]; then
+    if [ -d "$dotfiles_nixos" ]; then
+      cd "$dotfiles_nixos" || exit
+      nix flake update
+      # sudo nixos-rebuild switch --flake "$dotfiles_nixos"#surface
+      home-manager switch -b backup --flake "$dotfiles_nixos"#justin@surface
+    fi
   fi
+else
+  if [ -f "$HOME/.config/home-manager/home.nix" ]; then
+    if [ -x "$(command -v home-manager)" ]; then
+      home-manager switch -b backup
+    fi
+  fi
+fi
+
+# Update Nix packages
+if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
+  write_host_with_timestamp "Updating Nix packages"
+  nix-channel --update
+  # if [ -x "$(command -v home-manager)" ]; then
+  #   home-manager switch -b backup
+  # fi
+
+  # Check if memory is at least 8 GB before running nix-env update
+  # if less than 8 GB, nix-env -u will be too slow and should not be run
+  # Get the total RAM in GB
+  total_ram=$(free -g | awk '/^Mem:/{print $2}')
+
+  # Check if total RAM is at least 8GB
+  if [ "$total_ram" -ge 8 ]; then
+    echo "The system has at least 8GB of RAM. Running nix-env -u"
+    nix-env -u
+  else
+    echo "The system has less than 8GB of RAM. Skipping nix-env updates"
+  fi
+
 fi
 
 # Fedora packages
@@ -102,38 +138,6 @@ fi
 if command -v npm >/dev/null; then
   write_host_with_timestamp "Updating npm global packages"
   npm update -g
-fi
-
-# Update all Nix packages
-if [ -f "$HOME/.config/home-manager/flake.nix" ]; then
-  write_host_with_timestamp "Updating Nix Flake and Home Manager"
-  cd "$HOME/.config/home-manager/" || exit
-  # Update flakes and home-manager
-  # -b backup : if home-manager finds conflicting files, make backup
-  nix flake update && home-manager switch -b backup
-  cd - || exit
-fi
-
-if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
-  write_host_with_timestamp "Updating Nix packages"
-  nix-channel --update
-  if [ -x "$(command -v home-manager)" ]; then
-    home-manager switch -b backup
-  fi
-
-  # Check if memory is at least 8 GB before running nix-env update
-  # if less than 8 GB, nix-env -u will be too slow and should not be run
-  # Get the total RAM in GB
-  total_ram=$(free -g | awk '/^Mem:/{print $2}')
-
-  # Check if total RAM is at least 8GB
-  if [ "$total_ram" -ge 8 ]; then
-    echo "The system has at least 8GB of RAM. Running nix-env -u"
-    nix-env -u
-  else
-    echo "The system has less than 8GB of RAM. Skipping nix-env updates"
-  fi
-
 fi
 
 # Update yazi packages
