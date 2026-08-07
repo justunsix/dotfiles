@@ -13,7 +13,7 @@ if [ -d /etc/nixos ]; then
       cd "$dotfiles_nixos" || exit
       nix flake update
       sudo nixos-rebuild switch --flake "$dotfiles_nixos"#nixosbtw
-      home-manager switch -b backup --flake "$dotfiles_nixos"#justin@nixbtw
+      home-manager switch -b backup --flake "$dotfiles_nixos"#justin@nixosbtw
     fi
   fi
 
@@ -26,6 +26,7 @@ if [ -d /etc/nixos ]; then
     fi
   fi
 else
+
   if [ -f "$HOME/.config/home-manager/home.nix" ]; then
     if [ -x "$(command -v home-manager)" ]; then
       home-manager switch -b backup
@@ -53,7 +54,6 @@ if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
   else
     echo "The system has less than 8GB of RAM. Skipping nix-env updates"
   fi
-
 fi
 
 # Fedora packages
