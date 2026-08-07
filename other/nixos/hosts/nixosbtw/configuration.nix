@@ -26,6 +26,9 @@ in
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sdb";
   boot.loader.grub.useOSProber = true;
+  # Workaround to prevent /boot from filling up
+  # https://github.com/NixOS/nixpkgs/issues/23926
+  boot.loader.systemd-boot.configurationLimit = 3;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;

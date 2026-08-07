@@ -65,6 +65,9 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # Workaround to prevent /boot from filling up
+  # https://github.com/NixOS/nixpkgs/issues/23926
+  boot.loader.systemd-boot.configurationLimit = 3;
 
   # Set your hostname
   networking.hostName = "surface";
