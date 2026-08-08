@@ -76,6 +76,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/nixosbtw/configuration.nix
+            "${inputs.nixpkgs-unstable}/nixos/modules/services/networking/portmaster.nix"
           ];
         };
       };

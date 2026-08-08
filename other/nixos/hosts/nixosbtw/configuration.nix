@@ -207,8 +207,9 @@ in
     git
     # exfat disk utilities like fsck.exfat
     exfatprogs
-    # Portmaster only exists in unstable as of 2026-08-06
-    pkgs-unstable.portmaster
+
+    # Declare packages in in nixpkgs-unstable with pkgs.unstable prefix
+    # pkgs-unstable.firefox
   ];
 
   # VirtualBox - https://wiki.nixos.org/wiki/VirtualBox
@@ -241,10 +242,15 @@ in
   };
 
   # Portmaster - Secure DNS, firewall, network monitoring
-  # services.portmaster = {
-  #   package = pkgs-unstable.portmaster;
-  #   enable = true;
-  # };
+  # How to use at https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/portmaster.md
+  services.portmaster = {
+    enable = true;
+    package = pkgs-unstable.portmaster;
+  };
+  # The portmaster module comes from nixpkgs-unstable and ships manual docs whose
+  # chapter identifiers aren't registered in stable's redirects.json as of 2026-08-08
+  # Skip that check as suggested at https://github.com/NixOS/nixpkgs/issues/412451
+  documentation.nixos.checkRedirects = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
