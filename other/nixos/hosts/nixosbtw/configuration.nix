@@ -125,7 +125,7 @@ in
     ];
   };
 
-  # Install firefox.
+  # Install firefox
   programs.firefox.enable = true;
 
   # Run unpatched dynamic binaries on NixOS
@@ -147,12 +147,28 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # NVIDIA Graphics Configuration
-  ## Enable OpenGL
-  ## https://nixos.wiki/wiki/Nvidia
+  # Graphics Configuration
+  # AMD https://wiki.nixos.org/wiki/AMD_GPU
+  # NVIDIA https://nixos.wiki/wiki/Nvidia
+
+  # Enable OpenGL
   hardware.graphics = {
     enable = true;
   };
+
+  # Enable AMD ROCM or NVIDIA CUDA support for nixpkgs that have it like pkgs.btop
+  # nixpkgs.config.rocmSupport = true;
+  # CUDA Setup https://wiki.nixos.org/wiki/CUDA
+  # Enable CUDA Cache - requires one nixos-rebuild before it's available
+  nix.settings = {
+    substituters = [
+      "https://cache.nixos-cuda.org"
+    ];
+    trusted-public-keys = [
+      "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+    ];
+  };
+  # nixpkgs.config.cudaSupport = true;
 
   ## Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
