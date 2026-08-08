@@ -114,8 +114,7 @@ List of folders and dotfiles in them:
   - Status bar: [i3status](https://i3wm.org/docs/i3status.html)
 - Shell:
   - [Bash](https://www.gnu.org/software/bash/)
-    - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html)
-      library
+  - [GNU Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html) library
   - [Fish](https://fishshell.com/)
   - [Nushell](https://www.nushell.sh/) cross platform shell
   - [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell)
@@ -124,7 +123,8 @@ List of folders and dotfiles in them:
 ### Programs
 
 - Version control:
-  - [Git](https://git-scm.com/)
+  - [Git](https://git-scm.com/) with
+    [lazygit](https://github.com/jesseduffield/lazygit) user interface
   - [gfold](https://github.com/nickgerace/gfold) repositories tracker
 - Editor:
   - [Emacs](https://www.gnu.org/software/emacs/) with
@@ -133,15 +133,19 @@ List of folders and dotfiles in them:
   - [Neovim](https://neovim.io/) with
     [LazyVim distribution](https://www.lazyvim.org/)
   - [Helix](https://helix-editor.com/)
-- Video player: [mpv](https://mpv.io/) and [vlc](https://www.videolan.org/vlc/)
+- Media/Video player: [mpv](https://mpv.io/) and
+  [vlc](https://www.videolan.org/vlc/)
 
 - Window switcher/application launcher:
   [rofi](https://github.com/davatorium/rofi)
 - Clipboard manager: [copyq](https://hluk.github.io/CopyQ/)
 - Terminal:
+  - [Alacritty](https://github.com/alacritty/alacritty)
+  - [Ghostty](https://ghostty.org/)
   - [WezTerm](https://wezfurlong.org/wezterm/index.html) which includes
     multiplexer
-  - Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
+  - Multiplexer: [Zellij](https://zellij.dev/),
+    [tmux](https://github.com/tmux/tmux/wiki)
 - Notification daemon: [dunst](https://dunst-project.org/)
 - Personal Task management: [todotxt](https://github.com/todotxt/todo.txt-cli)
 - Parallel commands manager: [mprocs](https://github.com/pvolok/mprocs)
@@ -151,8 +155,10 @@ List of folders and dotfiles in them:
   [Home Manager using nix](https://github.com/nix-community/home-manager)
 - File Explorer, Directory Navigator: [Broot](https://dystroy.org/broot/),
   [Dolphin File Manager](https://apps.kde.org/dolphin/),
+  [GNOME File Manager aka Nautilus](https://apps.gnome.org/Nautilus/),
   [Yazi](https://yazi-rs.github.io/)
 - Text Expander: [Espanso](https://espanso.org/)
+- Tools, Task, Development Environment manager: [mise](https://mise.jdx.dev/)
 
 ### Operating System Compatibility
 
@@ -165,10 +171,12 @@ List of folders and dotfiles in them:
 
 ## How Dotfiles are Managed
 
-There are many ways to manage your dotfiles. I use an
+There are many ways to manage your dotfiles. I use
+[GNU Stow](https://www.gnu.org/software/stow/) on Linux. On other operating
+systems, I use an
 [Ansible playbook](https://github.com/justunsix/dotfiles-playbook) inspired by
 [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)
 and
 [dotfiles Ansible role](https://github.com/geerlingguy/ansible-role-dotfiles)
 which installs and configures machines I use from base installation using
-package managers like apt, dnf, nix, Chocolatey, and scoop.
+package managers like apt, dnf, nix, pacman, Chocolatey, and scoop.
