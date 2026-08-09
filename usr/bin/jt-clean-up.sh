@@ -156,12 +156,19 @@ clean_app_caches() {
     go clean -cache
   fi
 
-  # Clean Nix packages
+  # Clean Nix generations
   if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
-    write_host_with_timestamp "Cleaning Nix packages"
+    write_host_with_timestamp "Cleaning Nix generations older than 30 days"
     # Run nix package manager garbage collection
     # delete generations older than 30 days
     nix-collect-garbage --delete-older-than 30d
+  fi
+
+  # Clean Nix home manager generations
+  if command -v home-manager &>/dev/null; then
+    write_host_with_timestamp "Cleaning Nix home-manager generations older than 30 days"
+    # delete generations older than 30 days
+    home-manager expire-generations -30days
   fi
 
   # Clean Mise packages
