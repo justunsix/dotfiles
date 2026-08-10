@@ -162,6 +162,8 @@
 
     ### Containers, Docker/Podman
     dockerfmt
+    #### Older docker formatter, used by Doom Emacs
+    dockfmt
     dockerfile-language-server
 
     ## Go lang
