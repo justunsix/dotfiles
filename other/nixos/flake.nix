@@ -79,6 +79,12 @@
             "${inputs.nixpkgs-unstable}/nixos/modules/services/networking/portmaster.nix"
           ];
         };
+        nixosmis = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/nixosmis/configuration.nix
+          ];
+        };
       };
 
       # Standalone home-manager configuration entrypoint
@@ -95,6 +101,15 @@
           ];
         };
         "justin@surface" = home-manager.lib.homeManagerConfiguration {
+          # Home-manager requires 'pkgs' instance
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/home.nix
+          ];
+        };
+        "justin@nixosmis" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
           extraSpecialArgs = { inherit inputs; };

@@ -116,8 +116,6 @@
     todo-txt-cli
     gnumake
     # System and Monitors
-    # btop on NVIDIA
-    btop-cuda
     espanso
     ## Clean files
     bleachbit

@@ -224,6 +224,9 @@ in
     # exfat disk utilities like fsck.exfat
     exfatprogs
 
+    # btop on NVIDIA
+    btop-cuda
+
     # Declare packages in in nixpkgs-unstable with pkgs.unstable prefix
     # pkgs-unstable.firefox
   ];
