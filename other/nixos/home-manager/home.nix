@@ -35,6 +35,7 @@
 
     # System
     curl
+    nh
     ## Wayland clipboard management
     wl-clipboard
 
