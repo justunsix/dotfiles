@@ -25,5 +25,3 @@ lazy-lock.json
 /.config/git/.gitconfig.user
 /.config/zellij/layouts
 
-# Nix
-flake.lock
