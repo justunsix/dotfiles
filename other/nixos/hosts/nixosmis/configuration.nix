@@ -112,6 +112,9 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  # Enabling ROCm & HIP For Packages
+  nixpkgs.config.rocmSupport = true;
+
   services.fwupd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
