@@ -161,7 +161,11 @@ clean_app_caches() {
     write_host_with_timestamp "Cleaning Nix generations older than 30 days"
     # Run nix package manager garbage collection
     # delete generations older than 30 days
-    nix-collect-garbage --delete-older-than 30d
+    if command -v nh &>/dev/null; then
+      nh clean all --keep-since 30d --keep-one
+    else
+      nix-collect-garbage --delete-older-than 30d
+    fi
   fi
 
   # Clean Nix home manager generations
