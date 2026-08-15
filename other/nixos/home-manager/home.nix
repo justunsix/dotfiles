@@ -73,7 +73,7 @@
     kondo
     kdePackages.dolphin
     ## KDE theme configuration
-    kdePackages.qt6ct
+    # kdePackages.qt6ct
     ## Git
     lazygit
     worktrunk
