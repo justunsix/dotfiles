@@ -28,6 +28,8 @@ List of folders and dotfiles in them:
     [Nix package manager](https://nixos.org/)
   - `git/` - [Git](https://git-scm.com/) distributed version control
     configuration files
+  - `gtk-3.0/` and `gtk-4.0`- [GTK](https://www.gtk.org/) - UI element colours,
+    affects Dolphin file manager when on GNOME
   - `ghostty` - [ghostty](https://ghostty.org/) terminal emulator
   - `helix` - [Helix](https://helix-editor.com/) editor
   - `home-manager` -
