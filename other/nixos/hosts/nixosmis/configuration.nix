@@ -95,6 +95,8 @@
       "networkmanager"
       "wheel"
       "libvirtd"
+      # for work with rdev crate https://crates.io/crates/rdev
+      "input"
     ];
     packages = with pkgs; [
       #  thunderbird
