@@ -2,6 +2,9 @@
 PreviewSize=16
 
 [General]
+ShowFullPath=true
+ShowStatusBar=FullWidth
+ShowZoomSlider=true
 Version=202
 ViewPropsTimestamp=2026,8,14,23,59,57.226
 
