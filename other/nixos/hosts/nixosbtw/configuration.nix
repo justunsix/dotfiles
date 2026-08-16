@@ -62,28 +62,24 @@ in
   # Enable the GNOME Desktop Environment
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+
   environment.gnome.excludePackages = (
     with pkgs;
-
     [
-      atomix # puzzle game
-      cheese # webcam tool
-      epiphany # web browser
-      decibels # audio player
+      # atomix # puzzle game
+      # cheese # webcam tool
+      # epiphany # web browser
+      # decibels # audio player
       # evince # document viewer
-      geary # email reader
+      # geary # email reader
       # gedit # text editor
       # gnome-characters
       gnome-connections # remote desktop
-      gnome-music
+      # gnome-music
       # gnome-photos
       # gnome-terminal
       # gnome-tour
-      showtime # video player
-      hitori # sudoku game
-      iagno # go game
-      tali # poker game
-      totem # video player
+      # showtime # video player
     ]
   );
 
