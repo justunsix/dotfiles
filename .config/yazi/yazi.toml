@@ -9,3 +9,17 @@ edit = [
 [mgr]
 # Show hidden files by default
 show_hidden = true
+
+# MIME type retrieval plugin
+# https://github.com/yazi-rs/plugins/tree/main/mime-ext.yazi
+[[plugin.prepend_fetchers]]
+url   = "local://*"
+run   = "mime-ext.local"
+prio  = "high"
+group = "mime"
+
+[[plugin.prepend_fetchers]]
+url   = "remote://*"
+run   = "mime-ext.remote"
+prio  = "high"
+group = "mime"

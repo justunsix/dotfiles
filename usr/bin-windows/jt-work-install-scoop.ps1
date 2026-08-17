@@ -35,9 +35,11 @@ $programsList = @(
     ### yazi file manager and supporting programs
     "yazi",
     #### yazi optional dependencies
-    "unar",
+    "ffmpeg",
+    "7zip",
     "jq",
     "poppler",
+    # "resvg",
     # "bottom",
     ## Media
     # "figma",
@@ -132,7 +134,7 @@ $programsList = @(
     "diffutils",
     #### Shellcheck used by Emacs Flymake for shell scripts by default - Emacs 29.1
     "shellcheck",
-    #### Used by org-download for clipboard pasting to org
+    #### Used by org-download for clipboard pasting to org and yazi for previews
     "imagemagick",
     #### Emacs Doom Framework
     "llvm",
