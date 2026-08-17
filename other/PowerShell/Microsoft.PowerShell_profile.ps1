@@ -135,11 +135,12 @@ function Use-Conda {
 ## Yazi File Manager
 ## Wrapper for yazi to allow change cwd when existing yazi
 function y {
-    $tmp = [System.IO.Path]::GetTempFileName()
-    yazi $args --cwd-file="$tmp"
-    $cwd = Get-Content -Path $tmp
-    if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
-        Set-Location -LiteralPath $cwd
-    }
-    Remove-Item -Path $tmp
+	$tmp = (New-TemporaryFile).FullName
+	yazi.exe @args --cwd-file="$tmp"
+	$cwd = Get-Content -Path $tmp -Encoding UTF8
+	if ($cwd -and $cwd -ne $PWD.Path -and (Test-Path -LiteralPath $cwd -PathType Container)) {
+		Set-Location -LiteralPath (Resolve-Path -LiteralPath $cwd).Path
+	}
+	Remove-Item -Path $tmp
 }
+
