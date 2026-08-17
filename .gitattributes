@@ -1,5 +1,6 @@
 # Make Git normalize .txt files, 
-# ensure .sh files have LF in the working directory
+# ensure .sh and bash files have LF in the working directory
 *           text=auto
 *.txt		text
 *.sh		text eol=lf
+.bash*		text eol=lf
