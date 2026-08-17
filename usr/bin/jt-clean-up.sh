@@ -84,7 +84,7 @@ clean_app_caches() {
 
   if command -v yazi >/dev/null; then
     write_host_with_timestamp "Clear yazi cache"
-    yazi --clear-cache
+    ya cache clear
   fi
 
   if command -v scoop >/dev/null; then
