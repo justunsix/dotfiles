@@ -1,7 +1,6 @@
 scoop bucket add java
 scoop bucket add extras
 scoop bucket add nerd-fonts
-scoop bucket add versions
 # Lists of scoop packages to install
 $programsList = @(
     ## System
@@ -47,8 +46,6 @@ $programsList = @(
     # "obs-studio",
     # "gimp",
     # "inkscape",
-    ## Web
-    "firefox",
     ## Fonts
     ### For general, emacs use
     "nerd-fonts/JetBrains-Mono",
@@ -106,6 +103,7 @@ $programsList = @(
     # "maven",
     #### JavaScript / TypeScript
     "nodejs",
+    "pnpm",
     #### XML
     ##### XML Formatter, linter
     "extras/xmllint",
@@ -150,10 +148,14 @@ $programsList = @(
     "tree-sitter",
     ## Data Science, Artificial Intelligence (AI)
     "opencode"
+
 )
 
 # Convert programs to be installed by scoop into a single space-separated string
 $programs = $programsList -join " "
+
+# Install Firefox separately due to manifest issues
+scoop install firefox
 
 # Install list of programs
 # Use Invoke-Expression to execute as if on command line
@@ -169,12 +171,15 @@ uv tool install ruff
 uv tool install black
 uv tool upgrade --all
 scoop install main/marksman
-## npm installs
-npm install -g prettier
-npm install -g bash-language-server
-npm install -g vscode-langservers-extracted
-npm install -g dockerfile-language-server-nodejs
-npm update -g
+### npm installs
+pnpm setup
+pnpm add -g prettier
+pnpm add -g bash-language-server
+pnpm add -g vscode-langservers-extracted
+pnpm add -g dockerfile-language-server-nodejs
+
+pnpm outdated -g
+pnpm update -g --latest
 
 # Yazi theme
 ya pkg add yazi-rs/flavors:catppuccin-mocha

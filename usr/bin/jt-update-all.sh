@@ -140,6 +140,14 @@ if command -v npm >/dev/null; then
   npm update -g
 fi
 
+if command -v pnpm >/dev/null; then
+  write_host_with_timestamp "Updating pnpm global packages"
+  ## List them
+  pnpm outdated -g
+  ## then update
+  pnpm update -g --latest
+fi
+
 # Update yazi packages
 if command -v yazi >/dev/null; then
   write_host_with_timestamp "Updating yazi packages"
