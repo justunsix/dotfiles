@@ -7,7 +7,8 @@ edit = [
 ]
 
 [open]
-rules = [
+# Add rules to the default to avoid overwriting defaults
+append_rules = [
   { mime = "text/*", use = "edit" },
   # Various text files use this MIME type
   # Check MIMI type in Yazi using Tab
