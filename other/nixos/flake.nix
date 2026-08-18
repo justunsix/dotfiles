@@ -16,8 +16,8 @@
 
     # Home manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
@@ -111,7 +111,7 @@
         };
         "justin@nixosmis" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
+          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
           extraSpecialArgs = { inherit inputs; };
           modules = [
             # > Our main home-manager configuration file <
