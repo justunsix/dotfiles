@@ -93,7 +93,7 @@
         # replace with your username@hostname
         "justin@nixosbtw" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
+          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
           extraSpecialArgs = { inherit inputs; };
           modules = [
             # > Our main home-manager configuration file <
@@ -102,7 +102,7 @@
         };
         "justin@surface" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
-          pkgs = nixpkgs.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
+          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
           extraSpecialArgs = { inherit inputs; };
           modules = [
             # > Our main home-manager configuration file <
