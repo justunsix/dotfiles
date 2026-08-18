@@ -58,6 +58,8 @@
     # Fonts
     iosevka
     ## Doom Emacs
+    ### Emacs fall back font
+    symbola
     ### Default font
     jetbrains-mono
     ## Starship prompt, eza nerd font
