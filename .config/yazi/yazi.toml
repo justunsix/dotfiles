@@ -6,20 +6,44 @@ edit = [
   { run = '%EDITOR% %s', block = true, desc = "$EDITOR file", for = "windows" },
 ]
 
+[open]
+rules = [
+  { mime = "text/*", use = "edit" },
+  # Various text files use this MIME type
+  # Check MIMI type in Yazi using Tab
+  { mime = "application/octet-stream", use = "edit" },
+  # { mime = "application/json", use = "edit" },
+  { url = "*.json", use = "edit" },
+]
+
 [mgr]
 # Show hidden files by default
 show_hidden = true
 
+[preview]
+# Word wrap code preview
+# wrap = "yes"
+
 # MIME type retrieval plugin
 # https://github.com/yazi-rs/plugins/tree/main/mime-ext.yazi
 [[plugin.prepend_fetchers]]
-url   = "local://*"
-run   = "mime-ext.local"
-prio  = "high"
+url = "local://*"
+run = "mime-ext.local"
+prio = "high"
 group = "mime"
 
 [[plugin.prepend_fetchers]]
-url   = "remote://*"
-run   = "mime-ext.remote"
-prio  = "high"
+url = "remote://*"
+run = "mime-ext.remote"
+prio = "high"
 group = "mime"
+
+# Disable Image, Video Previews
+# https://yazi-rs.github.io/docs/configuration/yazi#plugin.previewers
+[plugin]
+prepend_previewers = [
+  { mime = "image/*", run = "noop" },
+  { mime = "video/*", run = "noop" },
+  { mime = "application/octet-stream", run = "code" },
+  { mime = "application/xml", run = "code" },
+]
