@@ -40,6 +40,7 @@ prio = "high"
 group = "mime"
 
 # Disable Image, Video Previews
+# prepend to replace defaults
 # https://yazi-rs.github.io/docs/configuration/yazi#plugin.previewers
 [plugin]
 prepend_previewers = [
