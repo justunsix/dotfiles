@@ -140,6 +140,9 @@ ColorSchemeHash=9d38eb71ded8ff549da26d57d7cbab9164da243a
 contrast=4
 frameContrast=0.2
 
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
 [WM]
 activeBackground=39,44,49
 activeBlend=252,252,252
