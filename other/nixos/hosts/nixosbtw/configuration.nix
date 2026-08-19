@@ -284,10 +284,9 @@ in
     # Set only when unrestricted browser or debugging access to http://127.0.0.1:817 is required
     settings.devmode = true;
   };
-
-  # The portmaster module comes from nixpkgs-unstable and ships manual docs whose
-  # chapter identifiers aren't registered in stable's redirects.json as of 2026-08-08
-  # Skip that check as suggested at https://github.com/NixOS/nixpkgs/issues/412451
+  # Portmaster is in nixpkgs-unstable and ships manual docs where
+  # chapter identifiers aren't registered in nixpkgs-stable's redirects.json as of 2026-08-08
+  # Skip that check suggested at https://github.com/NixOS/nixpkgs/issues/412451
   documentation.nixos.checkRedirects = false;
 
   # Open ports in the firewall.

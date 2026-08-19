@@ -83,6 +83,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/nixosmis/configuration.nix
+            "${inputs.nixpkgs-unstable}/nixos/modules/services/networking/portmaster.nix"
           ];
         };
       };
