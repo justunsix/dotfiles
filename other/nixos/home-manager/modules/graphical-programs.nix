@@ -4,15 +4,14 @@
 }:
 
 {
-  # Install Neovim and dependencies
   home.packages = with pkgs; [
 
     # ------------------------------------------------------------
     # Graphical Applications with Nix
 
     # Browser
-    firefox
     ungoogled-chromium
+    firefox
 
     # Books, Library, Knowledge
     calibre
@@ -20,6 +19,11 @@
 
     # Clipboard manager
     copyq
+
+    # File Management
+    kdePackages.dolphin
+    ## KDE theme configuration
+    # kdePackages.qt6ct
 
     # Information Management
     ## Library and Bibliography management
@@ -57,6 +61,4 @@
 
   ];
 
-  # Services
-  services.copyq.enable = true;
 }

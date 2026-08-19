@@ -6,12 +6,18 @@
     # User, fonts config, home-manager, allow unfree packages
     ./modules/base.nix
     ./modules/graphical-programs.nix
-    ./modules/graphical-firefox.nix    
-    # GNOME Desktop and its settings, System services
-    ./modules/desktop.nix
     # All other packages like for terminal, fonts, system management, computer programming, devops
     ./modules/tools.nix
   ];
+
+  # Settings that make Home Manager work better on GNU/Linux distributions other than NixOS
+  targets.genericLinux.enable = true;
+
+  # GPU use on non NixOS Linux systems, like for graphical programs
+  # Set using two options:
+  # 1. home-manager https://nix-community.github.io/home-manager/usage/gpu-non-nixos.html
+  # 2. NixGL https://github.com/nix-community/nixGL
+  targets.genericLinux.gpu.enable = true;
 
   # home.file = {
   # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -25,13 +31,5 @@
   #   org.gradle.daemon.idletimeout=3600000
   #   '';
   # };
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
 
 }

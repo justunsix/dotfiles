@@ -94,31 +94,40 @@
         # replace with your username@hostname
         "justin@nixosbtw" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
-          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
+          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with host's architecture
           extraSpecialArgs = { inherit inputs; };
           modules = [
-            # > Our main home-manager configuration file <
+            # > home-manager configuration <
             ./home-manager/home.nix
           ];
         };
         "justin@surface" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
-          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
+          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with host's architecture
           extraSpecialArgs = { inherit inputs; };
           modules = [
-            # > Our main home-manager configuration file <
+            # > home-manager configuration <
             ./home-manager/home.nix
           ];
         };
         "justin@nixosmis" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
-          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with your architecture
+          pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with host's architecture
           extraSpecialArgs = { inherit inputs; };
           modules = [
-            # > Our main home-manager configuration file <
+            # > home-manager configuration <
             ./home-manager/home.nix
           ];
         };
+        # Placeholder for non-NixOS home manager configuration
+        # "justin@ubuntu" = home-manager.lib.homeManagerConfiguration {
+        # Home-manager requires 'pkgs' instance
+        # pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with host's architecture
+        # extraSpecialArgs = { inherit inputs; };
+        #     modules = [
+        #       ./home-manager/home-non-nixos.nix
+        #     ];
+        # };
       };
 
     };
