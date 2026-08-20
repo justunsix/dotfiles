@@ -1,8 +1,9 @@
 {
+  pkgs,
   ...
 }:
 
-{  
+{
   # GNOME Settings
   dconf = {
     settings = {
@@ -32,7 +33,7 @@
     # password entry
     pinentry.package = pkgs.pinentry-gnome3;
   };
-  
+
   # Clipboard manager
   services.copyq.enable = true;
 }

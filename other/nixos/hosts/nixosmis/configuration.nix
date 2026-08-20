@@ -2,7 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 let
   pkgs-unstable = import inputs.nixpkgs-unstable {
@@ -206,7 +212,7 @@ in
     settings.devmode = true;
   };
   # Portmaster - Startup - do not autostart, start manually due to interference with other progams at startup
-  systemd.services.portmaster.wantedBy = lib.mkForce [];
+  systemd.services.portmaster.wantedBy = lib.mkForce [ ];
   # It's default is start up before netowrking:
   # wantedBy = [ "multi-user.target" ];
   # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/networking/portmaster.nix

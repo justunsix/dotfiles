@@ -6,7 +6,6 @@
     # User, fonts config, home-manager, allow unfree packages
     ./modules/base.nix
     ./modules/graphical-programs.nix
-    ./modules/graphical-firefox.nix    
     # GNOME Desktop and its settings, System services
     ./modules/desktop.nix
     # All other packages like for terminal, fonts, system management, computer programming, devops
@@ -26,12 +25,11 @@
   #   '';
   # };
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-  ];
+  # # You can also create simple shell scripts directly inside your
+  # # configuration. For example, this adds a command 'my-hello' to your
+  # # environment:
+  # (writeShellScriptBin "my-hello" ''
+  #   echo "Hello, ${config.home.username}!"
+  # '')
 
 }
