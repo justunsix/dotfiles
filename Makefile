@@ -6,8 +6,10 @@ help: ## Show this help
 
 .ONESHELL:
 stow-files: ## Stow files
-	# Link all files explicitly with --no-folding instead of symlink directories
 	mkdir -p "$$HOME"/.config
+	# Link all files explicitly with --no-folding instead of symlink directories
+	# Warning with --adopt. Stow will take over the file, but its contents will not be changed
+	# git restore . will undo any changes caused by adopting existing files in stow's target
 	stow --target="$$HOME"/.config .config \
 	--no-folding \
 	--ignore=emacs \

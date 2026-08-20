@@ -108,8 +108,9 @@ List of folders and dotfiles in them:
 ### Operating System and Environment
 
 - Operating systems/distributions:
+  - [GNU/Linux NixOS using GNOME](https://nixos.org/download/#nix-more)
   - [GNU/Linux Ubuntu using GNOME](https://ubuntu.com/desktop)
-  - [GNU/Linux Fedora using i3 spin](https://spins.fedoraproject.org/en/i3/)
+  - [GNU/Linux Fedora using i3 spin](https://fedoraproject.org/spins/)
   - [Microsoft Windows](https://www.microsoft.com/en-ca/windows)
 - Desktop environment: [GNOME](https://www.gnome.org/)
 - Window manager (WM): [i3 tiling WM](https://i3wm.org/)
@@ -174,9 +175,10 @@ List of folders and dotfiles in them:
 ## How Dotfiles are Managed
 
 There are many ways to manage your dotfiles. I use
-[GNU Stow](https://www.gnu.org/software/stow/) on Linux. On other operating
-systems, I use an
-[Ansible playbook](https://github.com/justunsix/dotfiles-playbook) inspired by
+[GNU Stow](https://www.gnu.org/software/stow/) on Linux and see
+[`Makefile`](./Makefile) for example commands. On other operating systems, I use
+an [Ansible playbook](https://github.com/justunsix/dotfiles-playbook) inspired
+by
 [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)
 and
 [dotfiles Ansible role](https://github.com/geerlingguy/ansible-role-dotfiles)
