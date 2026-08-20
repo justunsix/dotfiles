@@ -218,6 +218,10 @@ in
     };
   };
 
+  # Firmware updates
+  # https://wiki.archlinux.org/title/Fwupd
+  services.fwupd.enable = true;
+
   # Enable flakes https://nix.dev/concepts/flakes.html
   nix.settings.experimental-features = [
     "nix-command"

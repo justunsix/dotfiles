@@ -146,6 +146,10 @@ in
   # Enabling ROCm & HIP For Packages
   nixpkgs.config.rocmSupport = true;
 
+  # Firmware updates
+  # https://wiki.archlinux.org/title/Fwupd
+  services.fwupd.enable = true;
+
   # Key binding service
   # Autoload from https://github.com/thursdaddy/nixos-config/blob/f21380b188bd3941b32656e832c65111c437f463/modules/desktop/input-remapper.nix
   services.input-remapper = {

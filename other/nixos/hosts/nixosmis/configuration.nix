@@ -166,6 +166,8 @@ in
   # Enabling ROCm & HIP For Packages
   nixpkgs.config.rocmSupport = true;
 
+  # Firmware updates
+  # https://wiki.archlinux.org/title/Fwupd
   services.fwupd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
