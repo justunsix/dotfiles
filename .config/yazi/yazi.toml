@@ -13,6 +13,7 @@ append_rules = [
   # Various text files use this MIME type
   # Check MIMI type in Yazi using Tab
   { mime = "application/octet-stream", use = "edit" },
+  { mime = "application/msdownload", use = "edit" },
   # { mime = "application/json", use = "edit" },
   { url = "*.json", use = "edit" },
 ]
@@ -48,4 +49,5 @@ prepend_previewers = [
   { mime = "video/*", run = "noop" },
   { mime = "application/octet-stream", run = "code" },
   { mime = "application/xml", run = "code" },
+  { mime = "application/msdownload", run = "code" },
 ]
