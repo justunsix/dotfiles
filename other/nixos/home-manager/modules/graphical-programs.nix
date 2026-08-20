@@ -59,6 +59,10 @@
     ## Email
     ## thunderbird
 
+    # System management
+    ## GPU control centre
+    lact
+
   ];
 
 }
