@@ -12,8 +12,11 @@
     # System
     curl
     nh
-    ## Wayland clipboard management
-    wl-clipboard
+    ## Desktop clipboard management
+    ### Wayland
+    ### wl-clipboard
+    ### X11 or XWayland
+    xsel
 
     # Shell
     nushell
