@@ -1,0 +1,217 @@
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
+
+let
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    # Use same platform as host
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in
+{
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  networking.hostName = "nixosp14"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # Set your time zone.
+  time.timeZone = "America/Toronto";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_CA.UTF-8";
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
+      # atomix # puzzle game
+      # cheese # webcam tool
+      # epiphany # web browser
+      # decibels # audio player
+      # evince # document viewer
+      # geary # email reader
+      # gedit # text editor
+      # gnome-characters
+      gnome-connections # remote desktop
+      # gnome-music
+      # gnome-photos
+      # gnome-terminal
+      # gnome-tour
+      # showtime # video player
+    ]
+  );
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users."justin" = {
+    isNormalUser = true;
+    description = "justin";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [
+      #  thunderbird
+    ];
+  };
+
+  # Install firefox.
+  programs.firefox.enable = true;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    git
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    btop-rocm
+    #  wget
+  ];
+
+  # Steam gaming
+  # https://nixos.wiki/wiki/Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
+  # Enabling ROCm & HIP For Packages
+  nixpkgs.config.rocmSupport = true;
+
+  # Key binding service
+  # Autoload from https://github.com/thursdaddy/nixos-config/blob/f21380b188bd3941b32656e832c65111c437f463/modules/desktop/input-remapper.nix
+  services.input-remapper = {
+    enable = true;
+    serviceWantedBy = [ "multi-user.target" ];
+  };
+
+  systemd.user.services.input-remapper-autoload = {
+    description = "Run input-remapper-control autoload command";
+    documentation = [ "https://github.com/sezanzeb/input-remapper" ];
+    after = [ "graphical-session.target" ];
+    bindsTo = [ "graphical-session.target" ];
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.input-remapper}/bin/input-remapper-control --command autoload";
+      Restart = "on-failure";
+      RestartSec = "5s";
+      KillMode = "mixed";
+    };
+  };
+
+  # Portmaster - Package - Secure DNS, firewall, network monitoring
+  # How to use at https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/portmaster.md
+  services.portmaster = {
+    enable = true;
+    package = pkgs-unstable.portmaster;
+    # Set only when unrestricted browser or debugging access to http://127.0.0.1:817 is required
+    settings.devmode = true;
+  };
+  # Portmaster - Startup - do not autostart, start manually due to interference with other progams at startup
+  systemd.services.portmaster.wantedBy = lib.mkForce [ ];
+  # It's default is start up before netowrking:
+  # wantedBy = [ "multi-user.target" ];
+  # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/networking/portmaster.nix
+  #
+  # Portmaster - Nix Manual - Portmaster is in nixpkgs-unstable and ships manual docs where
+  # chapter identifiers aren't registered in nixpkgs-stable's redirects.json as of 2026-08-08
+  # Skip that check suggested at https://github.com/NixOS/nixpkgs/issues/412451
+  documentation.nixos.checkRedirects = false;
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "26.05"; # Did you read the comment?
+
+}
