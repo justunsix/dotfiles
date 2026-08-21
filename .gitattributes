@@ -3,4 +3,5 @@
 *           text=auto
 *.txt		text
 *.sh		text eol=lf
+*.lua		text eol=lf
 .bash*		text eol=lf
