@@ -181,8 +181,14 @@ pnpm add -g dockerfile-language-server-nodejs
 pnpm outdated -g
 pnpm update -g --latest
 
-# Yazi theme
+# Yazi packages
+
+## Yazi theme
 ya pkg add yazi-rs/flavors:catppuccin-mocha
+## MIME type detector
+ya pkg add yazi-rs/plugins:mime-ext
+## Preview toggle
+ya pkg add yazi-rs/plugins:toggle-pane
 
 # Television channels update
 tv update-channels
