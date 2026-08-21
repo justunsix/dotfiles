@@ -279,6 +279,9 @@ source $"($nu.cache-dir)/carapace.nu"
 # mise
 use ($nu.default-config-dir | path join mise.nu)
 
+# Atuin - Shell history
+source ~/.local/share/atuin/init.nu
+
 # Conditional Sourcing based on operating system
 ## Conditional sourcing
 ## per https://www.nushell.sh/blog/2023-09-19-nushell_0_85_0.html#improvements-to-parse-time-evaluation
