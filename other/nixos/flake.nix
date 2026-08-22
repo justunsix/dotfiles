@@ -69,7 +69,7 @@
           modules = [
             # > Our main nixos configuration file <
             ./hosts/surface/configuration.nix
-            nixos-hardware.nixosModules.microsoft-surface-common
+            # nixos-hardware.nixosModules.microsoft-surface-common
           ];
         };
         nixosbtw = nixpkgs.lib.nixosSystem {
