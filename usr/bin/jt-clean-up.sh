@@ -150,11 +150,12 @@ clean_app_caches() {
     npm cache clean --force
   fi
 
-  # Clean pnpm cache - experimental, leave out for now
-  # if command -v pnpm &>/dev/null; then
-  #   write_host_with_timestamp "Clean pnpm metadata cache"
-  #   pnpm cache delete
-  # fi
+  # Clean unreferenced pnpm store items
+  # (items not symbolically linked to active node_modules in a project)
+  if command -v pnpm &>/dev/null; then
+    write_host_with_timestamp "Clean pnpm unreferenced store items"
+    pnpm store prune
+  fi
 
   # Clean go cache
   if command -v go &>/dev/null; then
