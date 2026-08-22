@@ -47,7 +47,7 @@
   ;; --------------------------------------------------------------------------------
   ;; * Speedbar - File Explorer ----------------------------
   ;;
-  ;; Emacs 30 option, show Speedbar in a separate window (like a side bar)
+  ;; Emacs 31 option, show Speedbar in a separate window (like a side bar)
   ;; instead of frame
   (setq speedbar-prefer-window t)
   ;; Do not use default icons
