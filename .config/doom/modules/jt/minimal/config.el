@@ -45,6 +45,15 @@
   (setq shr-color-visible-luminance-min 70)
 
   ;; --------------------------------------------------------------------------------
+  ;; * Speedbar - File Explorer ----------------------------
+  ;;
+  ;; Emacs 30 option, show Speedbar in a separate window (like a side bar)
+  ;; instead of frame
+  (setq speedbar-prefer-window t)
+  ;; Do not use default icons
+  (setq speedbar-use-images nil)
+
+  ;; --------------------------------------------------------------------------------
   ;; * Dired - File Management ----------------------------
 
   ;; Previous setting "-alhgo --group-directories-first"
