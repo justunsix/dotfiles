@@ -107,8 +107,6 @@ in
     extraGroups = [
       "networkmanager"
       "wheel"
-      # virtualization
-      "libvirtd"
       # for work with rdev crate https://crates.io/crates/rdev
       "input"
     ];
@@ -139,12 +137,13 @@ in
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     btop-rocm
-    #  wget
     gnome-boxes
+    #  wget
   ];
 
   # Virtualization, Virtual Machines
   # https://wiki.nixos.org/wiki/Libvirt
+  # https://nixos.wiki/wiki/Virt-manager
   virtualisation.libvirtd.enable = true;
   # Enable TPM emulation (optional)
   # install pkgs.swtpm system-wide for use in virt-manager (optional)
@@ -153,6 +152,8 @@ in
   };
   # Enable USB redirection (optional)
   virtualisation.spiceUSBRedirection.enable = true;
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = [ "justin" ];
 
   # Steam gaming
   # https://nixos.wiki/wiki/Steam
