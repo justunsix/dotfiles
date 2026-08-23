@@ -22,7 +22,11 @@ stow-files: ## Stow files
 	--ignore=rofi \
 	--ignore=tmux \
 	--adopt
-	stow --target="$$HOME" home --no-folding --adopt
+
+	stow --target="$$HOME" home \
+	--no-folding \
+	--ignore=.xinitrc \
+	--adopt
 	git restore .
 
 unstow-files: ## Unstow files
