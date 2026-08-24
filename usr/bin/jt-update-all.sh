@@ -72,6 +72,12 @@ if [ -d /c/Users ]; then
   fi
 fi
 
+# FreeBSD pkg packages
+if [ "$(uname -s)" = "FreeBSD" ] && command -v pkg >/dev/null; then
+  write_host_with_timestamp "Updating FreeBSD pkg packages"
+  doas pkg upgrade -y
+fi
+
 # pacman packages
 if command -v pacman >/dev/null; then
   write_host_with_timestamp "Updating pacman packages"
