@@ -127,6 +127,8 @@
     ## Other Editors
     neovim
     helix
+    ### Emacs 31.1 no longer bundles ctags, use Univerval Ctags
+    universal-ctags
 
     # Languages
     ## Language Servers installs, LSP, Linters
@@ -135,11 +137,12 @@
     tree-sitter
     
     ### Containers
+    #### Formatter
     dockerfmt
+    ##### Older version for Doom Emacs
+    dockfmt
     dockerfile-language-server
     
-    # luajitPackages.luarocks
-
     ## Help
     ### tldr in rust
     tealdeer
@@ -170,6 +173,8 @@
 
     ## Lua
     lua-language-server
+    # luajitPackages.luarocks
+     
     ## Markdown LSP
     marksman
 

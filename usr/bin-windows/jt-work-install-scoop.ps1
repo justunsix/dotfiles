@@ -98,6 +98,8 @@ $programsList = @(
     "uv",
     ##### Python LSP
     "ty",
+    #### Go Lang
+    "go",
     #### Java
     # "java/temurin-lts-jdk",
     # "maven",
@@ -127,6 +129,8 @@ $programsList = @(
     "shfmt",
     ### Emacs and Supporting Programs
     "emacs",
+    #### Emacs 31.1 no longer bundles ctags, use Univerval Ctags
+    "universal-ctags"
     "pandoc",
     #### For use with Emacs diff, grep, gzip for undo
     "diffutils",
@@ -165,7 +169,8 @@ Invoke-Expression "scoop install $programs"
 scoop hold msys2
 
 ## Install LSPs, formatters, linters for use
-## with helix editor
+ 
+## For Helix editor
 uv tool install pyright
 uv tool install ruff
 uv tool install black
@@ -181,8 +186,13 @@ pnpm add -g dockerfile-language-server-nodejs
 pnpm outdated -g
 pnpm update -g --latest
 
-# Yazi packages
+### Go installs
+#### For Helix editor
+go install github.com/reteps/dockerfmt@latest
+### For Doom Emacs
+go install github.com/jessfraz/dockfmt@latest
 
+# Yazi packages
 ## Yazi theme
 ya pkg add yazi-rs/flavors:catppuccin-mocha
 ## MIME type detector

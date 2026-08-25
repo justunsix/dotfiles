@@ -121,6 +121,8 @@
     mise
     ### Doom Emacs requirements
     emacs
+    #### Emacs 31.1 no longer bundles ctags, use Univerval Ctags
+    universal-ctags
     #### fd also yazi dependency for file search
     fd
     ## Other Editors
