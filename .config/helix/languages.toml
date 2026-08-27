@@ -53,6 +53,25 @@ auto-format = true
 # LSP formatter (gofmt) does not fix imports, goimports should be used instead
 formatter = { command = "goimports" }
 
+# PowerShell
+[[language]]
+name = 'powershell'
+scope = 'source.ps1'
+file-types = ['ps1', 'psm1']
+roots = ['.git']
+comment-token = '#'
+indent = { tab-width = 2, unit = '  ' }
+language-servers = [ 'powershell-editor-services' ]
+
+[language-server.powershell-editor-services]
+# https://github.com/PowerShell/PowerShellEditorServices
+name = 'powershell-editor-services'
+transport = 'stdio'
+command = 'pwsh'
+args = ['-NoLogo', '-NoProfile', '-Command', 'Start-EditorServices.ps1 -Stdio -LogLevel Error -SessionDetailsPath ~/usr/temp/PowerShellEditorSession.json']
+
+# Other Languages
+
 [[language]]
 name = "yaml"
 auto-format = true

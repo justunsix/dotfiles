@@ -89,7 +89,9 @@ $programsList = @(
     ### Tool, runtime, environment management
     "mise",
     ### Languages
-    "make", 
+    "make",
+    #### PowerShell used by Helix and Neovim
+    "powershelleditorservices",
     #### Python
     "python",
     # Replace pipx with uv
@@ -177,12 +179,13 @@ uv tool install black
 uv tool upgrade --all
 scoop install main/marksman
 ### npm installs
-pnpm setup
+# pnpm setup
 pnpm add -g prettier
 pnpm add -g bash-language-server
 pnpm add -g vscode-langservers-extracted
 pnpm add -g dockerfile-language-server-nodejs
 
+# List updates
 pnpm outdated -g
 pnpm update -g --latest
 
