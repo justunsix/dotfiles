@@ -215,6 +215,10 @@
     ### Used in document conversion, Emacs exports
     pandoc
 
+    ## PowerShell
+    # powershell
+    # powershell-editor-services
+
     ## Python
     python3
     uv
