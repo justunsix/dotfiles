@@ -9,6 +9,33 @@ if [ -d "/c/Windows" ]; then
   IS_WINDOWS=true
 fi
 
+clean_emacs() {
+
+  # Clean Emacs and Doom Packages
+  if [ -d "$HOME/.config/emacs/.local/cache" ]; then
+    write_host_with_timestamp 'Clean non-essential Emacs cache'
+    read -rp "Do you want to proceed with cleaning emacs Doom local files? (y/n): " choice
+    if [[ "$choice" != [Yy] ]]; then
+      echo "Operation canceled."
+    else
+      cd "$HOME/.config/emacs/.local/cache" || exit
+      rm -rf autosave
+      rm -rf org
+      rm -rf undo-fu-session
+      rm -rf url
+      rm -rf eshell
+      rm -f savehist
+    fi
+  fi
+
+  if [ -d "$HOME/.config/emacs/bin" ]; then
+    if [ $IS_WINDOWS = false ]; then
+      write_host_with_timestamp "Clean Doom Emacs Packages"
+      cd "$HOME/.config/emacs/bin" && doom gc
+    fi
+  fi
+}
+
 # Clean Python .venv directories
 clean_venvs() {
 
@@ -188,24 +215,6 @@ clean_app_caches() {
     mise cache prune
   fi
 
-  # Clean Emacs and Doom Packages
-  if [ -d "$HOME/.config/emacs/bin" ]; then
-    if [ $IS_WINDOWS = false ]; then
-      write_host_with_timestamp "Clean Doom Emacs Packages"
-      cd "$HOME/.config/emacs/bin" && doom gc
-    fi
-  fi
-  if [ -d "$HOME/.config/emacs/.local/cache" ]; then
-    write_host_with_timestamp 'Clean non-essential Emacs cache'
-    cd "$HOME/.config/emacs/.local/cache" || exit
-    rm -rf autosave
-    rm -rf org
-    rm -rf undo-fu-session
-    rm -rf url
-    rm -rf eshell
-    rm -f savehist
-  fi
-
   # Clean proselint cache
   if [ -d "$HOME/.cache/proselint" ]; then
     write_host_with_timestamp 'Clean proselint cache'
@@ -258,4 +267,5 @@ elif [ "$1" = "--all" ]; then
 
 fi
 
+clean_emacs
 clean_app_caches
