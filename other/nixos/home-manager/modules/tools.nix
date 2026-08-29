@@ -279,7 +279,7 @@
     ### Password entry of gpupg
     pinentry-gnome3
     sops
-    veracrypt
+    # veracrypt
     ## Anti-virus
     clamav
 
