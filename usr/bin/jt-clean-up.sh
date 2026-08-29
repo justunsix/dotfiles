@@ -3,6 +3,7 @@
 source "$(dirname "$0")/common.sh"
 
 IS_WINDOWS=false
+full_clean=false
 
 # Assume run under msys2 like environment on Windows
 if [ -d "/c/Windows" ]; then
@@ -13,11 +14,8 @@ clean_emacs() {
 
   # Clean Emacs and Doom Packages
   if [ -d "$HOME/.config/emacs/.local/cache" ]; then
-    write_host_with_timestamp 'Clean non-essential Emacs cache'
-    read -rp "Do you want to proceed with cleaning emacs Doom local files? (y/n): " choice
-    if [[ "$choice" != [Yy] ]]; then
-      echo "Operation canceled."
-    else
+    if [ "$full_clean" = true ]; then
+      write_host_with_timestamp 'Clean non-essential Emacs cache'
       cd "$HOME/.config/emacs/.local/cache" || exit
       rm -rf autosave
       rm -rf org
@@ -67,6 +65,28 @@ clean_venvs() {
   echo "All specified 'venv' directories have been removed."
 }
 
+clean_code_caches() {
+
+  if [ "$full_clean" = true ]; then
+
+    if [ -d "$HOME/Code" ]; then
+
+      if [ $IS_WINDOWS = false ]; then
+        write_host_with_timestamp "Clean python virtual environments"
+        clean_venvs
+      fi
+
+      # kondo command exists
+      if command -v kondo >/dev/null; then
+        write_host_with_timestamp "Clean software projects unneeded files"
+        cd "$HOME/Code" && kondo
+      fi
+
+    fi
+
+  fi
+}
+
 # Clean regular app caches
 clean_app_caches() {
 
@@ -83,21 +103,6 @@ clean_app_caches() {
     ls -A | grep -v $(nvm current) | xargs rm -rf
   fi
 
-  if [ -d "$HOME/Code" ]; then
-
-    if [ $IS_WINDOWS = false ]; then
-      write_host_with_timestamp "Clean python virtual environments"
-      clean_venvs
-    fi
-
-    # kondo command exists
-    if command -v kondo >/dev/null; then
-      write_host_with_timestamp "Clean software projects unneeded files"
-      cd "$HOME/Code" && kondo
-    fi
-
-  fi
-
   # Clean Docker images
   if command -v docker >/dev/null; then
     # check Docker daemon is running
@@ -112,13 +117,6 @@ clean_app_caches() {
   if command -v yazi >/dev/null; then
     write_host_with_timestamp "Clear yazi cache"
     ya cache clear
-  fi
-
-  if command -v scoop >/dev/null; then
-    write_host_with_timestamp "Clear scoop cache"
-    scoop cleanup --all
-    scoop cache rm --all
-
   fi
 
   # Windows mpv history
@@ -190,6 +188,23 @@ clean_app_caches() {
     go clean -cache
   fi
 
+  # Clean proselint cache
+  if [ -d "$HOME/.cache/proselint" ]; then
+    write_host_with_timestamp 'Clean proselint cache'
+    rm -rf "$HOME/.cache/proselint"
+  fi
+
+}
+
+clean_package_manager_caches() {
+
+  # Clean Nix home manager generations
+  if command -v home-manager &>/dev/null; then
+    write_host_with_timestamp "Cleaning Nix home-manager generations older than 30 days"
+    # delete generations older than 30 days
+    home-manager expire-generations -30days
+  fi
+
   # Clean Nix generations
   if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
     write_host_with_timestamp "Cleaning Nix generations older than 30 days"
@@ -202,37 +217,19 @@ clean_app_caches() {
     fi
   fi
 
-  # Clean Nix home manager generations
-  if command -v home-manager &>/dev/null; then
-    write_host_with_timestamp "Cleaning Nix home-manager generations older than 30 days"
-    # delete generations older than 30 days
-    home-manager expire-generations -30days
-  fi
-
   # Clean Mise packages
   if command -v mise &>/dev/null; then
     write_host_with_timestamp "Clean mise-en-place cache"
     mise cache prune
   fi
 
-  # Clean proselint cache
-  if [ -d "$HOME/.cache/proselint" ]; then
-    write_host_with_timestamp 'Clean proselint cache'
-    rm -rf "$HOME/.cache/proselint"
+  if command -v scoop >/dev/null; then
+
+    write_host_with_timestamp "Clear scoop cache"
+    scoop cleanup --all
+    scoop cache rm --all
+
   fi
-
-}
-
-# Help
-if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
-
-  echo "Run with no arguments, clean various caches"
-  echo "--all: Remove OS package manager caches, Editor caches"
-  echo '       To clean complete Emacs cache (warning it will remove saved project, recent and files history), run:'
-  echo '       jt-clean-up.sh --all'
-  exit
-
-elif [ "$1" = "--all" ]; then
 
   if command -v apt >/dev/null; then
 
@@ -247,6 +244,10 @@ elif [ "$1" = "--all" ]; then
     pacman -Sc --noconfirm
 
   fi
+
+}
+
+clean_editor_files() {
 
   write_host_with_timestamp "Clean Emacs local files, Run Doom sync after to reinstall"
   if [ $IS_WINDOWS = true ]; then
@@ -265,7 +266,29 @@ elif [ "$1" = "--all" ]; then
     rm -rf ./*nvim*
   fi
 
+}
+
+# Help
+if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+
+  echo "Run with no arguments, clean various caches"
+  echo "--full: Remove Emacs editor cache"
+  echo "--editor: Remove Neovim, Emacs files"
+  echo '       To clean complete Emacs cache (warning it will remove saved project, recent and files history), run:'
+  echo '       jt-clean-up.sh --all'
+  exit
+
+elif [ "$1" = "--editor" ]; then
+
+  clean_editor_files
+
+elif [ "$1" = "--full" ]; then
+
+  full_clean=true
+
 fi
 
+clean_code_caches
 clean_emacs
+clean_package_manager_caches
 clean_app_caches
