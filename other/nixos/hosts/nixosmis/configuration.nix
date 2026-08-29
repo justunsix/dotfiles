@@ -231,6 +231,22 @@ in
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  # Secondary Storage
+  # https://wiki.nixos.org/wiki/Full_Disk_Encryption#Unlocking_secondary_drives
+  environment.etc.crypttab.text = ''
+    briar UUID=5a5fb28d-9ab8-4bb0-b73b-e4cd16bd752a /root/mykeyfile.key luks,nofail
+  '';
+
+  # nofail plus a short device timeout
+  fileSystems."/run/media/justin/Briar" = {
+    device = "/dev/mapper/briar";
+    fsType = "ext4";
+    options = [
+      "nofail"
+      "x-systemd.device-timeout=10s"
+    ];
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
