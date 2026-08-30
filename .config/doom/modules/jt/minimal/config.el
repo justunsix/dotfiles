@@ -56,6 +56,7 @@
   ;; --------------------------------------------------------------------------------
   ;; * Dired - File Management ----------------------------
 
+  ;; Some suggestions from https://www.jamescherti.com/emacs-dired-configuration/
   ;; Previous setting "-alhgo --group-directories-first"
   (setq dired-listing-switches "-alh --group-directories-first")
 
@@ -70,9 +71,14 @@
     )
 
   ;; Add hook, when dired buffer is open, active (dired-hide-details-mode)
-  (add-hook 'dired-mode-hook 'dired-hide-details-mode)
+  ;; to hide user, date, permissions, and size information
+  (add-hook 'dired-mode-hook #'dired-hide-details-mode)
   ;; Turn off hl-line-mode in dired due to a lag until determined what is cause
   (add-hook 'dired-mode-hook (lambda () (hl-line-mode -1)))
+
+  ;; Dired to perform file renames through the underlying version control system when supported,
+  ;; using the vc-rename-file function
+  (setq dired-vc-rename-file t)
 
   ;; Optionally post set up Emacs configurations
   ;; for example other machine specific configurations

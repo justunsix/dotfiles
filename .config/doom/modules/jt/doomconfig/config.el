@@ -126,3 +126,8 @@
   ;; Set styles to Zotero's default styles directory
   ;; https://blog.tecosaur.com/tmio/2021-07-31-citations.html#working-with-zotero
   (setopt org-cite-csl-styles-dir "~/Zotero/styles"))
+
+;; Similar to (add-hook 'dired-mode-hook #'dired-hide-details-mode)
+;; https://www.answeroverflow.com/m/1349746616382525521
+(after! dirvish
+  (setq dirvish-hide-details t))
