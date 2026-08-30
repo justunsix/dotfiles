@@ -37,6 +37,9 @@
     # Fonts
     iosevka
     ## Doom Emacs
+    ### GNU Core Utilities prefixed
+    ### gls preferred by Emacs
+    coreutils-prefixed
     ### Emacs fall back font
     symbola
     ### Default font
