@@ -1,0 +1,17 @@
+# Custom Aliases
+alias e ls -alH $1
+alias ggs git status $1
+alias ggd git diff $1
+
+## Aliases inspired by LazyVim and Doom Emacs
+### find file, open with editor
+alias ff projectile-find-file $1
+
+### git status
+alias gg magit-status
+alias ggf git pull $1
+alias ggl magit-log
+### git list repositories, status of repositories
+alias gglrs magit-list-repositories
+### git list repositories, pull all repositories
+alias gglrf topgrade --only git_repos
