@@ -15,3 +15,5 @@ alias ggl magit-log
 alias gglrs magit-list-repositories
 ### git list repositories, pull all repositories
 alias gglrf topgrade --only git_repos
+
+alias fm +make/run
