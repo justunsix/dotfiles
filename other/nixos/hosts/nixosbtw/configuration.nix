@@ -22,6 +22,8 @@ in
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../modules/nixos/base.nix
+    ../modules/nixos/desktop-gnome.nix
+    ../modules/nixos/audio.nix
   ];
 
   # Bootloader.
@@ -45,42 +47,6 @@ in
   # Setting RTC time standard to localtime, compatible with Windows in its default configuration
   # https://nixos.wiki/wiki/Dual_Booting_NixOS_and_Windows
   time.hardwareClockInLocalTime = true;
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
-  environment.gnome.excludePackages = (
-    with pkgs;
-    [
-      # atomix # puzzle game
-      # cheese # webcam tool
-      # epiphany # web browser
-      # decibels # audio player
-      # evince # document viewer
-      # geary # email reader
-      # gedit # text editor
-      # gnome-characters
-      gnome-connections # remote desktop
-      # gnome-music
-      # gnome-photos
-      # gnome-terminal
-      # gnome-tour
-      # showtime # video player
-    ]
-  );
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -114,13 +80,6 @@ in
 
     ];
   };
-
-  # Install firefox
-  programs.firefox.enable = true;
-
-  # Run unpatched dynamic binaries on NixOS
-  # like uv https://wiki.nixos.org/wiki/Python_quickstart_using_uv
-  programs.nix-ld.enable = true;
 
   # Allow removable media management
   services.udisks2.enable = true;

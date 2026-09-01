@@ -21,7 +21,9 @@ in
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../modules/nixos/base.nix     
+    ../modules/nixos/base.nix
+    ../modules/nixos/desktop-gnome.nix
+    ../modules/nixos/audio.nix    
   ];
 
   # Bootloader.
@@ -31,63 +33,10 @@ in
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixosmis"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
-  environment.gnome.excludePackages = (
-    with pkgs;
-    [
-      # atomix # puzzle game
-      # cheese # webcam tool
-      # epiphany # web browser
-      # decibels # audio player
-      # evince # document viewer
-      # geary # email reader
-      # gedit # text editor
-      # gnome-characters
-      gnome-connections # remote desktop
-      # gnome-music
-      # gnome-photos
-      # gnome-terminal
-      # gnome-tour
-      # showtime # video player
-    ]
-  );
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -107,34 +56,12 @@ in
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Run unpatched dynamic binaries on NixOS
-  # like uv https://wiki.nixos.org/wiki/Python_quickstart_using_uv
-  programs.nix-ld.enable = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     btop-rocm
     gnome-boxes
     # wget
-  ];
-
-  # Nautilus media information
-  # https://wiki.nixos.org/wiki/Nautilus
-  nixpkgs.overlays = [
-    (final: prev: {
-      nautilus = prev.nautilus.overrideAttrs (nprev: {
-        buildInputs =
-          nprev.buildInputs
-          ++ (with pkgs.gst_all_1; [
-            gst-plugins-good
-            gst-plugins-bad
-          ]);
-      });
-    })
   ];
 
   # Virtualization, Virtual Machines
