@@ -10,13 +10,6 @@
   ...
 }:
 
-let
-  pkgs-unstable = import inputs.nixpkgs-unstable {
-    # Use same platform as host
-    system = pkgs.system;
-    config.allowUnfree = true;
-  };
-in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -24,6 +17,11 @@ in
     ../modules/nixos/base.nix
     ../modules/nixos/desktop-gnome.nix
     ../modules/nixos/audio.nix    
+    ../modules/nixos/gaming.nix
+    ../modules/nixos/key-mapper-input-remapper.nix
+    ../modules/nixos/networking-portmaster.nix
+    ../modules/nixos/gpu-amd.nix
+    ../modules/nixos/virtualization-libvirt.nix
   ];
 
   # Bootloader.
@@ -56,40 +54,6 @@ in
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    btop-rocm
-    gnome-boxes
-    # wget
-  ];
-
-  # Virtualization, Virtual Machines
-  # https://wiki.nixos.org/wiki/Libvirt
-  # https://nixos.wiki/wiki/Virt-manager
-  virtualisation.libvirtd.enable = true;
-  # Enable TPM emulation (optional)
-  # install pkgs.swtpm system-wide for use in virt-manager (optional)
-  virtualisation.libvirtd.qemu = {
-    swtpm.enable = true;
-  };
-  # Enable USB redirection (optional)
-  virtualisation.spiceUSBRedirection.enable = true;
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "justin" ];
-
-  # Steam gaming
-  # https://nixos.wiki/wiki/Steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
-
-  # Enabling ROCm & HIP For Packages
-  nixpkgs.config.rocmSupport = true;
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -102,47 +66,6 @@ in
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Key binding service
-  # Autoload from https://github.com/thursdaddy/nixos-config/blob/f21380b188bd3941b32656e832c65111c437f463/modules/desktop/input-remapper.nix
-  services.input-remapper = {
-    enable = true;
-    serviceWantedBy = [ "multi-user.target" ];
-  };
-
-  systemd.user.services.input-remapper-autoload = {
-    description = "Run input-remapper-control autoload command";
-    documentation = [ "https://github.com/sezanzeb/input-remapper" ];
-    after = [ "graphical-session.target" ];
-    bindsTo = [ "graphical-session.target" ];
-    wantedBy = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.input-remapper}/bin/input-remapper-control --command autoload";
-      Restart = "on-failure";
-      RestartSec = "5s";
-      KillMode = "mixed";
-    };
-  };
-
-  # Portmaster - Package - Secure DNS, firewall, network monitoring
-  # How to use at https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/networking/portmaster.md
-  services.portmaster = {
-    enable = true;
-    package = pkgs-unstable.portmaster;
-    # Set only when unrestricted browser or debugging access to http://127.0.0.1:817 is required
-    settings.devmode = true;
-  };
-  # Portmaster - Startup - do not autostart, start manually due to interference with other progams at startup
-  systemd.services.portmaster.wantedBy = lib.mkForce [ ];
-  # It's default is start up before netowrking:
-  # wantedBy = [ "multi-user.target" ];
-  # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/networking/portmaster.nix
-  #
-  # Portmaster - Nix Manual - Portmaster is in nixpkgs-unstable and ships manual docs where
-  # chapter identifiers aren't registered in nixpkgs-stable's redirects.json as of 2026-08-08
-  # Skip that check suggested at https://github.com/NixOS/nixpkgs/issues/412451
-  documentation.nixos.checkRedirects = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

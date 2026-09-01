@@ -1,4 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
+
+let
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    # Use same platform as host
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in
 {
 
   # Base system configuration with:
@@ -64,6 +72,9 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
     git
+
+    # Declare packages in in nixpkgs-unstable with pkgs.unstable prefix
+    # pkgs-unstable.firefox
   ];
 
   # Run unpatched dynamic binaries on NixOS

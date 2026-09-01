@@ -7,6 +7,7 @@
   # - Keyboard setup
   # - Graphical environment settings
   # - Web browser
+  # - Removable media management  
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -61,5 +62,8 @@
       });
     })
   ];
+
+  # Allow removable media management
+  services.udisks2.enable = true;
 
 }
