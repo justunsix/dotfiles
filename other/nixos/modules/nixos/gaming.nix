@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
 
+  # Gaming with
+  # - Steam
+
   # Steam gaming
   # https://nixos.wiki/wiki/Steam
   programs.steam = {
