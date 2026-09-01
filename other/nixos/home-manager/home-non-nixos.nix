@@ -4,10 +4,10 @@
 
   imports = [
     # User, fonts config, home-manager, allow unfree packages
-    ./modules/base.nix
-    ./modules/graphical-programs.nix
+    ../modules/home-manager/base.nix
+    ../modules/home-manager/graphical-programs.nix
     # All other packages like for terminal, fonts, system management, computer programming, devops
-    ./modules/tools.nix
+    ../modules/home-manager/tools.nix
   ];
 
   # Settings that make Home Manager work better on GNU/Linux distributions other than NixOS

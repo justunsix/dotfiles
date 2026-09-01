@@ -4,12 +4,12 @@
 
   imports = [
     # User, fonts config, home-manager, allow unfree packages
-    ./modules/base.nix
-    ./modules/graphical-programs.nix
+    ../modules/home-manager/base.nix
+    ../modules/home-manager/graphical-programs.nix
     # GNOME Desktop and its settings, System services
-    ./modules/desktop.nix
+    ../modules/home-manager/desktop.nix
     # All other packages like for terminal, fonts, system management, computer programming, devops
-    ./modules/tools.nix
+    ../modules/home-manager/tools.nix
   ];
 
   # home.file = {
