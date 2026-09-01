@@ -1,8 +1,16 @@
 { pkgs, ... }:
 {
 
+  # Base system configuration with:
+  # - Networking
+  # - Time zone and localization
+  # - Nix, nixpkgs settings
+  # - Firmware updates
+  # - System packages
+
   # Enable networking
   networking.networkmanager.enable = true;
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
@@ -57,5 +65,17 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
     git
   ];
+
+  # Run unpatched dynamic binaries on NixOS
+  # like uv https://wiki.nixos.org/wiki/Python_quickstart_using_uv
+  programs.nix-ld.enable = true;
+  # https://nix.dev/guides/faq#how-to-run-non-nix-executables
+  # Create a library path that only applies to unpackaged programs by using nix-ld. Add this to your configuration.nix:
+  #programs.nix-ld.libraries = with pkgs; [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  #];
+
+
 
 }
