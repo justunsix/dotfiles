@@ -81,6 +81,9 @@
   ;; using the vc-rename-file function
   (setq dired-vc-rename-file t)
 
+  ;; Emacs 29.1: Allow dired to click and drag files to desktop applications
+  (setq dired-mouse-drag-files t)
+
   ;; Optionally post set up Emacs configurations
   ;; for example other machine specific configurations
   (setq postsetup-el-location "~/.config/doom/setup/post-setup.el")
