@@ -21,6 +21,7 @@ in
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../modules/nixos/base.nix    
   ];
 
   # Bootloader.
@@ -36,15 +37,6 @@ in
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "America/Toronto";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_CA.UTF-8";
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -117,19 +109,9 @@ in
   # Install firefox.
   programs.firefox.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     btop-rocm
     #  wget
   ];
@@ -145,10 +127,6 @@ in
 
   # Enabling ROCm & HIP For Packages
   nixpkgs.config.rocmSupport = true;
-
-  # Firmware updates
-  # https://wiki.archlinux.org/title/Fwupd
-  services.fwupd.enable = true;
 
   # Key binding service
   # Autoload from https://github.com/thursdaddy/nixos-config/blob/f21380b188bd3941b32656e832c65111c437f463/modules/desktop/input-remapper.nix

@@ -21,6 +21,7 @@ in
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../modules/nixos/base.nix
   ];
 
   # Bootloader.
@@ -41,21 +42,9 @@ in
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "America/Toronto";
-
   # Setting RTC time standard to localtime, compatible with Windows in its default configuration
   # https://nixos.wiki/wiki/Dual_Booting_NixOS_and_Windows
   time.hardwareClockInLocalTime = true;
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_CA.UTF-8";
-
-  # Optionally (BEWARE: requires a different format with the added /UTF-8)
-  i18n.extraLocales = [ "en_US.UTF-8/UTF-8" ];
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -145,9 +134,6 @@ in
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Graphics Configuration
   # AMD https://wiki.nixos.org/wiki/AMD_GPU
   # NVIDIA https://nixos.wiki/wiki/Nvidia
@@ -218,21 +204,9 @@ in
     };
   };
 
-  # Firmware updates
-  # https://wiki.archlinux.org/title/Fwupd
-  services.fwupd.enable = true;
-
-  # Enable flakes https://nix.dev/concepts/flakes.html
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default
-    git
     # exfat disk utilities like fsck.exfat
     exfatprogs
 

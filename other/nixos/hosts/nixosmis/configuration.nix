@@ -21,6 +21,7 @@ in
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../modules/nixos/base.nix     
   ];
 
   # Bootloader.
@@ -35,15 +36,6 @@ in
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "America/Toronto";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_CA.UTF-8";
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -122,20 +114,9 @@ in
   # like uv https://wiki.nixos.org/wiki/Python_quickstart_using_uv
   programs.nix-ld.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Enable flakes https://nix.dev/concepts/flakes.html
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git
     btop-rocm
     gnome-boxes
     # wget
@@ -181,10 +162,6 @@ in
 
   # Enabling ROCm & HIP For Packages
   nixpkgs.config.rocmSupport = true;
-
-  # Firmware updates
-  # https://wiki.archlinux.org/title/Fwupd
-  services.fwupd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

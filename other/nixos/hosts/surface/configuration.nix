@@ -25,42 +25,8 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ../modules/nixos/base.nix 
   ];
-
-  nixpkgs = {
-    # You can add overlays here
-    overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      # inputs.self.overlays.additions
-      # inputs.self.overlays.modifications
-      # inputs.self.overlays.unstable-packages
-
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
-    ];
-    # Configure your nixpkgs instance
-    config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
-    };
-  };
-
-  nix = {
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Opinionated: disable global registry
-      flake-registry = "";
-    };
-
-  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -73,20 +39,11 @@
   # Set your hostname
   networking.hostName = "surface";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
   # Configure your system-wide user settings (groups, etc), add more users as needed.
 
   # Leave commented for now as most useful hardware is functional
   # and avoid long nix build times
   # hardware.microsoft-surface.kernelVersion = "stable";
-
-  # Set your time zone.
-  time.timeZone = "America/Toronto";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_CA.UTF-8";
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -138,24 +95,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    helix
-    git
-    yazi
-    nushell
-    gnumake
-    stow
-    btop
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-  ];
-
-  # Firmware updates
-  # https://wiki.archlinux.org/title/Fwupd
-  services.fwupd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
