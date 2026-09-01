@@ -2,10 +2,9 @@
 {
 
   # Graphics Configuration
+  # https://wiki.nixos.org/wiki/AMD_GPU
 
-  # NVIDIA https://nixos.wiki/wiki/Nvidia
-
-  # Enable NVIDIA CUDA support for nixpkgs that have it like pkgs.btop
+  # Enable AMD ROCM support for nixpkgs that have it like pkgs.btop
   environment.systemPackages = with pkgs; [
     btop-rocm
   ];
