@@ -7,7 +7,7 @@
   # - Keyboard setup
   # - Graphical environment settings
   # - Web browser
-  # - Removable media management  
+  # - Removable media management
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -44,24 +44,9 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-  
+
   # Install firefox
   programs.firefox.enable = true;
-
-  # Nautilus media information
-  # https://wiki.nixos.org/wiki/Nautilus
-  nixpkgs.overlays = [
-    (final: prev: {
-      nautilus = prev.nautilus.overrideAttrs (nprev: {
-        buildInputs =
-          nprev.buildInputs
-          ++ (with pkgs.gst_all_1; [
-            gst-plugins-good
-            gst-plugins-bad
-          ]);
-      });
-    })
-  ];
 
   # Allow removable media management
   services.udisks2.enable = true;
