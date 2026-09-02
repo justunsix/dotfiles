@@ -25,9 +25,9 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-    ../modules/nixos/base.nix 
-    ../modules/nixos/desktop-gnome.nix
-    ../modules/nixos/audio.nix    
+    ../../modules/nixos/base.nix
+    ../../modules/nixos/desktop-gnome.nix
+    ../../modules/nixos/audio.nix
   ];
 
   # Bootloader.

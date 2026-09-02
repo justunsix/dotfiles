@@ -21,13 +21,13 @@ in
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../modules/nixos/base.nix
-    ../modules/nixos/desktop-gnome.nix
-    ../modules/nixos/audio.nix    
-    ../modules/nixos/gaming.nix
-    ../modules/nixos/key-mapper-input-remapper.nix
-    ../modules/nixos/networking-portmaster.nix
-    ../modules/nixos/gpu-amd.nix    
+    ../../modules/nixos/base.nix
+    ../../modules/nixos/desktop-gnome.nix
+    ../../modules/nixos/audio.nix
+    ../../modules/nixos/gaming.nix
+    ../../modules/nixos/key-mapper-input-remapper.nix
+    ../../modules/nixos/networking-portmaster.nix
+    ../../modules/nixos/gpu-amd.nix
   ];
 
   # Bootloader.
@@ -38,7 +38,7 @@ in
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nixosp14"; # Define your hostname.
-  
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";

@@ -14,14 +14,15 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../modules/nixos/base.nix
-    ../modules/nixos/desktop-gnome.nix
-    ../modules/nixos/audio.nix    
-    ../modules/nixos/gaming.nix
-    ../modules/nixos/key-mapper-input-remapper.nix
-    ../modules/nixos/networking-portmaster.nix
-    ../modules/nixos/gpu-amd.nix
-    ../modules/nixos/virtualization-libvirt.nix
+    ../../modules/nixos/base.nix
+    ../../modules/nixos/desktop-gnome.nix
+    ../../modules/nixos/desktop-gnome-nautilus-overlay.nix
+    ../../modules/nixos/audio.nix
+    ../../modules/nixos/gaming.nix
+    ../../modules/nixos/key-mapper-input-remapper.nix
+    ../../modules/nixos/networking-portmaster.nix
+    ../../modules/nixos/gpu-amd.nix
+    ../../modules/nixos/virtualization-libvirt.nix
   ];
 
   # Bootloader.
