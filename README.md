@@ -68,6 +68,7 @@ List of folders and dotfiles in them:
   - `wezterm/` - [WezTerm](https://wezfurlong.org/wezterm/index.html) Cross
     platform terminal emulator and multiplexer
   - `yazi/` - [Yazi](https://yazi-rs.github.io/) file manager
+  - `zed/` - [Zed](https://zed.dev/) code editor
   - `zellij/` - [Zellij](https://zellij.dev/) terminal workspace manager
   - `dolphinrc` - [Dolphin File Manager](https://apps.kde.org/dolphin/) settings
   - `kdeglobals` - [KDE](https://kde.org/) KDE Desktop Environment appearance
