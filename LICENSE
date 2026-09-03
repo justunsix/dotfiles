@@ -7,6 +7,8 @@ MIT License unless another license is indicated in certain directories and files
   - todotxt configurations and actions in folder: .config/todotxt-cli
 - GNU General Public License v2.0
   - mpv scripts in folder: .config/mpv/scripts
+- Apache 2.0
+  - lua scripts that are part of the LazyVim Neovim distribution in folder: .config/nvim-lazyvim
 - CC0 1.0 Universal
   - other/nixos
 - Other
