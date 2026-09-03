@@ -219,3 +219,7 @@
        (:if (featurep :system 'linux) music)   ; Listen to music
        (:if (featurep :system 'linux) video)   ; Watch videos
        )
+
+;; If you're a dark-mode user who suffers from the "flash of white Emacs" when
+;; you first open Emacs, uncomment this (and adjust the color as you like).
+;; (add-to-list 'initial-frame-alist '(background-color . "#000000"))
