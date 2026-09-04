@@ -7,8 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "edit_predictions": {
-    "provider": "copilot"
+
+  // Appearance
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Ayu Dark"
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
   },
   "project_panel": {
     "dock": "left"
@@ -19,11 +30,32 @@
   "collaboration_panel": {
     "dock": "left"
   },
-  "format_on_save": "on",
   "git_panel": {
     "dock": "left"
   },
+  // System
+  // Let package manager manage updates
+  "auto_update": false,
   "proxy": "",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false
+  },
+  // Input
+  "vim_mode": true,
+  // Editing
+  "format_on_save": "on",
+  // Security
+  "session": {
+    "trust_all_worktrees": true
+  },
+  // AI
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
   "agent": {
     "default_profile": "ask",
     "default_model": {
@@ -39,32 +71,8 @@
       "threshold": "90%"
     }
   },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false,
-    "anthropic_retention": false
-  },
-  "session": {
-    "trust_all_worktrees": true
-  },
-  "vim_mode": true,
-  "agent_servers": {
-    "github-copilot-cli": {
-      "type": "registry"
-    }
-  },
-  "icon_theme": {
-    "mode": "dark",
-    "light": "Zed (Default)",
-    "dark": "Zed (Default)"
-  },
-  "auto_update": false,
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "dark",
-    "light": "One Light",
-    "dark": "Ayu Dark"
+  "edit_predictions": {
+    "provider": "copilot"
   }
 }
 
