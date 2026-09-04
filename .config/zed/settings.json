@@ -7,7 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-
   // Appearance
   "ui_font_size": 16,
   "buffer_font_size": 15,
@@ -42,6 +41,8 @@
     "metrics": false,
     "anthropic_retention": false
   },
+  // Reduce graphical requirements low GPU machines (default is false)
+  // "reduce_motion": true,
   // Input
   "vim_mode": true,
   // Editing
@@ -75,4 +76,3 @@
     "provider": "copilot"
   }
 }
-
