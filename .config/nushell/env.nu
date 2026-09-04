@@ -63,7 +63,9 @@ carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
 
 # Atuin - shell history
 mkdir ~/.local/share/atuin/
-atuin init nu | save -f ~/.local/share/atuin/init.nu
+# Temporary fix related to PR https://github.com/atuinsh/atuin/pull/3975
+# until next Atuin upgrade to 18.20+
+# atuin init nu | save -f ~/.local/share/atuin/init.nu
 
 # mise
 let mise_path = $nu.default-config-dir | path join mise.nu
