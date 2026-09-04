@@ -34,6 +34,9 @@
     alacritty
     ghostty
 
+    # Editor
+    zed-editor
+
     # Graphics and Diagrams
     gimp
     inkscape
