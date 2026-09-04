@@ -19,6 +19,7 @@
   "collaboration_panel": {
     "dock": "left"
   },
+  "format_on_save": "on",
   "git_panel": {
     "dock": "left"
   },
