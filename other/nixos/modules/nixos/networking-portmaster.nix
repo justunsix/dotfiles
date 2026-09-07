@@ -18,7 +18,7 @@ in
     enable = true;
     package = pkgs-unstable.portmaster;
     # Set only when unrestricted browser or debugging access to http://127.0.0.1:817 is required
-    settings.devmode = true;
+    # settings.devmode = true;
   };
   # Portmaster - Startup - do not autostart, start manually due to interference with other progams at startup
   systemd.services.portmaster.wantedBy = lib.mkForce [ ];
