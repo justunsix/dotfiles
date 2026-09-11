@@ -16,7 +16,6 @@
     ./hardware-configuration.nix
     ../../modules/nixos/base.nix
     ../../modules/nixos/desktop-gnome.nix
-    ../../modules/nixos/desktop-gnome-nautilus-overlay.nix
     ../../modules/nixos/audio.nix
     ../../modules/nixos/gaming.nix
     ../../modules/nixos/key-mapper-input-remapper.nix
