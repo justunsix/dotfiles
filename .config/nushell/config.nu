@@ -239,7 +239,7 @@ def fgrep [
 alias rm = rm -t
 
 # Custom Aliases
-alias e = eza -alh
+alias e = eza -alhg
 alias k = kubectl
 alias mr = mise run
 alias ggs = git s
