@@ -32,6 +32,9 @@ List of folders and dotfiles in them:
     affects Dolphin file manager when on GNOME
   - `ghostty` - [ghostty](https://ghostty.org/) terminal emulator
   - `helix` - [Helix](https://helix-editor.com/) editor
+  - `home-guix` -
+    [Home configuration using Guix package manager](https://guix.gnu.org/) for
+    software packages
   - `home-manager` -
     [Home Manager using nix](https://github.com/nix-community/home-manager) for
     software packages
