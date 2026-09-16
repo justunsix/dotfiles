@@ -183,6 +183,17 @@ if [ -d "$HOME/.nix-profile/bin" ]; then
   export NIXPKGS_ALLOW_UNFREE=1
 fi
 
+# Guix system
+if [ -d "$HOME/.guix-profile/" ]; then
+  export GUIX_PROFILE="$HOME/.guix-profile"
+  export PATH="$GUIX_PROFILE/bin:$PATH"
+fi
+
+# Guix home
+if [ -d "$HOME/.guix-home/" ]; then
+  export PATH="$HOME/.guix-home/profile/bin:$PATH"
+fi
+
 if [ -d "$HOME/usr/bin" ]; then
   export PATH="$HOME/usr/bin:$PATH"
 fi
