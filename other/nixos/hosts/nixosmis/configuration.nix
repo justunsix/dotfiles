@@ -22,6 +22,7 @@
     ../../modules/nixos/networking-portmaster.nix
     ../../modules/nixos/gpu-amd.nix
     ../../modules/nixos/virtualization-libvirt.nix
+    ../../modules/nixos/guix.nix
   ];
 
   # Bootloader.
