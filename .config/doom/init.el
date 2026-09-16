@@ -180,7 +180,7 @@
        (rust +lsp +tree-sitter)         ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scad              ; trust the preview, regret the render
        ;;scala             ; java, but good
-       ;;(scheme +guile)   ; a fully conniving family of lisps
+       (:if (featurep :system 'linux) (scheme +guile))   ; a fully conniving family of lisps
        (sh +fish +lsp +powershell +tree-sitter)    ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
