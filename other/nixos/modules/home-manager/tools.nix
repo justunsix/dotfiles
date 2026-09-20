@@ -62,36 +62,6 @@
     ### git diff
     delta
 
-    ## Media and Web, yt-dlp, metadata
-    ### yt-dlp requirements and optionals
-    yt-dlp
-    #### Video processing, yazi optional dependency for video thumbnails
-    ffmpeg_7-full
-    #### YouTube Support
-    python314Packages.yt-dlp-ejs
-    ##### YT Support, JS Engine, declared below using deno
-    ##### Root Certificates
-    python314Packages.certifi
-    ##### Encoding
-    python314Packages.brotli
-    ##### Downloading
-    python314Packages.websockets
-    #### HTTP library
-    python314Packages.requests
-    #### Impersonation
-    python314Packages.curl-cffi
-    #### Metadata
-    ##### thumbnail
-    python314Packages.mutagen
-    atomicparsley
-    #### xattr metadata
-    python314Packages.xattr
-    #### Other
-    ##### Decryption of streams
-    python314Packages.pycryptodome
-    #### Downloader
-    aria2
-
     # Web
     lynx
 
@@ -285,9 +255,6 @@
     # veracrypt
     ## Anti-virus
     clamav
-
-    # WINE - compatibility layer capable of running Windows applications
-    protontricks
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

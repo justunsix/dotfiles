@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+# Secondary NixOS Desktop configuration
+
 {
 
   imports = [
@@ -10,8 +12,6 @@
     ../modules/home-manager/desktop.nix
     # All other packages like for terminal, fonts, system management, computer programming, devops
     ../modules/home-manager/tools.nix
-    ../modules/home-manager/web-downloads.nix
-    ../modules/home-manager/wine.nix
   ];
 
   # home.file = {
