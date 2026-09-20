@@ -41,7 +41,7 @@
     ### gls preferred by Emacs
     coreutils-prefixed
     ### Emacs fall back font
-    symbola
+    ### symbola
     ### Default font
     jetbrains-mono
     ## Starship prompt, eza nerd font
