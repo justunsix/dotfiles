@@ -90,7 +90,8 @@
     ## Containers
     podman
     ## Tools, Env
-    asdf-vm
+    ### Tool version manager
+    ### asdf-vm
     mise
     ### Doom Emacs requirements
     emacs
