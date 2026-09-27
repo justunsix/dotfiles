@@ -86,6 +86,7 @@
             "${inputs.nixpkgs-unstable}/nixos/modules/services/networking/portmaster.nix"
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-gpu-amd
+            nixos-hardware.nixosModules.common-pc-ssd
           ];
         };
         nixosp14 = nixpkgs.lib.nixosSystem {
@@ -94,7 +95,9 @@
             ./hosts/nixosp14/configuration.nix
             "${inputs.nixpkgs-unstable}/nixos/modules/services/networking/portmaster.nix"
             nixos-hardware.nixosModules.common-pc-laptop
+            nixos-hardware.nixosModules.common-pc-ssd
             nixos-hardware.nixosModules.common-cpu-amd
+            nixos-hardware.nixosModules.common-gpu-amd
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen6
           ];
         };
