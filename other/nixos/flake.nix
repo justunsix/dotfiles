@@ -69,7 +69,7 @@
           modules = [
             # > Our main nixos configuration file <
             ./hosts/surface/configuration.nix
-            # nixos-hardware.nixosModules.microsoft-surface-common
+            nixos-hardware.nixosModules.microsoft-surface-common
           ];
         };
         nixosbtw = nixpkgs.lib.nixosSystem {
@@ -84,6 +84,8 @@
           modules = [
             ./hosts/nixosmis/configuration.nix
             "${inputs.nixpkgs-unstable}/nixos/modules/services/networking/portmaster.nix"
+            nixos-hardware.nixosModules.common-cpu-amd
+            nixos-hardware.nixosModules.common-gpu-amd
           ];
         };
         nixosp14 = nixpkgs.lib.nixosSystem {
@@ -91,6 +93,9 @@
           modules = [
             ./hosts/nixosp14/configuration.nix
             "${inputs.nixpkgs-unstable}/nixos/modules/services/networking/portmaster.nix"
+            nixos-hardware.nixosModules.common-pc-laptop
+            nixos-hardware.nixosModules.common-cpu-amd
+            nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen6
           ];
         };
       };
