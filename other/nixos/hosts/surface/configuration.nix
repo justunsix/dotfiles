@@ -36,7 +36,7 @@
   # Workaround to prevent /boot from filling up
   # https://github.com/NixOS/nixpkgs/issues/23926
   boot.loader.systemd-boot.configurationLimit = 15;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Set your hostname
   networking.hostName = "surface";
@@ -45,7 +45,7 @@
 
   # Leave commented for now as most useful hardware is functional
   # and avoid long nix build times
-  # hardware.microsoft-surface.kernelVersion = "stable";
+  hardware.microsoft-surface.kernelVersion = "stable";
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
