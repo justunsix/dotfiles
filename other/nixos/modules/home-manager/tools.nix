@@ -140,8 +140,6 @@
     (aspellWithDicts (
       dicts: with dicts; [
         en
-        en-computers
-        en-science
       ]
     ))
     ### Grammer checker (US English)
