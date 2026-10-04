@@ -12,41 +12,15 @@ boot.
 
 - `flake.nix` - Entry point, define nixpkgs and other inputs for use in
   configurations
-- `home-manager\` - home-manager configurations and modules
+- `home-manager/` - home-manager configurations and modules
   - `home-non-nixos.nix` - home-manager configuration for other Linux
     distributions like Ubuntu, Fedora to exclude packages provided those in
     there base installations like the desktop environment
   - `home.nix` - home-manager configuration for NixOS systems
-- `hosts\` - host specific configuration dependent on hardware like GPU,
+- `hosts/` - host specific configuration dependent on hardware like GPU,
   virtualization, gaming
   - Each host has a separate folder and `configuration.nix`
-
-### Tree View
-
-```text
-
-├── flake.lock
-├── flake.nix
-├── home-manager
-│   ├── home-non-nixos.nix
-│   ├── home.nix
-│   └── modules
-│       ├── base.nix
-│       ├── desktop.nix
-│       ├── graphical-programs.nix
-│       └── tools.nix
-├── hosts
-│   ├── nixosbtw
-│   │   └── configuration.nix
-│   ├── hostname1
-│   │   └── configuration.nix
-│   ├── hostname2
-│   │   └── configuration.nix
-│   ....
-│
-├── LICENSE.txt
-└── README.md
-```
+- `modules/` - modules to import for NixOS and home-manager
 
 ## Usage
 
