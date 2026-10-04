@@ -110,7 +110,10 @@
         "justin@nixosbtw" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
           pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with host's architecture
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = {
+            inherit inputs;
+            pkgs-stable = nixpkgs.legacyPackages.x86_64-linux;
+          };
           modules = [
             # > home-manager configuration <
             ./home-manager/home.nix
@@ -119,7 +122,10 @@
         "justin@surface" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
           pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with host's architecture
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = {
+            inherit inputs;
+            pkgs-stable = nixpkgs.legacyPackages.x86_64-linux;
+          };
           modules = [
             # > home-manager configuration <
             ./home-manager/home-nm.nix
@@ -128,7 +134,10 @@
         "justin@nixosmis" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
           pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with host's architecture
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = {
+            inherit inputs;
+            pkgs-stable = nixpkgs.legacyPackages.x86_64-linux;
+          };
           modules = [
             # > home-manager configuration <
             ./home-manager/home.nix
@@ -137,7 +146,10 @@
         "justin@nixosp14" = home-manager.lib.homeManagerConfiguration {
           # Home-manager requires 'pkgs' instance
           pkgs = nixpkgs-unstable.legacyPackages.x86_64-linux; # replace x86_64-linux with host's architecture
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = {
+            inherit inputs;
+            pkgs-stable = nixpkgs.legacyPackages.x86_64-linux;
+          };
           modules = [
             # > home-manager configuration <
             ./home-manager/home-nm.nix

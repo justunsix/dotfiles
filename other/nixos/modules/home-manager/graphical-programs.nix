@@ -25,10 +25,6 @@
     ## KDE theme configuration
     # kdePackages.qt6ct
 
-    # Information Management
-    ## Library and Bibliography management
-    zotero
-
     # Terminals
     # wezterm
     alacritty
@@ -67,5 +63,4 @@
     lact
 
   ];
-
 }

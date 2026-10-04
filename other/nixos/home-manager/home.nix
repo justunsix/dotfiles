@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgs-stable,
+  ...
+}:
 
 {
 
@@ -12,6 +17,7 @@
     ../modules/home-manager/tools.nix
     ../modules/home-manager/web-downloads.nix
     ../modules/home-manager/wine.nix
+    ../modules/home-manager/tools-stable.nix
   ];
 
   # home.file = {
