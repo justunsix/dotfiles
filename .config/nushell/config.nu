@@ -191,6 +191,20 @@ def fgrep [
         ^$env.EDITOR $result
     }
 }
+
+
+# Copy the current working directory to the system clipboard
+def jcopy-pwd [] {
+    let cwd = $env.PWD | path expand
+
+    match $nu.os-info.name {
+        "windows" => { $cwd | clip }
+        "macos"   => { $cwd | pbcopy }
+        "linux" | "freebsd"  => { $cwd | xsel --clipboard --input }
+        _ => { error make { msg: $"Unsupported OS: ($nu.os-info.name)" } }
+    }
+}
+
 # Check Git status for multiple repositories
 # Usage with multiple directories on Windows: jgt "~\\Code,T:\\OtherProjects"
 # Fix per https://github.com/nushell/nushell/pull/12232
