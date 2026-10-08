@@ -12,6 +12,8 @@
     # System
     curl
     nh
+    ## proc file system utilities
+    psmisc
     ## Desktop clipboard management
     ### Wayland
     ### wl-clipboard
