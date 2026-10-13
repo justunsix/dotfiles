@@ -152,7 +152,7 @@
           };
           modules = [
             # > home-manager configuration <
-            ./home-manager/home-nm.nix
+            ./home-manager/home.nix
           ];
         };
         # Placeholder for non-NixOS home manager configuration
