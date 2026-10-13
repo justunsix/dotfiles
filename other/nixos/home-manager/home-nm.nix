@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 
-# Secondary NixOS Desktop configuration
+# Secondary NixOS Desktop configuration, just daily tools
 
 {
 
@@ -12,6 +12,7 @@
     ../modules/home-manager/desktop.nix
     # All other packages like for terminal, fonts, system management, computer programming, devops
     ../modules/home-manager/tools.nix
+    ../modules/home-manager/tools-stable.nix
   ];
 
   # home.file = {
