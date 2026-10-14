@@ -15,6 +15,9 @@
     ## Library and Bibliography management
     zotero
 
+    ## Video upscale
+    video2x
+
   ];
 
 }
