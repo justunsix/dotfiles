@@ -284,9 +284,6 @@ alias gglrf = topgrade --only git_repos
 # Starship prompt
 use ~/.cache/starship/init.nu
 
-# Zoxide
-source ~/.config/nushell/zoxide.nu
-
 # Carapace - Shell completions
 source $"($nu.cache-dir)/carapace.nu"
 
@@ -307,3 +304,6 @@ const CONFIG_ACTUAL = if $nu.os-info.name == "windows" {
     $CONFIG_NIX
 }
 source $CONFIG_ACTUAL
+
+# Zoxide - needs to be at end of config file
+source ~/.config/nushell/zoxide.nu

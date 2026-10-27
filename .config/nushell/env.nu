@@ -53,9 +53,6 @@ $env.NVIM_APPNAME = 'nvim-lazyvim'
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 
-# Zoxide - directory navigation
-zoxide init nushell | save -f ~/.config/nushell/zoxide.nu
-
 # Carapace - completions
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir $"($nu.cache-dir)"
@@ -68,6 +65,9 @@ atuin init nu | save -f ~/.local/share/atuin/init.nu
 # mise
 let mise_path = $nu.default-config-dir | path join mise.nu
 ^mise activate nu | save $mise_path --force
+
+# Zoxide - directory navigation needs to be at end of config file
+zoxide init nushell | save -f ~/.config/nushell/zoxide.nu
 
 #####################
 # Old Fixes         #

@@ -325,12 +325,6 @@ if [ -d "$HOME/.cargo" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-## Zoxide - smarter cd
-if command -v zoxide &>/dev/null; then
-  # zoxide - smarter cd
-  eval "$(zoxide init bash)"
-fi
-
 ## broot - interactive tree view
 if command -v broot &>/dev/null; then
   # Run br first time to generate default configuration
@@ -473,6 +467,12 @@ jt-up() {
     echo "Couldn't go up $limit dirs."
   fi
 }
+
+## Zoxide - smarter cd
+## needs to be near end of config
+if command -v zoxide &>/dev/null; then
+  eval "$(zoxide init bash)"
+fi
 
 ################################
 #
