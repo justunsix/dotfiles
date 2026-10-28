@@ -187,7 +187,8 @@
 	},
 	// *** PlantUML
 	"[plantuml]": {
-		"editor.defaultFormatter": "jebbs.plantuml"
+		"editor.defaultFormatter": "jebbs.plantuml",
+		"plantuml.render": "Local"
 	},
 	// *** YAML
 	"[yaml]": {
