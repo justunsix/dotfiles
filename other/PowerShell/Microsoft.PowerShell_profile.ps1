@@ -36,14 +36,6 @@ Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 ### List view of predictions under the cursor, toggle in session with F2
 Set-PSReadLineOption -PredictionViewStyle ListView
 
-## Zoxide
-if (Get-Command "zoxide.exe" -ErrorAction SilentlyContinue) {
-    Invoke-Expression (& {
-            $hook = if ($PSVersionTable.PSVersion.Major -lt 6) { 'prompt' } else { 'pwd' }
-            (zoxide init --hook $hook powershell | Out-String)
-        })
-}
-
 ## Carapace - Shell completions
 if (Get-Command "carapace.exe" -ErrorAction SilentlyContinue) {
     $env:CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
@@ -144,3 +136,7 @@ function y {
 	Remove-Item -Path $tmp
 }
 
+## Zoxide - put near end of config
+if (Get-Command "zoxide.exe" -ErrorAction SilentlyContinue) {
+    Invoke-Expression (& { (zoxide init powershell | Out-String) })
+}
