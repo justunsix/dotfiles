@@ -11,7 +11,6 @@
 
     # Browser
     ungoogled-chromium
-    firefox
 
     # Books, Library, Knowledge
     calibre
