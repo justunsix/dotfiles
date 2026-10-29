@@ -22,7 +22,7 @@ in
   };
   # Portmaster - Startup - do not autostart, start manually due to interference with other progams at startup
   systemd.services.portmaster.wantedBy = lib.mkForce [ ];
-  # It's default is start up before netowrking:
+  # It's default is start up before networking:
   # wantedBy = [ "multi-user.target" ];
   # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/services/networking/portmaster.nix
   #
