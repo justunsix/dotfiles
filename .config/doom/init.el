@@ -211,6 +211,7 @@
        :jt 
        minimal                ; Minimal configuration for default Emacs
        doomconfig             ; Post configuration for Doom framework packages
+       mise                   ; mise-en-place tool integration
        ;; hyperbole              ; Everyday Hypertextual Information Manager
        ;; Enable org-web-tools on Windows since org-cliplink doesn't work there
        ;; https://github.com/rexim/org-cliplink#windows
