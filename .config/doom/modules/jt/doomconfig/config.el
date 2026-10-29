@@ -43,7 +43,8 @@
   ;; auto-mode-alist already has other PlantUML formats
   ;; https://github.com/skuro/plantuml-mode
   (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode))
-  )
+  (setq plantuml-output-type "svg"
+        plantuml-svg-background "white"))
 
 (after! org-roam
   ;; Set org-roam-directory, could be before org-roam loads
