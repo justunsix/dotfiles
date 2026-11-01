@@ -33,6 +33,12 @@
 
   networking.hostName = "nixosmis"; # Define your hostname.
 
+  # Hardware setting to troubleshoot WIFI issues
+  # ref:
+  # - https://discourse.nixos.org/t/bluetooth-wifi-stopped-working-on-rebuild/80876
+  # - https://discourse.nixos.org/t/wifi-stops-working-requiring-a-reboot/48940
+  hardware.enableRedistributableFirmware = true;
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
