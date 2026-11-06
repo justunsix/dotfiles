@@ -11,6 +11,8 @@
 ;;   - Middle vowels (AEIOU)
 ;;   - Double vowels
 ;;   - Double consonants
+;;     - Abbreviations may have double consonants if they are
+;;       separated by vowels in the full form of the word
 ;; - Keep vowels at the beginning and end of a word
 ;; Stage 2.
 ;; - Exclude silent letters
@@ -26,7 +28,7 @@
   '(
     ;; English words or names using
     ;; Teeline rules
-    ("astrln" "austrialian" nil :count 0)
+    ("astrln" "australian" nil :count 0)
     ("avlble" "available" nil :count 0)
     ("bbstr" "babysitter" nil :count 0)
     ("bckgrnd" "background" nil :count 0)
@@ -37,13 +39,13 @@
     ("cld" "cloud" nil :count 0)
     ("dtbse" "database" nil :count 0)
     ("dwnld" "download" nil :count 0)
-    ("eltr" "electro" nil :count 0)
+    ("elctr" "electro" nil :count 0)
     ("gls" "glass" nil :count 0)
     ("glss" "glasses" nil :count 0)
     ("gme" "game" nil :count 0)
     ("gymnstcs" "gymnastics" nil :count 0)
     ("hlwn" "halloween" nil :count 0)
-    ("hppy" "happy" nil :count 0)
+    ("hpy" "happy" nil :count 0)
     ("htl" "hotel" nil :count 0)
     ("intrnt" "internet" nil :count 0)
     ("intrvw" "interview" nil :count 0)
@@ -62,7 +64,7 @@
     ("ttoo" "tattoo" nil :count 0)
     ("wtchng" "watching" nil :count 0)
 
-    ;; Snippets below replaced by espanso
+    ;; Snippets below may be replaced by espanso
     ;;
     ;; -- Common words
     ;; ("za" "and" nil :count 0)
@@ -84,11 +86,11 @@
 
     ;; -- Domain specific words or abbreviations
     ;; Technology
-    ;; ("ZMS" "Microsoft" nil :count 0)
-    ;; ("AZ" "Azure" nil :count 0)
-    ;; ("ZAI" "artificial intelligence" nil :count 0)
-    ;; ;; Sports
-    ;; ("photog" "photographer" nil :count 0)
+    ("ZMS" "Microsoft" nil :count 0)
+    ("ZAZ" "Azure" nil :count 0)
+    ("ZAI" "artificial intelligence" nil :count 0)
+    ;; Sports
+    ("photog" "photographer" nil :count 0)
 
     ;; ;; -- Custom Abbreviations
     ;; ("GF" "girlfriend" nil :count 0)
@@ -96,11 +98,11 @@
     ;; ("REQS" "requirements" nil :count 0)
 
     ;; ;; --- Countries
-    ;; ("ZAUS" "australia" nil :count 0)
-    ;; ("ZCAD" "canada" nil :count 0)
-    ;; ("ZJAP" "japan" nil :count 0)
-    ;; ("ZPHIL" "philippines" nil :count 0)
-    ;; ("ZRUS" "russia" nil :count 0)
+    ;; ("ZAUS" "Australia" nil :count 0)
+    ;; ("ZCAD" "Canada" nil :count 0)
+    ;; ("ZJAP" "Japan" nil :count 0)
+    ;; ("ZPHIL" "Philippines" nil :count 0)
+    ;; ("ZRUS" "Russia" nil :count 0)
 
     ))
 
