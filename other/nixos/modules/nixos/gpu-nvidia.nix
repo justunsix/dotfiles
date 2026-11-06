@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
 
   # Graphics Configuration
@@ -63,7 +63,7 @@
     # https://forums.developer.nvidia.com/t/nvidia-drm-error-flip-event-timeout-on-head-0-system-hangs-during-boot/374743
     # package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
-    # Temporary workaround for build failure 2026-08-18
+    # Temporary workaround for build failure 2026-11-06
     # https://github.com/NixOS/nixpkgs/issues/554125
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
       version = "595.91.07";
