@@ -43,6 +43,9 @@
     transmission_4-gtk
     transmission-remote-gtk
 
+    # Video transcoding
+    handbrake
+
   ];
 
 }
