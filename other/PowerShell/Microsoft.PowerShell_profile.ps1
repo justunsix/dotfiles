@@ -76,6 +76,16 @@ function gglrs {
     gfold | rg -e unclean -e unpushed
 }
 
+### Git reposities pull
+function gglrf {
+    topgrade --only git_repos
+}
+
+### Git Status
+function ggs {
+    git status
+}
+
 ### Git Repositories checker detailed
 function jvcs {
     vcs status $env:USERPROFILE\Code | rg -e modified -e === -e Untracked
