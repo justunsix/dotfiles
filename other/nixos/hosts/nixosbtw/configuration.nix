@@ -25,7 +25,7 @@
 
   # Bootloader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sdb";
+  boot.loader.grub.device = "/dev/disk/by-id/wwn-0x5001b448b5b393f9";
   boot.loader.grub.useOSProber = true;
   # Workaround to prevent /boot from filling up
   # https://github.com/NixOS/nixpkgs/issues/23926
