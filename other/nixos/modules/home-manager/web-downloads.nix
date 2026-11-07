@@ -13,7 +13,7 @@
     ### yt-dlp requirements and optionals
     yt-dlp
     #### Video processing, yazi optional dependency for video thumbnails
-    ffmpeg_7-full
+    ffmpeg-full
     #### YouTube Support
     python314Packages.yt-dlp-ejs
     ##### YT Support, JS Engine, declared below using deno
@@ -42,9 +42,6 @@
     # Torrents
     transmission_4-gtk
     transmission-remote-gtk
-
-    # Video transcoding
-    handbrake
 
   ];
 
