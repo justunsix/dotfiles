@@ -20,9 +20,6 @@
     ### X11 or XWayland
     xsel
 
-    # Shell
-    nushell
-    nushellPlugins.polars
     ## Nushell formatter
     nufmt
     starship
@@ -52,7 +49,6 @@
     nerd-fonts.jetbrains-mono
     # File Management
     p7zip
-    gfold
     duf
     stow
     yazi
@@ -85,7 +81,6 @@
     ## Former rust cargo installs
     dust
     eza
-    topgrade
     ### zoxide optional dependency for yazi directory navigation
     zoxide
     # DevOps

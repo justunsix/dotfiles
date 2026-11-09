@@ -12,10 +12,6 @@
     # Browser
     ungoogled-chromium
 
-    # Books, Library, Knowledge
-    calibre
-    anki
-
     # Clipboard manager
     copyq
 
