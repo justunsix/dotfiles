@@ -9,6 +9,9 @@
     # ------------------------------------------------------------
     # Main Packages
 
+    # System Management
+    topgrade
+
     # System
     curl
     nh
@@ -20,6 +23,9 @@
     ### X11 or XWayland
     xsel
 
+    # Shell
+    nushell
+    nushellPlugins.polars
     ## Nushell formatter
     nufmt
     starship
