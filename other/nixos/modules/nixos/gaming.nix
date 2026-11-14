@@ -3,11 +3,6 @@
 
   # Gaming with
   # - Steam
-  # - Lutris
-
-  environment.systemPackages = with pkgs; [
-    lutris
-  ];
 
   # Steam gaming
   # https://nixos.wiki/wiki/Steam

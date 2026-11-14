@@ -18,6 +18,7 @@
     ../modules/home-manager/web-downloads.nix
     ../modules/home-manager/wine.nix
     ../modules/home-manager/tools-stable.nix
+    ../modules/home-manager/gaming.nix
   ];
 
   # home.file = {
