@@ -181,7 +181,7 @@ fi
 # Update Neovim LazyVim Plugins and Mason installed packages
 if command -v nvim >/dev/null; then
 
-  if [ -f "$HOME/.config/nvim/lazy-lock.json" ]; then
+  if [ -f "$HOME/.config/nvim-lazyvim/lazy-lock.json" ]; then
 
     write_host_with_timestamp "Updating Neovim LazyVim plugins and Mason installed packages"
 
