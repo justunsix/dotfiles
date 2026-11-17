@@ -178,6 +178,26 @@ if command -v mise >/dev/null; then
   mise upgrade
 fi
 
+# Update Neovim LazyVim Plugins and Mason installed packages
+if command -v nvim >/dev/null; then
+
+  if [ -f "$HOME/.config/nvim/lazy-lock.json" ]; then
+
+    write_host_with_timestamp "Updating Neovim LazyVim plugins and Mason installed packages"
+
+    # https://lazy.folke.io/usage
+    nvim --headless "+Lazy! sync" +qa
+
+    # https://github.com/mason-org/mason.nvim/discussions/2116
+    # Load mason in LazyVim, get installed package list from Mason's API
+    # Update mason registeries, then reinstall updated packages
+    # whose installed version is different from latest
+    nvim --headless '+Lazy! load mason.nvim' '+MasonUpdate' \
+      '+lua local names = {} for _, p in ipairs(require("mason-registry").get_installed_packages()) do if p:get_installed_version() ~= p:get_latest_version() then table.insert(names, p.name) end end if #names > 0 then vim.cmd("MasonInstall " .. table.concat(names, " ")) end' \
+      +qa
+  fi
+fi
+
 # If day is Saturday or Sunday
 # or if first argument was true
 if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
