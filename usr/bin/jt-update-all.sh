@@ -117,7 +117,7 @@ fi
 # Update git repositories using topgrade
 if command -v topgrade >/dev/null; then
   write_host_with_timestamp "Updating git repositories"
-  topgrade -y --only git_repos
+  topgrade -y --only git_repos --no-ask-retry
 fi
 
 # Update all Flatpaks
