@@ -188,12 +188,9 @@ if command -v nvim >/dev/null; then
     # https://lazy.folke.io/usage
     nvim --headless "+Lazy! sync" +qa
 
-    # https://github.com/mason-org/mason.nvim/discussions/2116
-    # Load mason in LazyVim, get installed package list from Mason's API
-    # Update mason registeries, then reinstall updated packages
-    # whose installed version is different from latest
-    nvim --headless '+Lazy! load mason.nvim' '+MasonUpdate' \
-      '+lua local names = {} for _, p in ipairs(require("mason-registry").get_installed_packages()) do if p:get_installed_version() ~= p:get_latest_version() then table.insert(names, p.name) end end if #names > 0 then vim.cmd("MasonInstall " .. table.concat(names, " ")) end' \
+    nvim --headless '+Lazy! load mason.nvim' \
+      '+MasonUpdate' \
+      '+luafile jt-update-nvim-mason-packages.lua' \
       +qa
   fi
 fi
