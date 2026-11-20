@@ -48,11 +48,6 @@
     vlc
     kdePackages.kdenlive
 
-    # Productivity
-    libreoffice
-    ## Email
-    ## thunderbird
-
     # System management
     ## GPU control centre
     lact

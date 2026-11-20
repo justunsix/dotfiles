@@ -18,6 +18,11 @@
     calibre
     anki
 
+    # Productivity
+    libreoffice
+    ## Email
+    ## thunderbird
+
     # Information Management
     ## Library and Bibliography management
     zotero
