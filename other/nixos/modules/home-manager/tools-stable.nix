@@ -8,6 +8,9 @@
   # Packages pinned to the stable nixpkgs input in flake
   home.packages = with pkgs-stable; [
 
+    # Browser
+    firefox
+
     # File Management
     gfold
 
