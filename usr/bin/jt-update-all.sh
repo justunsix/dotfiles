@@ -23,6 +23,7 @@ if [ -d /etc/nixos ]; then
       home-manager switch -b backup --flake "$dotfiles_nixos"#justin@surface
     fi
   fi
+  cd "$HOME/Code/dotfiles/usr/bin" || exit
 else
 
   if [ -f "$HOME/.config/home-manager/home.nix" ]; then
