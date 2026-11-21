@@ -11,7 +11,6 @@ if [ -d /etc/nixos ]; then
   if [[ "nixosbtw" == $(uname -n) ]]; then
     if [ -d "$dotfiles_nixos" ]; then
       cd "$dotfiles_nixos" || exit
-      nix flake update
       sudo nixos-rebuild switch --flake "$dotfiles_nixos"#nixosbtw
       home-manager switch -b backup --flake "$dotfiles_nixos"#justin@nixosbtw
     fi
@@ -20,7 +19,6 @@ if [ -d /etc/nixos ]; then
   if [[ "surface" == $(uname -n) ]]; then
     if [ -d "$dotfiles_nixos" ]; then
       cd "$dotfiles_nixos" || exit
-      nix flake update
       # sudo nixos-rebuild switch --flake "$dotfiles_nixos"#surface
       home-manager switch -b backup --flake "$dotfiles_nixos"#justin@surface
     fi
