@@ -182,6 +182,12 @@ clean_app_caches() {
     pnpm store prune
   fi
 
+  # Clean deno cache
+  if command -v deno &>/dev/null; then
+    write_host_with_timestamp "Clean deno unreferenced items"
+    deno clean
+  fi
+
   # Clean go cache
   if command -v go &>/dev/null; then
     write_host_with_timestamp "Clean go cache"
