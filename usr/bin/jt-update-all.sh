@@ -33,28 +33,6 @@ else
   fi
 fi
 
-# Update Nix packages
-if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
-  write_host_with_timestamp "Updating Nix packages"
-  nix-channel --update
-  # if [ -x "$(command -v home-manager)" ]; then
-  #   home-manager switch -b backup
-  # fi
-
-  # Check if memory is at least 8 GB before running nix-env update
-  # if less than 8 GB, nix-env -u will be too slow and should not be run
-  # Get the total RAM in GB
-  total_ram=$(free -g | awk '/^Mem:/{print $2}')
-
-  # Check if total RAM is at least 8GB
-  if [ "$total_ram" -ge 8 ]; then
-    echo "The system has at least 8GB of RAM. Running nix-env -u"
-    nix-env -u
-  else
-    echo "The system has less than 8GB of RAM. Skipping nix-env updates"
-  fi
-fi
-
 # Fedora packages
 if command -v dnf >/dev/null; then
   write_host_with_timestamp "Updating DNF packages"
@@ -197,6 +175,28 @@ fi
 # If day is Saturday or Sunday
 # or if first argument was true
 if [ "$(date +%u)" -ge 5 ] || [ "$1" = "true" ]; then
+
+  # Update Nix env installed packages
+  if [ -e "$HOME/.nix-profile/" ] || [ -e "/nix/var/nix/profiles/" ]; then
+    write_host_with_timestamp "Updating Nix packages"
+    nix-channel --update
+    # if [ -x "$(command -v home-manager)" ]; then
+    #   home-manager switch -b backup
+    # fi
+
+    # Check if memory is at least 8 GB before running nix-env update
+    # if less than 8 GB, nix-env -u will be too slow and should not be run
+    # Get the total RAM in GB
+    total_ram=$(free -g | awk '/^Mem:/{print $2}')
+
+    # Check if total RAM is at least 8GB
+    if [ "$total_ram" -ge 8 ]; then
+      echo "The system has at least 8GB of RAM. Running nix-env -u"
+      nix-env -u
+    else
+      echo "The system has less than 8GB of RAM. Skipping nix-env updates"
+    fi
+  fi
 
   # Update Emacs Packages
   if command -v emacs >/dev/null; then
