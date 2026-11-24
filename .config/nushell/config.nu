@@ -276,7 +276,7 @@ alias ggl = git l
 ### git list repositories, status of repositories
 alias gglrs = jgt
 ### git list repositories, pull all repositories
-alias gglrf = topgrade --only git_repos
+alias gglrf = topgrade --only git_repos --no-ask-retry
 
 #####################
 # Shell assitance

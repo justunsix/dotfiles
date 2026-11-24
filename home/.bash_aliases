@@ -3,6 +3,7 @@
 # git
 alias jgs="jt-gs.sh"
 alias gglrs="gfold | rg -e unclean -e unpushed || true"
+alias gglrf="topgrade --only git_repos --no-ask-retry"
 alias ggsc="jt-gc.sh"
 alias jvcs='vcs status $HOME/Code | rg -e modified -e === -e Untracked'
 alias ggs='git status'

@@ -78,7 +78,7 @@ function gglrs {
 
 ### Git reposities pull
 function gglrf {
-    topgrade --only git_repos
+    topgrade --only git_repos --no-ask-retry
 }
 
 ### Git Status
