@@ -5,7 +5,7 @@
     gnome-boxes
   ];
 
-# Virtualization, Virtual Machines
+  # Virtualization, Virtual Machines
   # https://wiki.nixos.org/wiki/Libvirt
   # https://nixos.wiki/wiki/Virt-manager
   virtualisation.libvirtd.enable = true;

@@ -83,10 +83,8 @@ in
   # https://nix.dev/guides/faq#how-to-run-non-nix-executables
   # Create a library path that only applies to unpackaged programs by using nix-ld. Add this to your configuration.nix:
   #programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
+  # Add any missing dynamic libraries for unpackaged programs
+  # here, NOT in environment.systemPackages
   #];
-
-
 
 }
